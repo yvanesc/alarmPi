@@ -1,6 +1,7 @@
 import pygame
 import iniPi
-
+#import pages/*
+from pages import n00000
 from iniPi import *
 
 # 2 put in iniPi
@@ -20,7 +21,7 @@ wake=pygame.image.load(picsPath+"wake.jpg")
 # define page ask
 def askP(X, Rect, Tri, Up, Down, Dis):
     if (X==0 and Rect==0 and Tri == 0 and Up == 0 and Down == 0):
-        n00000(Dis)
+        n00000.n00000(Dis)
     elif (X==1 and Rect==0 and Tri == 0 and Up == 0 and Down == 0):
         n10000(Dis)
     elif (X==0 and Rect==1 and Tri == 0 and Up == 0 and Down == 0):
@@ -36,23 +37,7 @@ def askP(X, Rect, Tri, Up, Down, Dis):
         n00000(Dis)
 # end first level
         
-# page default all button 0
-def n00000(DISPLAY):
-        #DISPLAYSURF.blit(splashScr, (0, 0))
-	#pygame.display.update()
-        #time.sleep(30)
-        DISPLAY.fill(iniPi.WHITE)
 
-        #screen
-        DISPLAY.blit(icO, (icOPosX, icOPosY))
-        DISPLAY.blit(icRect, (icRectPosX, icRectPosY))
-        DISPLAY.blit(icTri, (icTriPosX, icTriPosY))
-        DISPLAY.blit(icX, (icXPosX, icXPosY))
-        DISPLAY.blit(icDown, (icDownPosX, icDownPosY))
-        DISPLAY.blit(icUp, (icUpPosX, icUpPosY))
-        DISPLAY.blit(rayFace, (34, 0))
-        
-        pygame.display.flip()
         
 def n10000(DISPLAY):       
         DISPLAY.fill(iniPi.WHITE)
