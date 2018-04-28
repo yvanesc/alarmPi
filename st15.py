@@ -58,6 +58,10 @@ while True:
                 # O
                 #pygame.quit()
                 #sys.exit()
+                if clkRect==1:
+                    clkRect =0
+                else:
+                    clkRect+=1
         if (not GPIO.input(24)):
                 # triangle
                 if clkTri==1:
