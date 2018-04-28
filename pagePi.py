@@ -1,7 +1,7 @@
 import pygame
 import iniPi
 #import pages/*
-from pages import n00000
+from pages import n00000, n10000, n01000, n00100, n00010, n00001
 from iniPi import *
 
 # 2 put in iniPi
@@ -23,89 +23,17 @@ def askP(X, Rect, Tri, Up, Down, Dis):
     if (X==0 and Rect==0 and Tri == 0 and Up == 0 and Down == 0):
         n00000.n00000(Dis)
     elif (X==1 and Rect==0 and Tri == 0 and Up == 0 and Down == 0):
-        n10000(Dis)
+        n10000.n10000(Dis)
     elif (X==0 and Rect==1 and Tri == 0 and Up == 0 and Down == 0):
-        n01000(Dis)
+        n01000.n01000(Dis)
         
     elif (X==0 and Rect==0 and Tri == 1 and Up == 0 and Down == 0):
-        n00100(Dis)
+        n00100.n00100(Dis)
     elif (X==0 and Rect==0 and Tri == 0 and Up == 1 and Down == 0):
-        n00010(Dis)
+        n00010.n00010(Dis)
     elif (X==0 and Rect==0 and Tri == 0 and Up == 0 and Down == 1):
-        n00001(Dis)
+        n00001.n00001(Dis)
     else:
-        n00000(Dis)
+        n00000.n00000(Dis)
 # end first level
-        
-
-        
-def n10000(DISPLAY):       
-        DISPLAY.fill(iniPi.WHITE)
-
-        #screen
-        DISPLAY.blit(icO, (icOPosX, icOPosY))
-        DISPLAY.blit(icRect, (icRectPosX, icRectPosY))
-        DISPLAY.blit(icTri, (icTriPosX, icTriPosY))
-        DISPLAY.blit(icX, (icXPosX, icXPosY))
-        DISPLAY.blit(icDown, (icDownPosX, icDownPosY))
-        DISPLAY.blit(icUp, (icUpPosX, icUpPosY))
-        DISPLAY.blit(simps, (34, 0))
-        
-        pygame.display.flip()
-    
-def n01000(DISPLAY):       
-        DISPLAY.fill(iniPi.WHITE)
-
-        #screen
-        DISPLAY.blit(icO, (icOPosX, icOPosY))
-        DISPLAY.blit(icRect, (icRectPosX, icRectPosY))
-        DISPLAY.blit(icTri, (icTriPosX, icTriPosY))
-        DISPLAY.blit(icX, (icXPosX, icXPosY))
-        DISPLAY.blit(icDown, (icDownPosX, icDownPosY))
-        DISPLAY.blit(icUp, (icUpPosX, icUpPosY))
-        DISPLAY.blit(miaou, (34, 0))
-        
-        pygame.display.flip()
-        
-def n00100(DISPLAY):       
-        DISPLAY.fill(iniPi.WHITE)
-
-        #screen
-        DISPLAY.blit(icO, (icOPosX, icOPosY))
-        DISPLAY.blit(icRect, (icRectPosX, icRectPosY))
-        DISPLAY.blit(icTri, (icTriPosX, icTriPosY))
-        DISPLAY.blit(icX, (icXPosX, icXPosY))
-        DISPLAY.blit(icDown, (icDownPosX, icDownPosY))
-        DISPLAY.blit(icUp, (icUpPosX, icUpPosY))
-        DISPLAY.blit(noo, (34, 0))
-        
-        pygame.display.flip()
-
-def n00010(DISPLAY):       
-        DISPLAY.fill(iniPi.WHITE)
-
-        #screen
-        DISPLAY.blit(icO, (icOPosX, icOPosY))
-        DISPLAY.blit(icRect, (icRectPosX, icRectPosY))
-        DISPLAY.blit(icTri, (icTriPosX, icTriPosY))
-        DISPLAY.blit(icX, (icXPosX, icXPosY))
-        DISPLAY.blit(icDown, (icDownPosX, icDownPosY))
-        DISPLAY.blit(icUp, (icUpPosX, icUpPosY))
-        DISPLAY.blit(sleep, (34, 0))
-        
-        pygame.display.flip()
-
-def n00001(DISPLAY):       
-        DISPLAY.fill(iniPi.WHITE)
-
-        #screen
-        DISPLAY.blit(icO, (icOPosX, icOPosY))
-        DISPLAY.blit(icRect, (icRectPosX, icRectPosY))
-        DISPLAY.blit(icTri, (icTriPosX, icTriPosY))
-        DISPLAY.blit(icX, (icXPosX, icXPosY))
-        DISPLAY.blit(icDown, (icDownPosX, icDownPosY))
-        DISPLAY.blit(icUp, (icUpPosX, icUpPosY))
-        DISPLAY.blit(wake, (34, 0))
-        
-        pygame.display.flip()
 
