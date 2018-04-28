@@ -42,14 +42,14 @@ while True:
         #pagePi.n+str(clkX)+ str(clkRect) +str(clkTri)+str(clkUp)+str(clkDown)(DISPLAYSURF)
         if (not GPIO.input(5)):
                 # X limit 1 level
-                if clkX>1:
+                if clkX==1:
                     clkX =0
                 else:
                     clkX+=1
                 # pygame.display.update()
         if (not GPIO.input(22)):
                 # rect
-                if clkRect>1:
+                if clkRect==1:
                     clkRect =0
                 else:
                     clkRect+=1                
@@ -60,18 +60,21 @@ while True:
                 sys.exit()
         if (not GPIO.input(24)):
                 # triangle
-                clkTri+=1
+                if clkTri==1:
+                    clkTri =0
+                else:
+                    clkTri+=1                  
                 #pygame.display.update()
         if (not GPIO.input(4)):
                 #VOL LOW
-                if clkDown>1:
+                if clkDown==1:
                     clkDown =0
                 else:
                     clkDown+=1                 
                 #GPIO.output(27,GPIO.HIGH)
         if (not GPIO.input(17)):
                 #VOL HIGH
-                if clkUp>1:
+                if clkUp==1:
                     clkUp =0
                 else:
                     clkUp+=1                
