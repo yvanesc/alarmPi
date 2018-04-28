@@ -46,7 +46,7 @@ icOPosY = icUpPosY = 5
 icRectPosY = 70
 icTriPosY = 150
 icXPosY = icDownPosY = 205
-icDownPosX = icUpPosX = 280 
+icDownPosX = icUpPosX = 300 #280 
 
 # path 4 icon 32x32
 pathStart="/home/pi/pjtSmScr/ic32/"

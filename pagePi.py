@@ -1,6 +1,7 @@
 import pygame
 import iniPi
 #import pages/*
+from datetime import datetime
 from pages import n00000, n10000, n01000, n00100, n00010, n00001
 from iniPi import *
 
@@ -21,7 +22,11 @@ wake=pygame.image.load(picsPath+"wake.jpg")
 # define page ask
 def askP(X, Rect, Tri, Up, Down, Dis):
     if (X==0 and Rect==0 and Tri == 0 and Up == 0 and Down == 0):
-        n00000.n00000(Dis)
+        #n00000.n00000(Dis)
+        if (int(datetime.now().hour))>20:
+            n00010.n00010(Dis)
+        else:
+            n00001.n00001(Dis)
     elif (X==1 and Rect==0 and Tri == 0 and Up == 0 and Down == 0):
         n10000.n10000(Dis)
     elif (X==0 and Rect==1 and Tri == 0 and Up == 0 and Down == 0):
