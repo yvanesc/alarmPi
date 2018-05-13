@@ -87,6 +87,8 @@ def n00000(DISPLAY):
     DISPLAY.blit(icX, (icXPosX, icXPosY))
     DISPLAY.blit(icDown, (icDownPosX, icDownPosY))
     DISPLAY.blit(icUp, (icUpPosX, icUpPosY))
+    if int(minuteNum)<10:
+        minuteNum= "0" + str(minuteNum)
     label = myFont.render(hourNum+":"+minuteNum, True, BLACK)
     DISPLAY.blit(label, (66,5))
     label1 = myFont.render(timePi.dayOfWeek, True, BLACK)
