@@ -27,7 +27,8 @@ def askP(X, Rect, Tri, Up, Down, Dis):
             #n1.n1(Dis)
             n00000.n00000(Dis)
         else:
-            d1.d1(Dis)
+            #d1.d1(Dis)
+            n00000.n00000(Dis)
     elif (X==1 and Rect==0 and Tri == 0 and Up == 0 and Down == 0):
         n10000.n10000(Dis)
     elif (X==0 and Rect==1 and Tri == 0 and Up == 0 and Down == 0):
