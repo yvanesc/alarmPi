@@ -66,11 +66,13 @@ while True:
 
         if (not GPIO.input(5)):
                 # X
-                clkX+=1
+                #clkX+=1
+                pygame.quit()
                 # pygame.display.update()
         if (not GPIO.input(22)):
                 # rect
-                clkRect+=1
+                #clkRect+=1
+                exit()
                 #pygame.display.update()
         if (not GPIO.input(23)):
                 # O
