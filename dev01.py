@@ -13,7 +13,7 @@ os.putenv('SDL_FBDEV', '/dev/fb1')
 pygame.init()
 # 2 put in iniPi
 icO=pygame.image.load(ic16PathS+ "power-standby" +ic16PathE)
-icRect=pygame.image.load(ic16PathS+ "camera-slr" +ic16PathE)
+icRect=pygame.image.load(ic16PathS+ "eject" +ic16PathE)
 icTri=pygame.image.load(ic16PathS+ "transfer" +ic16PathE)
 icX=pygame.image.load(ic16PathS+ "cog" +ic16PathE)
 icUp=pygame.image.load(ic16PathS+ "lightbulb" +ic16PathE)
