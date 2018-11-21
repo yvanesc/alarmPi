@@ -19,7 +19,7 @@ do
       git status
       echo "Fetching"
       git fetch
-      echo "Pulling"
+      echo "Pullin"
       git pull
     else
       echo "Skipping because it doesn't look like it has a .git folder."
