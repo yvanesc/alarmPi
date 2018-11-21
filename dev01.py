@@ -5,6 +5,7 @@ import iniPi
 import sqlPi
 import ipPi
 import timePi
+import subprocess
 
 from pygame.locals import *
 from iniPi import * 
@@ -80,7 +81,8 @@ while True:
                 sys.exit()
         if (not GPIO.input(24)):
                 # triangle
-                clkTri+=1
+                # clkTri+=1
+                subprocess.Popen("pllHb.sh")
                 #pygame.display.update()
         if (not GPIO.input(4)):
                 #VOL LOW
