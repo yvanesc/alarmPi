@@ -10,6 +10,7 @@ import subprocess
 from pygame.locals import *
 from iniPi import * 
 
+
 os.putenv('SDL_FBDEV', '/dev/fb1')
 pygame.init()
 # 2 put in iniPi
