@@ -82,7 +82,7 @@ while True:
         if (not GPIO.input(24)):
                 # triangle
                 # clkTri+=1
-                subprocess.Popen("git_fetch_pull.sh")
+                subprocess.Popen("fetchHb.sh")
                 #pygame.display.update()
         if (not GPIO.input(4)):
                 #VOL LOW
