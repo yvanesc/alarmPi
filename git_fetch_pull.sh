@@ -8,5 +8,5 @@
 git status
 echo "Fetching"
 git fetch
-echo "Pullin"
+echo "Pulling"
 git pull
