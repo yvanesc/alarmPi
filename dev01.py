@@ -51,7 +51,7 @@ time.sleep(3)
 
 while True:
         os.system('clear')
-        menuTxtO= fontSel.render("<- ShutDown", True, iniPi.font_color)        
+        menuTxtO= fontSel.render("...", True, iniPi.font_color)        
         #DISPLAYSURF.blit(splashScr, (0, 0))
 	#pygame.display.update()
         #time.sleep(30)
