@@ -22,7 +22,7 @@ pygame.init()
 icO=pygame.image.load(ic16PathS+ "power-standby" +ic16PathE)
 icRect=pygame.image.load(ic16PathS+ "eject" +ic16PathE)
 icTri=pygame.image.load(ic16PathS+ "account-logout" +ic16PathE)
-icX=pygame.image.load(ic16PathS+ "cog" +ic16PathE)
+icX=pygame.image.load(ic16PathS+ "account-login" +ic16PathE)
 icUp=pygame.image.load(ic16PathS+ "lightbulb" +ic16PathE)
 icDown=pygame.image.load(ic16PathS+ "menu" +ic16PathE)
 rayFace =pygame.image.load("/home/pi/pjtSmScr/icon/raymond.png")
@@ -93,9 +93,7 @@ while True:
                 #repo.fetch ('master')
                 g = git.Git('alarmPi')
                 g.pull('origin','master')
-                
-                #process = subprocess.Popen(["git", "fetch", "origin", "master"], stdout=subprocess.PIPE)
-                #output = process.communicate()[0]
+                # WORK
 
                 #->next to restart python soft to update change
                 #os.execl('runme.sh', '')
