@@ -51,7 +51,9 @@ time.sleep(3)
 
 while True:
         os.system('clear')
-        menuTxtO= fontSel.render("...", True, iniPi.font_color)        
+        menuTxtO= fontSel.render("...", True, iniPi.font_color)      
+        infoTxt2 = fontSel.render(timePi.timePi + " | "+ timePi.dayOfWeek, True, iniPi.WHITE)  
+        infoTxt3 = fontSel.render(timePi.nowMonth + " "+ timePi.nbMonth + " " + timePi.nowYear, True, iniPi.WHITE)
         #DISPLAYSURF.blit(splashScr, (0, 0))
 	#pygame.display.update()
         #time.sleep(30)
@@ -69,9 +71,11 @@ while True:
         DISPLAYSURF.blit(icX, (icXPosX, icXPosY))
         DISPLAYSURF.blit(icDown, (icDownPosX, icDownPosY))
         DISPLAYSURF.blit(icUp, (icUpPosX, icUpPosY))
-        DISPLAYSURF.blit(rayFace, (34, 0))
+        #DISPLAYSURF.blit(rayFace, (34, 0))
         DISPLAYSURF.blit(menuTxtO, (iniPi.marge, 220))
-        
+        DISPLAYSURF.blit(infoTxt2, (50, 100))        
+        DISPLAYSURF.blit(infoTxt3, (50, 150))
+
         pygame.display.flip()
 
         if (not GPIO.input(5)):
