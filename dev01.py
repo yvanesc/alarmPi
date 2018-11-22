@@ -96,7 +96,7 @@ while True:
                 # WORK
 
                 #->next to restart python soft to update change
-                os.execl('runme.sh', '')
+                os.execl('/home/pi/alarmPi/runme.sh', '')
                 #pygame.display.update()
         if (not GPIO.input(4)):
                 #VOL LOW
