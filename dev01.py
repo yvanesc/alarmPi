@@ -96,7 +96,7 @@ while True:
                 # WORK
 
                 #->next to restart python soft to update change
-                runmeos.execl('runme.sh', '')
+                os.execl('runme.sh', '')
                 #pygame.display.update()
         if (not GPIO.input(4)):
                 #VOL LOW
