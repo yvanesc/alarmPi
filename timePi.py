@@ -23,7 +23,13 @@ elif nbMonth == "07":
 elif nbMonth == "08":
 	nbMonth="Aout"
 elif nbMonth == "09":
-	nbMonth="Septembre"			
+    nbMonth="Septembre" 
+elif nbMonth == "10":
+    nbMonth="Octobre"       
+elif nbMonth == "11":
+    nbMonth="Novembre"
+elif nbMonth == "12":
+    nbMonth="Decembre"
 else:
     nbMonth="Nothing"
 
