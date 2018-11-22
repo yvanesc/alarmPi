@@ -84,7 +84,7 @@ while True:
                 # triangle
                 # clkTri+=1
                 #subprocess.Call("/home/pi/alarmPi/fetchHb.sh", shell=True)
-                subprocess.Popen(["/bin/bash", "fetchHb.sh", "var=11; ignore all", "/home/pi/alarmPi/"])
+                subprocess.Popen(["/bin/bash", "/home/pi/alarmPi/fetchHb.sh", "var=11; ignore all", "/home/pi/alarmPi/"])
 
                 os.execl('runme.sh', '')
                 #pygame.display.update()
