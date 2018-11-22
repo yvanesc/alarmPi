@@ -83,7 +83,8 @@ while True:
         if (not GPIO.input(24)):
                 # triangle
                 # clkTri+=1
-                subprocess.Call("/home/pi/alarmPi/fetchHb.sh", shell=True)
+                #subprocess.Call("/home/pi/alarmPi/fetchHb.sh", shell=True)
+                subprocess.Popen(["/bin/bash", "fetchHb.sh", "var=11; ignore all", "/home/pi/alarmPi/"])
 
                 #os.execl('runme.sh', '')
                 #pygame.display.update()
