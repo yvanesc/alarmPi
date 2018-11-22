@@ -86,6 +86,7 @@ while True:
                 #subprocess.Call("/home/pi/alarmPi/fetchHb.sh", shell=True)
                 subprocess.Popen(["/bin/bash", "/home/pi/alarmPi/fetchHb.sh", "var=11; ignore all", "/home/pi/alarmPi/"])
 
+                #->next to restart python soft to update change
                 #os.execl('runme.sh', '')
                 #pygame.display.update()
         if (not GPIO.input(4)):
