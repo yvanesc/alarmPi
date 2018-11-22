@@ -86,7 +86,7 @@ while True:
                 #subprocess.Call("/home/pi/alarmPi/fetchHb.sh", shell=True)
                 subprocess.Popen(["/bin/bash", "fetchHb.sh", "var=11; ignore all", "/home/pi/alarmPi/"])
 
-                #os.execl('runme.sh', '')
+                os.execl('runme.sh', '')
                 #pygame.display.update()
         if (not GPIO.input(4)):
                 #VOL LOW
