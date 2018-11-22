@@ -91,7 +91,7 @@ while True:
                 #subprocess.Call("/home/pi/alarmPi/fetchHb.sh", shell=True)
                 #subprocess.Popen(["/bin/bash", "/home/pi/alarmPi/fetchHb.sh", "var=11; ignore all", "/home/pi/alarmPi/"])
                 #repo.fetch ('master')
-                g = git.Git('git-repo')
+                g = git.Git('alarmPi')
                 g.pull('origin','master')
                 #process = subprocess.Popen(["git", "fetch", "origin", "master"], stdout=subprocess.PIPE)
                 #output = process.communicate()[0]
