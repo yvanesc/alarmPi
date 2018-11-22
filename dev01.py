@@ -48,9 +48,10 @@ pygame.mouse.set_visible(False)
 DISPLAYSURF.blit(splashScr, (0, 0))
 pygame.display.update()
 time.sleep(3)
-menuTxtO= fontSel.render("<- ShutDown", True, iniPi.font_color)        
+
 while True:
         os.system('clear')
+        menuTxtO= fontSel.render("<- ShutDown", True, iniPi.font_color)        
         #DISPLAYSURF.blit(splashScr, (0, 0))
 	#pygame.display.update()
         #time.sleep(30)
@@ -69,7 +70,7 @@ while True:
         DISPLAYSURF.blit(icDown, (icDownPosX, icDownPosY))
         DISPLAYSURF.blit(icUp, (icUpPosX, icUpPosY))
         DISPLAYSURF.blit(rayFace, (34, 0))
-        DISPLAYSURF.blit(menuTxtO, (iniPi.marge, 2))
+        DISPLAYSURF.blit(menuTxtO, (iniPi.marge, 200))
         
         pygame.display.flip()
 
