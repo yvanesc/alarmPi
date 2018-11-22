@@ -93,6 +93,7 @@ while True:
                 #repo.fetch ('master')
                 g = git.Git('alarmPi')
                 g.pull('origin','master')
+                
                 #process = subprocess.Popen(["git", "fetch", "origin", "master"], stdout=subprocess.PIPE)
                 #output = process.communicate()[0]
 
