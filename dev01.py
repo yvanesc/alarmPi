@@ -84,8 +84,15 @@ while True:
                 # triangle
                 # clkTri+=1
                 #subprocess.Call("/home/pi/alarmPi/fetchHb.sh", shell=True)
-                subprocess.Popen(["/bin/bash", "/home/pi/alarmPi/fetchHb.sh", "var=11; ignore all", "/home/pi/alarmPi/"])
-
+                #subprocess.Popen(["/bin/bash", "/home/pi/alarmPi/fetchHb.sh", "var=11; ignore all", "/home/pi/alarmPi/"])
+                process = subprocess.Popen(["git", "fetch", "origin", "master"], stdout=subprocess.PIPE)
+                output = process.communicate()[0]
+                process = subprocess.Popen(["git", "reset", "--hard", "FETCH_HEAD"], stdout=subprocess.PIPE)
+                output = process.communicate()[0]
+                process = subprocess.Popen(["git", "pull"], stdout=subprocess.PIPE)
+                output = process.communicate()[0]
+                process = subprocess.Popen(["git", "clean", "-df"], stdout=subprocess.PIPE)
+                output = process.communicate()[0]
                 #->next to restart python soft to update change
                 #os.execl('runme.sh', '')
                 #pygame.display.update()
