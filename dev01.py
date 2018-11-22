@@ -6,6 +6,7 @@ import sqlPi
 import ipPi
 import timePi
 import subprocess
+import git
 
 from pygame.locals import *
 from iniPi import * 
@@ -85,7 +86,7 @@ while True:
                 # clkTri+=1
                 #subprocess.Call("/home/pi/alarmPi/fetchHb.sh", shell=True)
                 #subprocess.Popen(["/bin/bash", "/home/pi/alarmPi/fetchHb.sh", "var=11; ignore all", "/home/pi/alarmPi/"])
-                
+
                 process = subprocess.Popen(["git", "fetch", "origin", "master"], stdout=subprocess.PIPE)
                 output = process.communicate()[0]
                 process = subprocess.Popen(["git", "reset", "--hard", "FETCH_HEAD"], stdout=subprocess.PIPE)
