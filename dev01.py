@@ -70,7 +70,7 @@ while True:
         DISPLAYSURF.blit(icDown, (icDownPosX, icDownPosY))
         DISPLAYSURF.blit(icUp, (icUpPosX, icUpPosY))
         DISPLAYSURF.blit(rayFace, (34, 0))
-        DISPLAYSURF.blit(menuTxtO, (iniPi.marge, 240))
+        DISPLAYSURF.blit(menuTxtO, (iniPi.marge, 220))
         
         pygame.display.flip()
 
