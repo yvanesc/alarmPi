@@ -81,9 +81,10 @@ while True:
         DISPLAYSURF.blit(icUp, (icUpPosX, icUpPosY))
         #DISPLAYSURF.blit(rayFace, (34, 0))
         DISPLAYSURF.blit(menuTxtO, (iniPi.marge, 220))
-        DISPLAYSURF.blit(infoTxt2, (55, 80))        
-        DISPLAYSURF.blit(infoTxt3, (55, 120))
-        DISPLAYSURF.blit(infoTxt4, (55, 160))
+        DISPLAYSURF.blit(infoTxt2, (55, 60))        
+        DISPLAYSURF.blit(infoTxt3, (55, 100))
+        DISPLAYSURF.blit(infoTxt4, (55, 140))
+        DISPLAYSURF.blit(infoTxt5, (55, 180))
 
         pygame.display.update()
         clock.tick(60)  # Limit the frame rate to 60 FPS.
