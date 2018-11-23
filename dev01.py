@@ -76,7 +76,8 @@ while True:
         DISPLAYSURF.blit(infoTxt2, (50, 100))        
         DISPLAYSURF.blit(infoTxt3, (50, 150))
 
-        pygame.display.flip()
+        pygame.display.update()
+        #pygame.display.flip()
 
         if (not GPIO.input(5)):
                 # X
