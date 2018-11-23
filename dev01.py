@@ -84,9 +84,9 @@ while True:
         DISPLAYSURF.blit(icDown, (icDownPosX, icDownPosY))
         DISPLAYSURF.blit(icUp, (icUpPosX, icUpPosY))
         if (hour2Display<8 and hour2Display>20):
-                DISPLAYSURF.blit(sun, (260, 180))
+                DISPLAYSURF.blit(sun, (230, 170))
         else:
-                DISPLAYSURF.blit(moon, (260, 180))
+                DISPLAYSURF.blit(moon, (230, 170))
         #DISPLAYSURF.blit(rayFace, (34, 0))
         DISPLAYSURF.blit(menuTxtO, (iniPi.marge, 220))
         DISPLAYSURF.blit(infoTxt2, (55, 60))        
