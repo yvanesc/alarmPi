@@ -61,7 +61,7 @@ while True:
         infoTxt2 = fontSel.render(time2Display + " | "+ timePi.dayOfWeek, True, iniPi.BLACK)    #timePi.timePi + " | "+ timePi.dayOfWeek, True, iniPi.BLACK)  
         infoTxt3 = fontSel.render(timePi.nbDay + " "+ timePi.nbMonth + " " + timePi.nowYear, True, iniPi.BLACK)
         infoTxt4 = fontSel.render("Time last reboot : " + timePi.timePi , True, iniPi.BLACK)
-        infoTxt4 = fontSel.render(timePi.nbMonth + " " + timePi.nowYear, True, iniPi.BLACK)
+        infoTxt5 = fontSel.render(timePi.nbMonth + " " + timePi.nowYear, True, iniPi.BLACK)
         #DISPLAYSURF.blit(splashScr, (0, 0))
 	#pygame.display.update()
         #time.sleep(30)
