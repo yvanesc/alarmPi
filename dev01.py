@@ -7,6 +7,7 @@ import ipPi
 import timePi
 import subprocess
 import git
+import datetime
 
 from pygame.locals import *
 from iniPi import * 
@@ -51,13 +52,15 @@ time.sleep(3)
 clock = pygame.time.Clock()
 while True:
         os.system('clear')
+        DISPLAYSURF.fill(iniPi.WHITE)
+        time2Display = datetime.now().strftime("%H:%M")
         menuTxtO= fontSel.render("...", True, iniPi.font_color)      
-        infoTxt2 = fontSel.render(timePi.timePi + " | "+ timePi.dayOfWeek, True, iniPi.BLACK)  
+        infoTxt2 = fontSel.render(time2Display + " | "+ timePi.dayOfWeek, True, iniPi.BLACK)    #timePi.timePi + " | "+ timePi.dayOfWeek, True, iniPi.BLACK)  
         infoTxt3 = fontSel.render(timePi.nbDay + " "+ timePi.nbMonth + " " + timePi.nowYear, True, iniPi.BLACK)
         #DISPLAYSURF.blit(splashScr, (0, 0))
 	#pygame.display.update()
         #time.sleep(30)
-        DISPLAYSURF.fill(iniPi.WHITE)
+        
         #pygame.display.update()
 	#default display
         #menuTxtRect= fontSel.render(menuRect, True, iniPi.font_color)
@@ -78,7 +81,7 @@ while True:
 
         pygame.display.update()
         clock.tick(60)  # Limit the frame rate to 60 FPS.
-        
+
         #pygame.display.flip()
 
         if (not GPIO.input(5)):
