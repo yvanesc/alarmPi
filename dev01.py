@@ -116,10 +116,13 @@ while True:
                 #pygame.display.update()
         if (not GPIO.input(4)):
                 #VOL LOW
-                clkDown+=1
+                #clkDown+=1
+                pygame.mixer.music.load('/home/pi/alarmPi/sound/cartoon002.wav')
+                pygame.mixer.music.play(0)
                 #GPIO.output(27,GPIO.HIGH)
         if (not GPIO.input(17)):
                 #VOL HIGH
+                #clkUp
                 pygame.mixer.music.load('/home/pi/alarmPi/sound/wake-up.mp3')
                 pygame.mixer.music.play(0)
                 #GPIO.output(27,GPIO.LOW)
