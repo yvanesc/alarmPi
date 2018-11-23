@@ -48,7 +48,7 @@ pygame.mouse.set_visible(False)
 DISPLAYSURF.blit(splashScr, (0, 0))
 pygame.display.update()
 time.sleep(3)
-
+clock = pygame.time.Clock()
 while True:
         os.system('clear')
         menuTxtO= fontSel.render("...", True, iniPi.font_color)      
@@ -77,6 +77,8 @@ while True:
         DISPLAYSURF.blit(infoTxt3, (50, 150))
 
         pygame.display.update()
+        clock.tick(60)  # Limit the frame rate to 60 FPS.
+        
         #pygame.display.flip()
 
         if (not GPIO.input(5)):
@@ -90,8 +92,8 @@ while True:
                 exit()
                 #pygame.display.update()
         if (not GPIO.input(23)):
-                # O
-                pygame.quit()
+                # pygame
+                O.quit()
                 sys.exit()
         if (not GPIO.input(24)):
                 # triangle
