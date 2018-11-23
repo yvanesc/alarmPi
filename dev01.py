@@ -120,7 +120,8 @@ while True:
                 #GPIO.output(27,GPIO.HIGH)
         if (not GPIO.input(17)):
                 #VOL HIGH
-                clkUp+=1
+                pygame.mixer.music.load('sound/wake-up.mp3')
+                pygame.mixer.music.play(0)
                 #GPIO.output(27,GPIO.LOW)
         for event in pygame.event.get():
                 if event.type == QUIT:
