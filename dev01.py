@@ -15,7 +15,10 @@ from git import Repo
 
 repo = Repo("/home/pi/alarmPi")
 assert not repo.bare
-
+# Clean before start
+g = git.Git('alarmPi')
+g.pull('origin','master')
+os.execl('/home/pi/alarmPi/runme.sh', '')
 
 os.putenv('SDL_FBDEV', '/dev/fb1')
 pygame.init()
@@ -53,7 +56,7 @@ clock = pygame.time.Clock()
 while True:
         os.system('clear')
         DISPLAYSURF.fill(iniPi.WHITE)
-        time2Display = datetime.now().strftime("%H:%M")
+        time2Display = datetime.datetime.now().strftime("%H:%M")
         menuTxtO= fontSel.render("...", True, iniPi.font_color)      
         infoTxt2 = fontSel.render(time2Display + " | "+ timePi.dayOfWeek, True, iniPi.BLACK)    #timePi.timePi + " | "+ timePi.dayOfWeek, True, iniPi.BLACK)  
         infoTxt3 = fontSel.render(timePi.nbDay + " "+ timePi.nbMonth + " " + timePi.nowYear, True, iniPi.BLACK)
