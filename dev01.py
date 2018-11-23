@@ -44,7 +44,7 @@ GPIO.setup(24, GPIO.IN, pull_up_down=GPIO.PUD_UP)
 GPIO.setup(27,GPIO.OUT)
 
 fontSel=pygame.font.SysFont(iniPi.font, iniPi.font_size)
-fontSelHalf=pygame.font.SysFont(iniPi.font, iniPi.font_sizeHalf)
+fontSelHalf=pygame.font.SysFont(iniPi.font, iniPi.font_sizeSm)
 # DISPLAYSURF.fill(iniPi.WHITE)
 # pygame.display.update()
 GPIO.output(27,GPIO.HIGH)

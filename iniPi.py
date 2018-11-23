@@ -14,7 +14,7 @@ GREYDARK = (47, 79, 79)
 font_color = (BLACK)
 font = None
 font_size = 30
-font_sizeHalf = 20
+font_sizeSm = 25
 
 # frame
 marge = 5
