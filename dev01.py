@@ -53,7 +53,7 @@ while True:
         os.system('clear')
         menuTxtO= fontSel.render("...", True, iniPi.font_color)      
         infoTxt2 = fontSel.render(timePi.timePi + " | "+ timePi.dayOfWeek, True, iniPi.BLACK)  
-        infoTxt3 = fontSel.render(timePi.nowMonth + " "+ timePi.nbMonth + " " + timePi.nowYear, True, iniPi.BLACK)
+        infoTxt3 = fontSel.render(timePi.nbDay + " "+ timePi.nbMonth + " " + timePi.nowYear, True, iniPi.BLACK)
         #DISPLAYSURF.blit(splashScr, (0, 0))
 	#pygame.display.update()
         #time.sleep(30)

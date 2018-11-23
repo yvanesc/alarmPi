@@ -9,8 +9,12 @@ timePi = nowTime.strftime("%H:%M")
 
 # month
 nowMonth = datetime.datetime.now()
-nowMonth = nowMonth.strftime("%d")
+nowMonth = nowMonth.strftime("%m")
 nbMonth = nowMonth
+# day
+nowDay = datetime.datetime.now()
+nowDay = nowDay.strftime("%d")
+nbDay = nowDay
 
 if nbMonth == "04":
 	nbMonth="Avril"
