@@ -83,7 +83,7 @@ while True:
         #DISPLAYSURF.blit(rayFace, (34, 0))
         DISPLAYSURF.blit(menuTxtO, (iniPi.marge, 220))
         DISPLAYSURF.blit(infoTxt2, (55, 60))        
-        DISPLAYSURF.blit(infoTxt3, (55, 100))
+        DISPLAYSURF.blit(infoTxt3, (55, 90))
         DISPLAYSURF.blit(infoTxt4, (55, 140))
         DISPLAYSURF.blit(infoTxt5, (55, 160))
 
