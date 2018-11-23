@@ -16,9 +16,9 @@ from git import Repo
 repo = Repo("/home/pi/alarmPi")
 assert not repo.bare
 # Clean before start
-g = git.Git('alarmPi')
-g.pull('origin','master')
-os.execl('/home/pi/alarmPi/runme.sh', '')
+#g = git.Git('alarmPi')
+#g.pull('origin','master')
+#os.execl('/home/pi/alarmPi/runme.sh', '')
 
 os.putenv('SDL_FBDEV', '/dev/fb1')
 pygame.init()
