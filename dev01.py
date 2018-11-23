@@ -84,15 +84,15 @@ while True:
         DISPLAYSURF.blit(icDown, (icDownPosX, icDownPosY))
         DISPLAYSURF.blit(icUp, (icUpPosX, icUpPosY))
         if (hour2Display<8 and hour2Display>20):
-                DISPLAYSURF.blit(sun, (230, 170))
+                DISPLAYSURF.blit(sun, (224, 160))
         else:
-                DISPLAYSURF.blit(moon, (230, 170))
+                DISPLAYSURF.blit(moon, (224, 160))
         #DISPLAYSURF.blit(rayFace, (34, 0))
         DISPLAYSURF.blit(menuTxtO, (iniPi.marge, 220))
-        DISPLAYSURF.blit(infoTxt2, (55, 60))        
-        DISPLAYSURF.blit(infoTxt3, (55, 90))
-        DISPLAYSURF.blit(infoTxt4, (55, 140))
-        DISPLAYSURF.blit(infoTxt5, (55, 160))
+        DISPLAYSURF.blit(infoTxt2, (32, 60))        
+        DISPLAYSURF.blit(infoTxt3, (32, 90))
+        DISPLAYSURF.blit(infoTxt4, (32, 140))
+        DISPLAYSURF.blit(infoTxt5, (32, 160))
 
         pygame.display.update()
         clock.tick(60)  # Limit the frame rate to 60 FPS.

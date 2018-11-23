@@ -17,7 +17,7 @@ font_size = 30
 font_sizeSm = 25
 
 # frame
-marge = 5
+marge = 8
 # position Y for button
 posButX = posButDw = 220
 posButTri = 150
