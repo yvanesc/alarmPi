@@ -65,7 +65,7 @@ while True:
         infoTxt2 = fontSel.render(time2Display + " | "+ timePi.dayOfWeek, True, iniPi.BLACK)    #timePi.timePi + " | "+ timePi.dayOfWeek, True, iniPi.BLACK)  
         infoTxt3 = fontSel.render(date2Display + " "+ timePi.nbMonth + " " + timePi.nowYear, True, iniPi.BLACK)
         infoTxt4 = fontSelHalf.render("Last reboot : " + timePi.timePi , True, iniPi.BLACK)
-        infoTxt5 = fontSelHalf.render(timePi.nbDay + " "+ timePi.nbMonth + " " + timePi.nowYear + "  " + hour2Display, True, iniPi.BLACK)
+        infoTxt5 = fontSelHalf.render(timePi.nbDay + " "+ timePi.nbMonth + " " + timePi.nowYear , True, iniPi.BLACK)
         #DISPLAYSURF.blit(splashScr, (0, 0))
 	#pygame.display.update()
         #time.sleep(30)
@@ -84,9 +84,9 @@ while True:
         DISPLAYSURF.blit(icDown, (icDownPosX, icDownPosY))
         DISPLAYSURF.blit(icUp, (icUpPosX, icUpPosY))
         if (hour2Display<8 and hour2Display>20):
-                DISPLAYSURF.blit(moon, (280, 180))
+                DISPLAYSURF.blit(sun, (260, 180))
         else:
-                DISPLAYSURF.blit(sun, (280, 180))
+                DISPLAYSURF.blit(moon, (260, 180))
         #DISPLAYSURF.blit(rayFace, (34, 0))
         DISPLAYSURF.blit(menuTxtO, (iniPi.marge, 220))
         DISPLAYSURF.blit(infoTxt2, (55, 60))        
