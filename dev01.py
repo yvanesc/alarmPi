@@ -111,6 +111,7 @@ while True:
                 #pygame.display.update()
         if (not GPIO.input(23)):
                 # pygame
+                # O
                 O.quit()
                 sys.exit()
         if (not GPIO.input(24)):
