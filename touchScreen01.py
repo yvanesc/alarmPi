@@ -54,10 +54,7 @@ while True:
         # button 1 fct only (shutdown)
         
         #screen
-        if (hour2Display<8 and hour2Display>20):
-                DISPLAYSURF.blit(sun, (224, 160))
-        else:
-                DISPLAYSURF.blit(moon, (224, 160))
+
         # update button
         for k,v in touch_buttons.items():
                 text_surface = fontSel.render('%s'%k, True, WHITE)
