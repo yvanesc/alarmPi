@@ -39,7 +39,7 @@ DISPLAYSURF = pygame.display.set_mode((scrWidth, scrHeigth))
 fontSel=pygame.font.SysFont(iniPi.font, iniPi.font_size)
 fontSelHalf=pygame.font.SysFont(iniPi.font, iniPi.font_sizeSm)
 # update button
-touch_buttons = {'17 on':(80,60), '4 on':(240,60), '17 off':(80,180), '4 off':(240,180)}
+touch_buttons = {'A':(80,60), 'B':(240,60), 'C':(80,180), 'D':(240,180)}
 
 #GPIO.output(27,GPIO.HIGH)
 pygame.mouse.set_visible(False)
@@ -80,16 +80,16 @@ while True:
                         if y < 120:
                                 if x < 160:
                                         #GPIO.output(17, False)
-                                        print("17")
+                                        print("A")
                                 else:
                                         #GPIO.output(4, False)
-                                        print("4")   
+                                        print("B")   
                         else:
                                 if x < 160:
                                         #GPIO.output(17, True)
-                                        print("17")
+                                        print("C")
                                 else:
                                         #GPIO.output(4, True)
-                                        print("17")
+                                        print("D")
 
         time.sleep(0.1)
