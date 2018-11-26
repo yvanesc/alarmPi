@@ -59,7 +59,7 @@ time.sleep(3)
 clock = pygame.time.Clock()
 while True:
         os.system('clear')
-        DISPLAYSURF.fill(iniPi.BLACK)
+        DISPLAYSURF.fill(iniPi.WHITE)
         time2Display = datetime.datetime.now().strftime("%H:%M")
         hour2Display = int(datetime.datetime.now().strftime("%H"))
         date2Display = datetime.datetime.now().strftime("%d")
