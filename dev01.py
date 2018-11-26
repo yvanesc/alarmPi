@@ -15,10 +15,6 @@ from git import Repo
 
 repo = Repo("/home/pi/alarmPi")
 assert not repo.bare
-# Clean before start
-#g = git.Git('alarmPi')
-#g.pull('origin','master')
-#os.execl('/home/pi/alarmPi/runme.sh', '')
 
 os.putenv('SDL_FBDEV', '/dev/fb1')
 
@@ -30,11 +26,9 @@ icTri=pygame.image.load(ic16PathS+ "account-logout" +ic16PathE)
 icX=pygame.image.load(ic16PathS+ "cog" +ic16PathE)
 icUp=pygame.image.load(ic16PathS+ "caret-top" +ic16PathE)
 icDown=pygame.image.load(ic16PathS+ "caret-bottom" +ic16PathE)
-#rayFace =pygame.image.load("/home/pi/pjtSmScr/icon/raymond.png")
 moon =pygame.image.load("/home/pi/alarmPi/ic64/moon.jpg")
 sun =pygame.image.load("/home/pi/alarmPi/ic64/sun.png")
 splashScr =pygame.image.load("/home/pi/pjtSmScr/wp/coplandOS.jpg")
-#pygame.mouse.set_visible(False)
 DISPLAYSURF = pygame.display.set_mode((scrWidth, scrHeigth))
 
 GPIO.setmode(GPIO.BCM)
@@ -49,8 +43,6 @@ GPIO.setup(27,GPIO.OUT)
 fontSel=pygame.font.SysFont(iniPi.font, iniPi.font_size)
 fontSelHalf=pygame.font.SysFont(iniPi.font, iniPi.font_sizeSm)
 
-# DISPLAYSURF.fill(iniPi.WHITE)
-# pygame.display.update()
 GPIO.output(27,GPIO.HIGH)
 pygame.mouse.set_visible(False)
 DISPLAYSURF.blit(splashScr, (0, 0))
@@ -64,19 +56,10 @@ while True:
         hour2Display = int(datetime.datetime.now().strftime("%H"))        
         date2Display = datetime.datetime.now().strftime("%d")
         menuTxtO= fontSel.render("...", True, iniPi.font_color)      
-        infoTxt2 = fontSel.render(time2Display + " | "+ timePi.dayOfWeek, True, iniPi.BLACK)    #timePi.timePi + " | "+ timePi.dayOfWeek, True, iniPi.BLACK)  
+        infoTxt2 = fontSel.render(time2Display + " | "+ timePi.dayOfWeek, True, iniPi.BLACK)    
         infoTxt3 = fontSel.render(date2Display + " "+ timePi.nbMonth + " " + timePi.nowYear, True, iniPi.BLACK)
         infoTxt4 = fontSelHalf.render("Last reboot : " + timePi.timePi , True, iniPi.BLACK)
-        infoTxt5 = fontSelHalf.render(timePi.nbDay + " "+ timePi.nbMonth + " " + timePi.nowYear , True, iniPi.BLACK)
-        #DISPLAYSURF.blit(splashScr, (0, 0))
-	#pygame.display.update()
-        #time.sleep(30)
-        
-        #pygame.display.update()
-	#default display
-        #menuTxtRect= fontSel.render(menuRect, True, iniPi.font_color)
-            
-        # button 1 fct only (shutdown)
+        infoTxt5 = fontSelHalf.render(timePi.nbDay + " "+ timePi.nbMonth + " " + timePi.nowYear , True, iniPi.BLACK)                   
         
         #screen
         DISPLAYSURF.blit(icO, (icOPosX, icOPosY))
@@ -84,33 +67,28 @@ while True:
         DISPLAYSURF.blit(icTri, (icTriPosX, icTriPosY))
         DISPLAYSURF.blit(icX, (icXPosX, icXPosY))
         DISPLAYSURF.blit(icDown, (icDownPosX, icDownPosY))
-        DISPLAYSURF.blit(icUp, (icUpPosX, icUpPosY))
-        if (hour2Display<8 or hour2Display>20):
-                DISPLAYSURF.blit(moon, (224, 160))
-        else:
-                DISPLAYSURF.blit(sun, (224, 160))
-        #DISPLAYSURF.blit(rayFace, (34, 0))
+        DISPLAYSURF.blit(icUp, (icUpPosX, icUpPosY))        
         DISPLAYSURF.blit(menuTxtO, (iniPi.marge, 220))
         DISPLAYSURF.blit(infoTxt2, (32, 60))        
         DISPLAYSURF.blit(infoTxt3, (32, 90))
         DISPLAYSURF.blit(infoTxt4, (32, 140))
         DISPLAYSURF.blit(infoTxt5, (32, 160))
-        
+        if (hour2Display<8 or hour2Display>20):
+                DISPLAYSURF.blit(moon, (224, 160))
+        else:
+                DISPLAYSURF.blit(sun, (224, 160))
+
         pygame.display.update()
         clock.tick(60)  # Limit the frame rate to 60 FPS.
-
-        #pygame.display.flip()
 
         if (not GPIO.input(5)):
                 # X
                 #clkX+=1
-                pygame.quit()
-                # pygame.display.update()
+                pygame.quit()               
         if (not GPIO.input(22)):
                 # rect
                 #clkRect+=1
-                exit()
-                #pygame.display.update()
+                exit()                
         if (not GPIO.input(23)):
                 # pygame
                 # O
@@ -119,28 +97,21 @@ while True:
         if (not GPIO.input(24)):
                 # triangle
                 # clkTri+=1
-                #subprocess.Call("/home/pi/alarmPi/fetchHb.sh", shell=True)
-                #subprocess.Popen(["/bin/bash", "/home/pi/alarmPi/fetchHb.sh", "var=11; ignore all", "/home/pi/alarmPi/"])
-                #repo.fetch ('master')
                 g = git.Git('/home/pi/alarmPi')
                 g.pull('origin','master')
-                # WORK
-
-                #->next to restart python soft to update change
-                os.execl('/home/pi/alarmPi/runme.sh', '')
-                #pygame.display.update()
+                
+                # restart python soft to update change
+                os.execl('/home/pi/alarmPi/runme.sh', '')                
         if (not GPIO.input(4)):
                 #VOL LOW
                 #clkDown+=1
                 pygame.mixer.music.load('/home/pi/alarmPi/sound/cartoon002.wav')
-                pygame.mixer.music.play(0)
-                #GPIO.output(27,GPIO.HIGH)
+                pygame.mixer.music.play(0)                
         if (not GPIO.input(17)):
                 #VOL HIGH
                 #clkUp
                 pygame.mixer.music.load('/home/pi/alarmPi/sound/wake-up.mp3')
-                pygame.mixer.music.play(0)
-                #GPIO.output(27,GPIO.LOW)
+                pygame.mixer.music.play(0)                
         for event in pygame.event.get():
                 if event.type == QUIT:
                         pygame.quit()
