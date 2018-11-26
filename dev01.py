@@ -49,6 +49,11 @@ GPIO.setup(27,GPIO.OUT)
 
 fontSel=pygame.font.SysFont(iniPi.font, iniPi.font_size)
 fontSelHalf=pygame.font.SysFont(iniPi.font, iniPi.font_sizeSm)
+# update button
+touch_buttons = {'17 on':(80,60), '4 on':(240,60), '17 off':(80,180), '4 off':(240,180)}
+ 
+
+
 # DISPLAYSURF.fill(iniPi.WHITE)
 # pygame.display.update()
 GPIO.output(27,GPIO.HIGH)
@@ -95,6 +100,12 @@ while True:
         DISPLAYSURF.blit(infoTxt3, (32, 90))
         DISPLAYSURF.blit(infoTxt4, (32, 140))
         DISPLAYSURF.blit(infoTxt5, (32, 160))
+        # update button
+ 
+        for k,v in touch_buttons.items():
+                text_surface = fontSel.render('%s'%k, True, WHITE)
+                rect = text_surface.get_rect(center=v)
+                DISPLAYSURF.blit(text_surface, rect)
 
         pygame.display.update()
         clock.tick(60)  # Limit the frame rate to 60 FPS.
