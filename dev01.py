@@ -150,8 +150,26 @@ while True:
                 pygame.mixer.music.play(0)
                 #GPIO.output(27,GPIO.LOW)
         for event in pygame.event.get():
-                if event.type == QUIT:
-                        pygame.quit()
-                        sys.exit()
+                #if event.type == QUIT:
+                        #pygame.quit()
+                        #sys.exit()
+                if(event.type is MOUSEBUTTONDOWN):
+                        pos = pygame.mouse.get_pos()
+                        print pos
+                elif(event.type is MOUSEBUTTONUP):
+                        pos = pygame.mouse.get_pos()
+                        print pos
+                        #Find which quarter of the screen we're in
+                        x,y = pos
+                        if y < 120:
+                                if x < 160:
+                                        GPIO.output(17, False)
+                                else:
+                                        GPIO.output(4, False)
+                        else:
+                                if x < 160:
+                                        GPIO.output(17, True)
+                                else:
+                                        GPIO.output(4, True)
 
         time.sleep(0.1)
