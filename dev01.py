@@ -155,10 +155,10 @@ while True:
                         #sys.exit()
                 if(event.type is MOUSEBUTTONDOWN):
                         pos = pygame.mouse.get_pos()
-                        print pos
+                        print (pos)
                 elif(event.type is MOUSEBUTTONUP):
                         pos = pygame.mouse.get_pos()
-                        print pos
+                        print (pos)
                         #Find which quarter of the screen we're in
                         x,y = pos
                         if y < 120:
