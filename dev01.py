@@ -21,6 +21,8 @@ assert not repo.bare
 #os.execl('/home/pi/alarmPi/runme.sh', '')
 
 os.putenv('SDL_FBDEV', '/dev/fb1')
+os.putenv('SDL_MOUSEDRV', 'TSLIB')
+os.putenv('SDL_MOUSEDEV', '/dev/input/touchscreen')
 pygame.init()
 # 2 put in iniPi
 icO=pygame.image.load(ic16PathS+ "power-standby" +ic16PathE)
