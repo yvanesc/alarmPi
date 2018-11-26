@@ -120,7 +120,7 @@ while True:
                 #subprocess.Call("/home/pi/alarmPi/fetchHb.sh", shell=True)
                 #subprocess.Popen(["/bin/bash", "/home/pi/alarmPi/fetchHb.sh", "var=11; ignore all", "/home/pi/alarmPi/"])
                 #repo.fetch ('master')
-                g = git.Git('alarmPi')
+                g = git.Git('/home/pi/alarmPi')
                 g.pull('origin','master')
                 # WORK
 
