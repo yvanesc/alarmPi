@@ -21,7 +21,8 @@ assert not repo.bare
 #os.execl('/home/pi/alarmPi/runme.sh', '')
 
 os.putenv('SDL_FBDEV', '/dev/fb1')
-
+os.putenv('SDL_MOUSEDRV', 'TSLIB')
+os.putenv('SDL_MOUSEDEV', '/dev/input/touchscreen')
 pygame.init()
 # 2 put in iniPi
 icO=pygame.image.load(ic16PathS+ "power-standby" +ic16PathE)
@@ -48,6 +49,8 @@ GPIO.setup(27,GPIO.OUT)
 
 fontSel=pygame.font.SysFont(iniPi.font, iniPi.font_size)
 fontSelHalf=pygame.font.SysFont(iniPi.font, iniPi.font_sizeSm)
+# update button
+touch_buttons = {'17 on':(80,60), '4 on':(240,60), '17 off':(80,180), '4 off':(240,180)}
 
 # DISPLAYSURF.fill(iniPi.WHITE)
 # pygame.display.update()
@@ -95,7 +98,12 @@ while True:
         DISPLAYSURF.blit(infoTxt3, (32, 90))
         DISPLAYSURF.blit(infoTxt4, (32, 140))
         DISPLAYSURF.blit(infoTxt5, (32, 160))
-        
+        # update button
+        for k,v in touch_buttons.items():
+                text_surface = fontSel.render('%s'%k, True, WHITE)
+                rect = text_surface.get_rect(center=v)
+                DISPLAYSURF.blit(text_surface, rect)
+
         pygame.display.update()
         clock.tick(60)  # Limit the frame rate to 60 FPS.
 
@@ -142,8 +150,30 @@ while True:
                 pygame.mixer.music.play(0)
                 #GPIO.output(27,GPIO.LOW)
         for event in pygame.event.get():
-                if event.type == QUIT:
-                        pygame.quit()
-                        sys.exit()                
+                #if event.type == QUIT:
+                        #pygame.quit()
+                        #sys.exit()
+                if(event.type is MOUSEBUTTONDOWN):
+                        pos = pygame.mouse.get_pos()
+                        print (pos)
+                elif(event.type is MOUSEBUTTONUP):
+                        pos = pygame.mouse.get_pos()
+                        print (pos)
+                        #Find which quarter of the screen we're in
+                        x,y = pos
+                        if y < 120:
+                                if x < 160:
+                                        #GPIO.output(17, False)
+                                        print("17")
+                                else:
+                                        #GPIO.output(4, False)
+                                        print("17")   
+                        else:
+                                if x < 160:
+                                        #GPIO.output(17, True)
+                                        print("17")
+                                else:
+                                        #GPIO.output(4, True)
+                                        print("17")
 
         time.sleep(0.1)
