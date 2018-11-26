@@ -99,7 +99,6 @@ while True:
         DISPLAYSURF.blit(infoTxt4, (32, 140))
         DISPLAYSURF.blit(infoTxt5, (32, 160))
         # update button
- 
         for k,v in touch_buttons.items():
                 text_surface = fontSel.render('%s'%k, True, WHITE)
                 rect = text_surface.get_rect(center=v)
