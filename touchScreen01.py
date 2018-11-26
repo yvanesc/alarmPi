@@ -41,7 +41,7 @@ fontSelHalf=pygame.font.SysFont(iniPi.font, iniPi.font_sizeSm)
 # update button
 touch_buttons = {'17 on':(80,60), '4 on':(240,60), '17 off':(80,180), '4 off':(240,180)}
 
-GPIO.output(27,GPIO.HIGH)
+#GPIO.output(27,GPIO.HIGH)
 pygame.mouse.set_visible(False)
 DISPLAYSURF.blit(splashScr, (0, 0))
 pygame.display.update()
