@@ -51,8 +51,6 @@ fontSel=pygame.font.SysFont(iniPi.font, iniPi.font_size)
 fontSelHalf=pygame.font.SysFont(iniPi.font, iniPi.font_sizeSm)
 # update button
 touch_buttons = {'17 on':(80,60), '4 on':(240,60), '17 off':(80,180), '4 off':(240,180)}
- 
-
 
 # DISPLAYSURF.fill(iniPi.WHITE)
 # pygame.display.update()
