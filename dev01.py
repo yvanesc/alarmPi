@@ -163,13 +163,17 @@ while True:
                         x,y = pos
                         if y < 120:
                                 if x < 160:
-                                        GPIO.output(17, False)
+                                        #GPIO.output(17, False)
+                                        print("17")
                                 else:
-                                        GPIO.output(4, False)
+                                        #GPIO.output(4, False)
+                                        print("17")   
                         else:
                                 if x < 160:
-                                        GPIO.output(17, True)
+                                        #GPIO.output(17, True)
+                                        print("17")
                                 else:
-                                        GPIO.output(4, True)
+                                        #GPIO.output(4, True)
+                                        print("17")
 
         time.sleep(0.1)
