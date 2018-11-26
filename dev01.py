@@ -62,6 +62,7 @@ while True:
         DISPLAYSURF.fill(iniPi.WHITE)
         time2Display = datetime.datetime.now().strftime("%H:%M")
         hour2Display = int(datetime.datetime.now().strftime("%H"))
+        print(hour2Display)
         date2Display = datetime.datetime.now().strftime("%d")
         menuTxtO= fontSel.render("...", True, iniPi.font_color)      
         infoTxt2 = fontSel.render(time2Display + " | "+ timePi.dayOfWeek, True, iniPi.BLACK)    #timePi.timePi + " | "+ timePi.dayOfWeek, True, iniPi.BLACK)  
