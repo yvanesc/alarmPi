@@ -61,8 +61,7 @@ while True:
         os.system('clear')
         DISPLAYSURF.fill(iniPi.WHITE)
         time2Display = datetime.datetime.now().strftime("%H:%M")
-        hour2Display = int(datetime.datetime.now().strftime("%H"))
-        print(hour2Display)
+        hour2Display = int(datetime.datetime.now().strftime("%H"))        
         date2Display = datetime.datetime.now().strftime("%d")
         menuTxtO= fontSel.render("...", True, iniPi.font_color)      
         infoTxt2 = fontSel.render(time2Display + " | "+ timePi.dayOfWeek, True, iniPi.BLACK)    #timePi.timePi + " | "+ timePi.dayOfWeek, True, iniPi.BLACK)  
@@ -86,10 +85,10 @@ while True:
         DISPLAYSURF.blit(icX, (icXPosX, icXPosY))
         DISPLAYSURF.blit(icDown, (icDownPosX, icDownPosY))
         DISPLAYSURF.blit(icUp, (icUpPosX, icUpPosY))
-        if (hour2Display<8 and hour2Display>20):
-                DISPLAYSURF.blit(sun, (224, 160))
-        else:
+        if (hour2Display<8 or hour2Display>20):
                 DISPLAYSURF.blit(moon, (224, 160))
+        else:
+                DISPLAYSURF.blit(sun, (224, 160))
         #DISPLAYSURF.blit(rayFace, (34, 0))
         DISPLAYSURF.blit(menuTxtO, (iniPi.marge, 220))
         DISPLAYSURF.blit(infoTxt2, (32, 60))        
