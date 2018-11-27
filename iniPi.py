@@ -60,3 +60,6 @@ pathEnd="-4x.png"
 ic16PathS ="/home/pi/pjtSmScr/ic16/"
 # end of filename
 ic16PathE="-2x.png"
+
+#pygame
+fontSel=pygame.font.SysFont(iniPi.font, iniPi.font_size)

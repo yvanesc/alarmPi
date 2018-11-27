@@ -55,12 +55,13 @@ while True:
         time2Display = datetime.datetime.now().strftime("%H:%M")
         hour2Display = int(datetime.datetime.now().strftime("%H"))        
         date2Display = datetime.datetime.now().strftime("%d")
-        menuTxtO= fontSel.render("...", True, iniPi.font_color)      
+        menuTxtO= iniPi.fontSel.render("...", True, iniPi.font_color)      
         infoTxt2 = fontSel.render(time2Display + " | "+ timePi.dayOfWeek, True, iniPi.BLACK)    
         infoTxt3 = fontSel.render(date2Display + " "+ timePi.nbMonth + " " + timePi.nowYear, True, iniPi.BLACK)
         infoTxt4 = fontSelHalf.render("Last reboot : " + timePi.timePi , True, iniPi.BLACK)
         infoTxt5 = fontSelHalf.render(timePi.nbDay + " "+ timePi.nbMonth + " " + timePi.nowYear , True, iniPi.BLACK)                   
-        
+        heightInfoTxt = infoTxt2.get_rect().height
+        width = menuTxtDw.get_rect().width
         #screen
         DISPLAYSURF.blit(icO, (icOPosX, icOPosY))
         DISPLAYSURF.blit(icRect, (icRectPosX, icRectPosY))
