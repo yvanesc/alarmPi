@@ -9,6 +9,7 @@ import subprocess
 import git
 import datetime
 import autoMntUsbT01
+import subprocess
 
 from pygame.locals import *
 from iniPi import * 
@@ -118,9 +119,9 @@ while True:
         if (not GPIO.input(4)):
                 #VOL LOW
                 #clkDown+=1
-                #pygame.mixer.music.load('/home/pi/alarmPi/sound/cartoon002.wav')
-                #pygame.mixer.music.play(0)                
-                autoMntUsbT01.run_command()
+                pygame.mixer.music.load('/home/pi/alarmPi/sound/cartoon002.wav')
+                pygame.mixer.music.play(0)                
+                #autoMntUsbT01.run_command()
         if (not GPIO.input(17)):
                 #VOL HIGH
                 #clkUp

@@ -1,4 +1,4 @@
-import subprocess
+import commands
 
 # ASSUMED THAT THIS COMMAND HAS ALREADY BEEN RUN
 # sudo mkdir /mnt/usb
@@ -8,7 +8,7 @@ MOUNT_DIR = "/mnt/usb"
 
 def run_command(command):
     # start = time.time()
-    ret_code, output = subprocess.getstatusoutput(command)
+    ret_code, output = commands.getstatusoutput(command)
     if ret_code == 1:
         raise Exception("FAILED: %s" % command)
     # end = time.time()
