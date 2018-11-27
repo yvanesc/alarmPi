@@ -17,6 +17,7 @@ font_size = 30
 font_sizeSm = 25
 font_sizeL = 35
 font_sizeXl = 40
+font_sizeXXl = 45
 
 # frame
 marge = 8
