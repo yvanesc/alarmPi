@@ -70,7 +70,7 @@ while True:
         DISPLAYSURF.blit(icUp, (icUpPosX, icUpPosY))        
         DISPLAYSURF.blit(menuTxtO, (iniPi.marge, 220))
         DISPLAYSURF.blit(infoTxt2, (32, 60))        
-        DISPLAYSURF.blit(infoTxt3, (32, 90))
+        DISPLAYSURF.blit(infoTxt3, (32, 80))
         DISPLAYSURF.blit(infoTxt4, (32, 140))
         DISPLAYSURF.blit(infoTxt5, (32, 160))
         if (hour2Display<8 or hour2Display>20):
