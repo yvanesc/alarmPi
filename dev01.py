@@ -8,6 +8,7 @@ import timePi
 import subprocess
 import git
 import datetime
+import ipPi
 
 from pygame.locals import *
 from iniPi import * 
@@ -63,7 +64,8 @@ while True:
         infoTxt5 = fontSelHalf.render(timePi.nbDay + " "+ timePi.nbMonth + " " + timePi.nowYear , True, iniPi.BLACK)                   
         heightInfoTxt = infoTxt5.get_rect().height
         widthInfoTxt = infoTxt5.get_rect().width
-        infoTxt6 = fontSelHalf.render(str(heightInfoTxt) + " "+ str(widthInfoTxt) , True, iniPi.BLACK)                   
+        wlan2find = ipPi.getIp(b"wlan0")
+        infoTxt6 = fontSelHalf.render(wlan2find, True, iniPi.BLACK)                   
         
         #screen
         DISPLAYSURF.blit(icO, (icOPosX, icOPosY))
