@@ -62,7 +62,7 @@ while True:
         infoTxt5 = fontSelHalf.render(timePi.nbDay + " "+ timePi.nbMonth + " " + timePi.nowYear , True, iniPi.BLACK)                   
         heightInfoTxt = infoTxt5.get_rect().height
         widthInfoTxt = infoTxt5.get_rect().width
-        infoTxt6 = fontSelHalf.render(heightInfoTxt + " "+ widthInfoTxt , True, iniPi.BLACK)                   
+        infoTxt6 = fontSelHalf.render(str(heightInfoTxt) + " "+ str(widthInfoTxt) , True, iniPi.BLACK)                   
         
         #screen
         DISPLAYSURF.blit(icO, (icOPosX, icOPosY))
