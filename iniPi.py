@@ -15,6 +15,7 @@ font_color = (BLACK)
 font = None
 font_size = 30
 font_sizeSm = 25
+font_sizeL = 35
 
 # frame
 marge = 8
