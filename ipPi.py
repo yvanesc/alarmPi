@@ -6,15 +6,15 @@ import struct
 import urllib.request
 
 def getIp(ifname): 
-        s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+    try:
+    s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
         return socket.inet_ntoa(fcntl.ioctl(
                 s.fileno(),
                 0x8915,  # SIOCGIFADDR
-                try:
-                    struct.pack('256s', ifname[:15])
-                except:
-                    return "No connection"
+                struct.pack('256s', ifname[:15])                
         )[20:24])    
+    except :
+        return "No"
 def checkNet():
     try:
         x = urllib.request.urlopen("https://www.google.com/") #, timeout=1)
