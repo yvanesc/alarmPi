@@ -1,5 +1,5 @@
 #iniPi
-import pygame, sys, os
+#import pygame, sys, os
 #Pygame
 # set up the colors
 BLACK = (  0,   0,   0)
@@ -62,4 +62,4 @@ ic16PathS ="/home/pi/pjtSmScr/ic16/"
 ic16PathE="-2x.png"
 
 #pygame
-fontSel=pygame.font.SysFont(font, font_size)
+#fontSel=pygame.font.SysFont(font, font_size)

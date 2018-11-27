@@ -60,8 +60,10 @@ while True:
         infoTxt3 = fontSel.render(date2Display + " "+ timePi.nbMonth + " " + timePi.nowYear, True, iniPi.BLACK)
         infoTxt4 = fontSelHalf.render("Last reboot : " + timePi.timePi , True, iniPi.BLACK)
         infoTxt5 = fontSelHalf.render(timePi.nbDay + " "+ timePi.nbMonth + " " + timePi.nowYear , True, iniPi.BLACK)                   
-        heightInfoTxt = infoTxt2.get_rect().height
-        width = menuTxtDw.get_rect().width
+        heightInfoTxt = infoTxt5.get_rect().height
+        widthInfoTxt = infoTxt5.get_rect().width
+        infoTxt6 = fontSelHalf.render(heightInfoTxt + " "+ widthInfoTxt , True, iniPi.BLACK)                   
+        
         #screen
         DISPLAYSURF.blit(icO, (icOPosX, icOPosY))
         DISPLAYSURF.blit(icRect, (icRectPosX, icRectPosY))
@@ -74,6 +76,7 @@ while True:
         DISPLAYSURF.blit(infoTxt3, (32, 80))
         DISPLAYSURF.blit(infoTxt4, (32, 140))
         DISPLAYSURF.blit(infoTxt5, (32, 160))
+        DISPLAYSURF.blit(infoTxt6, (32, 180))
         if (hour2Display<8 or hour2Display>20):
                 DISPLAYSURF.blit(moon, (224, 160))
         else:
