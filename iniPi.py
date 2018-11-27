@@ -1,5 +1,5 @@
 #iniPi
-
+import pygame
 #Pygame
 # set up the colors
 BLACK = (  0,   0,   0)
