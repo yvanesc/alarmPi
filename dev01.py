@@ -79,7 +79,7 @@ while True:
         DISPLAYSURF.blit(icDown, (icDownPosX, icDownPosY))
         DISPLAYSURF.blit(icUp, (icUpPosX, icUpPosY))        
         DISPLAYSURF.blit(menuTxtO, (iniPi.marge, 220))
-        DISPLAYSURF.blit(infoTxt2, (150, 20))        
+        DISPLAYSURF.blit(infoTxt2, (widthInfoTxt/2, 20))        
         DISPLAYSURF.blit(infoTxt3, (32, 80))
         DISPLAYSURF.blit(infoTxt4, (32, 140))
         DISPLAYSURF.blit(infoTxt5, (32, 160))
