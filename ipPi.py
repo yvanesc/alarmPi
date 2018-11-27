@@ -14,12 +14,12 @@ def getIp(ifname):
                 struct.pack('256s', ifname[:15])                
         )[20:24])    
     except :
-        return "No"
+        return "None"
 def checkNet():
     try:
         x = urllib.request.urlopen("https://www.google.com/") #, timeout=1)
         #urllib2.urlopen("http://216.58.192.142", timeout=1)
-        return x + "Connection OK"
+        return x + "WWW OK"
     except : #urllib2.URLError as err:
-        return "No connection"
+        return "WWW No"
         

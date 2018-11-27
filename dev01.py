@@ -85,6 +85,7 @@ while True:
         DISPLAYSURF.blit(infoTxt5, (32, 160))
         DISPLAYSURF.blit(infoTxt6, (32, 180))
         DISPLAYSURF.blit(infoTxt7, (32, 200))
+        DISPLAYSURF.blit(infoTxt8, (32, 220))
         if (hour2Display<8 or hour2Display>20):
                 DISPLAYSURF.blit(moon, (224, 160))
         else:
