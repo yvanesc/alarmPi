@@ -12,7 +12,8 @@ def getIp(ifname):
                 0x8915,  # SIOCGIFADDR
                 try:
                     struct.pack('256s', ifname[:15])
-                except:"No"
+                except:
+                    return "No connection"
         )[20:24])    
 def checkNet():
     try:
