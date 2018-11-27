@@ -8,7 +8,7 @@ import timePi
 import subprocess
 import git
 import datetime
-import autoMntUsbT01
+#import autoMntUsbT01
 import subprocess
 
 from pygame.locals import *
