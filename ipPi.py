@@ -7,7 +7,7 @@ import urllib.request
 
 def getIp(ifname): 
     try:
-    s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+        s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
         return socket.inet_ntoa(fcntl.ioctl(
                 s.fileno(),
                 0x8915,  # SIOCGIFADDR
