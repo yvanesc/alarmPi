@@ -66,8 +66,10 @@ while True:
         widthInfoTxt = infoTxt5.get_rect().width
         wlan2find = ipPi.getIp(b"wlan0")
         lan2find = ipPi.getIp(b"eth0")
+        chkNet = ipPi.checkNet()
         infoTxt6 = fontSelHalf.render("wlan : " + wlan2find, True, iniPi.BLACK)                   
         infoTxt7 = fontSelHalf.render("lan : " + lan2find, True, iniPi.BLACK)                   
+        infoTxt8 = fontSelHalf.render(chkNet, True, iniPi.BLACK)                   
         
         #screen
         DISPLAYSURF.blit(icO, (icOPosX, icOPosY))
