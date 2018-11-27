@@ -43,7 +43,7 @@ GPIO.setup(27,GPIO.OUT)
 
 fontSel=pygame.font.SysFont(iniPi.font, iniPi.font_size)
 fontSelHalf=pygame.font.SysFont(iniPi.font, iniPi.font_sizeSm)
-fontSelL=pygame.font.SysFont(iniPi.font, iniPi.font_sizeL)
+fontSelL=pygame.font.SysFont(iniPi.font, iniPi.font_sizeXl)
 
 GPIO.output(27,GPIO.HIGH)
 pygame.mouse.set_visible(False)
@@ -63,7 +63,7 @@ while True:
         infoTxt4 = fontSelHalf.render("Last reboot : " + timePi.timePi , True, iniPi.BLACK)
         infoTxt5 = fontSelHalf.render(timePi.nbDay + " "+ timePi.nbMonth + " " + timePi.nowYear , True, iniPi.BLACK)                   
         heightInfoTxt = infoTxt5.get_rect().height
-        widthInfoTxt = infoTxt5.get_rect().width
+        widthInfoTxt = infoTxt2.get_rect().width
         wlan2find = ipPi.getIp(b"wlan0")
         lan2find = ipPi.getIp(b"eth0")
         chkNet = ipPi.checkNet()
