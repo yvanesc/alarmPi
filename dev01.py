@@ -65,7 +65,9 @@ while True:
         heightInfoTxt = infoTxt5.get_rect().height
         widthInfoTxt = infoTxt5.get_rect().width
         wlan2find = ipPi.getIp(b"wlan0")
-        infoTxt6 = fontSelHalf.render(wlan2find, True, iniPi.BLACK)                   
+        lan2find = ipPi.getIp(b"eth0")
+        infoTxt6 = fontSelHalf.render("wlan : " + wlan2find, True, iniPi.BLACK)                   
+        infoTxt7 = fontSelHalf.render("lan : " + lan2find, True, iniPi.BLACK)                   
         
         #screen
         DISPLAYSURF.blit(icO, (icOPosX, icOPosY))
@@ -80,6 +82,7 @@ while True:
         DISPLAYSURF.blit(infoTxt4, (32, 140))
         DISPLAYSURF.blit(infoTxt5, (32, 160))
         DISPLAYSURF.blit(infoTxt6, (32, 180))
+        DISPLAYSURF.blit(infoTxt7, (32, 200))
         if (hour2Display<8 or hour2Display>20):
                 DISPLAYSURF.blit(moon, (224, 160))
         else:
