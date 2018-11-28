@@ -18,7 +18,11 @@ repo = Repo("/home/pi/alarmPi")
 assert not repo.bare
 
 os.putenv('SDL_FBDEV', '/dev/fb1')
+
+#init menu
 timerMenu=30
+posMenu =50
+spaceMenu = 30
 pygame.init()
 # 2 put in iniPi
 icO=pygame.image.load(ic16PathS+ "power-standby" +ic16PathE)
@@ -52,10 +56,10 @@ while True:
         time2Display = datetime.datetime.now().strftime("%H:%M")
         hour2Display = int(datetime.datetime.now().strftime("%H"))        
         date2Display = datetime.datetime.now().strftime("%d")
-        menuTxtO= fontSelL.render("Prd", True, iniPi.BLACK)      
-        infoTxt2 = fontSelL.render("Dev", True, iniPi.BLACK)          
-        infoTxt3 = fontSelL.render("Git pull", True, iniPi.BLACK)      
-        infoTxt4 = fontSelL.render("Exit", True, iniPi.BLACK)   
+        infoTxt0 = fontSelL.render("Prd", True, iniPi.BLACK)      
+        infoTxt1 = fontSelL.render("Dev", True, iniPi.BLACK)          
+        infoTxt2 = fontSelL.render("Git pull", True, iniPi.BLACK)      
+        infoTxt3 = fontSelL.render("Exit", True, iniPi.BLACK)   
         #timerMenuShow = timerMenu   
         infoTxt5 = fontSelL.render("Timer : %2d"%  (timerMenu) , True, iniPi.BLACK)  
                  
@@ -67,11 +71,8 @@ while True:
         DISPLAYSURF.blit(icDown, (icDownPosX, icDownPosY))
         DISPLAYSURF.blit(icUp, (icUpPosX, icUpPosY))        
                 
-        DISPLAYSURF.blit(menuTxtO, (64, 50))
-        DISPLAYSURF.blit(infoTxt2, (64, 80))
-        DISPLAYSURF.blit(infoTxt3, (64, 110))
-        DISPLAYSURF.blit(infoTxt4, (64, 140))
-        DISPLAYSURF.blit(infoTxt5, (64, 200))
+		for x in range(0, 5):			
+			DISPLAYSURF.blit("infoTxt" + x, (64, posMenu + spaceMenu * x))			
         
 
         pygame.display.update()
