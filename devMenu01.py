@@ -55,8 +55,9 @@ while True:
         menuTxtO= fontSelL.render("Prd", True, iniPi.BLACK)      
         infoTxt2 = fontSelL.render("Dev", True, iniPi.BLACK)          
         infoTxt3 = fontSelL.render("Git pull", True, iniPi.BLACK)      
-        infoTxt4 = fontSelL.render("Exit", True, iniPi.BLACK)      
-        infoTxt5 = fontSelL.render("Timer : " + str(int(timerMenu)) , True, iniPi.BLACK)  
+        infoTxt4 = fontSelL.render("Exit", True, iniPi.BLACK)   
+        timerMenuShow = timerMenu   
+        infoTxt5 = fontSelL.render("Timer : " + str(int(timerMenuShow)) , True, iniPi.BLACK)  
                  
         
         #screen
