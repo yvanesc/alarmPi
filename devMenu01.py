@@ -55,7 +55,7 @@ while True:
         time2Display = datetime.datetime.now().strftime("%H:%M")
         hour2Display = int(datetime.datetime.now().strftime("%H"))        
         date2Display = datetime.datetime.now().strftime("%d")
-        infoTxt0 = fontSelL.render("Prd", True, iniPi.BLACK)      
+        infoTxt[0] = fontSelL.render("Prd", True, iniPi.BLACK)      
         infoTxt1 = fontSelL.render("Dev", True, iniPi.BLACK)          
         infoTxt2 = fontSelL.render("Git pull", True, iniPi.BLACK)      
         infoTxt3 = fontSelL.render("Exit", True, iniPi.BLACK)   
@@ -72,8 +72,8 @@ while True:
 
         for nbrMenu2Dis in range (0, 5):
                 nb2dis= posMenu +spaceMenu * int(nbrMenu2Dis)
-                txt2display = "infoTxt%2d"% (nbrMenu2Dis)
-                DISPLAYSURF.blit("infoTxt" + txt2display, (64,  nb2dis))
+                #txt2display = "infoTxt%2d"% (nbrMenu2Dis)
+                DISPLAYSURF.blit(infoTxt[nbrMenu2Dis], (64,  nb2dis))
                 
         pygame.display.update()
         clock.tick(60)  # Limit the frame rate to 60 FPS.
