@@ -51,13 +51,7 @@ pygame.mouse.set_visible(False)
 pygame.display.update()
 time.sleep(3)
 clock = pygame.time.Clock()
-for nbrMenu2Dis in range (0, 4):
-        print(infoTxt[nbrMenu2Dis])
-        disInfoTxt = fontSelL.render(infoTxt[nbrMenu2Dis], True, iniPi.BLACK)
-        nb2dis= posMenu +spaceMenu * nbrMenu2Dis
-        print(nb2dis)
-        #txt2display = "infoTxt%2d"% (nbrMenu2Dis)
-        DISPLAYSURF.blit(disInfoTxt, (64,  nb2dis))
+
 while True:
         os.system('clear')
         DISPLAYSURF.fill(iniPi.WHITE)
@@ -70,7 +64,13 @@ while True:
         infoTxt3 = fontSelL.render("Exit", True, iniPi.BLACK)   
         #timerMenuShow = timerMenu   
         infoTxt5 = fontSelL.render("Timer : %2d"%  (timerMenu) , True, iniPi.BLACK)  
-                 
+        for nbrMenu2Dis in range (0, 4):
+                print(infoTxt[nbrMenu2Dis])
+                disInfoTxt = fontSelL.render(infoTxt[nbrMenu2Dis], True, iniPi.BLACK)
+                nb2dis= posMenu +spaceMenu * nbrMenu2Dis
+                print(nb2dis)
+                #txt2display = "infoTxt%2d"% (nbrMenu2Dis)
+                DISPLAYSURF.blit(disInfoTxt, (64,  nb2dis))         
         
         #screen
         pygame.draw.rect(DISPLAYSURF, iniPi.RED, (32,50,256,30), 5)
