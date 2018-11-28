@@ -38,8 +38,6 @@ GPIO.setup(23, GPIO.IN, pull_up_down=GPIO.PUD_UP)
 GPIO.setup(24, GPIO.IN, pull_up_down=GPIO.PUD_UP)
 GPIO.setup(27,GPIO.OUT)
 
-fontSel=pygame.font.SysFont(iniPi.font, iniPi.font_size)
-fontSelHalf=pygame.font.SysFont(iniPi.font, iniPi.font_sizeSm)
 fontSelL=pygame.font.SysFont(iniPi.font, iniPi.font_sizeXXl)
 
 GPIO.output(27,GPIO.HIGH)
@@ -54,10 +52,10 @@ while True:
         time2Display = datetime.datetime.now().strftime("%H:%M")
         hour2Display = int(datetime.datetime.now().strftime("%H"))        
         date2Display = datetime.datetime.now().strftime("%d")
-        menuTxtO= fontSelXl.render("Prd", True, iniPi.BLACK)      
-        infoTxt2 = fontSelXl.render("Dev", True, iniPi.BLACK)          
-        infoTxt3 = fontSelXl.render("Git pull", True, iniPi.BLACK)      
-        infoTxt4 = fontSelXl.render("Exit", True, iniPi.BLACK)      
+        menuTxtO= fontSelL.render("Prd", True, iniPi.BLACK)      
+        infoTxt2 = fontSelL.render("Dev", True, iniPi.BLACK)          
+        infoTxt3 = fontSelL.render("Git pull", True, iniPi.BLACK)      
+        infoTxt4 = fontSelL.render("Exit", True, iniPi.BLACK)      
                  
         
         #screen
