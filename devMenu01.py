@@ -53,7 +53,7 @@ time.sleep(3)
 clock = pygame.time.Clock()
 for nbrMenu2Dis in range (0, 5):
         print(nbrMenu2Dis)
-        #disInfoTxt = fontSelL.render(infoTxt[nbrMenu2Dis], True, iniPi.BLACK)
+        disInfoTxt = fontSelL.render(infoTxt[nbrMenu2Dis], True, iniPi.BLACK)
         nb2dis= posMenu +spaceMenu * nbrMenu2Dis
         print(nb2dis)
         #txt2display = "infoTxt%2d"% (nbrMenu2Dis)
