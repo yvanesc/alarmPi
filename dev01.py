@@ -116,7 +116,7 @@ while True:
                 g.pull('origin','master')
                 n12345model.n00000()
                 # restart python soft to update change
-                os.execl('/home/pi/alarmPi/runme.sh', '')                
+                os.execl('/home/pi/alarmPi/runDev01.sh', '')                
         if (not GPIO.input(4)):
                 #VOL HIGH
                 #clkDown+=1
