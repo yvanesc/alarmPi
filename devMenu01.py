@@ -18,7 +18,7 @@ repo = Repo("/home/pi/alarmPi")
 assert not repo.bare
 
 os.putenv('SDL_FBDEV', '/dev/fb1')
-
+timer=30
 pygame.init()
 # 2 put in iniPi
 icO=pygame.image.load(ic16PathS+ "power-standby" +ic16PathE)
@@ -56,6 +56,7 @@ while True:
         infoTxt2 = fontSelL.render("Dev", True, iniPi.BLACK)          
         infoTxt3 = fontSelL.render("Git pull", True, iniPi.BLACK)      
         infoTxt4 = fontSelL.render("Exit", True, iniPi.BLACK)      
+        infoTxt5 = fontSelL.render("Timer : " + str(timer), True, iniPi.BLACK)  
                  
         
         #screen
@@ -69,6 +70,7 @@ while True:
         DISPLAYSURF.blit(infoTxt2, (64, 80))
         DISPLAYSURF.blit(infoTxt3, (64, 110))
         DISPLAYSURF.blit(infoTxt4, (64, 140))
+        DISPLAYSURF.blit(infoTxt5, (64, 200))
         
 
         pygame.display.update()
@@ -100,5 +102,5 @@ while True:
                 if event.type == QUIT:
                         pygame.quit()
                         sys.exit()                
-
+        timer = timer - 0.1
         time.sleep(0.1)
