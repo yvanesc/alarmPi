@@ -23,6 +23,7 @@ os.putenv('SDL_FBDEV', '/dev/fb1')
 timerMenu=30
 posMenu =50
 spaceMenu = 30
+infoTxt = ["Prd", "Dev", "Git pull", "Exit"]
 pygame.init()
 # 2 put in iniPi
 icO=pygame.image.load(ic16PathS+ "power-standby" +ic16PathE)
@@ -71,9 +72,10 @@ while True:
         DISPLAYSURF.blit(icUp, (icUpPosX, icUpPosY))        
 
         for nbrMenu2Dis in range (0, 5):
-                nb2dis= posMenu +spaceMenu * int(nbrMenu2Dis)
+                disInfoTxt = fontSelL.render(infoTxt[nbrMenu2Dis], True, iniPi.BLACK)
+                nb2dis= posMenu +spaceMenu * nbrMenu2Dis
                 #txt2display = "infoTxt%2d"% (nbrMenu2Dis)
-                DISPLAYSURF.blit(infoTxt[nbrMenu2Dis], (64,  nb2dis))
+                DISPLAYSURF.blit(disInfoTxt, (64,  nb2dis))
                 
         pygame.display.update()
         clock.tick(60)  # Limit the frame rate to 60 FPS.
