@@ -51,7 +51,7 @@ pygame.mouse.set_visible(False)
 pygame.display.update()
 time.sleep(3)
 clock = pygame.time.Clock()
-for nbrMenu2Dis in range (0, 5):
+for nbrMenu2Dis in range (0, 4):
         print(nbrMenu2Dis)
         disInfoTxt = fontSelL.render(infoTxt[nbrMenu2Dis], True, iniPi.BLACK)
         nb2dis= posMenu +spaceMenu * nbrMenu2Dis
