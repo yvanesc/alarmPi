@@ -73,7 +73,7 @@ while True:
         for nbrMenu2Dis in range (0, 5):
                 DISPLAYSURF.blit("infoTxt" + str(nbrMenu2Dis), (64, posMenu + spaceMenu * int(nbrMenu2Dis))
                 
-        pygame.display.update()
+        #pygame.display.update()
         clock.tick(60)  # Limit the frame rate to 60 FPS.
 
         if (not GPIO.input(5)):
