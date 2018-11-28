@@ -104,6 +104,6 @@ while True:
                         sys.exit()    
 
         timerMenu = timerMenu - 0.1
-        if timer < 0
+        if (timer < 0):
                 exit()
         time.sleep(0.1)
