@@ -57,7 +57,7 @@ while True:
         infoTxt3 = fontSelL.render("Git pull", True, iniPi.BLACK)      
         infoTxt4 = fontSelL.render("Exit", True, iniPi.BLACK)   
         #timerMenuShow = timerMenu   
-        infoTxt5 = fontSelL.render("Timer : %2d"%  + str(timerMenu) , True, iniPi.BLACK)  
+        infoTxt5 = fontSelL.render("Timer : %2d"%  (timerMenu) , True, iniPi.BLACK)  
                  
         
         #screen
