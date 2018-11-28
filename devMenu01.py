@@ -24,7 +24,7 @@ timerMenu=30
 posMenu =50
 spaceMenu = 30
 infoTxt = ["Prd", "Dev", "Git pull", "Exit"]
-fontSelL=pygame.font.SysFont(iniPi.font, iniPi.font_sizeXXl)
+
 pygame.init()
 # 2 put in iniPi
 icO=pygame.image.load(ic16PathS+ "power-standby" +ic16PathE)
