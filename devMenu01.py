@@ -56,7 +56,7 @@ while True:
         infoTxt2 = fontSelL.render("Dev", True, iniPi.BLACK)          
         infoTxt3 = fontSelL.render("Git pull", True, iniPi.BLACK)      
         infoTxt4 = fontSelL.render("Exit", True, iniPi.BLACK)      
-        infoTxt5 = fontSelL.render("Timer : " + str(timer), True, iniPi.BLACK)  
+        infoTxt5 = fontSelL.render("Timer : " + str(int(timer), True, iniPi.BLACK)  
                  
         
         #screen
@@ -103,4 +103,6 @@ while True:
                         pygame.quit()
                         sys.exit()                
         timer = timer - 0.1
+        if timer < 0
+                exit()
         time.sleep(0.1)
