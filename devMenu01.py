@@ -24,6 +24,7 @@ timerMenu=30
 posMenu =50
 spaceMenu = 30
 infoTxt = ["Prd", "Dev", "Git pull", "Exit"]
+posCur = 50
 
 pygame.init()
 # 2 put in iniPi
@@ -65,15 +66,14 @@ while True:
         #timerMenuShow = timerMenu   
         infoTxt5 = fontSelL.render("Timer : %2d"%  (timerMenu) , True, iniPi.BLACK)  
         for nbrMenu2Dis in range (0, 4):
-                print(infoTxt[nbrMenu2Dis])
                 disInfoTxt = fontSelL.render(infoTxt[nbrMenu2Dis], True, iniPi.BLACK)
                 nb2dis= posMenu +spaceMenu * nbrMenu2Dis
-                print(nb2dis)
                 #txt2display = "infoTxt%2d"% (nbrMenu2Dis)
                 DISPLAYSURF.blit(disInfoTxt, (64,  nb2dis))         
         
         #screen
-        pygame.draw.rect(DISPLAYSURF, iniPi.RED, (32,50,256,30), 5)
+        #pygame.draw.rect(DISPLAYSURF, iniPi.RED, (32,50,256,30), 3)
+        pygame.draw.rect(DISPLAYSURF, iniPi.RED, (32,posCur,256,30), 3)
         DISPLAYSURF.blit(icO, (icOPosX, icOPosY))
         DISPLAYSURF.blit(icX, (icXPosX, icXPosY))
         DISPLAYSURF.blit(icDown, (icDownPosX, icDownPosY))
@@ -98,14 +98,14 @@ while True:
         if (not GPIO.input(4)):
                 #VOL LOW
                 #clkDown+=1
-                pygame.mixer.music.load('/home/pi/alarmPi/sound/cartoon002.wav')
-                pygame.mixer.music.play(0)                
-                #autoMntUsbT01.run_command()
+                if posCur > 50:
+                        posCur-=30                
         if (not GPIO.input(17)):
                 #VOL HIGH
                 #clkUp
-                pygame.mixer.music.load('/home/pi/alarmPi/sound/wake-up.mp3')
-                pygame.mixer.music.play(0)                
+                if posCur < (50*len(infoTxt)):
+                        posCur+=30
+                
         for event in pygame.event.get():
                 if event.type == QUIT:
                         pygame.quit()
