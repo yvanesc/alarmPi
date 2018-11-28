@@ -59,7 +59,7 @@ while True:
                  
         
         #screen
-        pygame.draw.rect(DISPLAYSURF, iniPi.GREY, (32,50,256,30), 10)
+        pygame.draw.rect(DISPLAYSURF, iniPi.RED, (32,50,256,30), 5)
         DISPLAYSURF.blit(icO, (icOPosX, icOPosY))
         DISPLAYSURF.blit(icX, (icXPosX, icXPosY))
         DISPLAYSURF.blit(icDown, (icDownPosX, icDownPosY))
