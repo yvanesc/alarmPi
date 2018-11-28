@@ -72,7 +72,7 @@ while True:
 
         for nbrMenu2Dis in range (0, 5):
                 nb2dis= posMenu +spaceMenu * int(nbrMenu2Dis)
-                txt2display = "infoTxt {s}".format(nbrMenu2Dis)
+                txt2display = "infoTxt%2d"% (nbrMenu2Dis)
                 DISPLAYSURF.blit("infoTxt" + txt2display, (64,  nb2dis))
                 
         pygame.display.update()
