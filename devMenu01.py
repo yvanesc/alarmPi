@@ -81,17 +81,17 @@ while True:
         if (not GPIO.input(5)):
                 # X
                 #clkX+=1
-                if posCur = 50:
+                if posCur == 50:
                         os.execl('/home/pi/alarmPi/runProd.sh', '')
-                if posCur = 80:
+                if posCur == 80:
                         os.execl('/home/pi/alarmPi/runDev.sh', '')
-                if posCur = 110:
+                if posCur == 110:
                         g = git.Git('/home/pi/alarmPi')
                         g.pull('origin','master')
                 
                         # restart python soft to update change
                         os.execl('/home/pi/alarmPi/runme.sh', '')
-                if posCur = 140:
+                if posCur == 140:
                         pygame.quit()                 
 
         if (not GPIO.input(23)):
