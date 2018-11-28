@@ -71,7 +71,9 @@ while True:
         DISPLAYSURF.blit(icUp, (icUpPosX, icUpPosY))        
 
         for nbrMenu2Dis in range (0, 5):
-                DISPLAYSURF.blit("infoTxt" + str(nbrMenu2Dis), (64, posMenu + spaceMenu * int(nbrMenu2Dis)))
+                nb2dis= posMenu +spaceMenu * int(nbrMenu2Dis)
+                txt2display = "infoTxt {s}".format(nbrMenu2Dis)
+                DISPLAYSURF.blit("infoTxt" + txt2display, (64,  nb2dis))
                 
         pygame.display.update()
         clock.tick(60)  # Limit the frame rate to 60 FPS.
