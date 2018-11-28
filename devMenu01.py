@@ -103,13 +103,14 @@ while True:
         if (not GPIO.input(4)):
                 #VOL LOW
                 #clkDown+=1
-                if posCur > 50:
-                        posCur-=30                
+                if posCur < (50*len(infoTxt)):
+                        posCur+=30
+                
         if (not GPIO.input(17)):
                 #VOL HIGH
                 #clkUp
-                if posCur < (50*len(infoTxt)):
-                        posCur+=30
+                if posCur > 50:
+                        posCur-=30                
                 
         for event in pygame.event.get():
                 if event.type == QUIT:
