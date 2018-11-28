@@ -103,7 +103,7 @@ while True:
         if (not GPIO.input(4)):
                 #VOL LOW
                 #clkDown+=1
-                if posCur < (50*len(infoTxt)):
+                if posCur < (50 + 30*(len(infoTxt))):
                         posCur+=30
                 
         if (not GPIO.input(17)):
