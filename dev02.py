@@ -39,10 +39,10 @@ GPIO.setmode(GPIO.BCM)
 GPIO.setup(4, GPIO.IN, pull_up_down=GPIO.PUD_UP)
 GPIO.setup(5, GPIO.IN, pull_up_down=GPIO.PUD_UP)
 GPIO.setup(17, GPIO.IN, pull_up_down=GPIO.PUD_UP)
-#GPIO.setup(22, GPIO.IN, pull_up_down=GPIO.PUD_UP)
+GPIO.setup(22, GPIO.IN, pull_up_down=GPIO.PUD_UP)
 GPIO.setup(23, GPIO.IN, pull_up_down=GPIO.PUD_UP)
-#GPIO.setup(24, GPIO.IN, pull_up_down=GPIO.PUD_UP)
-#GPIO.setup(27,GPIO.OUT)
+GPIO.setup(24, GPIO.IN, pull_up_down=GPIO.PUD_UP)
+GPIO.setup(27, GPIO.IN, pull_up_down=GPIO.PUD_UP)
 
 fontSelL=pygame.font.SysFont(iniPi.font, iniPi.font_sizeXXl)
 
@@ -94,21 +94,31 @@ while True:
                 if posCur == 140:
                         pygame.quit()    
                         exit()             
-
+        if (not GPIO.input(22)):
+                # rect
+                #clkRect+=1
+                exit()       
         if (not GPIO.input(23)):
                 # pygame
                 # O
                 O.quit()
                 sys.exit()
-            
+        if (not GPIO.input(24)):
+                # triangle
+                # clkTri+=1
+                g = git.Git('/home/pi/alarmPi')
+                g.pull('origin','master')
+                
+                # restart python soft to update change
+                os.execl('/home/pi/alarmPi/runme.sh', '')   
         if (not GPIO.input(4)):
-                #VOL LOW
+                #VOL HIGH
                 #clkDown+=1
                 if posCur < 140: #(50 + 30*(len(infoTxt))):
                         posCur+=30
                 
         if (not GPIO.input(17)):
-                #VOL HIGH
+                #VOL LOW
                 #clkUp
                 if posCur > 50:
                         posCur-=30                

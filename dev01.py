@@ -10,6 +10,7 @@ import git
 import datetime
 #import autoMntUsbT01
 import subprocess
+import n00000
 
 from pygame.locals import *
 from iniPi import * 
@@ -113,17 +114,17 @@ while True:
                 # clkTri+=1
                 g = git.Git('/home/pi/alarmPi')
                 g.pull('origin','master')
-                
+                n00000.n00000()
                 # restart python soft to update change
                 os.execl('/home/pi/alarmPi/runme.sh', '')                
         if (not GPIO.input(4)):
-                #VOL LOW
+                #VOL HIGH
                 #clkDown+=1
                 pygame.mixer.music.load('/home/pi/alarmPi/sound/cartoon002.wav')
                 pygame.mixer.music.play(0)                
                 #autoMntUsbT01.run_command()
         if (not GPIO.input(17)):
-                #VOL HIGH
+                #VOL LOW
                 #clkUp
                 pygame.mixer.music.load('/home/pi/alarmPi/sound/wake-up.mp3')
                 pygame.mixer.music.play(0)                
