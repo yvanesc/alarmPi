@@ -92,7 +92,8 @@ while True:
                         # restart python soft to update change
                         os.execl('/home/pi/alarmPi/runme.sh', '')
                 if posCur == 140:
-                        pygame.quit()                 
+                        pygame.quit()    
+                        exit()             
 
         if (not GPIO.input(23)):
                 # pygame
@@ -103,7 +104,7 @@ while True:
         if (not GPIO.input(4)):
                 #VOL LOW
                 #clkDown+=1
-                if posCur < (50 + 30*(len(infoTxt))):
+                if posCur < 110: #(50 + 30*(len(infoTxt))):
                         posCur+=30
                 
         if (not GPIO.input(17)):
@@ -116,7 +117,7 @@ while True:
                 if event.type == QUIT:
                         pygame.quit()
                         sys.exit()    
-
+        print(posCur)
         #timerMenu = timerMenu - 0.1
         #if (timerMenu < 0):
         #        pygame.quit()
