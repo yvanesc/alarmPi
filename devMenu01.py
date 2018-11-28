@@ -56,7 +56,7 @@ while True:
         time2Display = datetime.datetime.now().strftime("%H:%M")
         hour2Display = int(datetime.datetime.now().strftime("%H"))        
         date2Display = datetime.datetime.now().strftime("%d")
-        infoTxt[0] = fontSelL.render("Prd", True, iniPi.BLACK)      
+        #infoTxt[0] = fontSelL.render("Prd", True, iniPi.BLACK)      
         infoTxt1 = fontSelL.render("Dev", True, iniPi.BLACK)          
         infoTxt2 = fontSelL.render("Git pull", True, iniPi.BLACK)      
         infoTxt3 = fontSelL.render("Exit", True, iniPi.BLACK)   
