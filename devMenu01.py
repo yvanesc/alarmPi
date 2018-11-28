@@ -39,18 +39,18 @@ GPIO.setmode(GPIO.BCM)
 GPIO.setup(4, GPIO.IN, pull_up_down=GPIO.PUD_UP)
 GPIO.setup(5, GPIO.IN, pull_up_down=GPIO.PUD_UP)
 GPIO.setup(17, GPIO.IN, pull_up_down=GPIO.PUD_UP)
-GPIO.setup(22, GPIO.IN, pull_up_down=GPIO.PUD_UP)
+#GPIO.setup(22, GPIO.IN, pull_up_down=GPIO.PUD_UP)
 GPIO.setup(23, GPIO.IN, pull_up_down=GPIO.PUD_UP)
-GPIO.setup(24, GPIO.IN, pull_up_down=GPIO.PUD_UP)
-GPIO.setup(27,GPIO.OUT)
+#GPIO.setup(24, GPIO.IN, pull_up_down=GPIO.PUD_UP)
+#GPIO.setup(27,GPIO.OUT)
 
 fontSelL=pygame.font.SysFont(iniPi.font, iniPi.font_sizeXXl)
 
-GPIO.output(27,GPIO.HIGH)
+#GPIO.output(27,GPIO.HIGH)
 pygame.mouse.set_visible(False)
 
-pygame.display.update()
-time.sleep(3)
+#pygame.display.update()
+#time.sleep(3)
 clock = pygame.time.Clock()
 
 while True:
@@ -58,28 +58,22 @@ while True:
         DISPLAYSURF.fill(iniPi.WHITE)
         time2Display = datetime.datetime.now().strftime("%H:%M")
         hour2Display = int(datetime.datetime.now().strftime("%H"))        
-        date2Display = datetime.datetime.now().strftime("%d")
-        #infoTxt[0] = fontSelL.render("Prd", True, iniPi.BLACK)      
-        infoTxt1 = fontSelL.render("Dev", True, iniPi.BLACK)          
-        infoTxt2 = fontSelL.render("Git pull", True, iniPi.BLACK)      
-        infoTxt3 = fontSelL.render("Exit", True, iniPi.BLACK)   
+        date2Display = datetime.datetime.now().strftime("%d")        
+        
         #timerMenuShow = timerMenu   
-        infoTxt5 = fontSelL.render("Timer : %2d"%  (timerMenu) , True, iniPi.BLACK)  
+        timer2Display = fontSelL.render("Timer : %2d"%  (timerMenu) , True, iniPi.BLACK)  
         for nbrMenu2Dis in range (0, 4):
                 disInfoTxt = fontSelL.render(infoTxt[nbrMenu2Dis], True, iniPi.BLACK)
-                nb2dis= posMenu +spaceMenu * nbrMenu2Dis
-                #txt2display = "infoTxt%2d"% (nbrMenu2Dis)
+                nb2dis= posMenu +spaceMenu * nbrMenu2Dis                
                 DISPLAYSURF.blit(disInfoTxt, (64,  nb2dis))         
         
-        #screen
-        #pygame.draw.rect(DISPLAYSURF, iniPi.RED, (32,50,256,30), 3)
+        #screen        
         pygame.draw.rect(DISPLAYSURF, iniPi.RED, (32,posCur,256,30), 3)
         DISPLAYSURF.blit(icO, (icOPosX, icOPosY))
         DISPLAYSURF.blit(icX, (icXPosX, icXPosY))
         DISPLAYSURF.blit(icDown, (icDownPosX, icDownPosY))
-        DISPLAYSURF.blit(icUp, (icUpPosX, icUpPosY))        
-
-        
+        DISPLAYSURF.blit(icUp, (icUpPosX, icUpPosY))
+        #DISPLAYSURF.blit(timer2Display, (64, 210))        
                 
         pygame.display.update()
         clock.tick(60)  # Limit the frame rate to 60 FPS.
@@ -87,8 +81,19 @@ while True:
         if (not GPIO.input(5)):
                 # X
                 #clkX+=1
-                pygame.quit()               
-            
+                if posCur = 50:
+                        os.execl('/home/pi/alarmPi/runProd.sh', '')
+                if posCur = 80:
+                        os.execl('/home/pi/alarmPi/runDev.sh', '')
+                if posCur = 110:
+                        g = git.Git('/home/pi/alarmPi')
+                        g.pull('origin','master')
+                
+                        # restart python soft to update change
+                        os.execl('/home/pi/alarmPi/runme.sh', '')
+                if posCur = 140:
+                        pygame.quit()                 
+
         if (not GPIO.input(23)):
                 # pygame
                 # O
@@ -111,7 +116,7 @@ while True:
                         pygame.quit()
                         sys.exit()    
 
-        timerMenu = timerMenu - 0.1
-        if (timerMenu < 0):
-                exit()
+        #timerMenu = timerMenu - 0.1
+        #if (timerMenu < 0):
+        #        pygame.quit()
         time.sleep(0.1)
