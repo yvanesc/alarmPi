@@ -71,7 +71,7 @@ while True:
         DISPLAYSURF.blit(icUp, (icUpPosX, icUpPosY))        
                 
 	for x in range(0, 5):
-                DISPLAYSURF.blit("infoTxt" + x, (64, posMenu + spaceMenu * x))			
+                DISPLAYSURF.blit("infoTxt" + str(x), (64, posMenu + spaceMenu * x))			
         
 
         pygame.display.update()
