@@ -112,6 +112,7 @@ while True:
         if (not GPIO.input(24)):
                 # triangle
                 # clkTri+=1
+                print("triangle")
                 g = git.Git('/home/pi/alarmPi')
                 g.pull('origin','master')
                 #n12345model.n00000()
