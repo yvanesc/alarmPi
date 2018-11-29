@@ -114,7 +114,7 @@ while True:
                 # clkTri+=1
                 g = git.Git('/home/pi/alarmPi')
                 g.pull('origin','master')
-                n12345model.n00000()
+                #n12345model.n00000()
                 # restart python soft to update change
                 os.execl('/home/pi/alarmPi/runDev01.sh', '')                
         if (not GPIO.input(4)):
