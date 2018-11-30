@@ -85,7 +85,7 @@ while True:
                         os.execl('/home/pi/alarmPi/runStage.sh', '')
                 if posCur == 80:
 			#os.execl('/home/pi/alarmPi/runTest.sh', '')
-                if posCur == 110:
+                #if posCur == 110:
                         os.execl('/home/pi/alarmPi/runDev.sh', '')
                 if posCur == 140:
                         g = git.Git('/home/pi/alarmPi')
