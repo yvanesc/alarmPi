@@ -94,7 +94,7 @@ while True:
                         # restart python soft to update change
                         os.execl('/home/pi/alarmPi/runme.sh', '')
 		#if posCur == 170:
-			pygame.quit()    
+			#pygame.quit()    
                         exit()   
         if (not GPIO.input(23)):
                 # pygame
