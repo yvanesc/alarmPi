@@ -84,6 +84,8 @@ while True:
                 if posCur == 50:
                         os.execl('/home/pi/alarmPi/runStage.sh', '')
                 if posCur == 80:
+                        os.execl('/home/pi/alarmPi/runTest.sh', '')
+                if posCur == 110:
 			#os.execl('/home/pi/alarmPi/runTest.sh', '')
                 #if posCur == 110:
                         os.execl('/home/pi/alarmPi/runDev.sh', '')
@@ -93,6 +95,8 @@ while True:
                 
                         # restart python soft to update change
                         os.execl('/home/pi/alarmPi/runme.sh', '')
+                if posCur == 170:
+                        pygame.quit()
 		#if posCur == 170:
 			#pygame.quit()    
                         exit()   
