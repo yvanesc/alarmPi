@@ -43,7 +43,7 @@ GPIO.setup(17, GPIO.IN, pull_up_down=GPIO.PUD_UP)
 GPIO.setup(23, GPIO.IN, pull_up_down=GPIO.PUD_UP)
 
 
-fontSelL=pygame.font.SysFont(iniPi.font, iniPi.font_sizeXXl)
+fontSelL=pygame.font.SysFont(iniPi.font, iniPi.font_sizeB)
 
 #GPIO.output(27,GPIO.HIGH)
 pygame.mouse.set_visible(False)
