@@ -68,9 +68,9 @@ while True:
         
         #screen        
         pygame.draw.rect(DISPLAYSURF, iniPi.RED, (64,posCur,512,60), 6)
-        DISPLAYSURF.blit(icO, (icOPosX*2, icOPosY))
+        DISPLAYSURF.blit(icO, (icOPosX*2, icOPosY*2))
         DISPLAYSURF.blit(icX, (icXPosX*2, icXPosY*2))
-        DISPLAYSURF.blit(icDown, (icDownPosX*2, icDownPosY))
+        DISPLAYSURF.blit(icDown, (icDownPosX*2, icDownPosY*2))
         DISPLAYSURF.blit(icUp, (icUpPosX*2, icUpPosY*2))
                 
         pygame.display.update()
