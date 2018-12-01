@@ -22,7 +22,7 @@ os.putenv('SDL_FBDEV', '/dev/fb1')
 #init menu
 timerMenu=30
 posMenu =20
-spaceMenu = 30
+spaceMenu = 60
 #Dev Test Stage Prod GitPull Exit
 infoTxt = ["Prod", "Stage","Test", "Dev", "Git pull", "Exit"]
 posCur = 20
@@ -67,7 +67,7 @@ while True:
                 DISPLAYSURF.blit(disInfoTxt, (64,  nb2dis))         
         
         #screen        
-        pygame.draw.rect(DISPLAYSURF, iniPi.RED, (32,posCur,256,30), 3)
+        pygame.draw.rect(DISPLAYSURF, iniPi.RED, (64,posCur,512,60), 6)
         DISPLAYSURF.blit(icO, (icOPosX, icOPosY))
         DISPLAYSURF.blit(icX, (icXPosX, icXPosY))
         DISPLAYSURF.blit(icDown, (icDownPosX, icDownPosY))
