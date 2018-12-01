@@ -31,7 +31,7 @@ icUp=pygame.image.load(ic16PathS+ "caret-top" +ic16PathE)
 icDown=pygame.image.load(ic16PathS+ "caret-bottom" +ic16PathE)
 moon =pygame.image.load("/home/pi/alarmPi/ic64/moon.jpg")
 sun =pygame.image.load("/home/pi/alarmPi/ic64/sun.png")
-splashScr =pygame.image.load("/home/pi/pjtSmScr/wp/coplandOS.jpg")
+splashScr =pygame.image.load("/home/pi/alarmPi/wp/coplandOS.jpg")
 DISPLAYSURF = pygame.display.set_mode((scrWidth, scrHeigth))
 
 GPIO.setmode(GPIO.BCM)
