@@ -10,7 +10,7 @@ import git
 import datetime
 #import autoMntUsbT01
 import subprocess
-import n12345model
+#import n12345model
 
 from pygame.locals import *
 from iniPi import * 
