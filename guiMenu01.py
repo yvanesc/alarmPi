@@ -68,10 +68,10 @@ while True:
         
         #screen        
         pygame.draw.rect(DISPLAYSURF, iniPi.RED, (64,posCur,512,60), 6)
-        DISPLAYSURF.blit(icO, (icOPosX, icOPosY))
-        DISPLAYSURF.blit(icX, (icXPosX, icXPosY*2))
-        DISPLAYSURF.blit(icDown, (icDownPosX, icDownPosY))
-        DISPLAYSURF.blit(icUp, (icUpPosX, icUpPosY))
+        DISPLAYSURF.blit(icO, (icOPosX*2, icOPosY))
+        DISPLAYSURF.blit(icX, (icXPosX*2, icXPosY*2))
+        DISPLAYSURF.blit(icDown, (icDownPosX*2, icDownPosY))
+        DISPLAYSURF.blit(icUp, (icUpPosX*2, icUpPosY*2))
                 
         pygame.display.update()
         clock.tick(60)  # Limit the frame rate to 60 FPS.
@@ -109,7 +109,7 @@ while True:
         if (not GPIO.input(4)):
                 #VOL LOW
                 #clkDown+=1
-                if posCur < 170: #(50 + 30*(len(infoTxt))):
+                if posCur < 320: #(50 + 30*(len(infoTxt))):
                         posCur+=60
                 
         if (not GPIO.input(17)):
