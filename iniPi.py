@@ -34,7 +34,9 @@ clkX = clkRect = clkTri = clkUp = clkDown = 0
 # split screen with 20x60 pixel
 # use for icon 32x32 2 blocks (40x60)
 scrWidth = 320
+scrWidthB = 640
 scrHeigth = 240
+scrHeigthB = 480
 
 """ position for icon 32x32
 icOPosX = icRectPosX = icTriPosX = icXPosX = 2

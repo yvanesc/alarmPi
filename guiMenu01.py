@@ -34,7 +34,7 @@ icX=pygame.image.load(ic16PathS+ "check" +ic16PathE)
 icUp=pygame.image.load(ic16PathS+ "caret-top" +ic16PathE)
 icDown=pygame.image.load(ic16PathS+ "caret-bottom" +ic16PathE)
 
-DISPLAYSURF = pygame.display.set_mode((scrWidth, scrHeigth))
+DISPLAYSURF = pygame.display.set_mode((scrWidthB, scrHeigthB))
 
 GPIO.setmode(GPIO.BCM)
 GPIO.setup(4, GPIO.IN, pull_up_down=GPIO.PUD_UP)
