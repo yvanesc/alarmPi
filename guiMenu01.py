@@ -21,7 +21,7 @@ os.putenv('SDL_FBDEV', '/dev/fb1')
 
 #init menu
 timerMenu=30
-posMenu =50
+posMenu =20
 spaceMenu = 30
 #Dev Test Stage Prod GitPull Exit
 infoTxt = ["Prod", "Stage","Test", "Dev", "Git pull", "Exit"]
@@ -81,21 +81,21 @@ while True:
                 #clkX+=1
                 if posCur == 20:
                         os.execl('/home/pi/alarmPi/runProd.sh', '')
-                if posCur == 50:
-                        os.execl('/home/pi/alarmPi/runStage.sh', '')
                 if posCur == 80:
+                        os.execl('/home/pi/alarmPi/runStage.sh', '')
+                if posCur == 140:
                         os.execl('/home/pi/alarmPi/runTest.sh', '')
-                if posCur == 110:
+                if posCur == 200:
 			#os.execl('/home/pi/alarmPi/runTest.sh', '')
                 #if posCur == 110:
                         os.execl('/home/pi/alarmPi/runDev.sh', '')
-                if posCur == 140:
+                if posCur == 260:
                         g = git.Git('/home/pi/alarmPi')
                         g.pull('origin','master')
                 
                         # restart python soft to update change
                         os.execl('/home/pi/alarmPi/runme.sh', '')
-                if posCur == 170:
+                if posCur == 320:
                         pygame.quit()
 		#if posCur == 170:
 			#pygame.quit()    
