@@ -29,10 +29,10 @@ posCur = 20
 
 pygame.init()
 # 2 put in iniPi
-icO=pygame.image.load(ic16PathS+ "power-standby" +ic16PathE)
-icX=pygame.image.load(ic16PathS+ "check" +ic16PathE)
-icUp=pygame.image.load(ic16PathS+ "caret-top" +ic16PathE)
-icDown=pygame.image.load(ic16PathS+ "caret-bottom" +ic16PathE)
+icO=pygame.image.load(ic32PathS+ "power-standby" +ic32PathE)
+icX=pygame.image.load(ic32PathS+ "check" +ic32PathE)
+icUp=pygame.image.load(ic32PathS+ "caret-top" +ic32PathE)
+icDown=pygame.image.load(ic32PathS+ "caret-bottom" +ic32PathE)
 
 DISPLAYSURF = pygame.display.set_mode((scrWidthB, scrHeigthB))
 
@@ -110,13 +110,13 @@ while True:
                 #VOL LOW
                 #clkDown+=1
                 if posCur < 170: #(50 + 30*(len(infoTxt))):
-                        posCur+=30
+                        posCur+=60
                 
         if (not GPIO.input(17)):
                 #VOL HIGH
                 #clkUp
                 if posCur > 20:
-                        posCur-=30                
+                        posCur-=60                
                 
         for event in pygame.event.get():
                 if event.type == QUIT:
