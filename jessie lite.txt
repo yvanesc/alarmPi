@@ -1,0 +1,16 @@
+no git 
+dont work
+sudo apt-get install python-dev python3-dev
+sudo apt-get install mercurial
+sudo apt-get install python-pip python3-pip
+
+work
+sudo apt-get install git
+
+no RPi
+pip install RPi.GPIO
+
+no pygame
+pip3 install pygame
+
+error pygame
