@@ -11,7 +11,7 @@ import datetime
 import subprocess
 import pygame.display
 pygame.display.init()
-info = pygame.display.Info()
+info = pygame.display.Info().current_w
 print (info)
 
 from pygame.locals import *
