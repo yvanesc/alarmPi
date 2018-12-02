@@ -10,6 +10,9 @@ import git
 import datetime
 import subprocess
 import pygame.display
+pygame.display.init()
+info = pygame.display.Info()
+print (info)
 
 from pygame.locals import *
 from iniPi import * 
@@ -28,9 +31,8 @@ spaceMenu = 60
 infoTxt = ["Prod", "Stage","Test", "Dev", "Git pull", "Exit"]
 posCur = 20
 
-pygame.display.init()
-weightScr = pygame.display.info().current_w
-print(weightScr)
+pygame.init()
+
 # 2 put in iniPi
 icO=pygame.image.load(ic32PathS+ "power-standby" +ic32PathE)
 icX=pygame.image.load(ic32PathS+ "check" +ic32PathE)
