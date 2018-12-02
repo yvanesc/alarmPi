@@ -49,7 +49,7 @@ fontSelL=pygame.font.SysFont(iniPi.font, iniPi.font_sizeB)
 
 #GPIO.output(27,GPIO.HIGH)
 pygame.mouse.set_visible(False)
-weightScr=Pygame.display.info().current_w
+weightScr = pygame.display.info().current_w
 print(weightScr)
 #pygame.display.update()
 #time.sleep(3)
