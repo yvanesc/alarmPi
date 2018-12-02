@@ -84,7 +84,10 @@ while True:
                 if posCur == 80:
                         os.execl('/home/pi/alarmPi/runStage.sh', '')
                 if posCur == 140:
-                        os.execl('/home/pi/alarmPi/runTest.sh', '')
+                        #os.execl('/home/pi/alarmPi/runTest.sh', '')
+                        file = open('/home/pi/testfile.txt', 'r') 
+                        for line in file: 
+                                print (line)
                 if posCur == 200:
 			#os.execl('/home/pi/alarmPi/runTest.sh', '')
                 #if posCur == 110:
