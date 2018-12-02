@@ -57,6 +57,7 @@ while True:
         DISPLAYSURF.fill(iniPi.WHITE)
         time2Display = datetime.datetime.now().strftime("%H:%M")
         hour2Display = int(datetime.datetime.now().strftime("%H"))        
+        min2Display = int(datetime.datetime.now().strftime("%M"))
         date2Display = datetime.datetime.now().strftime("%d")        
         
         #timerMenuShow = timerMenu   
@@ -72,10 +73,11 @@ while True:
         DISPLAYSURF.blit(icX, (icXPosX, icXPosY))
         DISPLAYSURF.blit(icDown, (icDownPosX, icDownPosY))
         DISPLAYSURF.blit(icUp, (icUpPosX, icUpPosY))
-                
-        pygame.display.update()
-        clock.tick(30)  # Limit the frame rate to 60 FPS.
 
+        if min2Display <> minNow:
+                pygame.display.update()
+        clock.tick(30)  # Limit the frame rate to 60 FPS.
+        minNow = min2Display
         if (not GPIO.input(5)):
                 # X
                 #clkX+=1
