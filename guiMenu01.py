@@ -77,8 +77,8 @@ while True:
         pygame.draw.rect(DISPLAYSURF, iniPi.RED, (64,posCur,512,60), 6)
         DISPLAYSURF.blit(icO, (icOPosX*2, icOPosY*2))
         DISPLAYSURF.blit(icX, (icXPosX*2, icXPosY*2))
-        DISPLAYSURF.blit(icRect, (icPosRectX*2, icPosRectY*2))
-        DISPLAYSURF.blit(icTri, (icPosTriX*2, icPosTriY*2))
+        DISPLAYSURF.blit(icRect, (icRectPosX*2, icRectPosY*2))
+        DISPLAYSURF.blit(icTri, (icTriPosX*2, icTriPosY*2))
         DISPLAYSURF.blit(icDown, (icDownPosX*2, icDownPosY*2))
         DISPLAYSURF.blit(icUp, (icUpPosX*2, icUpPosY*2))
                 
