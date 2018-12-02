@@ -27,7 +27,9 @@ spaceMenu = 60
 infoTxt = ["Prod", "Stage","Test", "Dev", "Git pull", "Exit"]
 posCur = 20
 
-pygame.init()
+pygame.display.init()
+weightScr = pygame.display.info().current_w
+print(weightScr)
 # 2 put in iniPi
 icO=pygame.image.load(ic32PathS+ "power-standby" +ic32PathE)
 icX=pygame.image.load(ic32PathS+ "check" +ic32PathE)
@@ -49,8 +51,7 @@ fontSelL=pygame.font.SysFont(iniPi.font, iniPi.font_sizeB)
 
 #GPIO.output(27,GPIO.HIGH)
 pygame.mouse.set_visible(False)
-weightScr = pygame.display.info().current_w
-print(weightScr)
+
 #pygame.display.update()
 #time.sleep(3)
 clock = pygame.time.Clock()
