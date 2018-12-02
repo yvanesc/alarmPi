@@ -31,6 +31,8 @@ pygame.init()
 # 2 put in iniPi
 icO=pygame.image.load(ic32PathS+ "power-standby" +ic32PathE)
 icX=pygame.image.load(ic32PathS+ "check" +ic32PathE)
+icRect=pygame.image.load(ic32PathS+ "sun" +ic32PathE)
+icTri=pygame.image.load(ic32PathS+ "loop-circular" +ic32PathE)
 icUp=pygame.image.load(ic32PathS+ "caret-top" +ic32PathE)
 icDown=pygame.image.load(ic32PathS+ "caret-bottom" +ic32PathE)
 
@@ -47,7 +49,8 @@ fontSelL=pygame.font.SysFont(iniPi.font, iniPi.font_sizeB)
 
 #GPIO.output(27,GPIO.HIGH)
 pygame.mouse.set_visible(False)
-
+weightScr=Pygame.display.info().current_w
+print(weightScr)
 #pygame.display.update()
 #time.sleep(3)
 clock = pygame.time.Clock()
@@ -70,6 +73,8 @@ while True:
         pygame.draw.rect(DISPLAYSURF, iniPi.RED, (64,posCur,512,60), 6)
         DISPLAYSURF.blit(icO, (icOPosX*2, icOPosY*2))
         DISPLAYSURF.blit(icX, (icXPosX*2, icXPosY*2))
+        DISPLAYSURF.blit(icRect, (icPosRectX*2, icPosRectY*2))
+        DISPLAYSURF.blit(icTri, (icPosTriX*2, icPosTriY*2))
         DISPLAYSURF.blit(icDown, (icDownPosX*2, icDownPosY*2))
         DISPLAYSURF.blit(icUp, (icUpPosX*2, icUpPosY*2))
                 
