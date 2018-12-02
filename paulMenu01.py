@@ -126,4 +126,4 @@ while True:
         #timerMenu = timerMenu - 0.1
         #if (timerMenu < 0):
         #        pygame.quit()
-        time.sleep(0.1)
+        time.sleep(1)
