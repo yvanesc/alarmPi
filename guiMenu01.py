@@ -9,6 +9,7 @@ import subprocess
 import git
 import datetime
 import subprocess
+import pygame.display
 
 from pygame.locals import *
 from iniPi import * 
