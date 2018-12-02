@@ -21,7 +21,7 @@ os.putenv('SDL_FBDEV', '/dev/fb1')
 
 #init menu
 timerMenu=30
-posMenu =50
+posMenu =20
 spaceMenu = 30
 #Dev Test Stage Prod GitPull Exit
 infoTxt = ["Prod", "Stage","Test", "Dev", "Git pull", "Exit"]
