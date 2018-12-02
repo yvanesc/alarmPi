@@ -51,9 +51,9 @@ pygame.mouse.set_visible(False)
 #pygame.display.update()
 #time.sleep(3)
 clock = pygame.time.Clock()
-
+os.system('clear')
 while True:
-        os.system('clear')
+        
         DISPLAYSURF.fill(iniPi.WHITE)
         time2Display = datetime.datetime.now().strftime("%H:%M")
         hour2Display = int(datetime.datetime.now().strftime("%H"))        
@@ -74,7 +74,7 @@ while True:
         DISPLAYSURF.blit(icUp, (icUpPosX, icUpPosY))
                 
         pygame.display.update()
-        clock.tick(120)  # Limit the frame rate to 60 FPS.
+        clock.tick(60)  # Limit the frame rate to 60 FPS.
 
         if (not GPIO.input(5)):
                 # X
