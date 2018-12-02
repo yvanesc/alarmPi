@@ -74,7 +74,7 @@ while True:
         DISPLAYSURF.blit(icUp, (icUpPosX, icUpPosY))
                 
         pygame.display.update()
-        clock.tick(60)  # Limit the frame rate to 60 FPS.
+        clock.tick(30)  # Limit the frame rate to 60 FPS.
 
         if (not GPIO.input(5)):
                 # X
