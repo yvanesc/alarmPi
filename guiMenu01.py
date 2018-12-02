@@ -125,7 +125,7 @@ while True:
                 if event.type == QUIT:
                         pygame.quit()
                         sys.exit()    
-        print(posCur)
+        #print(posCur)
         #timerMenu = timerMenu - 0.1
         #if (timerMenu < 0):
         #        pygame.quit()
