@@ -97,7 +97,7 @@ while True:
                         g.pull('origin','master')
                 
                         # restart python soft to update change
-                        os.execl('/home/pi/alarmPi/runme.sh', '')
+                        os.execl('/home/pi/alarmPi/runGui.sh', '')
                 if posCur == 320:
                         pygame.quit()
 		#if posCur == 170:
