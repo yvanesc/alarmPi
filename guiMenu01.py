@@ -61,8 +61,8 @@ while True:
         time2Display = datetime.datetime.now().strftime("%H:%M")
         hour2Display = int(datetime.datetime.now().strftime("%H"))        
         date2Display = datetime.datetime.now().strftime("%d.%m.%y")        
-        if reverse == 1:                
-                DISPLAYSURF = pygame.transform.rotate(DISPLAYSURF, 90)#angle)
+        #if reverse == 1:                
+                #DISPLAYSURF = pygame.transform.rotate(DISPLAYSURF, 90)#angle)
                 #DISPLAYSURF = pygame.display.set_mode((scrW, scrH))
         #else:
                 #DISPLAYSURF = pygame.display.set_mode((scrH, scrW))
@@ -105,6 +105,7 @@ while True:
         DISPLAYSURF.blit(icUp, ((icUpPosX*2)-marge, icUpPosY*2))
         DISPLAYSURF.blit(displayTime, ((scrW/2)+marge, icOPosY*2))
         DISPLAYSURF.blit(displayDate, ((scrW/2)+marge, icRectPosY*2))
+        DISPLAYSURF = pygame.transform.rotate(DISPLAYSURF, 90)#angle)
         pygame.display.update()
         clock.tick(60)  # Limit the frame rate to 60 FPS.
 
