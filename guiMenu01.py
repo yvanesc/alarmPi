@@ -68,8 +68,6 @@ while True:
         hour2Display = int(datetime.datetime.now().strftime("%H"))        
         date2Display = datetime.datetime.now().strftime("%d")        
         
-        #timerMenuShow = timerMenu   
-        timer2Display = fontSelL.render("Timer : %2d"%  (timerMenu) , True, iniPi.BLACK)  
         for nbrMenu2Dis in range (0, 6):
                 disInfoTxt = fontSelL.render(infoTxt[nbrMenu2Dis], True, iniPi.BLACK)
                 nb2dis= posMenu +spaceMenu * nbrMenu2Dis                
@@ -83,7 +81,8 @@ while True:
         DISPLAYSURF.blit(icTri, (icTriPosX*4, icTriPosY*2))
         DISPLAYSURF.blit(icDown, ((icDownPosX*2)-marge, icDownPosY*2))
         DISPLAYSURF.blit(icUp, ((icUpPosX*2)-marge, icUpPosY*2))
-                
+        DISPLAYSURF.blit(time2Display, ((scrW/2)+64, icOPosY*2))
+        DISPLAYSURF.blit(date2Display, ((scrW/2)+64, icRectPosY*2))
         pygame.display.update()
         clock.tick(60)  # Limit the frame rate to 60 FPS.
 
