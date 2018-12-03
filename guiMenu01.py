@@ -32,6 +32,7 @@ infoTxt = ["Prod", "Stage","Test", "Dev", "Git pull", "Exit"]
 posCur = 20
 dayNight = 0
 reverse = 0
+angleRot = 0
 pygame.init()
 
 # 2 put in iniPi
