@@ -146,6 +146,7 @@ while True:
         if (not GPIO.input(24)):
                 # triangle
                 if reverse == 0:
+                        print ("reverse")
                         reverse = 1
                 else:
                         reverse = 0 
