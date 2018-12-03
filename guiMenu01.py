@@ -61,9 +61,8 @@ while True:
         time2Display = datetime.datetime.now().strftime("%H:%M")
         hour2Display = int(datetime.datetime.now().strftime("%H"))        
         date2Display = datetime.datetime.now().strftime("%d.%m.%y")        
-        if reverse == 1:
-                print("if")
-                pygame.transform.rotate(DISPLAYSURF, 90)#angle)
+        if reverse == 1:                
+                DISPLAYSURF = pygame.transform.rotate(DISPLAYSURF, 90)#angle)
                 #DISPLAYSURF = pygame.display.set_mode((scrW, scrH))
         #else:
                 #DISPLAYSURF = pygame.display.set_mode((scrH, scrW))
@@ -147,7 +146,6 @@ while True:
         if (not GPIO.input(24)):
                 # triangle
                 if reverse == 0:
-                        print ("reverse")
                         reverse = 1
                 else:
                         reverse = 0 
