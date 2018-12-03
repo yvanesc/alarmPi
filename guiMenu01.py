@@ -66,6 +66,7 @@ while True:
                 icTri=pygame.image.load(ic32PathS+ "loop-circular" +ic32PathE)
                 icUp=pygame.image.load(ic32PathS+ "caret-top" +ic32PathE)
                 icDown=pygame.image.load(ic32PathS+ "caret-bottom" +ic32PathE)
+                pygame.draw.rect(DISPLAYSURF, iniPi.RED, (64,posCur,(scrW/2)-64,60), 6)
         else:
                 DISPLAYSURF.fill(iniPi.BLACK)
                 icO=pygame.image.load(ic32PathR+ "power-standby" +ic32PathE)
@@ -88,7 +89,7 @@ while True:
                 DISPLAYSURF.blit(disInfoTxt, (64,  nb2dis))         
         
         #screen        
-        pygame.draw.rect(DISPLAYSURF, iniPi.RED, (64,posCur,(scrW/2)-64,60), 6)
+        
         DISPLAYSURF.blit(icO, (icOPosX*4, icOPosY*2))
         DISPLAYSURF.blit(icX, (icXPosX*4, icXPosY*2))
         DISPLAYSURF.blit(icRect, (icRectPosX*4, icRectPosY*2))
