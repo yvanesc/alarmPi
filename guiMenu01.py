@@ -112,13 +112,13 @@ while True:
                 angleRot = 0
         else:
                 if angleRot < 90:
-                        angleRot=angleRot+10
+                        angleRot=angleRot+5
                 icOd = pygame.transform.rotate(icO,90)   
                 icXd = pygame.transform.rotate(icX,90)   
                 icRectd = pygame.transform.rotate(icRect,90)   
                 icTrid = pygame.transform.rotate(icTri,90)   
                 displayTimed = pygame.transform.rotate(displayTime,angleRot)   
-                displayDated = pygame.transform.rotate(displayDate,90)   
+                displayDated = pygame.transform.rotate(displayDate,angleRot)   
                 DISPLAYSURF.blit(displayTimed, ((scrW/4)+marge, icOPosY*2))
                 DISPLAYSURF.blit(displayDated, ((scrW/2)+marge, icRectPosY*2))        
 
