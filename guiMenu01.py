@@ -11,8 +11,8 @@ import datetime
 import subprocess
 import pygame.display
 pygame.display.init()
-info = pygame.display.Info().current_w
-print (info)
+scrW = pygame.display.Info().current_w
+scrH = pygame.display.Info().current_h
 
 from pygame.locals import *
 from iniPi import * 
@@ -41,13 +41,15 @@ icTri=pygame.image.load(ic32PathS+ "loop-circular" +ic32PathE)
 icUp=pygame.image.load(ic32PathS+ "caret-top" +ic32PathE)
 icDown=pygame.image.load(ic32PathS+ "caret-bottom" +ic32PathE)
 
-DISPLAYSURF = pygame.display.set_mode((scrWidthB, scrHeigthB))
+DISPLAYSURF = pygame.display.set_mode((scrW, scrH))
 
 GPIO.setmode(GPIO.BCM)
 GPIO.setup(4, GPIO.IN, pull_up_down=GPIO.PUD_UP)
 GPIO.setup(5, GPIO.IN, pull_up_down=GPIO.PUD_UP)
 GPIO.setup(17, GPIO.IN, pull_up_down=GPIO.PUD_UP)
+GPIO.setup(22, GPIO.IN, pull_up_down=GPIO.PUD_UP)
 GPIO.setup(23, GPIO.IN, pull_up_down=GPIO.PUD_UP)
+GPIO.setup(24, GPIO.IN, pull_up_down=GPIO.PUD_UP)
 
 
 fontSelL=pygame.font.SysFont(iniPi.font, iniPi.font_sizeB)
@@ -74,7 +76,7 @@ while True:
                 DISPLAYSURF.blit(disInfoTxt, (64,  nb2dis))         
         
         #screen        
-        pygame.draw.rect(DISPLAYSURF, iniPi.RED, (64,posCur,512,60), 6)
+        pygame.draw.rect(DISPLAYSURF, iniPi.RED, (64,posCur,scrW/2,60), 6)
         DISPLAYSURF.blit(icO, (icOPosX*2, icOPosY*2))
         DISPLAYSURF.blit(icX, (icXPosX*2, icXPosY*2))
         DISPLAYSURF.blit(icRect, (icRectPosX*2, icRectPosY*2))
@@ -112,6 +114,13 @@ while True:
 		#if posCur == 170:
 			#pygame.quit()    
                         exit()   
+         if (not GPIO.input(22)):
+                # rect
+                #clkRect+=1
+                exit()             
+        if (not GPIO.input(24)):
+                # triangle
+                exit()  
         if (not GPIO.input(23)):
                 # pygame
                 # O
