@@ -76,7 +76,7 @@ while True:
                 DISPLAYSURF.blit(disInfoTxt, (64,  nb2dis))         
         
         #screen        
-        pygame.draw.rect(DISPLAYSURF, iniPi.RED, (64,posCur,(scrW/2)-marge*4,60), 6)
+        pygame.draw.rect(DISPLAYSURF, iniPi.RED, (64,posCur,(scrW/2)-64,60), 6)
         DISPLAYSURF.blit(icO, (icOPosX*4, icOPosY*2))
         DISPLAYSURF.blit(icX, (icXPosX*4, icXPosY*2))
         DISPLAYSURF.blit(icRect, (icRectPosX*4, icRectPosY*2))
