@@ -109,11 +109,13 @@ while True:
                 DISPLAYSURF.blit(displayTimed, ((scrW/2)+marge, icOPosY*2))
                 DISPLAYSURF.blit(displayDated, ((scrW/2)+marge, icRectPosY*2))
         else:
+                if angleRot < 90:
+                        angleRot=angleRot+10
                 icOd = pygame.transform.rotate(icO,90)   
                 icXd = pygame.transform.rotate(icX,90)   
                 icRectd = pygame.transform.rotate(icRect,90)   
                 icTrid = pygame.transform.rotate(icTri,90)   
-                displayTimed = pygame.transform.rotate(displayTime,90)   
+                displayTimed = pygame.transform.rotate(displayTime,angleRot)   
                 displayDated = pygame.transform.rotate(displayDate,90)   
                 DISPLAYSURF.blit(displayTimed, ((scrW/4)+marge, icOPosY*2))
                 DISPLAYSURF.blit(displayDated, ((scrW/2)+marge, icRectPosY*2))        
@@ -129,7 +131,7 @@ while True:
         if (not GPIO.input(5)):
                 # X
                 #clkX+=1
-                if dayNight == 0:
+                if dayNight == 0 and reverse == 0:
                         if posCur == 20:
                                 os.execl('/home/pi/alarmPi/runProd.sh', '')
                         if posCur == 80:
