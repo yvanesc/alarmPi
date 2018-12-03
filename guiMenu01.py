@@ -96,16 +96,18 @@ while True:
                 DISPLAYSURF.blit(disInfoTxt, (64,  nb2dis))         
         
         #screen        
-        
-        DISPLAYSURF.blit(icO, (icOPosX*4, icOPosY*2))
+        if reverse == 0:
+                icOd = pygame.transform.rotate(icO,0)
+        else:
+                icOd = pygame.transform.rotate(icO,90)   
+        DISPLAYSURF.blit(icOd, (icOPosX*4, icOPosY*2))
         DISPLAYSURF.blit(icX, (icXPosX*4, icXPosY*2))
         DISPLAYSURF.blit(icRect, (icRectPosX*4, icRectPosY*2))
         DISPLAYSURF.blit(icTri, (icTriPosX*4, icTriPosY*2))
         DISPLAYSURF.blit(icDown, ((icDownPosX*2)-marge, icDownPosY*2))
         DISPLAYSURF.blit(icUp, ((icUpPosX*2)-marge, icUpPosY*2))
         DISPLAYSURF.blit(displayTime, ((scrW/2)+marge, icOPosY*2))
-        DISPLAYSURF.blit(displayDate, ((scrW/2)+marge, icRectPosY*2))
-        DISPLAYSURF = pygame.transform.rotate(DISPLAYSURF, 90)#angle)
+        DISPLAYSURF.blit(displayDate, ((scrW/2)+marge, icRectPosY*2))        
         pygame.display.update()
         clock.tick(60)  # Limit the frame rate to 60 FPS.
 
