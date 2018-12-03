@@ -109,6 +109,7 @@ while True:
                 DISPLAYSURF.blit(icUp, ((icUpPosX*2)-marge, icUpPosY*2))
                 DISPLAYSURF.blit(displayTimed, ((scrW/2)+marge, icOPosY*2))
                 DISPLAYSURF.blit(displayDated, ((scrW/2)+marge, icRectPosY*2))
+                angleRot = 0
         else:
                 if angleRot < 90:
                         angleRot=angleRot+10
