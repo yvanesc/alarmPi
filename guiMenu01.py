@@ -31,11 +31,12 @@ spaceMenu = 60
 infoTxt = ["Prod", "Stage","Test", "Dev", "Git pull", "Exit"]
 posCur = 20
 dayNight = 0
+reverse = 0
 pygame.init()
 
 # 2 put in iniPi
 
-DISPLAYSURF = pygame.display.set_mode((scrW, scrH))
+#DISPLAYSURF = pygame.display.set_mode((scrW, scrH))
 
 GPIO.setmode(GPIO.BCM)
 GPIO.setup(4, GPIO.IN, pull_up_down=GPIO.PUD_UP)
@@ -56,12 +57,15 @@ pygame.mouse.set_visible(False)
 clock = pygame.time.Clock()
 
 while True:
-        os.system('clear')
+        os.system('clear')        
         time2Display = datetime.datetime.now().strftime("%H:%M")
         hour2Display = int(datetime.datetime.now().strftime("%H"))        
         date2Display = datetime.datetime.now().strftime("%d.%m.%y")        
-        
-        if dayNight == 0:
+        if reverse == 0:
+                DISPLAYSURF = pygame.display.set_mode((scrW, scrH))
+        else:
+                DISPLAYSURF = pygame.display.set_mode((scrH, scrW))
+        if dayNight == 0:                
                 DISPLAYSURF.fill(iniPi.WHITE)
                 icO=pygame.image.load(ic32PathS+ "power-standby" +ic32PathE)
                 icX=pygame.image.load(ic32PathS+ "check" +ic32PathE)
@@ -106,30 +110,31 @@ while True:
         if (not GPIO.input(5)):
                 # X
                 #clkX+=1
-                if posCur == 20:
-                        os.execl('/home/pi/alarmPi/runProd.sh', '')
-                if posCur == 80:
-                        os.execl('/home/pi/alarmPi/runStage.sh', '')
-                if posCur == 140:
-                        #os.execl('/home/pi/alarmPi/runTest.sh', '')
-                        file = open('/home/pi/testfile.txt', 'r') 
-                        for line in file: 
-                                print (line)
-                if posCur == 200:
-			#os.execl('/home/pi/alarmPi/runTest.sh', '')
-                #if posCur == 110:
-                        os.execl('/home/pi/alarmPi/runDev.sh', '')
-                if posCur == 260:
-                        g = git.Git('/home/pi/alarmPi')
-                        g.pull('origin','master')
-                
-                        # restart python soft to update change
-                        os.execl('/home/pi/alarmPi/runGui.sh', '')
-                if posCur == 320:
-                        pygame.quit()
-		#if posCur == 170:
-			#pygame.quit()    
-                        exit()   
+                if dayNight == 0:
+                        if posCur == 20:
+                                os.execl('/home/pi/alarmPi/runProd.sh', '')
+                        if posCur == 80:
+                                os.execl('/home/pi/alarmPi/runStage.sh', '')
+                        if posCur == 140:
+                                #os.execl('/home/pi/alarmPi/runTest.sh', '')
+                                file = open('/home/pi/testfile.txt', 'r') 
+                                for line in file: 
+                                        print (line)
+                        if posCur == 200:
+        			#os.execl('/home/pi/alarmPi/runTest.sh', '')
+                        #if posCur == 110:
+                                os.execl('/home/pi/alarmPi/runDev.sh', '')
+                        if posCur == 260:
+                                g = git.Git('/home/pi/alarmPi')
+                                g.pull('origin','master')
+                        
+                                # restart python soft to update change
+                                os.execl('/home/pi/alarmPi/runGui.sh', '')
+                        if posCur == 320:
+                                pygame.quit()
+        		#if posCur == 170:
+        			#pygame.quit()    
+                                exit()   
         if (not GPIO.input(22)):
                 # rect
                 #clkRect+=1
@@ -139,7 +144,10 @@ while True:
                         dayNight = 0
         if (not GPIO.input(24)):
                 # triangle
-                exit()  
+                if reverse == 0:
+                        reverse = 1
+                else:
+                        reverse = 0 
         if (not GPIO.input(23)):
                 # pygame
                 # O
