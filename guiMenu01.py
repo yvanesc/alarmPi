@@ -62,6 +62,7 @@ while True:
         hour2Display = int(datetime.datetime.now().strftime("%H"))        
         date2Display = datetime.datetime.now().strftime("%d.%m.%y")        
         if reverse == 1:
+                print("if")
                 pygame.transform.rotate(DISPLAYSURF, 90)#angle)
                 #DISPLAYSURF = pygame.display.set_mode((scrW, scrH))
         #else:
