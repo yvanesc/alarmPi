@@ -69,5 +69,6 @@ ic16PathE="-2x.png"
 
 ic32PathS ="/home/pi/alarmPi/ic32/"
 ic32PathE="-4x.png"
+ic32PathR ="/home/pi/alarmPi/ic32rev/"
 #pygame
 #fontSel=pygame.font.SysFont(font, font_size)
