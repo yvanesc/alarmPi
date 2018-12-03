@@ -66,7 +66,7 @@ while True:
         DISPLAYSURF.fill(iniPi.WHITE)
         time2Display = datetime.datetime.now().strftime("%H:%M")
         hour2Display = int(datetime.datetime.now().strftime("%H"))        
-        date2Display = datetime.datetime.now().strftime("%d")        
+        date2Display = datetime.datetime.now().strftime("%d.%m.%y")        
 
         displayTime = fontSelL.render(time2Display, True, iniPi.BLACK)
         displayDate = fontSelL.render(date2Display, True, iniPi.BLACK)
