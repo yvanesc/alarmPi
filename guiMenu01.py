@@ -36,7 +36,7 @@ pygame.init()
 
 # 2 put in iniPi
 
-#DISPLAYSURF = pygame.display.set_mode((scrW, scrH))
+DISPLAYSURF = pygame.display.set_mode((scrW, scrH))
 
 GPIO.setmode(GPIO.BCM)
 GPIO.setup(4, GPIO.IN, pull_up_down=GPIO.PUD_UP)
