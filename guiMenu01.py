@@ -61,10 +61,11 @@ while True:
         time2Display = datetime.datetime.now().strftime("%H:%M")
         hour2Display = int(datetime.datetime.now().strftime("%H"))        
         date2Display = datetime.datetime.now().strftime("%d.%m.%y")        
-        if reverse == 0:
-                DISPLAYSURF = pygame.display.set_mode((scrW, scrH))
-        else:
-                DISPLAYSURF = pygame.display.set_mode((scrH, scrW))
+        if reverse == 1:
+                pygame.transform.rotate(DISPLAYSURF, 90)#angle)
+                #DISPLAYSURF = pygame.display.set_mode((scrW, scrH))
+        #else:
+                #DISPLAYSURF = pygame.display.set_mode((scrH, scrW))
         if dayNight == 0:                
                 DISPLAYSURF.fill(iniPi.WHITE)
                 icO=pygame.image.load(ic32PathS+ "power-standby" +ic32PathE)
