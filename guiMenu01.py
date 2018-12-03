@@ -57,7 +57,10 @@ clock = pygame.time.Clock()
 
 while True:
         os.system('clear')
-
+        time2Display = datetime.datetime.now().strftime("%H:%M")
+        hour2Display = int(datetime.datetime.now().strftime("%H"))        
+        date2Display = datetime.datetime.now().strftime("%d.%m.%y")        
+        
         if dayNight == 0:
                 DISPLAYSURF.fill(iniPi.WHITE)
                 icO=pygame.image.load(ic32PathS+ "power-standby" +ic32PathE)
@@ -67,6 +70,8 @@ while True:
                 icUp=pygame.image.load(ic32PathS+ "caret-top" +ic32PathE)
                 icDown=pygame.image.load(ic32PathS+ "caret-bottom" +ic32PathE)
                 pygame.draw.rect(DISPLAYSURF, iniPi.RED, (64,posCur,(scrW/2)-64,60), 6)
+                displayTime = fontSelL.render(time2Display, True, iniPi.BLACK)
+                displayDate = fontSelL.render(date2Display, True, iniPi.BLACK)
         else:
                 DISPLAYSURF.fill(iniPi.BLACK)
                 icO=pygame.image.load(ic32PathR+ "power-standby" +ic32PathE)
@@ -75,13 +80,10 @@ while True:
                 icTri=pygame.image.load(ic32PathR+ "loop-circular" +ic32PathE)
                 icUp=pygame.image.load(ic32PathR+ "caret-top" +ic32PathE)
                 icDown=pygame.image.load(ic32PathR+ "caret-bottom" +ic32PathE)
+                displayTime = fontSelL.render(time2Display, True, iniPi.WHITE)
+                displayDate = fontSelL.render(date2Display, True, iniPi.WHITE)
 
-        time2Display = datetime.datetime.now().strftime("%H:%M")
-        hour2Display = int(datetime.datetime.now().strftime("%H"))        
-        date2Display = datetime.datetime.now().strftime("%d.%m.%y")        
-
-        displayTime = fontSelL.render(time2Display, True, iniPi.BLACK)
-        displayDate = fontSelL.render(date2Display, True, iniPi.BLACK)
+                
         
         for nbrMenu2Dis in range (0, 6):
                 disInfoTxt = fontSelL.render(infoTxt[nbrMenu2Dis], True, iniPi.BLACK)
