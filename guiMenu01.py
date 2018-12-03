@@ -30,16 +30,10 @@ spaceMenu = 60
 #Dev Test Stage Prod GitPull Exit
 infoTxt = ["Prod", "Stage","Test", "Dev", "Git pull", "Exit"]
 posCur = 20
-
+dayNight = 0
 pygame.init()
 
 # 2 put in iniPi
-icO=pygame.image.load(ic32PathS+ "power-standby" +ic32PathE)
-icX=pygame.image.load(ic32PathS+ "check" +ic32PathE)
-icRect=pygame.image.load(ic32PathS+ "sun" +ic32PathE)
-icTri=pygame.image.load(ic32PathS+ "loop-circular" +ic32PathE)
-icUp=pygame.image.load(ic32PathS+ "caret-top" +ic32PathE)
-icDown=pygame.image.load(ic32PathS+ "caret-bottom" +ic32PathE)
 
 DISPLAYSURF = pygame.display.set_mode((scrW, scrH))
 
@@ -63,7 +57,24 @@ clock = pygame.time.Clock()
 
 while True:
         os.system('clear')
-        DISPLAYSURF.fill(iniPi.WHITE)
+
+        if dayNight == 0:
+                DISPLAYSURF.fill(iniPi.WHITE)
+                icO=pygame.image.load(ic32PathS+ "power-standby" +ic32PathE)
+                icX=pygame.image.load(ic32PathS+ "check" +ic32PathE)
+                icRect=pygame.image.load(ic32PathS+ "moon" +ic32PathE)
+                icTri=pygame.image.load(ic32PathS+ "loop-circular" +ic32PathE)
+                icUp=pygame.image.load(ic32PathS+ "caret-top" +ic32PathE)
+                icDown=pygame.image.load(ic32PathS+ "caret-bottom" +ic32PathE)
+        else:
+                DISPLAYSURF.fill(iniPi.BLACK)
+                icO=pygame.image.load(ic32PathR+ "power-standby" +ic32PathE)
+                icX=pygame.image.load(ic32PathR+ "check" +ic32PathE)
+                icRect=pygame.image.load(ic32PathR+ "sun" +ic32PathE)
+                icTri=pygame.image.load(ic32PathR+ "loop-circular" +ic32PathE)
+                icUp=pygame.image.load(ic32PathR+ "caret-top" +ic32PathE)
+                icDown=pygame.image.load(ic32PathR+ "caret-bottom" +ic32PathE)
+
         time2Display = datetime.datetime.now().strftime("%H:%M")
         hour2Display = int(datetime.datetime.now().strftime("%H"))        
         date2Display = datetime.datetime.now().strftime("%d.%m.%y")        
@@ -119,7 +130,10 @@ while True:
         if (not GPIO.input(22)):
                 # rect
                 #clkRect+=1
-                exit()             
+                if dayNight == 0:
+                        dayNight = 1
+                else:
+                        dayNight = 0
         if (not GPIO.input(24)):
                 # triangle
                 exit()  
