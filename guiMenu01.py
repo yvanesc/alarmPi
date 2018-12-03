@@ -86,7 +86,7 @@ while True:
                 icDown=pygame.image.load(ic32PathR+ "caret-bottom" +ic32PathE)
                 displayTime = fontSelL.render(time2Display, True, iniPi.WHITE)
                 displayDate = fontSelL.render(date2Display, True, iniPi.WHITE)
-        if dayNight == 0 AND reverse == 0:
+        if dayNight == 0 and reverse == 0:
                 pygame.draw.rect(DISPLAYSURF, iniPi.RED, (64,posCur,(scrW/2)-64,60), 6)
                 
         
