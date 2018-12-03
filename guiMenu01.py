@@ -114,7 +114,7 @@ while True:
 		#if posCur == 170:
 			#pygame.quit()    
                         exit()   
-         if (not GPIO.input(22)):
+        if (not GPIO.input(22)):
                 # rect
                 #clkRect+=1
                 exit()             
@@ -125,8 +125,7 @@ while True:
                 # pygame
                 # O
                 O.quit()
-                sys.exit()
-            
+                sys.exit()            
         if (not GPIO.input(4)):
                 #VOL LOW
                 #clkDown+=1
