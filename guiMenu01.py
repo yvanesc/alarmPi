@@ -62,7 +62,7 @@ while True:
         time2Display = datetime.datetime.now().strftime("%H:%M")
         hour2Display = int(datetime.datetime.now().strftime("%H"))        
         date2Display = datetime.datetime.now().strftime("%d.%m.%y")      
-        menuTxt = sqlPi.reqMainMenu("Main")  
+        menuTxt = sqlPi.reqMainMenu("top")  
         print (menuTxt)
 
         if dayNight == 0:                
