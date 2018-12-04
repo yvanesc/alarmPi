@@ -125,7 +125,8 @@ while True:
                 #clkX+=1
                 if dayNight == 0 and reverse == 0:
                         if posCur == 20:
-                                os.execl('/home/pi/alarmPi/runProd.sh', '')
+                                #os.execl('/home/pi/alarmPi/runProd.sh', '')
+                                print(menuTxt[0])
                         if posCur == 80:
                                 os.execl('/home/pi/alarmPi/runStage.sh', '')
                         if posCur == 140:
