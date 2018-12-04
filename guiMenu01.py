@@ -97,6 +97,7 @@ while True:
         if reverse == 0:
                 nbrMenu2Dis=0
                 for row in menuTxt:
+                        row = (', '.join(row))
                         disInfoTxt = fontSelL.render(str(row), True, iniPi.BLACK)
                         nb2dis= posMenu +spaceMenu * nbrMenu2Dis  
                         nbrMenu2Dis = nbrMenu2Dis + 1              
