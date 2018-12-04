@@ -147,6 +147,9 @@ while True:
         		#if posCur == 170:
         			#pygame.quit()    
                                 exit()  
+                        if posCur == 380:
+                                str2search = (', '.join(menuTxt[6]))
+                                menuTxt = sqlPi.reqMainMenu("menu",str2search)
                 #after selection reset cursor 
                 posCur = 20
         if (not GPIO.input(22)):
