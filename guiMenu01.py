@@ -61,12 +61,10 @@ while True:
         os.system('clear')        
         time2Display = datetime.datetime.now().strftime("%H:%M")
         hour2Display = int(datetime.datetime.now().strftime("%H"))        
-        date2Display = datetime.datetime.now().strftime("%d.%m.%y")        
-        #if reverse == 1:                
-                #DISPLAYSURF = pygame.transform.rotate(DISPLAYSURF, 90)#angle)
-                #DISPLAYSURF = pygame.display.set_mode((scrW, scrH))
-        #else:
-                #DISPLAYSURF = pygame.display.set_mode((scrH, scrW))
+        date2Display = datetime.datetime.now().strftime("%d.%m.%y")      
+        menuTxt = fontSel.render(sqlPi.reqMainMenu("Main"), True, iniPi.font_color)  
+        print (menuTxt)
+
         if dayNight == 0:                
                 DISPLAYSURF.fill(iniPi.WHITE)
                 icO=pygame.image.load(ic32PathS+ "power-standby" +ic32PathE)
