@@ -17,7 +17,7 @@ def reqMainMenu(top):
         conn = sqlite3.connect('/home/pi/alarmPi/mainMenu.db')
         c = conn.cursor()
         #table_name='menu'
-        c.execute( "SELECT "+ top +" FROM mainMenu" .\
+        c.execute( "SELECT "+ top +" FROM menu" .\
         	format(name=top, menu='menu'))
         all_rows = c.fetchall()
         
