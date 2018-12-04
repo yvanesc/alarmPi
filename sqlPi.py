@@ -18,7 +18,7 @@ def reqMainMenu(col, searchW):
         c = conn.cursor()
         #table_name='menu'
         c.execute( "SELECT "+ col +" FROM menu WHERE top LIKE '" +searchW + "'" .\
-        	format(name=top, menu='menu'))
+        	format(name=col, menu=col))
         all_rows = c.fetchall()
         
         conn.close()
