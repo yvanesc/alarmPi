@@ -126,7 +126,9 @@ while True:
                 if dayNight == 0 and reverse == 0:
                         if posCur == 20:
                                 #os.execl('/home/pi/alarmPi/runProd.sh', '')
-                                print(menuTxt[0])
+                                #print(menuTxt[0])
+                                str2search = (', '.join(menuTxt[0]))
+                                menuTxt = sqlPi.reqMainMenu("menu",str2search)  
                         if posCur == 80:
                                 os.execl('/home/pi/alarmPi/runStage.sh', '')
                         if posCur == 140:
