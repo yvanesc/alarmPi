@@ -56,10 +56,10 @@ pygame.mouse.set_visible(False)
 #pygame.display.update()
 #time.sleep(3)
 clock = pygame.time.Clock()
-menuTxt = sqlPi.reqMainMenu("menu")  
+menuTxt = sqlPi.reqMainMenu("menu","Main")  
 for row in menuTxt:
         print (row)
-        
+
 while True:
         os.system('clear')        
         time2Display = datetime.datetime.now().strftime("%H:%M")

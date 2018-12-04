@@ -13,11 +13,11 @@ def reqMenu(chpsGet, butGet, rectGet, triGet, croixGet, upGet, downGet):
         conn.close()
         return(all_rows[0][0])
 
-def reqMainMenu(top):
+def reqMainMenu(col, searchW):
         conn = sqlite3.connect('/home/pi/alarmPi/mainMenu.db')
         c = conn.cursor()
         #table_name='menu'
-        c.execute( "SELECT "+ top +" FROM menu WHERE top LIKE 'Main'" .\
+        c.execute( "SELECT "+ top +" FROM menu WHERE top LIKE '" +searchW + "'" .\
         	format(name=top, menu='menu'))
         all_rows = c.fetchall()
         
