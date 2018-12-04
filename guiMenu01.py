@@ -95,10 +95,16 @@ while True:
         
         #screen        
         if reverse == 0:
-                for nbrMenu2Dis in range (0, 6):
-                        disInfoTxt = fontSelL.render(infoTxt[nbrMenu2Dis], True, iniPi.BLACK)
-                        nb2dis= posMenu +spaceMenu * nbrMenu2Dis                
-                        DISPLAYSURF.blit(disInfoTxt, (64,  nb2dis))         
+                nbrMenu2Dis=0
+                for row in menuTxt:
+                        disInfoTxt = fontSelL.render(row, True, iniPi.BLACK)
+                        nb2dis= posMenu +spaceMenu * nbrMenu2Dis  
+                        nbrMenu2Dis = nbrMenu2Dis + 1              
+                        DISPLAYSURF.blit(disInfoTxt, (64,  nb2dis))
+                #for nbrMenu2Dis in range (0, 6):
+                #        disInfoTxt = fontSelL.render(infoTxt[nbrMenu2Dis], True, iniPi.BLACK)
+                #        nb2dis= posMenu +spaceMenu * nbrMenu2Dis                
+                #        DISPLAYSURF.blit(disInfoTxt, (64,  nb2dis))         
                 icOd = pygame.transform.rotate(icO,0)
                 icXd = pygame.transform.rotate(icX,0)
                 icRectd = pygame.transform.rotate(icRect,0)
