@@ -17,7 +17,7 @@ def reqMainMenu(col, searchW):
         conn = sqlite3.connect('/home/pi/alarmPi/mainMenu.db')
         c = conn.cursor()
         #table_name='menu'
-        c.execute( "SELECT "+ top +" FROM menu WHERE top LIKE '" +searchW + "'" .\
+        c.execute( "SELECT "+ col +" FROM menu WHERE top LIKE '" +searchW + "'" .\
         	format(name=top, menu='menu'))
         all_rows = c.fetchall()
         
