@@ -49,7 +49,7 @@ GPIO.setup(24, GPIO.IN, pull_up_down=GPIO.PUD_UP)
 
 
 fontSelL=pygame.font.SysFont(iniPi.font, iniPi.font_sizeB)
-
+fontSel=pygame.font.SysFont(iniPi.font, iniPi.font_sizeA)
 #GPIO.output(27,GPIO.HIGH)
 pygame.mouse.set_visible(False)
 
@@ -57,8 +57,6 @@ pygame.mouse.set_visible(False)
 #time.sleep(3)
 clock = pygame.time.Clock()
 menuTxt = sqlPi.reqMainMenu("menu","Main")  
-for row in menuTxt:
-        print (row)
 
 while True:
         os.system('clear')        
@@ -98,7 +96,7 @@ while True:
                 nbrMenu2Dis=0
                 for row in menuTxt:
                         row = (', '.join(row))
-                        disInfoTxt = fontSelL.render(str(row), True, iniPi.BLACK)
+                        disInfoTxt = fontSel.render(str(row), True, iniPi.BLACK)
                         nb2dis= posMenu +spaceMenu * nbrMenu2Dis  
                         nbrMenu2Dis = nbrMenu2Dis + 1              
                         DISPLAYSURF.blit(disInfoTxt, (64,  nb2dis))
