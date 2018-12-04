@@ -1,9 +1,7 @@
 import sqlite3
 
 table_name='menu'
-#conn = sqlite3.connect('menu.db')
-#c = conn.cursor()
-#s=" "
+
 def reqMenu(chpsGet, butGet, rectGet, triGet, croixGet, upGet, downGet):
         conn = sqlite3.connect('menu.db')
         c = conn.cursor()
@@ -15,5 +13,13 @@ def reqMenu(chpsGet, butGet, rectGet, triGet, croixGet, upGet, downGet):
         conn.close()
         return(all_rows[0][0])
 
-#reqMenu("name","rect")
-
+def reqMainMenu(top):
+        conn = sqlite3.connect('/home/pi/alarmPi/mainMenu.db')
+        c = conn.cursor()
+        #table_name='menu'
+        c.execute( "SELECT "+ top +" FROM mainMenu" .\
+        	format(name=top, menu='mainMenu'))
+        all_rows = c.fetchall()
+        
+        conn.close()
+        return(all_rows[0][0])
