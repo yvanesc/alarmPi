@@ -18,7 +18,7 @@ def reqMainMenu(top):
         c = conn.cursor()
         #table_name='menu'
         c.execute( "SELECT "+ top +" FROM mainMenu" .\
-        	format(name=top, menu='mainMenu'))
+        	format(name=top, menu='menu'))
         all_rows = c.fetchall()
         
         conn.close()
