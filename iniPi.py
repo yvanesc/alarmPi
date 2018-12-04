@@ -19,8 +19,20 @@ font_sizeL = 35
 font_sizeXl = 40
 font_sizeXXl = 45
 font_sizeB = 90
-font_sizeA = 60
+font_sizeA = 70
 
+#move
+angleRot = 0
+
+#menu
+timerMenu=30
+posMenu =20
+spaceMenu = 60
+posCur = 20
+
+#button state
+dayNight = 0
+reverse = 0
 # frame
 marge = 8
 # position Y for button

@@ -23,16 +23,6 @@ assert not repo.bare
 
 os.putenv('SDL_FBDEV', '/dev/fb1')
 
-#init menu
-timerMenu=30
-posMenu =20
-spaceMenu = 60
-#Dev Test Stage Prod GitPull Exit
-infoTxt = ["Prod", "Stage","Test", "Dev", "Git pull", "Exit"]
-posCur = 20
-dayNight = 0
-reverse = 0
-angleRot = 0
 pygame.init()
 
 # 2 put in iniPi
@@ -53,8 +43,6 @@ fontSel=pygame.font.SysFont(iniPi.font, iniPi.font_sizeA)
 #GPIO.output(27,GPIO.HIGH)
 pygame.mouse.set_visible(False)
 
-#pygame.display.update()
-#time.sleep(3)
 clock = pygame.time.Clock()
 menuTxt = sqlPi.reqMainMenu("menu","Main")  
 
@@ -100,10 +88,7 @@ while True:
                         nb2dis= posMenu +spaceMenu * nbrMenu2Dis  
                         nbrMenu2Dis = nbrMenu2Dis + 1              
                         DISPLAYSURF.blit(disInfoTxt, (64,  nb2dis))
-                #for nbrMenu2Dis in range (0, 6):
-                #        disInfoTxt = fontSelL.render(infoTxt[nbrMenu2Dis], True, iniPi.BLACK)
-                #        nb2dis= posMenu +spaceMenu * nbrMenu2Dis                
-                #        DISPLAYSURF.blit(disInfoTxt, (64,  nb2dis))         
+          
                 icOd = pygame.transform.rotate(icO,0)
                 icXd = pygame.transform.rotate(icX,0)
                 icRectd = pygame.transform.rotate(icRect,0)
