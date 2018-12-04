@@ -146,7 +146,8 @@ while True:
                                 pygame.quit()
         		#if posCur == 170:
         			#pygame.quit()    
-                                exit()   
+                                exit()  
+                #after selection reset cursor 
                 posCur = 20
         if (not GPIO.input(22)):
                 # rect
@@ -169,7 +170,7 @@ while True:
         if (not GPIO.input(4)):
                 #VOL LOW
                 #clkDown+=1
-                if posCur < 320: #(50 + 30*(len(infoTxt))):
+                if posCur < 60*(len(menuTxt))-40:
                         posCur+=60
                 
         if (not GPIO.input(17)):
