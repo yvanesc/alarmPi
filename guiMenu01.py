@@ -147,6 +147,7 @@ while True:
         		#if posCur == 170:
         			#pygame.quit()    
                                 exit()   
+                posCur = 20
         if (not GPIO.input(22)):
                 # rect
                 #clkRect+=1
