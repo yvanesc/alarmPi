@@ -45,7 +45,7 @@ pygame.mouse.set_visible(False)
 
 clock = pygame.time.Clock()
 menuTxt = sqlPi.reqMainMenu("menu","Main")  
-print(menuTxt[1])
+
 while True:
         os.system('clear')        
         time2Display = datetime.datetime.now().strftime("%H:%M")
