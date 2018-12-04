@@ -125,21 +125,17 @@ while True:
                 #clkX+=1
                 if dayNight == 0 and reverse == 0:
                         if posCur == 20:
-                                #os.execl('/home/pi/alarmPi/runProd.sh', '')
-                                #print(menuTxt[0])
                                 str2search = (', '.join(menuTxt[0]))
                                 menuTxt = sqlPi.reqMainMenu("menu",str2search)  
                         if posCur == 80:
-                                os.execl('/home/pi/alarmPi/runStage.sh', '')
+                                str2search = (', '.join(menuTxt[1]))
+                                menuTxt = sqlPi.reqMainMenu("menu",str2search) 
                         if posCur == 140:
-                                #os.execl('/home/pi/alarmPi/runTest.sh', '')
-                                file = open('/home/pi/testfile.txt', 'r') 
-                                for line in file: 
-                                        print (line)
+                                str2search = (', '.join(menuTxt[2]))
+                                menuTxt = sqlPi.reqMainMenu("menu",str2search) 
                         if posCur == 200:
-        			#os.execl('/home/pi/alarmPi/runTest.sh', '')
-                        #if posCur == 110:
-                                os.execl('/home/pi/alarmPi/runDev.sh', '')
+                                str2search = (', '.join(menuTxt[3]))
+                                menuTxt = sqlPi.reqMainMenu("menu",str2search)                                 
                         if posCur == 260:
                                 g = git.Git('/home/pi/alarmPi')
                                 g.pull('origin','master')
