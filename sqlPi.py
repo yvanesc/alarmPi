@@ -22,4 +22,4 @@ def reqMainMenu(top):
         all_rows = c.fetchall()
         
         conn.close()
-        return(all_rows[0][0])
+        return(all_rows)
