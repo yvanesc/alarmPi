@@ -120,7 +120,7 @@ while True:
         DISPLAYSURF.blit(icXd, (icXPosX*4, icXPosY*2))
         DISPLAYSURF.blit(icRectd, (icRectPosX*4, icRectPosY*2))
         DISPLAYSURF.blit(icTrid, (icTriPosX*4, icTriPosY*2))
-        DISPLAYSURF.blit(icBell, (scrW/2)+marge, icRectPosY*2))
+        DISPLAYSURF.blit(icBell, ((scrW/2)+marge, icRectPosY*2))
                 
         pygame.display.update()
         clock.tick(60)  # Limit the frame rate to 60 FPS.
