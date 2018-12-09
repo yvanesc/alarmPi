@@ -61,6 +61,7 @@ while True:
                 icTri=pygame.image.load(ic32PathS+ "loop-circular" +ic32PathE)
                 icUp=pygame.image.load(ic32PathS+ "caret-top" +ic32PathE)
                 icDown=pygame.image.load(ic32PathS+ "caret-bottom" +ic32PathE)                
+                icBell=pygame.image.load(ic32PathS+ "bell" +ic32PathE)                
                 displayTime = fontSelL.render(time2Display, True, iniPi.BLACK)
                 displayDate = fontSelL.render(date2Display, True, iniPi.BLACK)
         else:
@@ -71,6 +72,7 @@ while True:
                 icTri=pygame.image.load(ic32PathR+ "loop-circular" +ic32PathE)
                 icUp=pygame.image.load(ic32PathR+ "caret-top" +ic32PathE)
                 icDown=pygame.image.load(ic32PathR+ "caret-bottom" +ic32PathE)
+                icBell=pygame.image.load(ic32PathR+ "bell" +ic32PathE)
                 displayTime = fontSelL.render(time2Display, True, iniPi.WHITE)
                 displayDate = fontSelL.render(date2Display, True, iniPi.GREY)
         if dayNight == 0 and reverse == 0:
@@ -98,6 +100,7 @@ while True:
                 DISPLAYSURF.blit(icDown, ((icDownPosX*2)-marge, icDownPosY*2))
                 DISPLAYSURF.blit(icUp, ((icUpPosX*2)-marge, icUpPosY*2))
                 DISPLAYSURF.blit(displayTimed, ((scrW/2)+marge, icOPosY*2))
+                #DISPLAYSURF.blit(displayTimed, ((scrW/2)+marge, icRectPosY*2))
                 DISPLAYSURF.blit(displayTimed, ((scrW/2)+marge*2, icRectPosY*2))
                 DISPLAYSURF.blit(displayDated, ((scrW/2)+marge, icTriPosY*2))
                 angleRot = 0
@@ -117,6 +120,7 @@ while True:
         DISPLAYSURF.blit(icXd, (icXPosX*4, icXPosY*2))
         DISPLAYSURF.blit(icRectd, (icRectPosX*4, icRectPosY*2))
         DISPLAYSURF.blit(icTrid, (icTriPosX*4, icTriPosY*2))
+        DISPLAYSURF.blit(icBell, (scrW/2)+marge, icRectPosY*2))
                 
         pygame.display.update()
         clock.tick(60)  # Limit the frame rate to 60 FPS.
