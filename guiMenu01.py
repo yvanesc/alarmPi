@@ -115,7 +115,7 @@ while True:
                 displayDated = pygame.transform.rotate(displayDate,angleRot)   
                 DISPLAYSURF.blit(displayTimed, ((scrW/4)+marge, icOPosY*2))
                 DISPLAYSURF.blit(displayTimed, ((scrW/2)+(marge*6), 120))
-                DISPLAYSURF.blit(displayDated, ((scrW/2)+marge, icTriPosY*2))        
+                DISPLAYSURF.blit(displayDated, ((scrW/2)+marge, icRectPosY*2))        
 
         DISPLAYSURF.blit(icOd, (icOPosX*4, icOPosY*2))
         DISPLAYSURF.blit(icXd, (icXPosX*4, icXPosY*2))
