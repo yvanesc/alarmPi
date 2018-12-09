@@ -67,7 +67,7 @@ while True:
         else:
                 DISPLAYSURF.fill(iniPi.BLACK)
                 icO=pygame.image.load(ic32PathR+ "power-standby" +ic32PathE)
-                icX=pygame.image.load(ic32PathR+ "check" +ic32PathE)
+                icX=pygame.image.load(ic32PathR+ "bell" +ic32PathE)
                 icRect=pygame.image.load(ic32PathR+ "sun" +ic32PathE)
                 icTri=pygame.image.load(ic32PathR+ "loop-circular" +ic32PathE)
                 icUp=pygame.image.load(ic32PathR+ "caret-top" +ic32PathE)
