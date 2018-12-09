@@ -24,7 +24,7 @@ assert not repo.bare
 os.putenv('SDL_FBDEV', '/dev/fb1')
 
 pygame.init()
-
+pygame.display.set_caption('test caption')
 # 2 put in iniPi
 
 DISPLAYSURF = pygame.display.set_mode((scrW, scrH))
