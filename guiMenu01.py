@@ -108,7 +108,7 @@ while True:
                 if angleRot < 90:
                         angleRot=angleRot+5
                 icOd = pygame.transform.rotate(icO,90)   
-                icXd = pygame.transform.rotate(icX,90)   
+                icXd = pygame.transform.rotate(icBell,90)   
                 icRectd = pygame.transform.rotate(icRect,90)   
                 icTrid = pygame.transform.rotate(icTri,90)   
                 icBell = pygame.transform.rotate(icBell,90)   
