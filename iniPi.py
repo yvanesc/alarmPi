@@ -3,7 +3,7 @@
 #Pygame
 
 #Title window
-versionTitle = "AlramPi Ver. 0.1"
+versionTitle = "AlarmPi Ver. 0.1"
 
 # set up the colors
 BLACK = (  0,   0,   0)
