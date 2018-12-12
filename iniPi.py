@@ -25,6 +25,9 @@ font_sizeXXl = 45
 font_sizeB = 90
 font_sizeA = 70
 
+#alarm
+alarm2Display="06:00"
+
 #move
 angleRot = 0
 

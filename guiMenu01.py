@@ -63,6 +63,7 @@ while True:
                 icDown=pygame.image.load(ic32PathS+ "caret-bottom" +ic32PathE)                
                 icBell=pygame.image.load(ic32PathS+ "bell" +ic32PathE)                
                 displayTime = fontSelL.render(time2Display, True, iniPi.BLACK)
+                displayAlar = fontSelL.render(alarm2Display, True, iniPi.BLACK)
                 displayDate = fontSelL.render(date2Display, True, iniPi.BLACK)
         else:
                 DISPLAYSURF.fill(iniPi.BLACK)
@@ -74,6 +75,7 @@ while True:
                 icDown=pygame.image.load(ic32PathR+ "caret-bottom" +ic32PathE)
                 icBell=pygame.image.load(ic32PathR+ "bell" +ic32PathE)
                 displayTime = fontSelL.render(time2Display, True, iniPi.WHITE)
+                displayAlar = fontSelL.render(alarm2Display, True, iniPi.WHITE)
                 displayDate = fontSelL.render(date2Display, True, iniPi.GREY)
         if dayNight == 0 and reverse == 0:
                 pygame.draw.rect(DISPLAYSURF, iniPi.RED, (64,posCur,(scrW/2)-64,60), 6)
@@ -96,12 +98,12 @@ while True:
                 icRectd = pygame.transform.rotate(icRect,0)
                 icTrid = pygame.transform.rotate(icTri,0)
                 displayTimed = pygame.transform.rotate(displayTime,0)
+                displayAlarm = pygame.transform.rotate(displayAlar,0)
                 displayDated = pygame.transform.rotate(displayDate,0)
                 DISPLAYSURF.blit(icDown, ((icDownPosX*2)-marge, icDownPosY*2))
                 DISPLAYSURF.blit(icUp, ((icUpPosX*2)-marge, icUpPosY*2))
                 DISPLAYSURF.blit(displayTimed, ((scrW/2)+marge, icOPosY*2))
-                #DISPLAYSURF.blit(displayTimed, ((scrW/2)+marge, icRectPosY*2))
-                DISPLAYSURF.blit(displayTimed, ((scrW/2)+(marge*6), 120))
+                DISPLAYSURF.blit(displayAlarm, ((scrW/2)+(marge*6), 120))
                 DISPLAYSURF.blit(displayDated, ((scrW/2)+marge, icTriPosY*2))
                 angleRot = 0
         else:
@@ -112,10 +114,11 @@ while True:
                 icRectd = pygame.transform.rotate(icRect,90)   
                 icTrid = pygame.transform.rotate(icTri,90)   
                 icBell = pygame.transform.rotate(icBell,90)   
-                displayTimed = pygame.transform.rotate(displayTime,angleRot)   
+                displayTimed = pygame.transform.rotate(displayTime,angleRot) 
+                displayAlarm = pygame.transform.rotate(displayTime,angleRot)   
                 displayDated = pygame.transform.rotate(displayDate,angleRot)   
                 DISPLAYSURF.blit(displayTimed, (scrW/4, 80))#icOPosY*2))
-                DISPLAYSURF.blit(displayTimed, ((scrW/2)-marge, 180))
+                DISPLAYSURF.blit(displayAlarm, ((scrW/2)-marge, 180))
                 DISPLAYSURF.blit(displayDated, ((scrW/2)+(marge*8), 100))        
 
         DISPLAYSURF.blit(icOd, (icOPosX*4, icOPosY*2))
@@ -129,39 +132,37 @@ while True:
 
         if (not GPIO.input(5)):
                 # X
-                #clkX+=1
                 if dayNight == 0 and reverse == 0:
-                        if posCur == 20:
+                        if posCur == scrH/24:
                                 str2search = (', '.join(menuTxt[0]))
                                 menuTxt = sqlPi.reqMainMenu("menu",str2search)  
-                        if posCur == 80:
+                        if posCur == scrH/24 + scrH/8:
                                 str2search = (', '.join(menuTxt[1]))
                                 menuTxt = sqlPi.reqMainMenu("menu",str2search) 
-                        if posCur == 140:
+                        if posCur == scrH/24 + (scrH/8)*2:
                                 str2search = (', '.join(menuTxt[2]))
                                 menuTxt = sqlPi.reqMainMenu("menu",str2search) 
-                        if posCur == 200:
+                        if posCur == scrH/24 + (scrH/8)*3:
                                 str2search = (', '.join(menuTxt[3]))
                                 menuTxt = sqlPi.reqMainMenu("menu",str2search)                                 
-                        if posCur == 260:
+                        if posCur == scrH/24 + (scrH/8)*4:
                                 g = git.Git('/home/pi/alarmPi')
-                                g.pull('origin','master')
-                        
+                                g.pull('origin','master')                        
                                 # restart python soft to update change
                                 os.execl('/home/pi/alarmPi/runGui.sh', '')
-                        if posCur == 320:
-                                pygame.quit()
-        		#if posCur == 170:
-        			#pygame.quit()    
+                        if posCur == scrH/24 + (scrH/8)*5:
+                                pygame.quit()        		
                                 exit()  
-                        if posCur == 380:
+                        if posCur == scrH/24 + (scrH/8)*6:
                                 str2search = (', '.join(menuTxt[6]))
                                 menuTxt = sqlPi.reqMainMenu("menu",str2search)
+                else:
+                        #alarm
+
                 #after selection reset cursor 
-                posCur = 20
+                posCur = scrH/24
         if (not GPIO.input(22)):
-                # rect
-                #clkRect+=1
+                # rect                
                 if dayNight == 0:
                         dayNight = 1
                 else:
@@ -173,28 +174,22 @@ while True:
                 else:
                         reverse = 0 
         if (not GPIO.input(23)):
-                # pygame
                 # O
                 O.quit()
                 sys.exit()            
         if (not GPIO.input(4)):
                 #VOL LOW
-                #clkDown+=1
-                if posCur < 60*(len(menuTxt))-40:
-                        posCur+=60
-                
+                if posCur < scrH/8*(len(menuTxt))-40:
+                        posCur+=scrH/8                
         if (not GPIO.input(17)):
                 #VOL HIGH
                 #clkUp
-                if posCur > 20:
-                        posCur-=60                
+                if posCur > scrH/24:
+                        posCur-=scrH/8                
                 
         for event in pygame.event.get():
                 if event.type == QUIT:
                         pygame.quit()
                         sys.exit()    
-        #print(posCur)
-        #timerMenu = timerMenu - 0.1
-        #if (timerMenu < 0):
-        #        pygame.quit()
+
         time.sleep(0.1)
