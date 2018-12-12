@@ -194,6 +194,7 @@ while True:
         if (not GPIO.input(4)):
                 #VOL LOW
                 if posCur < scrH/8*(len(menuTxt))-40:
+                        print (scrH/8*(len(menuTxt))-40)
                         posCur+=scrH/8                
                 else:
                         posCur = (scrH/8)*2
@@ -205,7 +206,7 @@ while True:
                         posCur-=scrH/8                
                 if posCur == (scrH/8)*2:
                         posCur = scrH/24
-                        
+
         for event in pygame.event.get():
                 if event.type == QUIT:
                         pygame.quit()
