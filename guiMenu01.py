@@ -197,13 +197,15 @@ while True:
                         posCur+=scrH/8                
                 else:
                         posCur = (scrH/8)*2
+                if posCur == (scrH/8)*2:
+                        posCur = (scrH/8)*2
         if (not GPIO.input(17)):
                 #VOL HIGH
-                #clkUp
                 if posCur > scrH/24:
                         posCur-=scrH/8                
-                #else:
-                        #posCur = (scrH/8)*2
+                if posCur == (scrH/8)*2:
+                        posCur = scrH/24 + (scrH/8)*6
+                        
         for event in pygame.event.get():
                 if event.type == QUIT:
                         pygame.quit()
