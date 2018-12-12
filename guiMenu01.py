@@ -61,7 +61,10 @@ while True:
                 icTri=pygame.image.load(ic32PathS+ "loop-circular" +ic32PathE)
                 icUp=pygame.image.load(ic32PathS+ "caret-top" +ic32PathE)
                 icDown=pygame.image.load(ic32PathS+ "caret-bottom" +ic32PathE)                
-                icBell=pygame.image.load(ic32PathS+ "bell" +ic32PathE)                
+                if flAlarm == 0:
+                        icBell=pygame.image.load(ic32PathS+ "bell" +ic32PathE)                
+                else:
+                        icBell=pygame.image.load(ic32PathS+ "nobell" +ic32PathE)                
                 displayTime = fontSelL.render(time2Display, True, iniPi.BLACK)
                 displayAlar = fontSelL.render(alarm2Display, True, iniPi.BLACK)
                 displayDate = fontSelL.render(date2Display, True, iniPi.BLACK)
@@ -73,7 +76,10 @@ while True:
                 icTri=pygame.image.load(ic32PathR+ "loop-circular" +ic32PathE)
                 icUp=pygame.image.load(ic32PathR+ "caret-top" +ic32PathE)
                 icDown=pygame.image.load(ic32PathR+ "caret-bottom" +ic32PathE)
-                icBell=pygame.image.load(ic32PathR+ "bell" +ic32PathE)
+                if flAlarm == 0:
+                        icBell=pygame.image.load(ic32PathR+ "bell" +ic32PathE)
+                else:
+                        icBell=pygame.image.load(ic32PathR+ "nobell" +ic32PathE)
                 displayTime = fontSelL.render(time2Display, True, iniPi.WHITE)
                 displayAlar = fontSelL.render(alarm2Display, True, iniPi.WHITE)
                 displayDate = fontSelL.render(date2Display, True, iniPi.GREY)
@@ -158,6 +164,12 @@ while True:
                                 menuTxt = sqlPi.reqMainMenu("menu",str2search)
                 else:
                         #alarm
+                        if flAlarm == 0:
+                                icBell=pygame.image.load(ic32PathS+ "nobell" +ic32PathE)
+                                flAlarm = 1
+                        else: 
+                                icBell=pygame.image.load(ic32PathS+ "bell" +ic32PathE)
+                                flAlarm = 0
 
                 #after selection reset cursor 
                 posCur = scrH/24
