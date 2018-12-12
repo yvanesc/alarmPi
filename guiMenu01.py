@@ -84,7 +84,11 @@ while True:
                 displayAlar = fontSelL.render(alarm2Display, True, iniPi.WHITE)
                 displayDate = fontSelL.render(date2Display, True, iniPi.GREY)
         if dayNight == 0 and reverse == 0:
-                pygame.draw.rect(DISPLAYSURF, iniPi.RED, (64,posCur,(scrW/2)-64,60), 6)
+                if posCur == (scrH/8)*2:
+                        pygame.draw.rect(DISPLAYSURF, iniPi.RED, (64,posCur,scrW-64,scrH/24), 6)
+                else:
+                        pygame.draw.rect(DISPLAYSURF, iniPi.RED, (64,posCur,(scrW/2)-64,scrH/24), 6)
+
                 
         
         
@@ -162,6 +166,8 @@ while True:
                         if posCur == scrH/24 + (scrH/8)*6:
                                 str2search = (', '.join(menuTxt[6]))
                                 menuTxt = sqlPi.reqMainMenu("menu",str2search)
+                        #if posCur == (scrH/8)*2:
+                                #setup alarm
                 else:
                         #alarm
                         if flAlarm == 0:
@@ -198,7 +204,8 @@ while True:
                 #clkUp
                 if posCur > scrH/24:
                         posCur-=scrH/8                
-                
+                #else:
+                        #posCur = (scrH/8)*2
         for event in pygame.event.get():
                 if event.type == QUIT:
                         pygame.quit()
