@@ -204,7 +204,7 @@ while True:
                 if posCur > scrH/24:
                         posCur-=scrH/8                
                 if posCur == (scrH/8)*2:
-                        posCur = scrH/24 + (scrH/8)*6
+                        posCur = scrH/8
                         
         for event in pygame.event.get():
                 if event.type == QUIT:
