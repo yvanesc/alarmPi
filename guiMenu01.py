@@ -85,13 +85,9 @@ while True:
                 displayDate = fontSelL.render(date2Display, True, iniPi.GREY)
         if dayNight == 0 and reverse == 0:
                 if posCur == (scrH/8)*2:
-                        pygame.draw.rect(DISPLAYSURF, iniPi.RED, (64,posCur,scrW-64,scrH/24), 6)
+                        pygame.draw.rect(DISPLAYSURF, iniPi.RED, (64,posCur,(scrW/2)-64,60), 6)
                 else:
-                        pygame.draw.rect(DISPLAYSURF, iniPi.RED, (64,posCur,(scrW/2)-64,scrH/24), 6)
-
-                
-        
-        
+                        pygame.draw.rect(DISPLAYSURF, iniPi.RED, (64,posCur,(scrW/2)-64,60), 6)
         
         #screen        
         if reverse == 0:
