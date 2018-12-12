@@ -195,6 +195,8 @@ while True:
                 #VOL LOW
                 if posCur < scrH/8*(len(menuTxt))-40:
                         posCur+=scrH/8                
+                else:
+                        posCur = (scrH/8)*2
         if (not GPIO.input(17)):
                 #VOL HIGH
                 #clkUp
