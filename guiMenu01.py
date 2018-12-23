@@ -205,9 +205,9 @@ while True:
                 #VOL HIGH
                 if posCur > scrH/24 and posCur!= (scrH/8)*2:
                         posCur-=scrH/8  
-                if posCur == (scrH/8)*2:
+                elif posCur == (scrH/8)*2:
                         posCur = scrH/24
-                if posCur == scrH/24:
+                elif posCur == scrH/24:
                         posCur = (scrH/8)*2
 
         for event in pygame.event.get():
