@@ -166,8 +166,10 @@ while True:
                                 #str2search = "Alarm"
                                 str2search = (', '.join("Alarm"))
                                 menuTxt = sqlPi.reqMainMenu("menu",str2search)
-                                
-                        menuTyp = sqlPi.reqMainMenu("type",str2search)                          
+                                print (str2search)
+                                print (menuTxt)
+                        menuTyp = sqlPi.reqMainMenu("type",str2search) 
+                        print(menuTyp)                         
                         typ2search = (', '.join(menuTyp[0]))                          
                         if typ2search == "Action":
                                 print ("Action")
