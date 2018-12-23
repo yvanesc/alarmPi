@@ -83,7 +83,7 @@ while True:
                 displayTime = fontSelL.render(time2Display, True, iniPi.WHITE)
                 displayAlar = fontSelL.render(alarm2Display, True, iniPi.WHITE)
                 displayDate = fontSelL.render(date2Display, True, iniPi.GREY)
-        if dayNight == 0 and reverse == 0:
+        if dayNight == 0 and reverse == 0 and typeAct == 0:
                 if posCur == (scrH/8)*2:
                         pygame.draw.rect(DISPLAYSURF, iniPi.RED, (scrW/2,posCur,(scrW/2)-64,60), 6)
                 else:
@@ -168,6 +168,13 @@ while True:
                                 menuTyp = sqlPi.reqMainMenu("type",str2search)
                                 print(menuTxt)
                                 print(menuTyp)
+                                if menuTyp == "Action":
+                                        print ("Action")
+                                        typeAct = 1
+                                else:
+                                        typeAct = 0
+                                        #remove red square
+                                        #side button to +1 hour/min
                 else:
                         #alarm
                         if flAlarm == 0:
@@ -197,20 +204,31 @@ while True:
                 sys.exit()            
         if (not GPIO.input(4)):
                 #VOL LOW
-                if posCur < scrH/8*(len(menuTxt))-40 and posCur!= (scrH/8)*2:
-                        posCur+=scrH/8 
-                elif posCur == (scrH/8)*2:
-                        posCur = scrH/24
+                #displayAlar = displayAlar - 1
+                #fct cursor
+                if typeAct == 0:
+                        if posCur < scrH/8*(len(menuTxt))-40 and posCur!= (scrH/8)*2:
+                                posCur+=scrH/8 
+                        elif posCur == (scrH/8)*2:
+                                posCur = scrH/24
+                        else:
+                                posCur = (scrH/8)*2
+                        if posCur == (scrH/8)*2:
+                                posCur = (scrH/8)*2
                 else:
-                        posCur = (scrH/8)*2
-                if posCur == (scrH/8)*2:
-                        posCur = (scrH/8)*2
+                        if menuTxt == "hour"
+                                print(int(alarm2Display[:2]))
+                                tmpHr = int(alarm2Display[:2])
+                                tmpHr = tmpHr - 1
+                                print (tmpHr)
+                                alarm2Display = str(tmpHr) + alarm2Display[3:]
+
         if (not GPIO.input(17)):
                 #VOL HIGH
+                #displayAlar = displayAlar + 1
                 if posCur > scrH/24 and posCur!= (scrH/8)*2:
                         posCur-=scrH/8  
-                elif posCur == (scrH/8)*2:
-                        #posCur = scrH/24
+                elif posCur == (scrH/8)*2:                        
                         posCur = scrH/8*(len(menuTxt))-40
                 elif posCur == scrH/24:
                         posCur = (scrH/8)*2

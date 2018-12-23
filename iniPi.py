@@ -41,6 +41,9 @@ posCur = 20
 #button state
 dayNight = 0
 reverse = 0
+#type menu/Action
+typeAct = 0
+
 # frame
 marge = 8
 # position Y for button
