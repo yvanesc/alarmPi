@@ -170,7 +170,7 @@ while True:
                         print (menuTyp)
                         typ2search = (', '.join(menuTyp[0]))  
                         print(typ2search)                            
-                        if menuTyp == "Action":
+                        if typ2search == "Action":
                                 print ("Action")
                                 typeAct = 1
                         else:
