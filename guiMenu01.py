@@ -17,7 +17,7 @@ scrH = pygame.display.Info().current_h
 from pygame.locals import *
 from iniPi import * 
 from git import Repo
-from datetime import timeDelta
+#from datetime import timeDelta
 
 repo = Repo("/home/pi/alarmPi")
 assert not repo.bare
@@ -227,6 +227,7 @@ while True:
                                 #print(int(alarm2Display[:2]))
                                 #tmpHr = int(alarm2Display[:2])
                                 #tmpHr = tmpHr - 1
+                                alarm2Display = datetime.datetime.strftime(alarm2Display,"%H:%M")
                                 print (alarm2Display)
                                 alarm2Display = alarm2Display - timeDelta(hours=1, minutes=0)
                                 
