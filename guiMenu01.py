@@ -228,6 +228,7 @@ while True:
                                 tmpHr = tmpHr - 1
                                 print (tmpHr)
                                 alarm2Display = str(tmpHr) + alarm2Display[3:]
+                                print(alarm2Display)
 
         if (not GPIO.input(17)):
                 #VOL HIGH
