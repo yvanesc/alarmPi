@@ -166,10 +166,8 @@ while True:
                                 str2search = "Alarm"
                                 menuTxt = sqlPi.reqMainMenu("menu",str2search)
                                 
-                        menuTyp = sqlPi.reqMainMenu("type",str2search)  
-                        print (menuTyp)
-                        typ2search = (', '.join(menuTyp[0]))  
-                        print(typ2search)                            
+                        menuTyp = sqlPi.reqMainMenu("type",str2search)                          
+                        typ2search = (', '.join(menuTyp[0]))                          
                         if typ2search == "Action":
                                 print ("Action")
                                 typeAct = 1
@@ -217,8 +215,8 @@ while True:
                                 posCur = (scrH/8)*2
                         if posCur == (scrH/8)*2:
                                 posCur = (scrH/8)*2
-                else:
-                        if menuTxt == "hour":
+                else:                        
+                        if menuTxt == "Hour":
                                 print(int(alarm2Display[:2]))
                                 tmpHr = int(alarm2Display[:2])
                                 tmpHr = tmpHr - 1
