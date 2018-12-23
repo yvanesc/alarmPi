@@ -165,7 +165,9 @@ while True:
                         if posCur == (scrH/8)*2:
                                 str2search = "Alarm"
                                 menuTxt = sqlPi.reqMainMenu("menu",str2search)
+                                menuTyp = sqlPi.reqMainMenu("type",str2search)
                                 print(menuTxt)
+                                print(menuTyp)
                 else:
                         #alarm
                         if flAlarm == 0:
