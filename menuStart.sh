@@ -3,7 +3,7 @@ echo "select the operation ************  1)operation 1 2)operation 2 3)operation
 
 read n
 case $n in
-    1) commands for opn 1;;
+    1) echo "opn 1";;
     2) commands for opn 2;;
     3) commands for opn 3;;
     4) commands for  opn 4;;
