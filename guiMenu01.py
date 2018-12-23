@@ -228,7 +228,7 @@ while True:
                                 tmpHr = tmpHr - 1
                                 print (tmpHr)
                                 alarm2Display = str(tmpHr) +":" +alarm2Display[3:]
-                                alarm2Display = datetime.datetime.strptime(alarm2Display,'%H:%M')
+                                alarm2Display = datetime.datetime.strptime(alarm2Display,'%H:%M %p')
                                 print(alarm2Display)
 
         if (not GPIO.input(17)):
