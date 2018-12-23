@@ -163,8 +163,8 @@ while True:
                                 str2search = (', '.join(menuTxt[6]))
                                 menuTxt = sqlPi.reqMainMenu("menu",str2search)
                         if posCur == (scrH/8)*2:
-                                str2search = "Setup"
-                                menuTxt = sqlPi.reqMainMenu("Alarm",str2search)
+                                str2search = "Alarm"
+                                menuTxt = sqlPi.reqMainMenu("menu",str2search)
                                 print(menuTxt)
                 else:
                         #alarm
