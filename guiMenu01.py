@@ -206,7 +206,8 @@ while True:
                 if posCur > scrH/24 and posCur!= (scrH/8)*2:
                         posCur-=scrH/8  
                 elif posCur == (scrH/8)*2:
-                        posCur = scrH/24
+                        #posCur = scrH/24
+                        posCur = scrH/8*(len(menuTxt))-40
                 elif posCur == scrH/24:
                         posCur = (scrH/8)*2
 
