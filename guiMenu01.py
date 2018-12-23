@@ -215,7 +215,8 @@ while True:
                                 posCur = (scrH/8)*2
                         if posCur == (scrH/8)*2:
                                 posCur = (scrH/8)*2
-                else:                        
+                else:          
+                        print(menuTxt)
                         if menuTxt == "Hour":
                                 print(int(alarm2Display[:2]))
                                 tmpHr = int(alarm2Display[:2])
