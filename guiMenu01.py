@@ -163,7 +163,8 @@ while True:
                                 str2search = (', '.join(menuTxt[6]))
                                 menuTxt = sqlPi.reqMainMenu("menu",str2search)
                         if posCur == (scrH/8)*2:
-                                str2search = "Alarm"
+                                #str2search = "Alarm"
+                                str2search = (', '.join("Alarm"))
                                 menuTxt = sqlPi.reqMainMenu("menu",str2search)
                                 
                         menuTyp = sqlPi.reqMainMenu("type",str2search)                          
