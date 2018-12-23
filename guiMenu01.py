@@ -162,8 +162,9 @@ while True:
                         if posCur == scrH/24 + (scrH/8)*6:
                                 str2search = (', '.join(menuTxt[6]))
                                 menuTxt = sqlPi.reqMainMenu("menu",str2search)
-                        #if posCur == (scrH/8)*2:
-                                #setup alarm
+                        if posCur == (scrH/8)*2:
+                                menuTxt = sqlPi.reqMainMenu("Alarm",str2search)
+                                print(menuTxt)
                 else:
                         #alarm
                         if flAlarm == 0:
