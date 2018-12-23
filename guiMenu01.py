@@ -193,10 +193,12 @@ while True:
                 sys.exit()            
         if (not GPIO.input(4)):
                 #VOL LOW
-                if posCur < scrH/8*(len(menuTxt))-40:
+                if posCur < scrH/8*(len(menuTxt))-40 and posCur!= (scrH/8)*2:
                         print (scrH/8*(len(menuTxt))-40)
                         print ((scrH/8)*2)
-                        posCur+=scrH/8                
+                        posCur+=scrH/8 
+                elif posCur == (scrH/8)*2:
+                        posCur = scrH/24
                 else:
                         posCur = (scrH/8)*2
                 if posCur == (scrH/8)*2:
