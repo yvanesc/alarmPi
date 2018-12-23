@@ -165,16 +165,15 @@ while True:
                         if posCur == (scrH/8)*2:
                                 str2search = "Alarm"
                                 menuTxt = sqlPi.reqMainMenu("menu",str2search)
-                                menuTyp = sqlPi.reqMainMenu("type",str2search)
-                                print(menuTxt)
-                                print(menuTyp)
-                                if menuTyp == "Action":
-                                        print ("Action")
-                                        typeAct = 1
-                                else:
-                                        typeAct = 0
-                                        #remove red square
-                                        #side button to +1 hour/min
+                                
+                        menuTyp = sqlPi.reqMainMenu("type",str2search)                                
+                        if menuTyp == "Action":
+                                print ("Action")
+                                typeAct = 1
+                        else:
+                                typeAct = 0
+                                #remove red square
+                                #side button to +1 hour/min
                 else:
                         #alarm
                         if flAlarm == 0:
