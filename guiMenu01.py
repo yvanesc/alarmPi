@@ -17,6 +17,7 @@ scrH = pygame.display.Info().current_h
 from pygame.locals import *
 from iniPi import * 
 from git import Repo
+from datetime import timeDelta
 
 repo = Repo("/home/pi/alarmPi")
 assert not repo.bare
@@ -223,12 +224,14 @@ while True:
                         menu2Dis = (', '.join(menuTxt[0])) 
                         print(menu2Dis)
                         if menu2Dis == "Hour":
-                                print(int(alarm2Display[:2]))
-                                tmpHr = int(alarm2Display[:2])
-                                tmpHr = tmpHr - 1
-                                print (tmpHr)
-                                alarm2Display = str(tmpHr) +":" +alarm2Display[3:]
-                                alarm2Display = datetime.datetime.strptime(alarm2Display,'%H:%M %p')
+                                #print(int(alarm2Display[:2]))
+                                #tmpHr = int(alarm2Display[:2])
+                                #tmpHr = tmpHr - 1
+                                print (alarm2Display)
+                                alarm2Display = alarm2Display - timeDelta(hours=1, minutes=0)
+                                
+                                #alarm2Display = str(tmpHr) +":" +alarm2Display[3:]
+                                #alarm2Display = datetime.datetime.strptime(alarm2Display,'%H:%M %p')
                                 print(alarm2Display)
 
         if (not GPIO.input(17)):
