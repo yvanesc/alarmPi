@@ -28,6 +28,7 @@ font_sizeA = 70
 #alarm
 #alarm2Display="06:00"
 flAlarm = 0
+alarmOn = 0
 alHour = 6
 alMin = 0
 alMon = 1
