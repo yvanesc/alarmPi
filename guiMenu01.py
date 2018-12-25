@@ -121,7 +121,7 @@ while True:
                 DISPLAYSURF.blit(icUp, ((icUpPosX*2)-marge, icUpPosY*2))
                 DISPLAYSURF.blit(displayTimed, ((scrW/2)+marge, icOPosY*2))
                 DISPLAYSURF.blit(displayAlarm, ((scrW/2)+(marge*6), 120))
-                DISPLAYSURF.blit(displayDay, ((scrW/2)+marge, 320))
+                DISPLAYSURF.blit(displayDay, ((scrW/2)+marge, 310))
                 DISPLAYSURF.blit(displayDated, ((scrW/2)+marge, 370))
                 angleRot = 0
         else:
