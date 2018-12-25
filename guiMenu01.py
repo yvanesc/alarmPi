@@ -176,7 +176,7 @@ while True:
                                 print(str2search)
                                 print(top2search)
                                 #menuTop = sqlPi.reqMainTop("top",top2search)
-                                print(menuTop)
+                                #print(menuTop)
                         if posCur == scrH/24 + (scrH/8)*3:
                                 str2search = (', '.join(menuTxt[3]))
                                 menuTxt = sqlPi.reqMainMenu("menu",str2search) 
