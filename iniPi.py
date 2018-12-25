@@ -26,8 +26,17 @@ font_sizeB = 90
 font_sizeA = 70
 
 #alarm
-alarm2Display="06:00"
+#alarm2Display="06:00"
 flAlarm = 0
+alHour = 6
+alMin = 0
+alMon = 1
+alTue = 1
+alWed = 1
+alThu = 1
+alFri = 1
+alSat = 0
+alSun = 0
 
 #move
 angleRot = 0
