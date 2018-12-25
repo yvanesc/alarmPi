@@ -52,7 +52,7 @@ while True:
         time2Display = datetime.datetime.now().strftime("%H:%M")
         hour2Display = int(datetime.datetime.now().strftime("%H"))        
         date2Display = datetime.datetime.now().strftime("%d.%m.%y")      
-        alarm2Display = alHour + ':' + alMin
+        alarm2Display = str(alHour) + ":" + str(alMin)
         print(alarm2Display)
 
         if dayNight == 0:                
