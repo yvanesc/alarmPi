@@ -7,6 +7,6 @@ def actFormatTime(hr, min):
 	elif alHour < 10:
     	alarm2Display = "0" + str(alHour) + ":" + str(alMin)
     else:
-        alarm2Display = str(alHour) + ":" + str(alMin)   
+    	alarm2Display = str(alHour) + ":" + str(alMin)   
 
-    return(alarm2Display)
+	return(alarm2Display)
