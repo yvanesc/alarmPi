@@ -52,7 +52,8 @@ while True:
         time2Display = datetime.datetime.now().strftime("%H:%M")
         hour2Display = int(datetime.datetime.now().strftime("%H"))        
         date2Display = datetime.datetime.now().strftime("%d.%m.%y")
-        disDay = datetime.datetime.today().weekday()
+        disDay = datetime.datetime.today().strftime('%A')
+        print(disDay)
         if alMin < 10 and alHour < 10:
                 alarm2Display = "0" + str(alHour) + ":" + "0" + str(alMin)        
         elif alMin < 10:
