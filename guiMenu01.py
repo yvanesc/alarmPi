@@ -60,8 +60,9 @@ while True:
         alarm2Display = actionPi.actFormatTime(alHour,alMin) 
         if alHour == hour2Display and alMin == min2Display and alarmOn == 0:
                 alarmOn = 1
-                print("ring")
                 soundPi.playMusic()
+        if alarmOn == 1 and alarmOff == 1:
+                soundPi.stopMusic()
         if dayNight == 0:                
                 DISPLAYSURF.fill(iniPi.WHITE)
                 icO=pygame.image.load(ic32PathS+ "power-standby" +ic32PathE)
@@ -149,6 +150,9 @@ while True:
 
         if (not GPIO.input(5)):
                 # X
+                if alarmOn == 1:
+                        alarmOff = 1
+
                 if dayNight == 0 and reverse == 0:
                         if posCur == scrH/24:
                                 str2search = (', '.join(menuTxt[0]))

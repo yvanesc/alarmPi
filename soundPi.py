@@ -7,3 +7,5 @@ def playMusic():
 	pygame.mixer.music.load(file)
 	pygame.mixer.music.play()
 	pygame.event.wait()
+def stopMusic():
+	pygame.mixer.music.stop()
