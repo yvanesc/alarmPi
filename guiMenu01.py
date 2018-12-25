@@ -163,20 +163,22 @@ while True:
                                 str2search = (', '.join(menuTxt[0]))
                                 menuTxt = sqlPi.reqMainMenu("menu",str2search)  
                                 print("->" + menuTxt)
-                                menuTop = sqlPi.reqMainTop("top",menuTxt)  
+                                menuTop = sqlPi.reqMainTop("top",str2search)  
                         if posCur == scrH/24 + scrH/8:
                                 str2search = (', '.join(menuTxt[1]))
                                 menuTxt = sqlPi.reqMainMenu("menu",str2search) 
-                                menuTop = sqlPi.reqMainTop("top",menuTxt)
+                                menuTop = sqlPi.reqMainTop("top",str2search)
                         if posCur == scrH/24 + (scrH/8)*2:
                                 str2search = (', '.join(menuTxt[2]))
                                 menuTxt = sqlPi.reqMainMenu("menu",str2search) 
-                                print(menuTxt)
-                                menuTop = sqlPi.reqMainTop("top",menuTxt)
+                                print(menuTxt[0])
+                                print(str2search)
+                                menuTop = sqlPi.reqMainTop("top",str2search)
+                                print(menuTop)
                         if posCur == scrH/24 + (scrH/8)*3:
                                 str2search = (', '.join(menuTxt[3]))
                                 menuTxt = sqlPi.reqMainMenu("menu",str2search) 
-                                menuTop = sqlPi.reqMainTop("top",menuTxt)                                
+                                menuTop = sqlPi.reqMainTop("top",str2search)                                
                         if posCur == scrH/24 + (scrH/8)*4:
                                 g = git.Git('/home/pi/alarmPi')
                                 g.pull('origin','master')                        
