@@ -167,12 +167,15 @@ while True:
                         if posCur == scrH/24 + scrH/8:
                                 str2search = (', '.join(menuTxt[1]))
                                 menuTxt = sqlPi.reqMainMenu("menu",str2search) 
+                                menuTop = sqlPi.reqMainTop("top",menuTxt)
                         if posCur == scrH/24 + (scrH/8)*2:
                                 str2search = (', '.join(menuTxt[2]))
                                 menuTxt = sqlPi.reqMainMenu("menu",str2search) 
+                                menuTop = sqlPi.reqMainTop("top",menuTxt)
                         if posCur == scrH/24 + (scrH/8)*3:
                                 str2search = (', '.join(menuTxt[3]))
-                                menuTxt = sqlPi.reqMainMenu("menu",str2search)                                 
+                                menuTxt = sqlPi.reqMainMenu("menu",str2search) 
+                                menuTop = sqlPi.reqMainTop("top",menuTxt)                                
                         if posCur == scrH/24 + (scrH/8)*4:
                                 g = git.Git('/home/pi/alarmPi')
                                 g.pull('origin','master')                        
@@ -184,12 +187,15 @@ while True:
                         if posCur == scrH/24 + (scrH/8)*6:
                                 str2search = (', '.join(menuTxt[6]))
                                 menuTxt = sqlPi.reqMainMenu("menu",str2search)
+                                menuTop = sqlPi.reqMainTop("top",menuTxt)
                         if posCur == (scrH/8)*2:
                                 str2search = "Alarm"
                                 #str2search = (', '.join("Alarm"))
                                 menuTxt = sqlPi.reqMainMenu("menu",str2search)
+                                menuTop = sqlPi.reqMainTop("top",menuTxt)
                                 print (str2search)
                                 print (menuTxt)
+                        #menuTop = sqlPi.reqMainTop("top",menuTxt)
                         menuTyp = sqlPi.reqMainMenu("type",str2search) 
                         print(menuTyp)                         
                         typ2search = (', '.join(menuTyp[0]))                          
