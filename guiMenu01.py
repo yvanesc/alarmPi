@@ -11,6 +11,7 @@ import datetime
 import subprocess
 import pygame.display
 import actionPi
+import soundPi
 
 pygame.display.init()
 scrW = pygame.display.Info().current_w
@@ -60,6 +61,7 @@ while True:
         if alHour == hour2Display and alMin == min2Display and alarmOn == 0:
                 alarmOn = 1
                 print("ring")
+                soundPi.playMusic()
         if dayNight == 0:                
                 DISPLAYSURF.fill(iniPi.WHITE)
                 icO=pygame.image.load(ic32PathS+ "power-standby" +ic32PathE)
