@@ -105,9 +105,9 @@ while True:
                 nbrMenu2Dis=0
                 for row in menuTxt:
                         row = (', '.join(row))
-                        #str2search = (', '.join(menuTxt[0]))
-                        print(menuTxt[0])
-                        if Action == 1 and menuTop == "Day" and len(menuTxt[0]) < 4:
+                        str2search = (', '.join(menuTxt[0]))
+                        print(str2search)
+                        if typeAct == 1 and menuTop == "Day" and len(str2search) < 4:
                                 disInfoTxt = fontSel.render(str(row), True, iniPi.GREY)
                         else:
                                 disInfoTxt = fontSel.render(str(row), True, iniPi.BLACK)
