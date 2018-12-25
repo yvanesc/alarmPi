@@ -191,9 +191,9 @@ while True:
                         if posCur == (scrH/8)*2:
                                 str2search = "Alarm"
                                 #str2search = (', '.join("Alarm"))
-                                str2search = (', '.join(menuTxt[7]))
+
                                 menuTxt = sqlPi.reqMainMenu("menu",str2search)
-                                menuTop = sqlPi.reqMainTop("top",menuTxt)
+                                
                                 print (str2search)
                                 print (menuTxt)
                         #menuTop = sqlPi.reqMainTop("top",menuTxt)
