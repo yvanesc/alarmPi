@@ -51,8 +51,15 @@ while True:
         os.system('clear')        
         time2Display = datetime.datetime.now().strftime("%H:%M")
         hour2Display = int(datetime.datetime.now().strftime("%H"))        
-        date2Display = datetime.datetime.now().strftime("%d.%m.%y")      
-        alarm2Display = str(alHour) + ":" + str(alMin)
+        date2Display = datetime.datetime.now().strftime("%d.%m.%y")
+        if alHour < 10:
+                alarm2Display = "0" + str(alHour) + ":" + str(alMin)
+        elif alMin < 10:
+                alarm2Display = str(alHour) + ":" + "0" + str(alMin)
+        elif alMin < 10 and alHour < 10:
+                alarm2Display = "0" + str(alHour) + ":" + "0" + str(alMin)
+        else:
+                alarm2Display = str(alHour) + ":" + str(alMin)
         print(alarm2Display)
 
         if dayNight == 0:                
