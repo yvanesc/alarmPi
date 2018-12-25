@@ -10,6 +10,8 @@ import git
 import datetime
 import subprocess
 import pygame.display
+import actionPi
+
 pygame.display.init()
 scrW = pygame.display.Info().current_w
 scrH = pygame.display.Info().current_h
@@ -54,16 +56,16 @@ while True:
         min2Display = int(datetime.datetime.now().strftime("%M"))        
         date2Display = datetime.datetime.now().strftime("%d.%m.%y")
         disDay = datetime.datetime.today().strftime('%A')
-        print(hour2Display)
-
-        if alMin < 10 and alHour < 10:
-                alarm2Display = "0" + str(alHour) + ":" + "0" + str(alMin)        
-        elif alMin < 10:
-                alarm2Display = str(alHour) + ":" + "0" + str(alMin)
-        elif alHour < 10:
-                alarm2Display = "0" + str(alHour) + ":" + str(alMin)
-        else:
-                alarm2Display = str(alHour) + ":" + str(alMin)        
+        alarm2Display = actionPi.actFormatTime(alHour,alMin)
+        print(alarm2Display)
+        #if alMin < 10 and alHour < 10:
+                #alarm2Display = "0" + str(alHour) + ":" + "0" + str(alMin)        
+        #elif alMin < 10:
+                #alarm2Display = str(alHour) + ":" + "0" + str(alMin)
+        #elif alHour < 10:
+                #alarm2Display = "0" + str(alHour) + ":" + str(alMin)
+        #else:
+                #alarm2Display = str(alHour) + ":" + str(alMin)        
 
         if dayNight == 0:                
                 DISPLAYSURF.fill(iniPi.WHITE)
