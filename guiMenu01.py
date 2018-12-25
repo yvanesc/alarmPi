@@ -52,6 +52,7 @@ while True:
         time2Display = datetime.datetime.now().strftime("%H:%M")
         hour2Display = int(datetime.datetime.now().strftime("%H"))        
         date2Display = datetime.datetime.now().strftime("%d.%m.%y")
+        disDay = datetime.datetime.today().weekday()
         if alMin < 10 and alHour < 10:
                 alarm2Display = "0" + str(alHour) + ":" + "0" + str(alMin)        
         elif alMin < 10:
@@ -75,6 +76,7 @@ while True:
                         icBell=pygame.image.load(ic32PathS+ "nobell" +ic32PathE)                
                 displayTime = fontSelL.render(time2Display, True, iniPi.BLACK)
                 displayAlar = fontSelL.render(alarm2Display, True, iniPi.BLACK)
+                displayDay = fontSelL.render(disDay, True, iniPi.BLACK)
                 displayDate = fontSelL.render(date2Display, True, iniPi.BLACK)
         else:
                 DISPLAYSURF.fill(iniPi.BLACK)
@@ -118,6 +120,7 @@ while True:
                 DISPLAYSURF.blit(icUp, ((icUpPosX*2)-marge, icUpPosY*2))
                 DISPLAYSURF.blit(displayTimed, ((scrW/2)+marge, icOPosY*2))
                 DISPLAYSURF.blit(displayAlarm, ((scrW/2)+(marge*6), 120))
+                DISPLAYSURF.blit(displayDay, ((scrW/2)+marge, 160))
                 DISPLAYSURF.blit(displayDated, ((scrW/2)+marge, icTriPosY*2))
                 angleRot = 0
         else:
