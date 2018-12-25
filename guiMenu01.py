@@ -105,7 +105,12 @@ while True:
                 nbrMenu2Dis=0
                 for row in menuTxt:
                         row = (', '.join(row))
-                        disInfoTxt = fontSel.render(str(row), True, iniPi.BLACK)
+                        #str2search = (', '.join(menuTxt[0]))
+                        print(menuTxt[0])
+                        if Action == 1 and menuTop == "Day" and len(menuTxt[0]) < 4:
+                                disInfoTxt = fontSel.render(str(row), True, iniPi.GREY)
+                        else:
+                                disInfoTxt = fontSel.render(str(row), True, iniPi.BLACK)
                         nb2dis= posMenu +spaceMenu * nbrMenu2Dis  
                         nbrMenu2Dis = nbrMenu2Dis + 1              
                         DISPLAYSURF.blit(disInfoTxt, (64,  nb2dis))
@@ -157,6 +162,8 @@ while True:
                         if posCur == scrH/24:
                                 str2search = (', '.join(menuTxt[0]))
                                 menuTxt = sqlPi.reqMainMenu("menu",str2search)  
+                                print(menuTxt)
+                                menuTop = sqlPi.reqMainTop("top",menuTxt)  
                         if posCur == scrH/24 + scrH/8:
                                 str2search = (', '.join(menuTxt[1]))
                                 menuTxt = sqlPi.reqMainMenu("menu",str2search) 

@@ -23,3 +23,14 @@ def reqMainMenu(col, searchW):
         
         conn.close()
         return(all_rows)
+
+def reqMainTop(col, searchW):
+        conn = sqlite3.connect('/home/pi/alarmPi/mainMenu.db')
+        c = conn.cursor()
+        #table_name='menu'
+        c.execute( "SELECT "+ col +" FROM top WHERE top LIKE '" +searchW + "'" .\
+                format(name=col, menu=col))
+        all_rows = c.fetchall()
+        
+        conn.close()
+        return(all_rows)
