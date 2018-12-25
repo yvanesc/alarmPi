@@ -52,15 +52,14 @@ while True:
         time2Display = datetime.datetime.now().strftime("%H:%M")
         hour2Display = int(datetime.datetime.now().strftime("%H"))        
         date2Display = datetime.datetime.now().strftime("%d.%m.%y")
-        if alHour < 10:
-                alarm2Display = "0" + str(alHour) + ":" + str(alMin)
+        if alMin < 10 and alHour < 10:
+                alarm2Display = "0" + str(alHour) + ":" + "0" + str(alMin)        
         elif alMin < 10:
                 alarm2Display = str(alHour) + ":" + "0" + str(alMin)
-        elif alMin < 10 and alHour < 10:
-                alarm2Display = "0" + str(alHour) + ":" + "0" + str(alMin)
+        elif alHour < 10:
+                alarm2Display = "0" + str(alHour) + ":" + str(alMin)
         else:
-                alarm2Display = str(alHour) + ":" + str(alMin)
-        print(alarm2Display)
+                alarm2Display = str(alHour) + ":" + str(alMin)        
 
         if dayNight == 0:                
                 DISPLAYSURF.fill(iniPi.WHITE)
@@ -235,13 +234,13 @@ while True:
                                 #print(int(alarm2Display[:2]))
                                 #tmpHr = int(alarm2Display[:2])
                                 #tmpHr = tmpHr - 1
-                                alarm2Display = datetime.datetime.strftime(alarm2Display,"%H:%M")
-                                print (alarm2Display)
-                                alarm2Display = alarm2Display - timeDelta(hours=1, minutes=0)
-                                
+                                #alarm2Display = datetime.datetime.strftime(alarm2Display,"%H:%M")
+                                #print (alarm2Display)
+                                #alarm2Display = alarm2Display - timeDelta(hours=1, minutes=0)
+                                alHour = alHour - 1
                                 #alarm2Display = str(tmpHr) +":" +alarm2Display[3:]
                                 #alarm2Display = datetime.datetime.strptime(alarm2Display,'%H:%M %p')
-                                print(alarm2Display)
+                                print(alHour)
 
         if (not GPIO.input(17)):
                 #VOL HIGH
