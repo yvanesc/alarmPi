@@ -56,16 +56,7 @@ while True:
         min2Display = int(datetime.datetime.now().strftime("%M"))        
         date2Display = datetime.datetime.now().strftime("%d.%m.%y")
         disDay = datetime.datetime.today().strftime('%A')
-        alarm2Display = actionPi.actFormatTime(alHour,alMin)
-        print(alarm2Display)
-        #if alMin < 10 and alHour < 10:
-                #alarm2Display = "0" + str(alHour) + ":" + "0" + str(alMin)        
-        #elif alMin < 10:
-                #alarm2Display = str(alHour) + ":" + "0" + str(alMin)
-        #elif alHour < 10:
-                #alarm2Display = "0" + str(alHour) + ":" + str(alMin)
-        #else:
-                #alarm2Display = str(alHour) + ":" + str(alMin)        
+        alarm2Display = actionPi.actFormatTime(alHour,alMin) 
 
         if dayNight == 0:                
                 DISPLAYSURF.fill(iniPi.WHITE)
@@ -239,16 +230,7 @@ while True:
                         menu2Dis = (', '.join(menuTxt[0])) 
                         print(menu2Dis)
                         if menu2Dis == "Hour":
-                                #print(int(alarm2Display[:2]))
-                                #tmpHr = int(alarm2Display[:2])
-                                #tmpHr = tmpHr - 1
-                                #alarm2Display = datetime.datetime.strftime(alarm2Display,"%H:%M")
-                                #print (alarm2Display)
-                                #alarm2Display = alarm2Display - timeDelta(hours=1, minutes=0)
-                                alHour = alHour - 1
-                                #alarm2Display = str(tmpHr) +":" +alarm2Display[3:]
-                                #alarm2Display = datetime.datetime.strptime(alarm2Display,'%H:%M %p')
-                                print(alHour)
+                                alHour = alHour - 1                              
 
         if (not GPIO.input(17)):
                 #VOL HIGH
