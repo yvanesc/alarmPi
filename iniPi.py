@@ -42,7 +42,7 @@ alSun = 0
 
 #timer
 timerSc = 10
-global timerStart = 0
+timerStart = 0
 
 #move
 angleRot = 0

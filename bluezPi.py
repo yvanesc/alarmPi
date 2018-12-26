@@ -6,15 +6,15 @@ from iniPi import *
 from time import gmtime, strftime
 #import time
 #timerStart = 0
-
+flgTimer = 0
 bluezDeviceFnd =[]
 
 def search(timeStart): 
 
 	#starttime=int(strftime("%S", gmtime()))
-	if timerStart == 0:
+	if flgTimer == 0:
 		starttime = timeStart
-		timerStart = 1
+		flgTimer = 1
 
 	loopSc = True
 	while loopSc == True:
