@@ -13,6 +13,7 @@ import pygame.display
 import actionPi
 import soundPi
 import displayPi
+import bluezPi
 
 pygame.display.init()
 scrW = pygame.display.Info().current_w
@@ -66,7 +67,13 @@ while True:
                 soundPi.stopMusic()
         if dayNight == 0:  
                 DISPLAYSURF.fill(iniPi.WHITE)              
-                displayPi.dayDis()
+                #displayPi.dayDis()
+                icO=pygame.image.load(ic32PathS+ "power-standby" +ic32PathE)
+                icX=pygame.image.load(ic32PathS+ "check" +ic32PathE)
+                icRect=pygame.image.load(ic32PathS+ "moon" +ic32PathE)
+                icTri=pygame.image.load(ic32PathS+ "loop-circular" +ic32PathE)
+                icUp=pygame.image.load(ic32PathS+ "caret-top" +ic32PathE)
+                icDown=pygame.image.load(ic32PathS+ "caret-bottom" +ic32PathE)
                 if flAlarm == 0:
                         icBell=pygame.image.load(ic32PathS+ "bell" +ic32PathE)                
                 else:
@@ -105,6 +112,8 @@ while True:
                                 disInfoTxt = fontSel.render(str(row), True, iniPi.GREY)
                         else:
                                 disInfoTxt = fontSel.render(str(row), True, iniPi.BLACK)
+                        if typeAct == 1 and str2search == "Scan":
+                                bluezPi.search()
                         nb2dis= posMenu +spaceMenu * nbrMenu2Dis  
                         nbrMenu2Dis = nbrMenu2Dis + 1              
                         DISPLAYSURF.blit(disInfoTxt, (64,  nb2dis))
@@ -173,13 +182,19 @@ while True:
                                 menuTxt = sqlPi.reqMainMenu("menu",str2search) 
                                 menuTop = sqlPi.reqMainTop("top",str2search)                                
                         if posCur == scrH/24 + (scrH/8)*4:
-                                g = git.Git('/home/pi/alarmPi')
-                                g.pull('origin','master')                        
+                                #g = git.Git('/home/pi/alarmPi')
+                                #g.pull('origin','master')                        
                                 # restart python soft to update change
-                                os.execl('/home/pi/alarmPi/runGui.sh', '')
+                                #os.execl('/home/pi/alarmPi/runGui.sh', '')
+                                str2search = (', '.join(menuTxt[4]))
+                                menuTxt = sqlPi.reqMainMenu("menu",str2search)
+                                menuTop = sqlPi.reqMainTop("top",menuTxt)
                         if posCur == scrH/24 + (scrH/8)*5:
-                                pygame.quit()        		
-                                exit()  
+                                #pygame.quit()        		
+                                #exit()  
+                                str2search = (', '.join(menuTxt[5]))
+                                menuTxt = sqlPi.reqMainMenu("menu",str2search)
+                                menuTop = sqlPi.reqMainTop("top",menuTxt)
                         if posCur == scrH/24 + (scrH/8)*6:
                                 str2search = (', '.join(menuTxt[6]))
                                 menuTxt = sqlPi.reqMainMenu("menu",str2search)
