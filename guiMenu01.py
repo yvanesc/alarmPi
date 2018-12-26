@@ -109,7 +109,7 @@ while True:
                         #print(str2search)
                         #print ("-:"+menuTop)
                         #TODO
-                        if typeAct == 1 and menuTop == "Day" and len(str(row)) < 4:
+                        if typeAct == 1 and str2search == "Day" and len(str(row)) < 4:
                                 disInfoTxt = fontSel.render(str(row), True, iniPi.GREY)
                         else:
                                 disInfoTxt = fontSel.render(str(row), True, iniPi.BLACK)
@@ -175,7 +175,7 @@ while True:
                                 menuTxt = sqlPi.reqMainMenu("menu",str2search) 
                                 menuTop = (', '.join(menuTxt[0]))
                                 print(menuTxt[0])
-                                print(str2search)
+                                print("**"+str2search)
                                 print("-*"+menuTop)
                                 #menuTop = sqlPi.reqMainTop("top",top2search)
                                 #print(menuTop)
