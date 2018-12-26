@@ -5,11 +5,11 @@ import time
 bluezDeviceFnd =[]
 
 def search(): 
-	starttime=time.time()
+	starttime=time.time.strftime("%S", now())
 	loopSc = True
 	while loopSc == True:
 		print("Searching ...")
-		print((starttime) % 60.0)
+		print(starttime)
 		devices = bluetooth.discover_devices(duration=10, lookup_names=1, flush_cache=1)
 		for device_address, device_name in devices:
 			#print("Found: {}".format(device_name))
