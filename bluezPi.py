@@ -5,6 +5,7 @@ import iniPi
 from iniPi import * 
 from time import gmtime, strftime
 #import time
+timerStart = 0
 
 bluezDeviceFnd =[]
 
@@ -14,7 +15,7 @@ def search(timeStart):
 	if timerStart == 0:
 		starttime = timeStart
 		timerStart = 1
-		
+
 	loopSc = True
 	while loopSc == True:
 		print("Searching ...")
