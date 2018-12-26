@@ -109,6 +109,11 @@ while True:
                         #print(str2search)
                         #print ("-:"+menuTop)
                         #TODO
+                        print("---")
+                        print(typeAct)
+                        print(str2search)
+                        print(len(str(row)))
+                        print("---")
                         if typeAct == 1 and str2search == "Day" and len(str(row)) < 4:
                                 disInfoTxt = fontSel.render(str(row), True, iniPi.GREY)
                         else:
