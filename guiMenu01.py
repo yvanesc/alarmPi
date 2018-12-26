@@ -57,6 +57,7 @@ while True:
         time2Display = datetime.datetime.now().strftime("%H:%M")
         hour2Display = int(datetime.datetime.now().strftime("%H"))        
         min2Display = int(datetime.datetime.now().strftime("%M"))        
+        sec2Display = int(datetime.datetime.now().strftime("%S")) 
         date2Display = datetime.datetime.now().strftime("%d.%m.%y")
         disDay = datetime.datetime.today().strftime('%A')[:3]
         alarm2Display = actionPi.actFormatTime(alHour,alMin) 
@@ -113,7 +114,7 @@ while True:
                         else:
                                 disInfoTxt = fontSel.render(str(row), True, iniPi.BLACK)
                         if typeAct == 1 and str2search == "Scan":
-                                bluezPi.search()
+                                bluezPi.search(sec2Display)
                         nb2dis= posMenu +spaceMenu * nbrMenu2Dis  
                         nbrMenu2Dis = nbrMenu2Dis + 1              
                         DISPLAYSURF.blit(disInfoTxt, (64,  nb2dis))

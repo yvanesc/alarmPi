@@ -1,12 +1,17 @@
 import os
 import bluetooth
+import datetime
+import iniPi
+from iniPi import * 
 from time import gmtime, strftime
 #import time
 
 bluezDeviceFnd =[]
 
-def search(): 
-	starttime=int(strftime("%S", gmtime()))
+def search(starttime): 
+
+	#starttime=int(strftime("%S", gmtime()))
+		
 	loopSc = True
 	while loopSc == True:
 		print("Searching ...")
@@ -26,11 +31,11 @@ def search():
 		print(runTime)
 		if starttime > 49:
 			starttime = starttime-50
-			if (starttime - runTime) > 10:
+			if (starttime - runTime) > timerSc:
 				break
 
 		else:
-			if (runTime - starttime) > 10:
+			if (runTime - starttime) > timerSc:
 				break
 				#print(bluezDeviceFnd.index(device_name))
 			#if bluezDeviceFnd.index(device_name)
