@@ -13,9 +13,9 @@ def search():
 			if device_name in bluezDeviceFnd:
 				print("nothing")
 			#except IndexError:
-			else:
-				print(bluezDeviceFnd.index(device_name))
+			else:				
 				bluezDeviceFnd.append(device_name)
+				print(bluezDeviceFnd.index(device_name))
 			#if bluezDeviceFnd.index(device_name)
 			#print(device_name)
         #if(device_name.lower() == "chrisg"):
