@@ -166,21 +166,21 @@ while True:
                                 str2search = (', '.join(menuTxt[0]))
                                 menuTxt = sqlPi.reqMainMenu("menu",str2search)  
                                 #print("->" + menuTxt)
-                                menuTop = sqlPi.reqMainTop("top",str2search)  
+                                #menuTop = sqlPi.reqMainTop("top",str2search)  
                         if posCur == scrH/24 + scrH/8:
                                 str2search = (', '.join(menuTxt[1]))
                                 menuTxt = sqlPi.reqMainMenu("menu",str2search) 
-                                menuTop = sqlPi.reqMainTop("top",str2search)
+                                #menuTop = sqlPi.reqMainTop("top",str2search)
                         if posCur == scrH/24 + (scrH/8)*2:
                                 str2search = (', '.join(menuTxt[2]))
                                 menuTxt = sqlPi.reqMainMenu("menu",str2search) 
-                                menuTop = (', '.join(menuTxt[0]))
+                                #menuTop = (', '.join(menuTxt[0]))
                                 #menuTop = sqlPi.reqMainTop("top",top2search)
                                 #print(menuTop)
                         if posCur == scrH/24 + (scrH/8)*3:
                                 str2search = (', '.join(menuTxt[3]))
                                 menuTxt = sqlPi.reqMainMenu("menu",str2search) 
-                                menuTop = sqlPi.reqMainTop("top",str2search)                                
+                                #menuTop = sqlPi.reqMainTop("top",str2search)                                
                         if posCur == scrH/24 + (scrH/8)*4:
                                 #g = git.Git('/home/pi/alarmPi')
                                 #g.pull('origin','master')                        
@@ -188,17 +188,17 @@ while True:
                                 #os.execl('/home/pi/alarmPi/runGui.sh', '')
                                 str2search = (', '.join(menuTxt[4]))
                                 menuTxt = sqlPi.reqMainMenu("menu",str2search)
-                                menuTop = sqlPi.reqMainTop("top",menuTxt)
+                                #menuTop = sqlPi.reqMainTop("top",menuTxt)
                         if posCur == scrH/24 + (scrH/8)*5:
                                 #pygame.quit()        		
                                 #exit()  
                                 str2search = (', '.join(menuTxt[5]))
                                 menuTxt = sqlPi.reqMainMenu("menu",str2search)
-                                menuTop = sqlPi.reqMainTop("top",menuTxt)
+                                #menuTop = sqlPi.reqMainTop("top",menuTxt)
                         if posCur == scrH/24 + (scrH/8)*6:
                                 str2search = (', '.join(menuTxt[6]))
                                 menuTxt = sqlPi.reqMainMenu("menu",str2search)
-                                menuTop = sqlPi.reqMainTop("top",menuTxt)
+                                #menuTop = sqlPi.reqMainTop("top",menuTxt)
                         if posCur == (scrH/8)*2:
                                 str2search = "Alarm"
                                 #str2search = (', '.join("Alarm"))
