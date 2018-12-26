@@ -14,7 +14,7 @@ def search():
 			#print(bluezDeviceFnd.index(device_name))
 			except IndexError:
 				bluezDeviceFnd.append(device_name)
-
+				print(bluezDeviceFnd.index(device_name))
 			#if bluezDeviceFnd.index(device_name)
 			#print(device_name)
         #if(device_name.lower() == "chrisg"):
