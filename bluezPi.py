@@ -22,8 +22,16 @@ def search():
 				bluezDeviceFnd.append(device_name)
 				bluezDeviceFnd.append(device_address)
 				#print(device_address)
-		if ((time.time() - starttime)%60.0) > 10:
-			break
+		runTime=strftime("%S", gmtime())
+		print(runTime)
+		if starttime > 49:
+			starttime = starttime-50
+			if (starttime - runTime) > 10:
+				break
+
+		else:
+			if (runTime - starttime) > 10:
+				break
 				#print(bluezDeviceFnd.index(device_name))
 			#if bluezDeviceFnd.index(device_name)
 			#print(device_name)
