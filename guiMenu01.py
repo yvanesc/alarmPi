@@ -64,7 +64,8 @@ while True:
                 soundPi.playMusic()
         if alarmOn == 1 and alarmOff == 1:
                 soundPi.stopMusic()
-        if dayNight == 0:                
+        if dayNight == 0:  
+                DISPLAYSURF.fill(iniPi.WHITE)              
                 displayPi.dayDis()
                 if flAlarm == 0:
                         icBell=pygame.image.load(ic32PathS+ "bell" +ic32PathE)                
