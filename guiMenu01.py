@@ -107,8 +107,6 @@ while True:
                         row = (', '.join(row))
                         str2search = (', '.join(menuTxt[0]))
                         #print(str2search)
-                        print (len(str(row)))
-                        print (typeAct)
                         #print ("-:"+menuTop)
                         #TODO
                         if typeAct == 1 and menuTop == "Day" and len(str(row)) < 4:
