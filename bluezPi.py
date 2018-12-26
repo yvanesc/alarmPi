@@ -5,7 +5,7 @@ import time
 bluezDeviceFnd =[]
 
 def search(): 
-	starttime=time.time.strftime("%S", now())
+	starttime=time.time.strftime("%S", gmtime())
 	loopSc = True
 	while loopSc == True:
 		print("Searching ...")
