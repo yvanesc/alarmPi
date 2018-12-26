@@ -105,13 +105,15 @@ while True:
                 nbrMenu2Dis=0
                 for row in menuTxt:
                         row = (', '.join(row))
-                        str2search = (', '.join(menuTxt[0]))
+                        #str2search = (', '.join(menuTxt[0]))
+
                         #print(str2search)
                         #print ("-:"+menuTop)
                         #TODO
                         print("---")
                         print(typeAct)
                         print(str2search)
+                        print(str(row))
                         print(len(str(row)))
                         print("---")
                         if typeAct == 1 and str2search == "Day" and len(str(row)) < 4:
