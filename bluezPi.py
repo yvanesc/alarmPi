@@ -5,7 +5,7 @@ import iniPi
 from iniPi import * 
 from time import gmtime, strftime
 #import time
-timerStart = 0
+#timerStart = 0
 
 bluezDeviceFnd =[]
 
