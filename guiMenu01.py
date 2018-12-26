@@ -56,7 +56,7 @@ while True:
         hour2Display = int(datetime.datetime.now().strftime("%H"))        
         min2Display = int(datetime.datetime.now().strftime("%M"))        
         date2Display = datetime.datetime.now().strftime("%d.%m.%y")
-        disDay = datetime.datetime.today().strftime('%A')
+        disDay = datetime.datetime.today().strftime('%A')[:3]
         alarm2Display = actionPi.actFormatTime(alHour,alMin) 
         if alHour == hour2Display and alMin == min2Display and alarmOn == 0:
                 alarmOn = 1
@@ -110,6 +110,7 @@ while True:
                         print (len(str(row)))
                         print (typeAct)
                         #print ("-:"+menuTop)
+                        #TODO
                         if typeAct == 1 and menuTop == "Day" and len(str(row)) < 4:
                                 disInfoTxt = fontSel.render(str(row), True, iniPi.GREY)
                         else:
