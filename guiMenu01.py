@@ -30,7 +30,7 @@ os.putenv('SDL_FBDEV', '/dev/fb1')
 pygame.init()
 pygame.display.set_caption(versionTitle)
 # 2 put in iniPi
-
+str2search = "Main"
 DISPLAYSURF = pygame.display.set_mode((scrW, scrH))
 
 GPIO.setmode(GPIO.BCM)
