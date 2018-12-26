@@ -1,11 +1,12 @@
 import os
 import bluetooth
-import time
+from time import gmtime, strftime
+#import time
 
 bluezDeviceFnd =[]
 
 def search(): 
-	starttime=time.time.strftime("%S", gmtime())
+	starttime=strftime("%S", gmtime())
 	loopSc = True
 	while loopSc == True:
 		print("Searching ...")
