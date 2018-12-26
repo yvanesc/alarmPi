@@ -6,7 +6,7 @@ from time import gmtime, strftime
 bluezDeviceFnd =[]
 
 def search(): 
-	starttime=strftime("%S", gmtime())
+	starttime=int(strftime("%S", gmtime()))
 	loopSc = True
 	while loopSc == True:
 		print("Searching ...")
@@ -22,7 +22,7 @@ def search():
 				bluezDeviceFnd.append(device_name)
 				bluezDeviceFnd.append(device_address)
 				#print(device_address)
-		runTime=strftime("%S", gmtime())
+		runTime=int(strftime("%S", gmtime()))
 		print(runTime)
 		if starttime > 49:
 			starttime = starttime-50
