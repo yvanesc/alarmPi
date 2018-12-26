@@ -1,11 +1,15 @@
 import os
 import bluetooth
+import time
 
 bluezDeviceFnd =[]
 
 def search(): 
-	while 1:
+	starttime=time.time()
+	loopSc = True
+	while loopSc == True:
 		print("Searching ...")
+		print(starttime)
 		devices = bluetooth.discover_devices(duration=10, lookup_names=1, flush_cache=1)
 		for device_address, device_name in devices:
 			#print("Found: {}".format(device_name))
@@ -15,7 +19,10 @@ def search():
 			except ValueError:
 			#else:				
 				bluezDeviceFnd.append(device_name)
-				print(device_address)
+				bluezDeviceFnd.append(device_address)
+				#print(device_address)
+		if (time.time() - starttime) > 10:
+			break
 				#print(bluezDeviceFnd.index(device_name))
 			#if bluezDeviceFnd.index(device_name)
 			#print(device_name)
