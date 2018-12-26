@@ -15,6 +15,7 @@ def search():
 			except ValueError:
 			#else:				
 				bluezDeviceFnd.append(device_name)
+				print(device_address)
 				#print(bluezDeviceFnd.index(device_name))
 			#if bluezDeviceFnd.index(device_name)
 			#print(device_name)
