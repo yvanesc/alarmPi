@@ -12,6 +12,7 @@ import subprocess
 import pygame.display
 import actionPi
 import soundPi
+import diplayPi
 
 pygame.display.init()
 scrW = pygame.display.Info().current_w
@@ -64,13 +65,7 @@ while True:
         if alarmOn == 1 and alarmOff == 1:
                 soundPi.stopMusic()
         if dayNight == 0:                
-                DISPLAYSURF.fill(iniPi.WHITE)
-                icO=pygame.image.load(ic32PathS+ "power-standby" +ic32PathE)
-                icX=pygame.image.load(ic32PathS+ "check" +ic32PathE)
-                icRect=pygame.image.load(ic32PathS+ "moon" +ic32PathE)
-                icTri=pygame.image.load(ic32PathS+ "loop-circular" +ic32PathE)
-                icUp=pygame.image.load(ic32PathS+ "caret-top" +ic32PathE)
-                icDown=pygame.image.load(ic32PathS+ "caret-bottom" +ic32PathE)                
+                displayPi.dayDis()
                 if flAlarm == 0:
                         icBell=pygame.image.load(ic32PathS+ "bell" +ic32PathE)                
                 else:
@@ -105,18 +100,6 @@ while True:
                 nbrMenu2Dis=0
                 for row in menuTxt:
                         row = (', '.join(row))
-                        #str2search = (', '.join(menuTxt[0]))
-
-                        #print(str2search)
-                        #print ("-:"+menuTop)
-                        #TODO
-                        print("---")
-                        print(typeAct)
-                        if str2search != "":
-                                print(str2search)
-                        print(str(row))
-                        print(len(str(row)))
-                        print("---")
                         if typeAct == 1 and str2search == "Day" and len(str(row)) < 4:
                                 disInfoTxt = fontSel.render(str(row), True, iniPi.GREY)
                         else:
@@ -148,7 +131,7 @@ while True:
                 icTrid = pygame.transform.rotate(icTri,90)   
                 icBell = pygame.transform.rotate(icBell,90)   
                 displayTimed = pygame.transform.rotate(displayTime,angleRot) 
-                displayAlarm = pygame.transform.rotate(displayTime,angleRot)   
+                displayAlarm = pygame.transform.rotate(displayAlar,angleRot)   
                 displayDated = pygame.transform.rotate(displayDate,angleRot)   
                 DISPLAYSURF.blit(displayTimed, (scrW/4, 80))#icOPosY*2))
                 DISPLAYSURF.blit(displayAlarm, ((scrW/2)-marge, 180))
@@ -182,9 +165,6 @@ while True:
                                 str2search = (', '.join(menuTxt[2]))
                                 menuTxt = sqlPi.reqMainMenu("menu",str2search) 
                                 menuTop = (', '.join(menuTxt[0]))
-                                print(menuTxt[0])
-                                print("**"+str2search)
-                                print("-*"+menuTop)
                                 #menuTop = sqlPi.reqMainTop("top",top2search)
                                 #print(menuTop)
                         if posCur == scrH/24 + (scrH/8)*3:
@@ -209,14 +189,11 @@ while True:
 
                                 menuTxt = sqlPi.reqMainMenu("menu",str2search)
                                 
-                                print (str2search)
-                                print (menuTxt)
                         #menuTop = sqlPi.reqMainTop("top",menuTxt)
                         menuTyp = sqlPi.reqMainMenu("type",str2search) 
-                        print(menuTyp)                         
+                        #print(menuTyp)                         
                         typ2search = (', '.join(menuTyp[0]))                          
                         if typ2search == "Action":
-                                print ("Action")
                                 typeAct = 1
                         else:
                                 typeAct = 0
@@ -263,9 +240,7 @@ while True:
                         if posCur == (scrH/8)*2:
                                 posCur = (scrH/8)*2
                 else:          
-                        print(menuTxt)
                         menu2Dis = (', '.join(menuTxt[0])) 
-                        print(menu2Dis)
                         if menu2Dis == "Hour":
                                 alHour = alHour - 1                              
 
