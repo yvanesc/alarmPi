@@ -112,7 +112,8 @@ while True:
                         #TODO
                         print("---")
                         print(typeAct)
-                        print(str2search)
+                        if str2search != "":
+                                print(str2search)
                         print(str(row))
                         print(len(str(row)))
                         print("---")
