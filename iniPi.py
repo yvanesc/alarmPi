@@ -40,6 +40,9 @@ alFri = 1
 alSat = 0
 alSun = 0
 
+#timer
+timerSc = 10
+
 #move
 angleRot = 0
 
