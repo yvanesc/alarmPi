@@ -42,6 +42,7 @@ alSun = 0
 
 #timer
 timerSc = 10
+timerStart = 0
 
 #move
 angleRot = 0

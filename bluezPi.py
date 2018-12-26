@@ -8,9 +8,12 @@ from time import gmtime, strftime
 
 bluezDeviceFnd =[]
 
-def search(starttime): 
+def search(timeStart): 
 
 	#starttime=int(strftime("%S", gmtime()))
+	if timerStart == 0:
+		starttime = timeStart
+		timerStart = 1
 		
 	loopSc = True
 	while loopSc == True:
