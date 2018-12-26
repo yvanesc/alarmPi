@@ -12,7 +12,7 @@ import subprocess
 import pygame.display
 import actionPi
 import soundPi
-import diplayPi
+import displayPi
 
 pygame.display.init()
 scrW = pygame.display.Info().current_w
