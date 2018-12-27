@@ -32,7 +32,7 @@ def search(timeStart):
 				bluezDeviceFnd.append(device_address)
 				#print(device_address)
 		runTime=int(strftime("%S", gmtime()))
-		print(runTime)
+		print("run" + runTime)
 		if starttime > 49:
 			starttime = starttime-50
 			if (starttime - runTime) > timerSc:

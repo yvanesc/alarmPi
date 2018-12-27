@@ -51,7 +51,7 @@ pygame.mouse.set_visible(False)
 
 clock = pygame.time.Clock()
 menuTxt = sqlPi.reqMainMenu("menu","Main")  
-
+sec2Start = int(datetime.datetime.now().strftime("%S"))
 while True:
         os.system('clear')        
         time2Display = datetime.datetime.now().strftime("%H:%M")
@@ -110,11 +110,12 @@ while True:
                                 disInfoTxt = fontSel.render(str(row), True, iniPi.GREY)
                         else:
                                 disInfoTxt = fontSel.render(str(row), True, iniPi.BLACK)
-                        if typeAct == 1 and str2search == "Scan":
+                        if typeAct == 1 and str2search == "Scan" and startSc == 0:
+                                startSc = 1
                                 bluezPi.search(sec2Display)
                         nb2dis= posMenu +spaceMenu * nbrMenu2Dis  
                         nbrMenu2Dis = nbrMenu2Dis + 1              
-                        DISPLAYSURF.blit(disInfoTxt, (64,  nb2dis))
+                        DISPLAYSURF.blit(disInfoTxt, (64,  nb2dis))                
           
                 icOd = pygame.transform.rotate(icO,0)
                 icXd = pygame.transform.rotate(icX,0)
@@ -206,11 +207,13 @@ while True:
                         #menuTop = sqlPi.reqMainTop("top",menuTxt)
                         menuTyp = sqlPi.reqMainMenu("type",str2search) 
                         #print(menuTyp)                         
-                        typ2search = (', '.join(menuTyp[0]))                          
-                        if typ2search == "Action":
-                                typeAct = 1
-                        else:
-                                typeAct = 0
+                        typ2search = (', '.join(menuTyp[0]))  
+                        typeAct = actionPi.swType(typ2search)                        
+                        #if typ2search == "Action":
+                                #typeAct = 1
+                        #else:
+                                #typeAct = 0
+
                                 #remove red square
                                 #side button to +1 hour/min
                 else:
