@@ -10,7 +10,7 @@ flgTimer = 0
 bluezDeviceFnd =[]
 
 def search(timeStart): 
-
+	#timer TODO
 	#starttime=int(strftime("%S", gmtime()))
 	if flgTimer == 0:
 		starttime = timeStart

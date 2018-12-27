@@ -228,17 +228,19 @@ while True:
                 #after selection reset cursor 
                 posCur = scrH/24
         if (not GPIO.input(22)):
-                # rect                
-                if dayNight == 0:
-                        dayNight = 1
-                else:
-                        dayNight = 0
+                # rect     
+                dayNight = actionPi.flipBool(dayNight)          
+                #if dayNight == 0:
+                        #dayNight = 1
+                #else:
+                        #dayNight = 0
         if (not GPIO.input(24)):
                 # triangle
-                if reverse == 0:
-                        reverse = 1
-                else:
-                        reverse = 0 
+                reverse = actionPi.flipBool(reverse)
+                #if reverse == 0:
+                        #reverse = 1
+                #else:
+                        #reverse = 0 
         if (not GPIO.input(23)):
                 # O
                 O.quit()

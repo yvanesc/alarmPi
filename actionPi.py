@@ -10,3 +10,9 @@ def actFormatTime(hrTr, minTr):
 		alarm2Display = str(hrTr) + ":" + str(minTr)
 
 	return(alarm2Display)
+
+def flipBool(state):
+	if state == 0:
+		return(1)
+	else:
+		return(0)
