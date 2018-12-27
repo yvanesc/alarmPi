@@ -112,8 +112,7 @@ while True:
                                 disInfoTxt = fontSel.render(str(row), True, iniPi.BLACK)
                         if typeAct == 1 and str2search == "Scan" and startSc == 0:
                                 startSc = 1
-                                lstDeviceBlu = bluezPi.search(sec2Display)
-                                print(lstDeviceBlu[0])
+                                lstDeviceBlu = bluezPi.search(sec2Display)                                
                                 nbrMenu2Dis = nbrMenu2Dis - 1              
                                 disInfoTxt = fontSel.render(lstDeviceBlu[0], True, iniPi.BLACK)
                         nb2dis= posMenu +spaceMenu * nbrMenu2Dis  
@@ -154,9 +153,12 @@ while True:
         DISPLAYSURF.blit(icXd, (icXPosX*4, icXPosY*2))
         DISPLAYSURF.blit(icRectd, (icRectPosX*4, icRectPosY*2))
         DISPLAYSURF.blit(icTrid, (icTriPosX*4, icTriPosY*2))
-        if typeAct == 0:
+        if typeAct == 0 or reverse == 1:
                 DISPLAYSURF.blit(icBell, ((scrW/2)+marge, icRectPosY*2))
-                
+        else:
+                print(lstDeviceBlu[0])              
+                displayFindBlu = fontSelL.render(lstDeviceBlu[0], True, iniPi.BLACK)
+                DISPLAYSURF.blit(displayFindBlu, ((scrW/2)+(marge*6), 120))
         pygame.display.update()
         clock.tick(60)  # Limit the frame rate to 60 FPS.
 
