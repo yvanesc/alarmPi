@@ -113,6 +113,7 @@ while True:
                         if typeAct == 1 and str2search == "Scan" and startSc == 0:
                                 startSc = 1
                                 lstDeviceBlu = bluezPi.search(sec2Display)
+                                print(lstDeviceBlu[0])
                                 nbrMenu2Dis = nbrMenu2Dis - 1              
                                 disInfoTxt = fontSel.render(lstDeviceBlu[0], True, iniPi.BLACK)
                         nb2dis= posMenu +spaceMenu * nbrMenu2Dis  
