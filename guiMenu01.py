@@ -153,9 +153,10 @@ while True:
         DISPLAYSURF.blit(icXd, (icXPosX*4, icXPosY*2))
         DISPLAYSURF.blit(icRectd, (icRectPosX*4, icRectPosY*2))
         DISPLAYSURF.blit(icTrid, (icTriPosX*4, icTriPosY*2))
-        if typeAct == 0 or reverse == 1 or dayNight == 0:
+        print("->" + menuTxt)
+        if typeAct == 0 and (reverse == 1 or dayNight == 1):
                 DISPLAYSURF.blit(icBell, ((scrW/2)+marge, icRectPosY*2))
-        else:                    
+        elif typeAct == 1 and menuTxt == "Scan...":
                 displayFindBlu = fontSelL.render(lstDeviceBlu[0], True, iniPi.BLACK)
                 DISPLAYSURF.blit(displayFindBlu, ((scrW/2)+(marge*6), 120))
         pygame.display.update()
