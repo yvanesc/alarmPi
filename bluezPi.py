@@ -14,12 +14,15 @@ def search(timeStart):
 	#starttime=int(strftime("%S", gmtime()))
 	#if flgTimer == 0:
 	starttime = timeStart
+	runTime=int(strftime("%S", gmtime()))
+	print("run:")
+	print(runTime)
 	#	flgTimer = 1
-
+	print(starttime)
 	loopSc = True
 	while loopSc == True:
 		print("Searching ...")
-		print(starttime)
+		
 		devices = bluetooth.discover_devices(duration=10, lookup_names=1, flush_cache=1)
 		for device_address, device_name in devices:
 			#print("Found: {}".format(device_name))
@@ -31,9 +34,7 @@ def search(timeStart):
 				bluezDeviceFnd.append(device_name)
 				bluezDeviceFnd.append(device_address)
 				#print(device_address)
-		runTime=int(strftime("%S", gmtime()))
-		print("run:")
-		print(runTime)
+
 		if starttime > 49:
 			starttime = starttime-50
 			if (starttime - runTime) > timerSc:
