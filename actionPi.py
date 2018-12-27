@@ -16,3 +16,9 @@ def flipBool(state):
 		return(1)
 	else:
 		return(0)
+
+def alarmOn(fgAl):
+	if fgAl == 0:
+		return("bell")
+	else
+		return("nobell")

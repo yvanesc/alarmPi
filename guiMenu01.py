@@ -75,10 +75,12 @@ while True:
                 icTri=pygame.image.load(ic32PathS+ "loop-circular" +ic32PathE)
                 icUp=pygame.image.load(ic32PathS+ "caret-top" +ic32PathE)
                 icDown=pygame.image.load(ic32PathS+ "caret-bottom" +ic32PathE)
-                if flAlarm == 0:
-                        icBell=pygame.image.load(ic32PathS+ "bell" +ic32PathE)                
-                else:
-                        icBell=pygame.image.load(ic32PathS+ "nobell" +ic32PathE)                
+                stateBell = actionPi.alarmOn(flAlarm)
+                icBell=pygame.image.load(ic32PathS+ stateBell +ic32PathE)                
+                #if flAlarm == 0:
+                        #icBell=pygame.image.load(ic32PathS+ "bell" +ic32PathE)                
+                #else:
+                        #icBell=pygame.image.load(ic32PathS+ "nobell" +ic32PathE)                
                 displayTime = fontSelL.render(time2Display, True, iniPi.BLACK)
                 displayAlar = fontSelL.render(alarm2Display, True, iniPi.BLACK)
                 displayDay = fontSelL.render(disDay, True, iniPi.BLACK)
@@ -86,15 +88,18 @@ while True:
         else:
                 DISPLAYSURF.fill(iniPi.BLACK)
                 icO=pygame.image.load(ic32PathR+ "power-standby" +ic32PathE)
-                icX=pygame.image.load(ic32PathR+ "bell" +ic32PathE)
+                stateBell = actionPi.alarmOn(flAlarm)
+                icX=pygame.image.load(ic32PathR+ stateBell +ic32PathE)
                 icRect=pygame.image.load(ic32PathR+ "sun" +ic32PathE)
                 icTri=pygame.image.load(ic32PathR+ "loop-circular" +ic32PathE)
                 icUp=pygame.image.load(ic32PathR+ "caret-top" +ic32PathE)
                 icDown=pygame.image.load(ic32PathR+ "caret-bottom" +ic32PathE)
-                if flAlarm == 0:
-                        icBell=pygame.image.load(ic32PathR+ "bell" +ic32PathE)
-                else:
-                        icBell=pygame.image.load(ic32PathR+ "nobell" +ic32PathE)
+                stateBell = actionPi.alarmOn(flAlarm)
+                icBell=pygame.image.load(ic32PathR+ stateBell +ic32PathE)                
+                #if flAlarm == 0:
+                        #icBell=pygame.image.load(ic32PathR+ "bell" +ic32PathE)
+                #else:
+                        #icBell=pygame.image.load(ic32PathR+ "nobell" +ic32PathE)
                 displayTime = fontSelL.render(time2Display, True, iniPi.WHITE)
                 displayAlar = fontSelL.render(alarm2Display, True, iniPi.WHITE)
                 displayDate = fontSelL.render(date2Display, True, iniPi.GREY)
@@ -217,7 +222,7 @@ while True:
                                 #remove red square
                                 #side button to +1 hour/min
                 else:
-                        #alarm
+                        #alarm check if On
                         if flAlarm == 0:
                                 icBell=pygame.image.load(ic32PathS+ "nobell" +ic32PathE)
                                 flAlarm = 1
@@ -230,17 +235,11 @@ while True:
         if (not GPIO.input(22)):
                 # rect     
                 dayNight = actionPi.flipBool(dayNight)          
-                #if dayNight == 0:
-                        #dayNight = 1
-                #else:
-                        #dayNight = 0
+
         if (not GPIO.input(24)):
                 # triangle
                 reverse = actionPi.flipBool(reverse)
-                #if reverse == 0:
-                        #reverse = 1
-                #else:
-                        #reverse = 0 
+
         if (not GPIO.input(23)):
                 # O
                 O.quit()
