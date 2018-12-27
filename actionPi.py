@@ -22,3 +22,11 @@ def alarmOn(fgAl):
 		return("bell")
 	else:
 		return("nobell")
+
+def swType(typ):
+	if typ == "Action":
+		return(1)
+	elif typ =="DbleDisplay":
+		return(2)
+	else:
+		return(0)

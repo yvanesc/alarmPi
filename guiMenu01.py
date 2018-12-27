@@ -76,11 +76,7 @@ while True:
                 icUp=pygame.image.load(ic32PathS+ "caret-top" +ic32PathE)
                 icDown=pygame.image.load(ic32PathS+ "caret-bottom" +ic32PathE)
                 stateBell = actionPi.alarmOn(flAlarm)
-                icBell=pygame.image.load(ic32PathS+ stateBell +ic32PathE)                
-                #if flAlarm == 0:
-                        #icBell=pygame.image.load(ic32PathS+ "bell" +ic32PathE)                
-                #else:
-                        #icBell=pygame.image.load(ic32PathS+ "nobell" +ic32PathE)                
+                icBell=pygame.image.load(ic32PathS+ stateBell +ic32PathE)                                        
                 displayTime = fontSelL.render(time2Display, True, iniPi.BLACK)
                 displayAlar = fontSelL.render(alarm2Display, True, iniPi.BLACK)
                 displayDay = fontSelL.render(disDay, True, iniPi.BLACK)
@@ -96,10 +92,6 @@ while True:
                 icDown=pygame.image.load(ic32PathR+ "caret-bottom" +ic32PathE)
                 stateBell = actionPi.alarmOn(flAlarm)
                 icBell=pygame.image.load(ic32PathR+ stateBell +ic32PathE)                
-                #if flAlarm == 0:
-                        #icBell=pygame.image.load(ic32PathR+ "bell" +ic32PathE)
-                #else:
-                        #icBell=pygame.image.load(ic32PathR+ "nobell" +ic32PathE)
                 displayTime = fontSelL.render(time2Display, True, iniPi.WHITE)
                 displayAlar = fontSelL.render(alarm2Display, True, iniPi.WHITE)
                 displayDate = fontSelL.render(date2Display, True, iniPi.GREY)
