@@ -24,6 +24,7 @@ def search(timeStart):
 		print(starttime)
 		print("run:")
 		print(runTime)
+		print(timerSc)
 		devices = bluetooth.discover_devices(duration=10, lookup_names=1, flush_cache=1)
 		for device_address, device_name in devices:
 			#print("Found: {}".format(device_name))
