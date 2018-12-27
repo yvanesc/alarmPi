@@ -155,8 +155,7 @@ while True:
         DISPLAYSURF.blit(icTrid, (icTriPosX*4, icTriPosY*2))
         if typeAct == 0 or reverse == 1:
                 DISPLAYSURF.blit(icBell, ((scrW/2)+marge, icRectPosY*2))
-        else:
-                print(lstDeviceBlu[0])              
+        else:                    
                 displayFindBlu = fontSelL.render(lstDeviceBlu[0], True, iniPi.BLACK)
                 DISPLAYSURF.blit(displayFindBlu, ((scrW/2)+(marge*6), 120))
         pygame.display.update()

@@ -41,6 +41,8 @@ def search(timeStart):
 			starttime = starttime-50
 			if (starttime - runTime) > timerSc:
 				loopSc = False
+				if not bluezDeviceFnd:
+					bluezDeviceFnd.append("Nothing")
 				print(bluezDeviceFnd)
 				return(bluezDeviceFnd)
 				break				
