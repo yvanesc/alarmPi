@@ -114,7 +114,7 @@ while True:
                                 startSc = 1
                                 lstDeviceBlu = bluezPi.search(sec2Display)
                                 nbrMenu2Dis = nbrMenu2Dis + 1              
-                                disInfoTxt = fontSel.render(lstDeviceBlu[0], True, iniPi.BLACK)
+                                disInfoTxt = fontSel.render(lstDeviceBlu, True, iniPi.BLACK)
                         nb2dis= posMenu +spaceMenu * nbrMenu2Dis  
                         nbrMenu2Dis = nbrMenu2Dis + 1              
                         DISPLAYSURF.blit(disInfoTxt, (64,  nb2dis))                
