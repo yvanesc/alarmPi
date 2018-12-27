@@ -40,10 +40,12 @@ def search(timeStart):
 		if starttime > 49:
 			starttime = starttime-50
 			if (starttime - runTime) > timerSc:
+				print(bluezDeviceFnd)
 				return(bluezDeviceFnd)
 				break				
 		else:
 			if (runTime - starttime) > timerSc:
+				print(bluezDeviceFnd)
 				return(bluezDeviceFnd)
 				break
 				#print(bluezDeviceFnd.index(device_name))
