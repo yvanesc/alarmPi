@@ -129,10 +129,11 @@ while True:
                 displayDated = pygame.transform.rotate(displayDate,0)
                 DISPLAYSURF.blit(icDown, ((icDownPosX*2)-marge, icDownPosY*2))
                 DISPLAYSURF.blit(icUp, ((icUpPosX*2)-marge, icUpPosY*2))
-                DISPLAYSURF.blit(displayTimed, ((scrW/2)+marge, icOPosY*2))
-                DISPLAYSURF.blit(displayAlarm, ((scrW/2)+(marge*6), 120))
-                DISPLAYSURF.blit(displayDay, ((scrW/2)+marge, 310))
-                DISPLAYSURF.blit(displayDated, ((scrW/2)+marge, 370))
+                if typeAct == 0:
+                        DISPLAYSURF.blit(displayTimed, ((scrW/2)+marge, icOPosY*2))
+                        DISPLAYSURF.blit(displayAlarm, ((scrW/2)+(marge*6), 120))
+                        DISPLAYSURF.blit(displayDay, ((scrW/2)+marge, 310))
+                        DISPLAYSURF.blit(displayDated, ((scrW/2)+marge, 370))
                 angleRot = 0
         else:
                 if angleRot < 90:
@@ -206,19 +207,14 @@ while True:
                                 #str2search = (', '.join("Alarm"))
 
                                 menuTxt = sqlPi.reqMainMenu("menu",str2search)
-                                
+                                swType
                         #menuTop = sqlPi.reqMainTop("top",menuTxt)
                         menuTyp = sqlPi.reqMainMenu("type",str2search) 
                         #print(menuTyp)                         
                         typ2search = (', '.join(menuTyp[0]))  
                         typeAct = actionPi.swType(typ2search)                        
-                        #if typ2search == "Action":
-                                #typeAct = 1
-                        #else:
-                                #typeAct = 0
-
-                                #remove red square
-                                #side button to +1 hour/min
+                        #remove red square
+                        #side button to +1 hour/min
                 else:
                         #alarm check if On
                         if flAlarm == 0:
