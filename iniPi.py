@@ -111,3 +111,6 @@ ic32PathE="-4x.png"
 ic32PathR ="/home/pi/alarmPi/ic32rev/"
 #pygame
 #fontSel=pygame.font.SysFont(font, font_size)
+
+#scan 
+startSc = 0
