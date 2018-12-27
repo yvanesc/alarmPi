@@ -153,7 +153,7 @@ while True:
         DISPLAYSURF.blit(icXd, (icXPosX*4, icXPosY*2))
         DISPLAYSURF.blit(icRectd, (icRectPosX*4, icRectPosY*2))
         DISPLAYSURF.blit(icTrid, (icTriPosX*4, icTriPosY*2))
-        if typeAct == 0 or reverse == 1:
+        if typeAct == 0 or reverse == 1 or dayNight == 0:
                 DISPLAYSURF.blit(icBell, ((scrW/2)+marge, icRectPosY*2))
         else:                    
                 displayFindBlu = fontSelL.render(lstDeviceBlu[0], True, iniPi.BLACK)
