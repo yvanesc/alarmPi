@@ -114,3 +114,6 @@ ic32PathR ="/home/pi/alarmPi/ic32rev/"
 
 #scan 
 startSc = 0
+
+#list bluetooth
+lstDeviceBlu
