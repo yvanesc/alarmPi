@@ -209,7 +209,7 @@ while True:
                                 #str2search = (', '.join("Alarm"))
 
                                 menuTxt = sqlPi.reqMainMenu("menu",str2search)
-                                swType
+                                #swType
                         #menuTop = sqlPi.reqMainTop("top",menuTxt)
                         menuTyp = sqlPi.reqMainMenu("type",str2search) 
                         #print(menuTyp)                         
