@@ -33,7 +33,7 @@ pygame.init()
 pygame.display.set_caption(versionTitle)
 # 2 put in iniPi
 str2search = "Main"
-DISPLAYSURF = pygame.display.set_mode((scrW, scrH))
+DISPLAYSURF = pygame.display.set_mode((scrW, scrH), pygame.NOFRAME)
 
 GPIO.setmode(GPIO.BCM)
 GPIO.setup(4, GPIO.IN, pull_up_down=GPIO.PUD_UP)
