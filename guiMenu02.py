@@ -66,8 +66,8 @@ while True:
         pygame.draw.rect(DISPLAYSURF, GREY, (0,(scrH/2),(scrW/8),(scrH/4)), 6)
         pygame.draw.rect(DISPLAYSURF, RED, (0,(scrH/4)*3,(scrW/8),(scrH/4)), 6)
         #center
-        pygame.draw.rect(DISPLAYSURF, BLACK, ((scrW/8),0,(scrW/2),(scrH/2)), 6)
-        pygame.draw.rect(DISPLAYSURF, GREYDARK, ((scrW/8),(scrH/2),(scrW/2),(scrH/2)), 6)
+        pygame.draw.rect(DISPLAYSURF, BLACK, ((scrW/8),0,(scrW/2)-(scrW/8),(scrH/2)), 6)
+        pygame.draw.rect(DISPLAYSURF, GREYDARK, ((scrW/8),(scrH/2),(scrW/2)-(scrW/8),(scrH/2)), 6)
 
         pygame.display.update()
         clock.tick(60)  # Limit the frame rate to 60 FPS.
