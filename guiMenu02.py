@@ -64,7 +64,7 @@ while True:
         pygame.draw.rect(DISPLAYSURF, BLUE, (0,0,(scrW/8),(scrH/4)), 6)
         #(scrW/8)/2 - get_width()/2 // (scrH/4)/7 + get_height()/2
         #DISPLAYSURF.blit(disInfoTxt, ((scrW/16),  (scrH/8)))   
-        DISPLAYSURF.blit(disInfoTxt, ((scrW/8)/2 - disInfoTxt.get_width()/2,  (scrH/4)/2 + disInfoTxt.get_height()/2))
+        DISPLAYSURF.blit(disInfoTxt, ((scrW/8)/2 - disInfoTxt.get_width()/2,  (scrH/4)/2 - disInfoTxt.get_height()/2))
         disInfoTxt = fontSel.render("2", True, iniPi.BLACK)
         pygame.draw.rect(DISPLAYSURF, GREEN, (0,(scrH/4),(scrW/8),(scrH/4)), 6)
         disInfoTxt = pygame.transform.rotate(disInfoTxt,90)
