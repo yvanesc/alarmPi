@@ -59,7 +59,7 @@ while True:
         #display grid
         DISPLAYSURF.fill(WHITE)
         #first 4 row and first col
-        pygame.draw.rect(DISPLAYSURF, RED, (scrW/2,0,(scrW/2)-64,60), 6)
+        #pygame.draw.rect(DISPLAYSURF, RED, (scrW/2,0,(scrW/2)-64,60), 6)
         pygame.draw.rect(DISPLAYSURF, BLUE, (0,0,(scrW/8),(scrH/4)), 6)
         DISPLAYSURF.blit(disInfoTxt1, ((scrW/16),  (scrH/8)))   
         pygame.draw.rect(DISPLAYSURF, GREEN, (0,(scrH/4),(scrW/8),(scrH/4)), 6)
@@ -68,6 +68,7 @@ while True:
         #center
         pygame.draw.rect(DISPLAYSURF, BLACK, ((scrW/8),0,(scrW/2)-(scrW/8),(scrH/2)), 6)
         pygame.draw.rect(DISPLAYSURF, GREYDARK, ((scrW/8),(scrH/2),(scrW/2)-(scrW/8),(scrH/2)), 6)
+        pygame.draw.rect(DISPLAYSURF, RED, ((scrW/2),0,(scrW/2)-(scrW/8),(scrH/2)), 6)
 
         pygame.display.update()
         clock.tick(60)  # Limit the frame rate to 60 FPS.
