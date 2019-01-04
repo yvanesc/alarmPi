@@ -80,7 +80,7 @@ while True:
         pygame.draw.rect(DISPLAYSURF, BLACK, ((scrW/8),0,(scrW/2)-(scrW/8),(scrH/2)), 6)
         disInfoTxt = fontSel.render("5", True, iniPi.BLACK)
         DISPLAYSURF.blit(disInfoTxt, ((scrW/2 - scrW/8)/2 + scrW/8 - disInfoTxt.get_width()/2,  scrH/4 - disInfoTxt.get_height()/2)
-        pygame.draw.rect(DISPLAYSURF, GREYDARK, ((scrW/8),(scrH/2),(scrW/2)-(scrW/8),(scrH/2)), 6))
+        pygame.draw.rect(DISPLAYSURF, GREYDARK, ((scrW/8),(scrH/2),(scrW/2)-(scrW/8),(scrH/2)), 6)
         disInfoTxt = fontSel.render("6", True, iniPi.BLACK)
         DISPLAYSURF.blit(disInfoTxt, ((scrW/2 - scrW/8)/2 + scrW/8 - disInfoTxt.get_width()/2,  scrH/2 + scrH/2 - disInfoTxt.get_height()/2)
         pygame.draw.rect(DISPLAYSURF, RED, ((scrW/2),0,(scrW/2)-(scrW/8),(scrH/2)), 6)
