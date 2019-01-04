@@ -53,16 +53,19 @@ clock = pygame.time.Clock()
 menuTxt = sqlPi.reqMainMenu("menu","Main")  
 sec2Start = int(datetime.datetime.now().strftime("%S"))
 
-disInfoTxt1 = fontSel.render("1", True, iniPi.BLACK)
+disInfoTxt = fontSel.render("1", True, iniPi.BLACK)
 while True:
         os.system('clear')        
         #display grid
+        disInfoTxt = fontSel.render("1", True, iniPi.BLACK)
         DISPLAYSURF.fill(WHITE)
         #first 4 row and first col
         #pygame.draw.rect(DISPLAYSURF, RED, (scrW/2,0,(scrW/2)-64,60), 6)
         pygame.draw.rect(DISPLAYSURF, BLUE, (0,0,(scrW/8),(scrH/4)), 6)
-        DISPLAYSURF.blit(disInfoTxt1, ((scrW/16),  (scrH/8)))   
+        DISPLAYSURF.blit(disInfoTxt, ((scrW/16),  (scrH/8)))   
+        disInfoTxt = fontSel.render("2", True, iniPi.BLACK)
         pygame.draw.rect(DISPLAYSURF, GREEN, (0,(scrH/4),(scrW/8),(scrH/4)), 6)
+        DISPLAYSURF.blit(disInfoTxt, ((scrW/16),  (scrH/4)))   
         pygame.draw.rect(DISPLAYSURF, GREY, (0,(scrH/2),(scrW/8),(scrH/4)), 6)
         pygame.draw.rect(DISPLAYSURF, RED, (0,(scrH/4)*3,(scrW/8),(scrH/4)), 6)
         #center
