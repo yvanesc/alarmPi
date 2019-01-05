@@ -116,3 +116,32 @@ ic32PathR ="/home/pi/alarmPi/ic32rev/"
 startSc = 0
 
 #list bluetooth
+
+#position & size
+#pos = (  x,   y,   width, high)
+#get screen size
+def getPosSize(pos,scrW,scrH):
+	switch (pos){
+		case 1: return (0,0,scrW/8,scrH/4);
+				break;
+		case 2: return (0,scrH/4,scrW/8,scrH/4);
+				break;
+		case 3: return (0,scrH/2,scrW/8,scrH/4);
+				break;
+		case 4: return (0,(scrH/4)*3,scrW/8,scrH/4);
+				break;
+		case 5: return (scrW/8,0,scrW/2 - scrW/8,scrH/2);
+				break;
+		case 6: return (scrW/8,scrH/2,scrW/2 - scrW/8,scrH/2);
+				break;
+		case 7: return (scrW/2,0,scrW/2 - scrW/8,scrH/2);
+				break;
+		case 8: return (scrW/2,scrH/2,scrW/2 - scrW/8,scrH/2);
+				break;
+		case 9: return (scrW-scrW/8,0,scrW/8,scrH/4);
+				break;
+		case 10: return (scrW-scrW/8,scrH/4,scrW/8,scrH/2);
+				break;
+		case 11: return (scrW-scrW/8,(scrH/4)*3,scrW/8);
+				break;
+	}
