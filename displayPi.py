@@ -13,3 +13,6 @@ def dayDis():
 	icDown=pygame.image.load(ic32PathS+ "caret-bottom" +ic32PathE)
 
 	return icO, icX, icRect, icTri, icUp, icDown
+
+def blueScr(DISPLAYSURF,scrW,scrH):
+	pygame.draw.rect(DISPLAYSURF, BLUE, (0,0,(scrW/8),(scrH/4)), 6)
