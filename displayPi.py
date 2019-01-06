@@ -15,6 +15,7 @@ def dayDis():
 	return icO, icX, icRect, icTri, icUp, icDown
 
 def blueScr(DISPLAYSURF,scrW,scrH):
+	fontSel=pygame.font.SysFont(iniPi.font, iniPi.font_sizeA)
 	#left col 4 rows
 	pygame.draw.rect(DISPLAYSURF, BLUE, (0,0,(scrW/8),(scrH/4)), 6)
 	pygame.draw.rect(DISPLAYSURF, GREEN, (0,(scrH/4),(scrW/8),(scrH/4)), 6)
