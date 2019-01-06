@@ -55,8 +55,7 @@ sec2Start = int(datetime.datetime.now().strftime("%S"))
 
 while True:
         os.system('clear')        
-        #display grid
-        disInfoTxt = fontSel.render("1", True, iniPi.BLACK)        
+        #display grid                
         DISPLAYSURF.fill(WHITE)
         #first 4 row and first col
         #pygame.draw.rect(DISPLAYSURF, RED, (scrW/2,0,(scrW/2)-64,60), 6)
@@ -72,21 +71,9 @@ while True:
         disInfoTxt = fontSel.render("4", True, iniPi.BLACK)
         DISPLAYSURF.blit(disInfoTxt, ((scrW/8)/2 - disInfoTxt.get_width()/2,  scrH -scrH/8 - disInfoTxt.get_height()/2))
         #center
-        disInfoTxt = fontSel.render("5", True, iniPi.BLACK)
-        DISPLAYSURF.blit(disInfoTxt, ((scrW/2 - scrW/8)/2 + scrW/8 - disInfoTxt.get_width()/2,  scrH/4 - disInfoTxt.get_height()/2))
-        disInfoTxt = fontSel.render("6", True, iniPi.BLACK)
-        DISPLAYSURF.blit(disInfoTxt, ((scrW/2 - scrW/8)/2 + scrW/8 - disInfoTxt.get_width()/2,  scrH/2 + scrH/4 - disInfoTxt.get_height()/2))
-        disInfoTxt = fontSel.render("7", True, iniPi.BLACK)
-        DISPLAYSURF.blit(disInfoTxt, ((scrW/2 - scrW/8)/2 + scrW/2 - disInfoTxt.get_width()/2,  scrH/4 - disInfoTxt.get_height()/2))
-        disInfoTxt = fontSel.render("8", True, iniPi.BLACK)
-        DISPLAYSURF.blit(disInfoTxt, ((scrW/2 - scrW/8)/2 + scrW/2 - disInfoTxt.get_width()/2,  scrH/2 + scrH/4 - disInfoTxt.get_height()/2))
+        
         #last col and 3 row        
-        disInfoTxt = fontSel.render("9", True, iniPi.BLACK)
-        DISPLAYSURF.blit(disInfoTxt, (scrW - (scrW/8)/2 - disInfoTxt.get_width()/2,  (scrH/4)/2 - disInfoTxt.get_height()/2))        
-        disInfoTxt = fontSel.render("10", True, iniPi.BLACK)
-        DISPLAYSURF.blit(disInfoTxt, (scrW - (scrW/8)/2 - disInfoTxt.get_width()/2,  (scrH)/2 - disInfoTxt.get_height()/2))        
-        disInfoTxt = fontSel.render("11", True, iniPi.BLACK)
-        DISPLAYSURF.blit(disInfoTxt, (scrW - (scrW/8)/2 - disInfoTxt.get_width()/2, scrH - (scrH)/8 - disInfoTxt.get_height()/2))
+        
 
         pygame.display.update()
         clock.tick(60)  # Limit the frame rate to 60 FPS.
