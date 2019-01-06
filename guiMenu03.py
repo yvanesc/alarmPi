@@ -61,15 +61,7 @@ while True:
         #pygame.draw.rect(DISPLAYSURF, RED, (scrW/2,0,(scrW/2)-64,60), 6)
         displayPi.blueScr(DISPLAYSURF,scrW,scrH)
         #(scrW/8)/2 - get_width()/2 // (scrH/4)/2 - get_height()/2
-        #DISPLAYSURF.blit(disInfoTxt, ((scrW/16),  (scrH/8)))   
-        DISPLAYSURF.blit(disInfoTxt, ((scrW/8)/2 - disInfoTxt.get_width()/2,  (scrH/4)/2 - disInfoTxt.get_height()/2))
-        disInfoTxt = fontSel.render("2", True, iniPi.BLACK)        
-        disInfoTxt = pygame.transform.rotate(disInfoTxt,90)
-        DISPLAYSURF.blit(disInfoTxt, ((scrW/8)/2 - disInfoTxt.get_width()/2,  (scrH/4)+ (scrH/4)/2 - disInfoTxt.get_height()/2))
-        disInfoTxt = fontSel.render("3", True, iniPi.BLACK)
-        DISPLAYSURF.blit(disInfoTxt, ((scrW/8)/2 - disInfoTxt.get_width()/2,  (scrH/8)+ (scrH/2) - disInfoTxt.get_height()/2))
-        disInfoTxt = fontSel.render("4", True, iniPi.BLACK)
-        DISPLAYSURF.blit(disInfoTxt, ((scrW/8)/2 - disInfoTxt.get_width()/2,  scrH -scrH/8 - disInfoTxt.get_height()/2))
+        #DISPLAYSURF.blit(disInfoTxt, ((scrW/16),  (scrH/8)))           
         #center
         
         #last col and 3 row        
