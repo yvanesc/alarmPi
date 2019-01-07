@@ -59,7 +59,10 @@ while True:
         
         #first 4 row and first col
         #pygame.draw.rect(DISPLAYSURF, RED, (scrW/2,0,(scrW/2)-64,60), 6)
-        displayPi.blueScr(DISPLAYSURF,scrW,scrH)
+        
+        #displayPi.blueScr(DISPLAYSURF,scrW,scrH)
+        displayPi.welcScr(DISPLAYSURF,scrW,scrH)
+
         #(scrW/8)/2 - get_width()/2 // (scrH/4)/2 - get_height()/2
         #DISPLAYSURF.blit(disInfoTxt, ((scrW/16),  (scrH/8)))           
         #center
