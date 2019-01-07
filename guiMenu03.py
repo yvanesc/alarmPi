@@ -14,6 +14,7 @@ import actionPi
 import soundPi
 import displayPi
 import bluezPi
+import butPi
 
 pygame.display.init()
 scrW = pygame.display.Info().current_w
@@ -75,22 +76,22 @@ while True:
 
         if (not GPIO.input(5)):
                 # X
-                print("X")
+                butPi.croi()
         if (not GPIO.input(22)):
                 # rect     
-                print("Rect")
+                butPi.rect()
         if (not GPIO.input(24)):
                 # triangle                
-                print("triangle")
+                butPi.tria()
         if (not GPIO.input(23)):
                 # O
-                print("O")     
+                butPi.rond()     
         if (not GPIO.input(4)):
                 #VOL LOW                
-                print ("LOW")
+                butPi.low()
         if (not GPIO.input(17)):
                 #VOL HIGH                
-                print("HIGH")
+                butPi.high()
         for event in pygame.event.get():
                 if event.type == QUIT:
                         pygame.quit()
