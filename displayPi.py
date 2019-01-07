@@ -61,6 +61,7 @@ def blueScr(DISPLAYSURF,scrW,scrH):
 	DISPLAYSURF.blit(disInfoTxt, (scrW - (scrW/8)/2 - disInfoTxt.get_width()/2, scrH - (scrH)/8 - disInfoTxt.get_height()/2))
 
 def welcScr(DISPLAYSURF,scrW,scrH):
+	menuTxt = sqlPi.reqMainMenu("menu","Main")  
 	fontSelL=pygame.font.SysFont(iniPi.font, iniPi.font_sizeB)
 	fontSel=pygame.font.SysFont(iniPi.font, iniPi.font_sizeA)
 	time2Display = datetime.datetime.now().strftime("%H:%M")
@@ -165,7 +166,7 @@ def welcScr(DISPLAYSURF,scrW,scrH):
 	#
 	menu2DisT = (', '.join(menuTxt[0])) 
 	                        #
-	print("->" + menu2DisT)
+	#print("->" + menu2DisT)
 
 	if typeAct == 0 and (reverse == 1 or dayNight == 1):
 		DISPLAYSURF.blit(icBell, ((scrW/2)+marge, icRectPosY*2))
