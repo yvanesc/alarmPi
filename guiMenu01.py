@@ -96,8 +96,8 @@ while True:
                 displayAlar = fontSelL.render(alarm2Display, True, iniPi.WHITE)
                 displayDate = fontSelL.render(date2Display, True, iniPi.GREY)
         if dayNight == 0 and reverse == 0 and typeAct == 0:
-                if posCur == (scrH/8)*2:
-                        pygame.draw.rect(DISPLAYSURF, iniPi.RED, (scrW/2,posCur,(scrW/2)-64,60), 6)
+                if posCur == (scrH/8)*2:pygame.draw.rect(DISPLAYSURF, iniPi.RED, (scrW/2,posCur,(scrW/2)-64,60), 6)
+                        
                 else:
                         pygame.draw.rect(DISPLAYSURF, iniPi.RED, (64,posCur,(scrW/2)-64,60), 6)
         
