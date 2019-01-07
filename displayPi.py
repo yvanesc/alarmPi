@@ -68,13 +68,13 @@ def welcScr(DISPLAYSURF,scrW,scrH):
 	date2Display = datetime.datetime.now().strftime("%d.%m.%y")
 	disDay = datetime.datetime.today().strftime('%A')[:3]
 	alarm2Display = actionPi.actFormatTime(alHour,alMin) 
-	if alHour == hour2Display and alMin == min2Display and alarmOn == 0:
-		alarmOn = 1
+	if alHour == hour2Display and alMin == min2Display and iniPi.alarmOn == 0:
+		iniPi.alarmOn = 1
 		soundPi.playMusic()
-	if alarmOn == 1 and alarmOff == 1:
+	if iniPi.alarmOn == 1 and iniPi.alarmOff == 1:
 		soundPi.stopMusic()
 	if dayNight == 0:  
-		DISPLAYSURF.fill(iniPi.WHITE)              
+		DISPLAYSURF.fill(WHITE)              
 		#displayPi.dayDis()
 		icO=pygame.image.load(ic32PathS+ "power-standby" +ic32PathE)
 		icX=pygame.image.load(ic32PathS+ "check" +ic32PathE)
