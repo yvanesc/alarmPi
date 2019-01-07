@@ -61,6 +61,8 @@ def blueScr(DISPLAYSURF,scrW,scrH):
 	DISPLAYSURF.blit(disInfoTxt, (scrW - (scrW/8)/2 - disInfoTxt.get_width()/2, scrH - (scrH)/8 - disInfoTxt.get_height()/2))
 
 def welcScr(DISPLAYSURF,scrW,scrH):
+	fontSelL=pygame.font.SysFont(iniPi.font, iniPi.font_sizeB)
+	fontSel=pygame.font.SysFont(iniPi.font, iniPi.font_sizeA)
 	time2Display = datetime.datetime.now().strftime("%H:%M")
 	hour2Display = int(datetime.datetime.now().strftime("%H"))        
 	min2Display = int(datetime.datetime.now().strftime("%M"))        
