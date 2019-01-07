@@ -56,7 +56,7 @@ sec2Start = int(datetime.datetime.now().strftime("%S"))
 while True:
         os.system('clear')        
         #display grid                
-        DISPLAYSURF.fill(WHITE)
+        
         #first 4 row and first col
         #pygame.draw.rect(DISPLAYSURF, RED, (scrW/2,0,(scrW/2)-64,60), 6)
         displayPi.blueScr(DISPLAYSURF,scrW,scrH)
