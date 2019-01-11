@@ -187,7 +187,7 @@ def scrSave(DISPLAYSURF,scrW,scrH):
 	displayTime = fontSelL.render(time2Display, True, RED)
 	#create only once
 	if iniPi.snFlake == 0:
-		snFlake = 1
+		iniPi.snFlake = 1
 		for i in range(50):
 			x = random.randrange(0, 400)
 			y = random.randrange(0, 400)
