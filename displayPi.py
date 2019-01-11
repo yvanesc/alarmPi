@@ -214,5 +214,5 @@ def scrSave(DISPLAYSURF,scrW,scrH):
 			snow_list[i][0] = x           
  
 	# Go ahead and update the screen with what we've drawn.
-	DISPLAYSURF.blit(displayTime, 300, 52) #scrW - lenDisTime, 52)
+	DISPLAYSURF.blit(displayTime, (300, 52)) #scrW - lenDisTime, 52)
 	pygame.display.flip()
