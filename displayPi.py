@@ -181,12 +181,14 @@ def welcScr(DISPLAYSURF,scrW,scrH):
 def scrSave(DISPLAYSURF,scrW,scrH):
 	
 	
-	fontSelL=pygame.font.SysFont(iniPi.font, int(scrW/3))#iniPi.font_sizeB)
+	fontSelL=pygame.font.SysFont(iniPi.font, int(scrW/4))#iniPi.font_sizeB)
+	fontSel=pygame.font.SysFont(iniPi.font, int(scrW/6))
 	DISPLAYSURF.fill(BLACK)
 	time2Display = datetime.datetime.now().strftime("%H:%M")
 	date2Display = datetime.datetime.now().strftime("%d.%m.%y")
 	disDay = datetime.datetime.today().strftime('%A')[:3]
 	displayTime = fontSelL.render(time2Display, True, RED)
+	displayDate = fontSel.render(date2Display, True, RED)
 	lenDisTime = displayTime.get_width()	
 
 	#create only once
@@ -217,4 +219,5 @@ def scrSave(DISPLAYSURF,scrW,scrH):
  
 	# Go ahead and update the screen with what we've drawn.
 	DISPLAYSURF.blit(displayTime, (scrW - lenDisTime - marge, 52)) 
+	DISPLAYSURF.blit(displayDate, (scrW - lenDisTime - marge, 152)) 
 	pygame.display.flip()
