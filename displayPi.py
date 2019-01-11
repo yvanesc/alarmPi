@@ -191,9 +191,9 @@ def scrSave(DISPLAYSURF,scrW,scrH):
 	#create only once
 	if iniPi.snFlake == 0:		
 		iniPi.snFlake = 1
-		for i in range(50):
-			x = random.randrange(0, 400)
-			y = random.randrange(0, 400)
+		for i in range(100):
+			x = random.randrange(0, scrW)
+			y = random.randrange(0, scrH)
 			snow_list.append([x, y])
 	# Process each snow flake in the list
 	for i in range(len(snow_list)):
@@ -206,7 +206,7 @@ def scrSave(DISPLAYSURF,scrW,scrH):
 
 		# If the snow flake has moved off the bottom of the screen
 		#lenDisTime = scrW - lenDisTime
-		if snow_list[i][1] > scrH or (snow_list[i][1] > 51 and snow_list[i][0] > 300):        
+		if snow_list[i][1] > scrH or (snow_list[i][1] > 51 and snow_list[i][0] > (scrW - lenDisTime)):        
 			# Reset it just above the top
 			y = random.randrange(-50, -10)
 			snow_list[i][1] = y
@@ -215,5 +215,5 @@ def scrSave(DISPLAYSURF,scrW,scrH):
 			snow_list[i][0] = x           
  
 	# Go ahead and update the screen with what we've drawn.
-	DISPLAYSURF.blit(displayTime, (300, 52)) #scrW - lenDisTime, 52)
+	DISPLAYSURF.blit(displayTime, (scrW - lenDisTime, 52)) #scrW - lenDisTime, 52)
 	pygame.display.flip()
