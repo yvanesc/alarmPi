@@ -186,6 +186,7 @@ def scrSave(DISPLAYSURF,scrW,scrH):
 	time2Display = datetime.datetime.now().strftime("%H:%M")
 	displayTime = fontSelL.render(time2Display, True, RED)
 	lenDisTime = displayTime.get_width
+	print(lenDisTime)
 	#create only once
 	if iniPi.snFlake == 0:
 		iniPi.snFlake = 1
