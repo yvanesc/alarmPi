@@ -181,9 +181,11 @@ def welcScr(DISPLAYSURF,scrW,scrH):
 def scrSave(DISPLAYSURF,scrW,scrH):
 	
 	
-	fontSelL=pygame.font.SysFont(iniPi.font, iniPi.font_sizeB)
+	fontSelL=pygame.font.SysFont(iniPi.font, scrW/3)#iniPi.font_sizeB)
 	DISPLAYSURF.fill(BLACK)
 	time2Display = datetime.datetime.now().strftime("%H:%M")
+	date2Display = datetime.datetime.now().strftime("%d.%m.%y")
+	disDay = datetime.datetime.today().strftime('%A')[:3]
 	displayTime = fontSelL.render(time2Display, True, RED)
 	lenDisTime = displayTime.get_width()	
 	print(lenDisTime)
