@@ -2,6 +2,8 @@
 #import pygame, sys, os
 #Pygame
 
+import random
+
 #Title window
 versionTitle = "AlarmPi Ver. 0.1"
 
@@ -114,6 +116,13 @@ ic32PathR ="/home/pi/alarmPi/ic32rev/"
 
 #scan 
 startSc = 0
+
+#snow
+snow_list = []
+for i in range(50):
+    x = random.randrange(0, 400)
+    y = random.randrange(0, 400)
+    snow_list.append([x, y])
 
 #list bluetooth
 

@@ -3,6 +3,7 @@ import iniPi
 import datetime
 import actionPi
 import sqlPi
+import random
 
 from iniPi import * 
 
@@ -18,6 +19,7 @@ def dayDis():
 	return icO, icX, icRect, icTri, icUp, icDown
 
 def blueScr(DISPLAYSURF,scrW,scrH):
+	#display grid                
 	DISPLAYSURF.fill(WHITE)
 	fontSel=pygame.font.SysFont(iniPi.font, iniPi.font_sizeA)
 	#left col 4 rows
@@ -174,3 +176,24 @@ def welcScr(DISPLAYSURF,scrW,scrH):
 	elif typeAct == 1 and menu2DisT == "Scan...":
 		displayFindBlu = fontSelL.render(lstDeviceBlu[0], True, iniPi.BLACK)
 		DISPLAYSURF.blit(displayFindBlu, ((scrW/2)+(marge*6), 120))
+
+
+def scrSave(DISPLAYSURF,scrW,scrH):
+	DISPLAYSURF.fill(BLACK)
+	for i in range(len(snow_list)):
+ 
+        # Draw the snow flake
+        pygame.draw.circle(screen, WHITE, snow_list[i], 2)
+ 
+        # Move the snow flake down one pixel
+        snow_list[i][1] += 1
+ 
+        # If the snow flake has moved off the bottom of the screen
+        if snow_list[i][1] > 400:
+            # Reset it just above the top
+            y = random.randrange(-50, -10)
+            snow_list[i][1] = y
+            # Give it a new x position
+            x = random.randrange(0, 400)
+            snow_list[i][0] = x
+	
