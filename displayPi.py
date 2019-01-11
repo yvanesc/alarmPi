@@ -189,6 +189,7 @@ def scrSave(DISPLAYSURF,scrW,scrH):
 	disDay = datetime.datetime.today().strftime('%A')[:3]
 	displayTime = fontSelL.render(time2Display, True, RED)
 	displayDate = fontSel.render(date2Display, True, RED)
+	displayDay = fontSel.render(disDay, True, RED)
 	lenDisTime = displayTime.get_width()	
 
 	#create only once
@@ -219,5 +220,6 @@ def scrSave(DISPLAYSURF,scrW,scrH):
  
 	# Go ahead and update the screen with what we've drawn.
 	DISPLAYSURF.blit(displayTime, (scrW - lenDisTime - marge, 52)) 
-	DISPLAYSURF.blit(displayDate, (scrW - lenDisTime - marge, 152)) 
+	DISPLAYSURF.blit(displayDate, (scrW - lenDisTime - marge, 182)) 
+	DISPLAYSURF.blit(displayDay, (scrW - lenDisTime - marge, 282)) 
 	pygame.display.flip()
