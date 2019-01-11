@@ -187,7 +187,7 @@ def scrSave(DISPLAYSURF,scrW,scrH):
 	displayTime = fontSelL.render(time2Display, True, RED)
 	lenDisTime = displayTime.get_width()	
 	#create only once
-	if iniPi.snFlake == 0:
+	if iniPi.snFlake != 0:
 		print(lenDisTime)
 		print(scrW)
 		iniPi.snFlake = 1
