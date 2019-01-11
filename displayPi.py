@@ -179,21 +179,37 @@ def welcScr(DISPLAYSURF,scrW,scrH):
 
 
 def scrSave(DISPLAYSURF,scrW,scrH):
+	snow_list = []
+	snFlake = 0
+	fontSelL=pygame.font.SysFont(iniPi.font, iniPi.font_sizeB)
 	DISPLAYSURF.fill(BLACK)
+	time2Display = datetime.datetime.now().strftime("%H:%M")
+	displayTime = fontSelL.render(time2Display, True, RED)
+	#create only once
+	if snFlake == 0:
+		snFlake = 1
+		for i in range(50):
+			x = random.randrange(0, 400)
+			y = random.randrange(0, 400)
+			snow_list.append([x, y])
+	# Process each snow flake in the list
 	for i in range(len(snow_list)):
  
-        # Draw the snow flake
-        pygame.draw.circle(screen, WHITE, snow_list[i], 2)
+		# Draw the snow flake
+		pygame.draw.circle(DISPLAYSURF, WHITE, snow_list[i], 2)		
+
+		# Move the snow flake down one pixel
+		snow_list[i][1] += 1
+
+		# If the snow flake has moved off the bottom of the screen
+		if snow_list[i][1] > 400 or (snow_list[i][1] > 50 and snow_list[i][0] > 215):        
+			# Reset it just above the top
+			y = random.randrange(-50, -10)
+			snow_list[i][1] = y
+			# Give it a new x position
+			x = random.randrange(0, 400)
+			snow_list[i][0] = x           
  
-        # Move the snow flake down one pixel
-        snow_list[i][1] += 1
- 
-        # If the snow flake has moved off the bottom of the screen
-        if snow_list[i][1] > 400:
-            # Reset it just above the top
-            y = random.randrange(-50, -10)
-            snow_list[i][1] = y
-            # Give it a new x position
-            x = random.randrange(0, 400)
-            snow_list[i][0] = x
-	
+	# Go ahead and update the screen with what we've drawn.
+	DISPLAYSURF.blit(displayTime, (230, 52))
+	pygame.display.flip()
