@@ -117,12 +117,9 @@ ic32PathR ="/home/pi/alarmPi/ic32rev/"
 #scan 
 startSc = 0
 
-#snow
+#screen saver snow
+snFlake = 0
 snow_list = []
-for i in range(50):
-    x = random.randrange(0, 400)
-    y = random.randrange(0, 400)
-    snow_list.append([x, y])
 
 #list bluetooth
 

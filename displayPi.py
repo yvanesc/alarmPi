@@ -179,8 +179,8 @@ def welcScr(DISPLAYSURF,scrW,scrH):
 
 
 def scrSave(DISPLAYSURF,scrW,scrH):
-	snow_list = []
-	snFlake = 0
+	
+	
 	fontSelL=pygame.font.SysFont(iniPi.font, iniPi.font_sizeB)
 	DISPLAYSURF.fill(BLACK)
 	time2Display = datetime.datetime.now().strftime("%H:%M")
