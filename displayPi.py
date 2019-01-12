@@ -642,19 +642,20 @@ def scrSaveBoreal(DISPLAYSURF,scrW,scrH):
 	for i in range(len(snow_list)):
  
 		# Draw the snow flake
-		pygame.draw.circle(DISPLAYSURF, WHITE, snow_list[i], 2)
+		#pygame.draw.circle(DISPLAYSURF, WHITE, snow_list[i], 2)
 		for iBoreal	in range(1,90,8):
-			nbBoreal = random.randrange(0, 4)						
+			nbBoreal = random.randrange(0, 8)						
 			#pygame.draw.circle(DISPLAYSURF, WHITE, (snow_list[i][0]-iBoreal,snow_list[i][1]-nbBoreal), 2)
-			for iBorSeq in range(1,90,4):
-				nbBorSeq = random.randrange(0, 4)						
+			for iBorSeq in range(1,90,8):
+				nbBorSeq = random.randrange(0, 8)						
 				#pygame.draw.circle(DISPLAYSURF, YELLOW, (snow_list[i][0]-iBorSeq-iBoreal,snow_list[i][1]-nbBoreal-nbBorSeq), 2)
 				for iTrace in range(1,255,2):
 					pygame.draw.circle(DISPLAYSURF, (255-iTrace, 255-iTrace, 255-iTrace), (snow_list[i][0]-iBoreal-iBorSeq,snow_list[i][1]-nbBoreal-iTrace-nbBorSeq), 2)
+					pygame.draw.circle(DISPLAYSURF, (255-iTrace, 255-iTrace, 255-iTrace), (snow_list[i][0]-iBoreal,snow_list[i][1]-nbBoreal-iTrace), 2)
 		#for iTrace in range(1,255,1):
 			#pygame.draw.circle(DISPLAYSURF, (255-iTrace, 255-iTrace, 255-iTrace), (snow_list[i][0],snow_list[i][1]-iTrace), 1)
 		# Move the snow flake down one pixel
-		snow_list[i][1] += 2
+		snow_list[i][1] += 1
 
 
 		# If the snow flake has moved off the bottom of the screen
