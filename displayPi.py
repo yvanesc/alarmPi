@@ -177,7 +177,7 @@ def welcScr(DISPLAYSURF,scrW,scrH):
 		displayFindBlu = fontSelL.render(lstDeviceBlu[0], True, iniPi.BLACK)
 		DISPLAYSURF.blit(displayFindBlu, ((scrW/2)+(marge*6), 120))
 
-
+		
 def scrSave(DISPLAYSURF,scrW,scrH):
 	#screen saver snowflake time + date + day display
 	
@@ -224,7 +224,7 @@ def scrSave(DISPLAYSURF,scrW,scrH):
 	DISPLAYSURF.blit(displayDay, (scrW - lenDisTime - marge, 282)) 
 	pygame.display.flip()
 
-def scrSaveT01(DISPLAYSURF,scrW,scrH):
+def scrSaveSnow(DISPLAYSURF,scrW,scrH):
 	#screen saver snowflake time + date + day display
 	
 	fontSelL=pygame.font.SysFont(iniPi.font, int(scrW/4))#iniPi.font_sizeB)
