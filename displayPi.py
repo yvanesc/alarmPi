@@ -269,12 +269,14 @@ def scrSaveT01(DISPLAYSURF,scrW,scrH):
 			#first snow
 			if iniPi.snowOnTime == 0:
 				iniPi.snowOnTime = 1
+				widthRect = 0
+				heigthRect = 0
 				#posXRect = scrW - lenDisTime - marge#random.randrange(scrW - lenDisTime - marge, scrW)
 				
 			#if posXRect > (scrW - lenDisTime - marge):
 				#posXRect = posXRect - 1
-			iniPi.widthRect = iniPi.widthRect + random.randrange(0,1)
-			iniPi.heigthRect = iniPi.heigthRect - random.randrange(0,1)
+			widthRect = widthRect + random.randrange(0,1)
+			heigthRect = heigthRect - random.randrange(0,1)
 			#else:
 				#iniPi.widthRect = iniPi.widthRect + random.randrange(0,1)
 				#iniPi.heigthRect = iniPi.heigthRect + random.randrange(0,1)
