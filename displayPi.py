@@ -487,10 +487,11 @@ def scrSaveT03(DISPLAYSURF,scrW,scrH):
 		iniPi.snFlake = 1
 		for i in range(15):
 			x = random.randrange(0, scrW)
-			y = random.randrange(0, scrH)
+			y = random.randrange(0, scrH)		
+			snow_list.append([x, y])			
+		for i in range(5):			
 			xB = random.randrange(0, scrW)
 			yB = random.randrange(0, scrH)
-			snow_list.append([x, y])
 			snow_listB.append([xB, yB])
 	# Process each snow flake in the list
 	for i in range(len(snow_list)):
