@@ -177,8 +177,8 @@ def welcScr(DISPLAYSURF,scrW,scrH):
 		displayFindBlu = fontSelL.render(lstDeviceBlu[0], True, iniPi.BLACK)
 		DISPLAYSURF.blit(displayFindBlu, ((scrW/2)+(marge*6), 120))
 
-		
-def scrSave(DISPLAYSURF,scrW,scrH):
+
+def scrSaveSnow(DISPLAYSURF,scrW,scrH):
 	#screen saver snowflake time + date + day display
 	
 	fontSelL=pygame.font.SysFont(iniPi.font, int(scrW/4))#iniPi.font_sizeB)
@@ -224,7 +224,7 @@ def scrSave(DISPLAYSURF,scrW,scrH):
 	DISPLAYSURF.blit(displayDay, (scrW - lenDisTime - marge, 282)) 
 	pygame.display.flip()
 
-def scrSaveSnow(DISPLAYSURF,scrW,scrH):
+def scrSaveSnowFill(DISPLAYSURF,scrW,scrH):
 	#screen saver snowflake time + date + day display
 	
 	fontSelL=pygame.font.SysFont(iniPi.font, int(scrW/4))#iniPi.font_sizeB)
@@ -594,6 +594,58 @@ def scrSaveRain(DISPLAYSURF,scrW,scrH):
  
 		# Draw the snow flake
 		pygame.draw.circle(DISPLAYSURF, WHITE, snow_list[i], 2)		
+		for iTrace in range(1,255,1):
+			pygame.draw.circle(DISPLAYSURF, (255-iTrace, 255-iTrace, 255-iTrace), (snow_list[i][0],snow_list[i][1]-iTrace), 1)
+		# Move the snow flake down one pixel
+		snow_list[i][1] += 1
+
+
+		# If the snow flake has moved off the bottom of the screen
+		#lenDisTime = scrW - lenDisTime
+		if snow_list[i][1] > scrH :#or (snow_list[i][1] > 51 and snow_list[i][0] > (scrW - lenDisTime - marge*2)):        
+			# Reset it just above the top
+			y = random.randrange(-50, -10)
+			snow_list[i][1] = y
+			# Give it a new x position
+			x = random.randrange(0, scrW)
+			snow_list[i][0] = x
+		if (snow_list[i][1] > 53 and snow_list[i][0]) > (scrW - lenDisTime - marge*2):
+			snow_list[i][1] = snow_list[i][1] + 400
+	# Go ahead and update the screen with what we've drawn.
+	DISPLAYSURF.blit(displayTime, (scrW - lenDisTime - marge, 52)) 
+	DISPLAYSURF.blit(displayDate, (scrW - lenDisTime - marge, 182)) 
+	DISPLAYSURF.blit(displayDay, (scrW - lenDisTime - marge, 282)) 
+	pygame.display.flip()
+
+def scrSaveBoreal(DISPLAYSURF,scrW,scrH):
+	#screen saver Boreal time + date + day display
+	
+	fontSelL=pygame.font.SysFont(iniPi.font, int(scrW/4))#iniPi.font_sizeB)
+	fontSel=pygame.font.SysFont(iniPi.font, int(scrW/6))
+	DISPLAYSURF.fill(BLACK)
+	time2Display = datetime.datetime.now().strftime("%H:%M")
+	date2Display = datetime.datetime.now().strftime("%d.%m.%y")
+	disDay = datetime.datetime.today().strftime('%A')[:3]
+	displayTime = fontSelL.render(time2Display, True, RED)
+	displayDate = fontSel.render(date2Display, True, RED)
+	displayDay = fontSel.render(disDay, True, RED)
+	lenDisTime = displayTime.get_width()	
+
+	#create only once
+	if iniPi.snFlake == 0:		
+		iniPi.snFlake = 1
+		for i in range(2):
+			x = random.randrange(0, scrW)
+			y = random.randrange(0, scrH)
+			snow_list.append([x, y])
+	# Process each snow flake in the list
+	for i in range(len(snow_list)):
+ 
+		# Draw the snow flake
+		pygame.draw.circle(DISPLAYSURF, WHITE, snow_list[i], 2)
+		for iBoreal	in range(1,10,1):
+			nbBoreal = random.randrange(0, 2)
+			pygame.draw.circle(DISPLAYSURF, WHITE, (snow_list[i][0]-iBoreal,snow_list[i][1]-nbBoreal, 1)
 		for iTrace in range(1,255,1):
 			pygame.draw.circle(DISPLAYSURF, (255-iTrace, 255-iTrace, 255-iTrace), (snow_list[i][0],snow_list[i][1]-iTrace), 1)
 		# Move the snow flake down one pixel
