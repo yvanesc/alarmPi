@@ -494,8 +494,8 @@ def scrSaveT03(DISPLAYSURF,scrW,scrH):
  
 		# Draw the stars
 		# x -> width
-
-		sizeStar = random.choice( random.randrange(4, 8),random.randrange(20, 24))
+		items = [random.randrange(4, 8),random.randrange(20, 24)]
+		sizeStar = random.choice(items)
 		
 		posXL = snow_list[i][0] - sizeStar#10
 		posXR = snow_list[i][0] + sizeStar
