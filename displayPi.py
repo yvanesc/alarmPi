@@ -469,7 +469,7 @@ def scrSaveT02(DISPLAYSURF,scrW,scrH):
 	pygame.display.flip()
 
 def scrSaveT03(DISPLAYSURF,scrW,scrH):
-	#screen saver snowflake time + date + day display
+	#screen saver starts time + date + day display
 	
 	fontSelL=pygame.font.SysFont(iniPi.font, int(scrW/4))
 	fontSel=pygame.font.SysFont(iniPi.font, int(scrW/6))
@@ -494,10 +494,11 @@ def scrSaveT03(DISPLAYSURF,scrW,scrH):
  
 		# Draw the stars
 		# x -> width
-		posXL = snow_list[i][0] - 10
-		posXR = snow_list[i][0] + 10
-		posYL = snow_list[i][1] - 10
-		posYR = snow_list[i][1] + 10
+		sizeStar = random.randrange(2, 10)
+		posXL = snow_list[i][0] - sizeStar#10
+		posXR = snow_list[i][0] + sizeStar
+		posYL = snow_list[i][1] - sizeStar
+		posYR = snow_list[i][1] + sizeStar
 		pygame.draw.line(DISPLAYSURF, WHITE, (posXL, snow_list[i][1]),(posXR,snow_list[i][1]), 1)		
 		pygame.draw.line(DISPLAYSURF, WHITE, (snow_list[i][0],posYL),(snow_list[i][0],posYR), 1)		
 		# Move the snow flake down one pixel
