@@ -127,6 +127,7 @@ widthRect = 0
 heigthRect = 0								
 snow_list = []
 snow_pack = []
+snow_listB = []
 blinkComet = 0
 
 #list bluetooth
