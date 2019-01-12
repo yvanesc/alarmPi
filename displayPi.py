@@ -243,6 +243,7 @@ def scrSaveT01(DISPLAYSURF,scrW,scrH):
 		iniPi.snFlake = 1
 		widthRect = 0
 		heigthRect = 0								
+		print("YesOne")
 		for i in range(100):
 			x = random.randrange(0, scrW)
 			y = random.randrange(0, scrH)
@@ -272,8 +273,6 @@ def scrSaveT01(DISPLAYSURF,scrW,scrH):
 			if iniPi.snowOnTime == 0:
 				iniPi.snowOnTime = 1
 				
-				break
-				print("YesOne")
 				#posXRect = scrW - lenDisTime - marge#random.randrange(scrW - lenDisTime - marge, scrW)
 				
 			#if posXRect > (scrW - lenDisTime - marge):
