@@ -366,6 +366,10 @@ def scrSaveT02(DISPLAYSURF,scrW,scrH):
 		else:
 			iniPi.blinkComet = 0
 			pygame.draw.circle(DISPLAYSURF, GREY, (posSnX, posSnY), 2)
+		posSnY = snow_list[i][1]
+		posSnY -= 5
+		posSnX = snow_list[i][0]
+		pygame.draw.circle(DISPLAYSURF, WHITE, (posSnX, posSnY), 1)
 
 		# Move the snow flake down one pixel
 		snow_list[i][1] += 4
