@@ -240,9 +240,7 @@ def scrSaveT01(DISPLAYSURF,scrW,scrH):
 
 	#create only once
 	if iniPi.snFlake == 0:		
-		iniPi.snFlake = 1
-
-		print(heigthRect)							
+		iniPi.snFlake = 1								
 		for i in range(100):
 			x = random.randrange(0, scrW)
 			y = random.randrange(0, scrH)
