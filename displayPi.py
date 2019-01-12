@@ -276,7 +276,10 @@ def scrSaveT01(DISPLAYSURF,scrW,scrH):
 				
 			#if posXRect > (scrW - lenDisTime - marge):
 				#posXRect = posXRect - 1
-			widthRect += random.randrange(0,1)
+			try:
+				widthRect += random.randrange(0,1)
+			except:
+				widthRect = 0
 			heigthRect = heigthRect - random.randrange(0,1)
 			#else:
 				#iniPi.widthRect = iniPi.widthRect + random.randrange(0,1)
