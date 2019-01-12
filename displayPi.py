@@ -352,29 +352,29 @@ def scrSaveT02(DISPLAYSURF,scrW,scrH):
 		# Draw the snow flake		
 						
 		#snow_list[i][1] += 2
-		pygame.draw.circle(DISPLAYSURF, RED, snow_list[i], 6)				
+		pygame.draw.circle(DISPLAYSURF, RED, snow_list[i], 8)				
 		posSnY = snow_list[i][1]
 		posSnY -= 2
 		posSnX = snow_list[i][0]
-		pygame.draw.circle(DISPLAYSURF, YELLOW, (posSnX, posSnY), 4)
+		pygame.draw.circle(DISPLAYSURF, YELLOW, (posSnX, posSnY), 6)
 		posSnY = snow_list[i][1]
 		posSnY -= 4
 		posSnX = snow_list[i][0]
 		if iniPi.blinkComet == 0:
 			iniPi.blinkComet = 1
-			pygame.draw.circle(DISPLAYSURF, WHITE, (posSnX, posSnY), 3)
+			pygame.draw.circle(DISPLAYSURF, WHITE, (posSnX, posSnY), 5)
 		else:
 			iniPi.blinkComet = 0
-			pygame.draw.circle(DISPLAYSURF, GREY, (posSnX, posSnY), 3)
+			pygame.draw.circle(DISPLAYSURF, GREY, (posSnX, posSnY), 5)
 		posSnY = snow_list[i][1]
 		posSnY -= 5
 		posSnX = snow_list[i][0]
-		pygame.draw.circle(DISPLAYSURF, WHITE, (posSnX, posSnY), 2)
+		pygame.draw.circle(DISPLAYSURF, WHITE, (posSnX, posSnY), 3)
 
 		posSnY = snow_list[i][1]
-		posSnY -= random.randrange (10, 50)
+		posSnY -= random.randrange (10, 25)
 		posSnX = snow_list[i][0]
-		pygame.draw.circle(DISPLAYSURF, GREYDARK, (posSnX, posSnY), 1)
+		pygame.draw.circle(DISPLAYSURF, WHITE, (posSnX, posSnY), 2)
 
 		# Move the snow flake down one pixel
 		#snow_list[i][1] += 4
