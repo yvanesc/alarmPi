@@ -255,7 +255,7 @@ def scrSaveT01(DISPLAYSURF,scrW,scrH):
 		snow_list[i][1] += 1
 
 		# If the snow flake has moved off the bottom of the screen
-		if snow_list[i][1] > scrH #or (snow_list[i][1] > 51) and snow_list[i][0] > (scrW - lenDisTime - marge)):        
+		if snow_list[i][1] > scrH :#or (snow_list[i][1] > 51) and snow_list[i][0] > (scrW - lenDisTime - marge)):        
 			# Reset it just above the top
 			y = random.randrange(-50, -10)
 			snow_list[i][1] = y
