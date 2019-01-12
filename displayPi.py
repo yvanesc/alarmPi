@@ -292,10 +292,9 @@ def scrSaveT01(DISPLAYSURF,scrW,scrH):
 			x = random.randrange(0, scrW)
 			snow_list[i][0] = x
 
-
+		pygame.draw.rect(DISPLAYSURF, WHITE, (posXRect,51, widthRect, heigthRect))
  
-	# Go ahead and update the screen with what we've drawn.
-	pygame.draw.rect(DISPLAYSURF, WHITE, (posXRect,51, widthRect, heigthRect))
+	# Go ahead and update the screen with what we've drawn.	
 	DISPLAYSURF.blit(displayTime, (scrW - lenDisTime - marge, 52)) 
 	DISPLAYSURF.blit(displayDate, (scrW - lenDisTime - marge, 182)) 
 	DISPLAYSURF.blit(displayDay, (scrW - lenDisTime - marge, 282)) 
