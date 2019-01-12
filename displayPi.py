@@ -472,7 +472,7 @@ def scrSaveT02(DISPLAYSURF,scrW,scrH):
 	DISPLAYSURF.blit(displayDay, (scrW - lenDisTime - marge, 282)) 
 	pygame.display.flip()
 
-def scrSaveT03(DISPLAYSURF,scrW,scrH):
+def scrSaveStars(DISPLAYSURF,scrW,scrH):
 	#screen saver starts time + date + day display
 	
 	fontSelL=pygame.font.SysFont(iniPi.font, int(scrW/4))
