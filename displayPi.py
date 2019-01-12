@@ -390,6 +390,8 @@ def scrSaveT02(DISPLAYSURF,scrW,scrH):
 		posSnY += 1
 		pygame.draw.circle(DISPLAYSURF, WHITE, (posSnX, posSnY), 2)
 		posSnY += 1
+		pygame.draw.circle(DISPLAYSURF, WHITE, (posSnX, posSnY), 2)
+		posSnY += 1
 		pygame.draw.circle(DISPLAYSURF, WHITE, (posSnX, posSnY), 3)
 
 
@@ -443,14 +445,14 @@ def scrSaveT02(DISPLAYSURF,scrW,scrH):
 				#pygame.draw.circle(DISPLAYSURF, GREYDARK, snow_pack[i], 1)	
 				print("Yes")
 			else:
-				pygame.draw.circle(DISPLAYSURF, WHITE, snow_pack[i], 2)	
+				pygame.draw.circle(DISPLAYSURF, YELLOW, snow_pack[i], 2)	
 				print("No")
 		elif len(snow_pack) < 1000:
 			if snow_pack[i][1] > 52:
 				#pygame.draw.circle(DISPLAYSURF, GREYDARK, snow_pack[i], 1)	
 				print("Yes")
 			else:
-				pygame.draw.circle(DISPLAYSURF, WHITE, snow_pack[i], 4)	
+				pygame.draw.circle(DISPLAYSURF, RED, snow_pack[i], 4)	
 		else:
 			if snow_pack[i][1] > 52:
 				#pygame.draw.circle(DISPLAYSURF, GREYDARK, snow_pack[i], 1)	
