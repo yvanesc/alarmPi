@@ -372,8 +372,12 @@ def scrSaveT02(DISPLAYSURF,scrW,scrH):
 		pygame.draw.circle(DISPLAYSURF, WHITE, (posSnX, posSnY), 3)
 
 		posSnY = snow_list[i][1]
-		posSnY -= random.randrange (10, 25)
+		posSnY -= random.randrange (10, 50)
 		posSnX = snow_list[i][0]
+		pygame.draw.circle(DISPLAYSURF, WHITE, (posSnX, posSnY), 2)
+		posSnY -= 1
+		pygame.draw.circle(DISPLAYSURF, WHITE, (posSnX, posSnY), 2)
+		posSnY += 1
 		pygame.draw.circle(DISPLAYSURF, WHITE, (posSnX, posSnY), 2)
 
 		# Move the snow flake down one pixel
