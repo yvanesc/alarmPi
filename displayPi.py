@@ -282,8 +282,8 @@ def scrSaveT01(DISPLAYSURF,scrW,scrH):
 				#iniPi.heigthRect = iniPi.heigthRect + random.randrange(0,1)
 
 			
-			print(iniPi.widthRect)
-			print(iniPi.heigthRect)
+			print(widthRect)
+			print(heigthRect)
 			# Reset it just above the top
 			y = random.randrange(-50, -10)
 			snow_list[i][1] = y
