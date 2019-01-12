@@ -57,7 +57,7 @@ while True:
 		#display button 1-4 & 5-6
 		
 		#display center
-        displayPi.scrSaveBoreal(DISPLAYSURF,scrW,scrH)
+        displayPi.scrSaveRain(DISPLAYSURF,scrW,scrH)
 
         pygame.display.update()
         clock.tick(60)  # Limit the frame rate to 60 FPS.
