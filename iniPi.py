@@ -18,6 +18,7 @@ GREY =  (112, 128, 144)
 GREYDARK = (47, 79, 79)
 YELLOW = (255, 255, 0)
 TURKOISE = (0, 125, 150)
+ORANGE = (255, 165, 0)
 
 # ini font
 font_color = (BLACK)
