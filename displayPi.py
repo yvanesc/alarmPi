@@ -333,7 +333,7 @@ def scrSaveT02(DISPLAYSURF,scrW,scrH):
 	time2Display = datetime.datetime.now().strftime("%H:%M")
 	date2Display = datetime.datetime.now().strftime("%d.%m.%y")
 	disDay = datetime.datetime.today().strftime('%A')[:3]
-	displayTime = fontSelL.render(time2Display, True, RED)
+	displayTime = fontSelL.render(time2Display, True, TURKOISE)
 	displayDate = fontSel.render(date2Display, True, RED)
 	displayDay = fontSel.render(disDay, True, YELLOW)
 	lenDisTime = displayTime.get_width()	
