@@ -226,7 +226,7 @@ def scrSave(DISPLAYSURF,scrW,scrH):
 
 def scrSaveT01(DISPLAYSURF,scrW,scrH):
 	#screen saver snowflake time + date + day display
-	
+	posXRect = scrW - lenDisTime - marge
 	fontSelL=pygame.font.SysFont(iniPi.font, int(scrW/4))#iniPi.font_sizeB)
 	fontSel=pygame.font.SysFont(iniPi.font, int(scrW/6))
 	DISPLAYSURF.fill(BLACK)
@@ -269,7 +269,7 @@ def scrSaveT01(DISPLAYSURF,scrW,scrH):
 			#first snow
 			if iniPi.snowOnTime == 0:
 				iniPi.snowOnTime = 1
-				posXRect = scrW - lenDisTime - marge#random.randrange(scrW - lenDisTime - marge, scrW)
+				#posXRect = scrW - lenDisTime - marge#random.randrange(scrW - lenDisTime - marge, scrW)
 				
 			#if posXRect > (scrW - lenDisTime - marge):
 				#posXRect = posXRect - 1
