@@ -324,8 +324,8 @@ def scrSaveT01(DISPLAYSURF,scrW,scrH):
 	DISPLAYSURF.blit(displayDay, (scrW - lenDisTime - marge, 282)) 
 	pygame.display.flip()
 
-def scrSaveT02(DISPLAYSURF,scrW,scrH):
-	#screen saver snowflake time + date + day display
+def scrSaveBombs(DISPLAYSURF,scrW,scrH):
+	#screen saver bombs falling time + date + day display
 	
 	fontSelL=pygame.font.SysFont(iniPi.font, int(scrW/4))#iniPi.font_sizeB)
 	fontSel=pygame.font.SysFont(iniPi.font, int(scrW/6))
