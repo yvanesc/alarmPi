@@ -494,17 +494,17 @@ def scrSaveT03(DISPLAYSURF,scrW,scrH):
  
 		# Draw the stars
 		# x -> width
-		sizeStar = random.randrange(2, 10)
+		sizeStar = random.randrange(3, 9)
 		posXL = snow_list[i][0] - sizeStar#10
 		posXR = snow_list[i][0] + sizeStar
 		posYL = snow_list[i][1] - sizeStar
 		posYR = snow_list[i][1] + sizeStar
 		pygame.draw.line(DISPLAYSURF, WHITE, (posXL, snow_list[i][1]),(posXR,snow_list[i][1]), 1)		
 		pygame.draw.line(DISPLAYSURF, WHITE, (snow_list[i][0],posYL),(snow_list[i][0],posYR), 1)		
-		pygame.draw.circle(DISPLAYSURF, WHITE, (posXL - 2, snow_list[i][1]), 1)
-		pygame.draw.circle(DISPLAYSURF, WHITE, (posXR + 2, snow_list[i][1]), 1)
-		pygame.draw.circle(DISPLAYSURF, WHITE, (snow_list[i][0], posYL - 2), 1)
-		pygame.draw.circle(DISPLAYSURF, WHITE, (snow_list[i][0], posYR + 2), 1)
+		pygame.draw.circle(DISPLAYSURF, WHITE, (posXL - 2, snow_list[i][1]), 0.5)
+		pygame.draw.circle(DISPLAYSURF, WHITE, (posXR + 2, snow_list[i][1]), 0.5)
+		pygame.draw.circle(DISPLAYSURF, WHITE, (snow_list[i][0], posYL - 2), 0.5)
+		pygame.draw.circle(DISPLAYSURF, WHITE, (snow_list[i][0], posYR + 2), 0.5)
 		# Move the snow flake down one pixel
 		#snow_list[i][1] += 1
 
