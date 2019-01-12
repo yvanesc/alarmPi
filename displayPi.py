@@ -241,6 +241,8 @@ def scrSaveT01(DISPLAYSURF,scrW,scrH):
 	#create only once
 	if iniPi.snFlake == 0:		
 		iniPi.snFlake = 1
+		widthRect = 0
+		heigthRect = 0							
 		for i in range(100):
 			x = random.randrange(0, scrW)
 			y = random.randrange(0, scrH)
@@ -269,14 +271,15 @@ def scrSaveT01(DISPLAYSURF,scrW,scrH):
 			#first snow
 			if iniPi.snowOnTime == 0:
 				snowOnTime = 1
-				posXRect = random.randrange(scrW - lenDisTime - marge, scrW)							
+				posXRect = random.randrange(scrW - lenDisTime - marge, scrW)
+				
 			if posXRect > (scrW - lenDisTime - marge):
 				posXRect = posXRect - 1
-				iniPi.widthRect = iniPi.widthRect + random.randrange(0,1)
-				iniPi.heightRect = iniPi.heightRect - random.randrange(0,1)
+				widthRect = widthRect + random.randrange(0,1)
+				heightRect = heightRect - random.randrange(0,1)
 			else:
-				iniPi.widthRect = iniPi.widthRect + random.randrange(0,1)
-				iniPi.heightRect = iniPi.heightRect - random.randrange(0,1)
+				widthRect = widthRect + random.randrange(0,1)
+				heightRect = heightRect - random.randrange(0,1)
 
 			pygame.draw.rect(DISPLAYSURF, WHITE, (posXRect,51, widthRect, heightRect))
 			# Reset it just above the top
