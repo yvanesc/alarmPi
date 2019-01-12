@@ -608,7 +608,7 @@ def scrSaveRain(DISPLAYSURF,scrW,scrH):
 			snow_list[i][1] = y
 			# Give it a new x position
 			x = random.randrange(0, scrW)
-			snow_list[i][0] = x           
+			snow_list[i][0] = x
  		if (snow_list[i][1] > 53 and snow_list[i][0] > (scrW - lenDisTime - marge*2)):
  			snow_list[i][1] = snow_list[i][1] + 300
 	# Go ahead and update the screen with what we've drawn.
