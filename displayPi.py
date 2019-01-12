@@ -279,7 +279,7 @@ def scrSaveT01(DISPLAYSURF,scrW,scrH):
 				#iniPi.widthRect = iniPi.widthRect + random.randrange(0,1)
 				#iniPi.heigthRect = iniPi.heigthRect + random.randrange(0,1)
 
-			pygame.draw.rect(DISPLAYSURF, WHITE, (posXRect,51, 10, -10 ))#widthRect, heigthRect))
+			
 			print(posXRect)
 			#print()
 			# Reset it just above the top
@@ -292,6 +292,7 @@ def scrSaveT01(DISPLAYSURF,scrW,scrH):
 
  
 	# Go ahead and update the screen with what we've drawn.
+	pygame.draw.rect(DISPLAYSURF, WHITE, (posXRect,51, iniPi.widthRect, iniPi.heigthRect))
 	DISPLAYSURF.blit(displayTime, (scrW - lenDisTime - marge, 52)) 
 	DISPLAYSURF.blit(displayDate, (scrW - lenDisTime - marge, 182)) 
 	DISPLAYSURF.blit(displayDay, (scrW - lenDisTime - marge, 282)) 
