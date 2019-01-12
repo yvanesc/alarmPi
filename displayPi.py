@@ -373,7 +373,7 @@ def scrSaveT02(DISPLAYSURF,scrW,scrH):
 
 		# Move the snow flake down one pixel
 		#snow_list[i][1] += 4
-		snow_list[i][1] += random.randrange (4, 8)
+		snow_list[i][1] += random.randrange (4, 20)
 
 		# If the snow flake has moved off the bottom of the screen
 		if snow_list[i][1] > scrH :#or (snow_list[i][1] > 51) and snow_list[i][0] > (scrW - lenDisTime - marge)):        
