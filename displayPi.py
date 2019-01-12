@@ -265,7 +265,7 @@ def scrSaveT01(DISPLAYSURF,scrW,scrH):
 			snow_list[i][0] = x
 
 		# if the snow fall on time
-		if (snow_list[i][1] > 51) and snow_list[i][0] > (scrW - lenDisTime - marge):
+		if (49 < snow_list[i][1] > 51) and snow_list[i][0] > (scrW - lenDisTime - marge):
 			#draw the snow
 			#first snow
 			if iniPi.snowOnTime == 0:
@@ -296,8 +296,7 @@ def scrSaveT01(DISPLAYSURF,scrW,scrH):
 
 		#pygame.draw.rect(DISPLAYSURF, WHITE, (posXRect,51, iniPi.widthRect, iniPi.heigthRect))
 	for i in range(len(snow_pack)):
-		if snow_pack[i][1] < 52:
-			pygame.draw.circle(DISPLAYSURF, WHITE, snow_pack[i], 2)	
+		pygame.draw.circle(DISPLAYSURF, WHITE, snow_pack[i], 2)	
 
 
 	# Go ahead and update the screen with what we've drawn.	
