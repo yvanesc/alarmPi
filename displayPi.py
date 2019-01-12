@@ -296,12 +296,20 @@ def scrSaveT01(DISPLAYSURF,scrW,scrH):
 
 		#pygame.draw.rect(DISPLAYSURF, WHITE, (posXRect,51, iniPi.widthRect, iniPi.heigthRect))
 	for i in range(len(snow_pack)):
-		if snow_pack[i][1] > 52:
-			#pygame.draw.circle(DISPLAYSURF, GREYDARK, snow_pack[i], 1)	
-			print("Yes")
+		if len(snow_pack) < 50:
+			if snow_pack[i][1] > 52:
+				#pygame.draw.circle(DISPLAYSURF, GREYDARK, snow_pack[i], 1)	
+				print("Yes")
+			else:
+				pygame.draw.circle(DISPLAYSURF, WHITE, snow_pack[i], 2)	
+				print("No")
 		else:
-			pygame.draw.circle(DISPLAYSURF, WHITE, snow_pack[i], 2)	
-			print("No")
+			if snow_pack[i][1] > 52:
+				#pygame.draw.circle(DISPLAYSURF, GREYDARK, snow_pack[i], 1)	
+				print("Yes")
+			else:
+				pygame.draw.circle(DISPLAYSURF, WHITE, snow_pack[i], 4)	
+				print("No")
 
 
 	# Go ahead and update the screen with what we've drawn.	
