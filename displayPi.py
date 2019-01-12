@@ -274,12 +274,14 @@ def scrSaveT01(DISPLAYSURF,scrW,scrH):
 			if posXRect > (scrW - lenDisTime - marge):
 				posXRect = posXRect - 1
 				iniPi.widthRect = iniPi.widthRect + random.randrange(0,1)
-				iniPi.heigthRect = iniPi.heigthRect - random.randrange(0,1)
+				iniPi.heigthRect = iniPi.heigthRect + random.randrange(0,1)
 			else:
 				iniPi.widthRect = iniPi.widthRect + random.randrange(0,1)
-				iniPi.heigthRect = iniPi.heigthRect - random.randrange(0,1)
+				iniPi.heigthRect = iniPi.heigthRect + random.randrange(0,1)
 
 			pygame.draw.rect(DISPLAYSURF, WHITE, (posXRect,51, widthRect, heigthRect))
+			print(posXRect)
+			#print()
 			# Reset it just above the top
 			y = random.randrange(-50, -10)
 			snow_list[i][1] = y
