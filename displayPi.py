@@ -375,7 +375,7 @@ def scrSaveT02(DISPLAYSURF,scrW,scrH):
 		pygame.draw.circle(DISPLAYSURF, YELLOW, (posSnX, posSnY), 3)
 
 		posSnY = snow_list[i][1]
-		posSnY -= random.randrange (12, 30)
+		posSnY -= random.randrange (12, 28)
 		posSnX = snow_list[i][0]
 		pygame.draw.circle(DISPLAYSURF, YELLOW, (posSnX, posSnY), 3)		
 		posSnY -= 1
@@ -413,7 +413,7 @@ def scrSaveT02(DISPLAYSURF,scrW,scrH):
 			snow_list[i][0] = x
 
 		# if the snow fall on time
-		if (49 < snow_list[i][1] > 51) and snow_list[i][0] > (scrW - lenDisTime - marge):
+		if (49 < snow_list[i][1] > 51) and snow_list[i][0] > (scrW - lenDisTime - marge*2):
 			#draw the snow
 			#first snow
 			if iniPi.snowOnTime == 0:
