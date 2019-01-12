@@ -375,6 +375,7 @@ def scrSaveT02(DISPLAYSURF,scrW,scrH):
 		posSnY -= random.randrange (10, 50)
 		posSnX = snow_list[i][0]
 		pygame.draw.circle(DISPLAYSURF, WHITE, (posSnX, posSnY), 2)
+		pygame.draw.circle(DISPLAYSURF, GREY, (posSnX, posSnY), 1)
 		posSnY -= 1
 		pygame.draw.circle(DISPLAYSURF, WHITE, (posSnX, posSnY), 2)
 		posSnY += 2
