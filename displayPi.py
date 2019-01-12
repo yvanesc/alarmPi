@@ -329,7 +329,7 @@ def scrSaveT02(DISPLAYSURF,scrW,scrH):
 	
 	fontSelL=pygame.font.SysFont(iniPi.font, int(scrW/4))#iniPi.font_sizeB)
 	fontSel=pygame.font.SysFont(iniPi.font, int(scrW/6))
-	DISPLAYSURF.fill(BLACK)
+	DISPLAYSURF.fill(BLUE)
 	time2Display = datetime.datetime.now().strftime("%H:%M")
 	date2Display = datetime.datetime.now().strftime("%d.%m.%y")
 	disDay = datetime.datetime.today().strftime('%A')[:3]
