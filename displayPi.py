@@ -323,3 +323,103 @@ def scrSaveT01(DISPLAYSURF,scrW,scrH):
 	DISPLAYSURF.blit(displayDate, (scrW - lenDisTime - marge, 182)) 
 	DISPLAYSURF.blit(displayDay, (scrW - lenDisTime - marge, 282)) 
 	pygame.display.flip()
+
+def scrSaveT02(DISPLAYSURF,scrW,scrH):
+	#screen saver snowflake time + date + day display
+	
+	fontSelL=pygame.font.SysFont(iniPi.font, int(scrW/4))#iniPi.font_sizeB)
+	fontSel=pygame.font.SysFont(iniPi.font, int(scrW/6))
+	DISPLAYSURF.fill(BLACK)
+	time2Display = datetime.datetime.now().strftime("%H:%M")
+	date2Display = datetime.datetime.now().strftime("%d.%m.%y")
+	disDay = datetime.datetime.today().strftime('%A')[:3]
+	displayTime = fontSelL.render(time2Display, True, RED)
+	displayDate = fontSel.render(date2Display, True, RED)
+	displayDay = fontSel.render(disDay, True, YELLOW)
+	lenDisTime = displayTime.get_width()	
+	posXRect = scrW - lenDisTime - marge
+	#create only once
+	if iniPi.snFlake == 0:		
+		iniPi.snFlake = 1		
+		print("YesOne")
+		for i in range(10):
+			x = random.randrange(0, scrW)
+			y = random.randrange(0, scrH)
+			snow_list.append([x, y])
+	# Process each snow flake in the list
+	for i in range(len(snow_list)):
+ 
+		# Draw the snow flake
+		pygame.draw.circle(DISPLAYSURF, WHITE, snow_list[i], 4)				
+		pygame.draw.circle(DISPLAYSURF, Grey, snow_list[i], 2)				
+		# Move the snow flake down one pixel
+		snow_list[i][1] += 1
+
+		# If the snow flake has moved off the bottom of the screen
+		if snow_list[i][1] > scrH :#or (snow_list[i][1] > 51) and snow_list[i][0] > (scrW - lenDisTime - marge)):        
+			# Reset it just above the top
+			y = random.randrange(-50, -10)
+			snow_list[i][1] = y
+			# Give it a new x position
+			x = random.randrange(0, scrW)
+			snow_list[i][0] = x
+
+		# if the snow fall on time
+		if (49 < snow_list[i][1] > 51) and snow_list[i][0] > (scrW - lenDisTime - marge):
+			#draw the snow
+			#first snow
+			if iniPi.snowOnTime == 0:
+				iniPi.snowOnTime = 1
+				
+				#posXRect = scrW - lenDisTime - marge#random.randrange(scrW - lenDisTime - marge, scrW)
+				
+			#if posXRect > (scrW - lenDisTime - marge):
+				#posXRect = posXRect - 1
+			try:
+				iniPi.widthRect += random.randrange(0,2)
+			except:
+				iniPi.widthRect = random.randrange(0,2)
+
+			try:
+				iniPi.heigthRect = heigthRect - random.randrange(0,2)
+			except:
+				iniPi.heigthRect = random.randrange(0,-2)
+			# add snow flak and check if place alone
+			snow_pack.append([snow_list[i][0],snow_list[i][1]])
+			#snow_list.append([x, y])
+			# Reset it just above the top
+			y = random.randrange(-50, -10)
+			snow_list[i][1] = y
+			# Give it a new x position
+			x = random.randrange(0, scrW)
+			snow_list[i][0] = x
+
+		#pygame.draw.rect(DISPLAYSURF, WHITE, (posXRect,51, iniPi.widthRect, iniPi.heigthRect))
+	for i in range(len(snow_pack)):
+		if len(snow_pack) < 500:
+			if snow_pack[i][1] > 52:
+				#pygame.draw.circle(DISPLAYSURF, GREYDARK, snow_pack[i], 1)	
+				print("Yes")
+			else:
+				pygame.draw.circle(DISPLAYSURF, WHITE, snow_pack[i], 2)	
+				print("No")
+		elif len(snow_pack) < 1000:
+			if snow_pack[i][1] > 52:
+				#pygame.draw.circle(DISPLAYSURF, GREYDARK, snow_pack[i], 1)	
+				print("Yes")
+			else:
+				pygame.draw.circle(DISPLAYSURF, WHITE, snow_pack[i], 4)	
+		else:
+			if snow_pack[i][1] > 52:
+				#pygame.draw.circle(DISPLAYSURF, GREYDARK, snow_pack[i], 1)	
+				print("Yes")
+			else:
+				pygame.draw.circle(DISPLAYSURF, WHITE, snow_pack[i], 8)	
+				print("No")
+
+
+	# Go ahead and update the screen with what we've drawn.	
+	DISPLAYSURF.blit(displayTime, (scrW - lenDisTime - marge, 52)) 
+	DISPLAYSURF.blit(displayDate, (scrW - lenDisTime - marge, 182)) 
+	DISPLAYSURF.blit(displayDay, (scrW - lenDisTime - marge, 282)) 
+	pygame.display.flip()
