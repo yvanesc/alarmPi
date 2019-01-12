@@ -250,7 +250,7 @@ def scrSaveT01(DISPLAYSURF,scrW,scrH):
 	for i in range(len(snow_list)):
  
 		# Draw the snow flake
-		pygame.draw.circle(DISPLAYSURF, WHITE, snow_list[i], 4)		
+		pygame.draw.circle(DISPLAYSURF, WHITE, snow_list[i], 4)				
 
 		# Move the snow flake down one pixel
 		snow_list[i][1] += 1
@@ -284,13 +284,9 @@ def scrSaveT01(DISPLAYSURF,scrW,scrH):
 				iniPi.heigthRect = heigthRect - random.randrange(0,2)
 			except:
 				iniPi.heigthRect = random.randrange(0,-2)
-			#else:
-				#iniPi.widthRect = iniPi.widthRect + random.randrange(0,1)
-				#iniPi.heigthRect = iniPi.heigthRect + random.randrange(0,1)
-
-			
-			#print(widthRect)
-			#print(heigthRect)
+			# add snow flak and check if place alone
+			snow_pack.append([snow_list[i][0],snow_list[i][1]])
+			#snow_list.append([x, y])
 			# Reset it just above the top
 			y = random.randrange(-50, -10)
 			snow_list[i][1] = y
@@ -298,8 +294,11 @@ def scrSaveT01(DISPLAYSURF,scrW,scrH):
 			x = random.randrange(0, scrW)
 			snow_list[i][0] = x
 
-		pygame.draw.rect(DISPLAYSURF, WHITE, (posXRect,51, iniPi.widthRect, iniPi.heigthRect))
- 
+		#pygame.draw.rect(DISPLAYSURF, WHITE, (posXRect,51, iniPi.widthRect, iniPi.heigthRect))
+	for i in range(len(snow_pack)):
+		pygame.draw.circle(DISPLAYSURF, WHITE, snow_pack[i], 2)	
+
+
 	# Go ahead and update the screen with what we've drawn.	
 	DISPLAYSURF.blit(displayTime, (scrW - lenDisTime - marge, 52)) 
 	DISPLAYSURF.blit(displayDate, (scrW - lenDisTime - marge, 182)) 

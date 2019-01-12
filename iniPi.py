@@ -124,6 +124,7 @@ snowOnTime = 0
 widthRect = 0
 heigthRect = 0								
 snow_list = []
+snow_pack = []
 
 #list bluetooth
 
