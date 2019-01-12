@@ -585,7 +585,7 @@ def scrSaveRain(DISPLAYSURF,scrW,scrH):
 	#create only once
 	if iniPi.snFlake == 0:		
 		iniPi.snFlake = 1
-		for i in range(10):
+		for i in range(20):
 			x = random.randrange(0, scrW)
 			y = random.randrange(0, scrH)
 			snow_list.append([x, y])
