@@ -272,11 +272,11 @@ def scrSaveT01(DISPLAYSURF,scrW,scrH):
 				posXRect = random.randrange(scrW - lenDisTime - marge, scrW)
 			if posXRect > (scrW - lenDisTime - marge):
 				posXRect = posXRect - 1
-				widthRect = widthRect + random.randrange(0,1)
-				heightRect = heightRect - random.randrange(0,1)
+				iniPi.widthRect = iniPi.widthRect + random.randrange(0,1)
+				iniPi.heightRect = iniPi.heightRect - random.randrange(0,1)
 			else:
-				widthRect = widthRect + random.randrange(0,1)
-				heightRect = heightRect - random.randrange(0,1)
+				iniPi.widthRect = iniPi.widthRect + random.randrange(0,1)
+				iniPi.heightRect = iniPi.heightRect - random.randrange(0,1)
 
 			pygame.draw.rect(DISPLAYSURF, WHITE, (posXRect,51, widthRect, heightRect))
 			# Reset it just above the top
