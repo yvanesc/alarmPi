@@ -485,7 +485,7 @@ def scrSaveT03(DISPLAYSURF,scrW,scrH):
 	#create only once
 	if iniPi.snFlake == 0:		
 		iniPi.snFlake = 1
-		for i in range(100):
+		for i in range(50):
 			x = random.randrange(0, scrW)
 			y = random.randrange(0, scrH)
 			snow_list.append([x, y])
