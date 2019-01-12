@@ -585,7 +585,7 @@ def scrSaveRain(DISPLAYSURF,scrW,scrH):
 	#create only once
 	if iniPi.snFlake == 0:		
 		iniPi.snFlake = 1
-		for i in range(100):
+		for i in range(50):
 			x = random.randrange(0, scrW)
 			y = random.randrange(0, scrH)
 			snow_list.append([x, y])
@@ -594,8 +594,8 @@ def scrSaveRain(DISPLAYSURF,scrW,scrH):
  
 		# Draw the snow flake
 		pygame.draw.circle(DISPLAYSURF, WHITE, snow_list[i], 2)		
-		for iTrace in range(1,100,1):
-			pygame.draw.circle(DISPLAYSURF, (255-iTrace*2, 255-iTrace*2, 255-iTrace*2), (snow_list[i][0],snow_list[i][1]-iTrace), 1)
+		for iTrace in range(1,255,1):
+			pygame.draw.circle(DISPLAYSURF, (255-iTrace, 255-iTrace, 255-iTrace), (snow_list[i][0],snow_list[i][1]-iTrace), 1)
 		# Move the snow flake down one pixel
 		snow_list[i][1] += 1
 
