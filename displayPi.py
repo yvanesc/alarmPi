@@ -585,7 +585,7 @@ def scrSaveRain(DISPLAYSURF,scrW,scrH):
 	#create only once
 	if iniPi.snFlake == 0:		
 		iniPi.snFlake = 1
-		for i in range(50):
+		for i in range(10):
 			x = random.randrange(0, scrW)
 			y = random.randrange(0, scrH)
 			snow_list.append([x, y])
@@ -602,14 +602,15 @@ def scrSaveRain(DISPLAYSURF,scrW,scrH):
 
 		# If the snow flake has moved off the bottom of the screen
 		#lenDisTime = scrW - lenDisTime
-		if snow_list[i][1] > scrH or (snow_list[i][1] > 51 and snow_list[i][0] > (scrW - lenDisTime - marge*2)):        
+		if snow_list[i][1] > scrH :#or (snow_list[i][1] > 51 and snow_list[i][0] > (scrW - lenDisTime - marge*2)):        
 			# Reset it just above the top
 			y = random.randrange(-50, -10)
 			snow_list[i][1] = y
 			# Give it a new x position
 			x = random.randrange(0, scrW)
 			snow_list[i][0] = x           
- 
+ 		if (snow_list[i][1] > 53 and snow_list[i][0] > (scrW - lenDisTime - marge*2)):  
+ 			snow_list[i][1] = snow_list[i][1] + 300
 	# Go ahead and update the screen with what we've drawn.
 	DISPLAYSURF.blit(displayTime, (scrW - lenDisTime - marge, 52)) 
 	DISPLAYSURF.blit(displayDate, (scrW - lenDisTime - marge, 182)) 
