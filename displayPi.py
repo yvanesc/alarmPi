@@ -645,7 +645,7 @@ def scrSaveBoreal(DISPLAYSURF,scrW,scrH):
 		pygame.draw.circle(DISPLAYSURF, WHITE, snow_list[i], 2)
 		for iBoreal	in range(1,10,1):
 			nbBoreal = random.randrange(0, 2)
-			pygame.draw.circle(DISPLAYSURF, WHITE, (snow_list[i][0]-iBoreal,snow_list[i][1]-nbBoreal, 1)
+			pygame.draw.circle(DISPLAYSURF, WHITE, (snow_list[i][0]-iBoreal,snow_list[i][1]-nbBoreal), 1)
 		for iTrace in range(1,255,1):
 			pygame.draw.circle(DISPLAYSURF, (255-iTrace, 255-iTrace, 255-iTrace), (snow_list[i][0],snow_list[i][1]-iTrace), 1)
 		# Move the snow flake down one pixel
