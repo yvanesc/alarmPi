@@ -337,7 +337,7 @@ def scrSaveT02(DISPLAYSURF,scrW,scrH):
 	displayDate = fontSel.render(date2Display, True, RED)
 	displayDay = fontSel.render(disDay, True, YELLOW)
 	lenDisTime = displayTime.get_width()	
-	posXRect = scrW - lenDisTime - marge
+	posXRect = scrW - lenDisTime - marge	
 	#create only once
 	if iniPi.snFlake == 0:		
 		iniPi.snFlake = 1		
@@ -360,7 +360,12 @@ def scrSaveT02(DISPLAYSURF,scrW,scrH):
 		posSnY = snow_list[i][1]
 		posSnY -= 4
 		posSnX = snow_list[i][0]
-		pygame.draw.circle(DISPLAYSURF, GREY, (posSnX, posSnY), 2)
+		if iniPi.blinkComet == 0:
+			iniPi.blinkComet = 1
+			pygame.draw.circle(DISPLAYSURF, WHITE, (posSnX, posSnY), 2)
+		else:
+			iniPi.blinkComet = 0
+			pygame.draw.circle(DISPLAYSURF, GREY, (posSnX, posSnY), 2)
 
 		# Move the snow flake down one pixel
 		snow_list[i][1] += 4
