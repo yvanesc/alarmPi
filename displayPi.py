@@ -349,11 +349,13 @@ def scrSaveT02(DISPLAYSURF,scrW,scrH):
 	# Process each snow flake in the list
 	for i in range(len(snow_list)):
  
-		# Draw the snow flake
-		pygame.draw.circle(DISPLAYSURF, WHITE, snow_list[i], 4)				
-		pygame.draw.circle(DISPLAYSURF, GREY, snow_list[i], 2)				
-		# Move the snow flake down one pixel
+		# Draw the snow flake		
+		pygame.draw.circle(DISPLAYSURF, GREY, snow_list[i], 3)				
 		snow_list[i][1] += 1
+		pygame.draw.circle(DISPLAYSURF, WHITE, snow_list[i], 4)				
+
+		# Move the snow flake down one pixel
+		#snow_list[i][1] += 1
 
 		# If the snow flake has moved off the bottom of the screen
 		if snow_list[i][1] > scrH :#or (snow_list[i][1] > 51) and snow_list[i][0] > (scrW - lenDisTime - marge)):        
