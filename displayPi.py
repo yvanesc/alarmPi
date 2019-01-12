@@ -352,13 +352,16 @@ def scrSaveT02(DISPLAYSURF,scrW,scrH):
 		# Draw the snow flake		
 						
 		#snow_list[i][1] += 2
-		pygame.draw.circle(DISPLAYSURF, RED, snow_list[i], 8)				
+		pygame.draw.circle(DISPLAYSURF, RED, snow_list[i], 10)				
 		posSnY = snow_list[i][1]
 		posSnY -= 2
-		posSnX = snow_list[i][0]
-		pygame.draw.circle(DISPLAYSURF, YELLOW, (posSnX, posSnY), 6)
+		pygame.draw.circle(DISPLAYSURF, YELLOW, snow_list[i], 8)				
 		posSnY = snow_list[i][1]
 		posSnY -= 4
+		posSnX = snow_list[i][0]
+		pygame.draw.circle(DISPLAYSURF, RED, (posSnX, posSnY), 6)
+		posSnY = snow_list[i][1]
+		posSnY -= 6
 		posSnX = snow_list[i][0]
 		if iniPi.blinkComet == 0:
 			iniPi.blinkComet = 1
@@ -367,7 +370,7 @@ def scrSaveT02(DISPLAYSURF,scrW,scrH):
 			iniPi.blinkComet = 0
 			pygame.draw.circle(DISPLAYSURF, GREY, (posSnX, posSnY), 5)
 		posSnY = snow_list[i][1]
-		posSnY -= 5
+		posSnY -= 7
 		posSnX = snow_list[i][0]
 		pygame.draw.circle(DISPLAYSURF, WHITE, (posSnX, posSnY), 3)
 
