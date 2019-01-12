@@ -593,11 +593,11 @@ def scrSaveRain(DISPLAYSURF,scrW,scrH):
 	for i in range(len(snow_list)):
  
 		# Draw the snow flake
-		pygame.draw.circle(DISPLAYSURF, WHITE, snow_list[i], 2)		
-		for iTrace in range(1,255,3):
-			pygame.draw.circle(DISPLAYSURF, (255-iTrace, 255-iTrace, 255-iTrace), (snow_list[i][0],snow_list[i][1]-iTrace), 2)
+		pygame.draw.circle(DISPLAYSURF, WHITE, snow_list[i], 1)		
+		for iTrace in range(1,255,2):
+			pygame.draw.circle(DISPLAYSURF, (255-iTrace, 255-iTrace, 255-iTrace), (snow_list[i][0],snow_list[i][1]-iTrace), 1)
 		# Move the snow flake down one pixel
-		snow_list[i][1] += 1
+		snow_list[i][1] += 2
 
 
 		# If the snow flake has moved off the bottom of the screen
