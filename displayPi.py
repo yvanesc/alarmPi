@@ -294,7 +294,7 @@ def scrSaveT01(DISPLAYSURF,scrW,scrH):
 
  
 	# Go ahead and update the screen with what we've drawn.
-	pygame.draw.rect(DISPLAYSURF, WHITE, (posXRect,51, iniPi.widthRect, iniPi.heigthRect))
+	pygame.draw.rect(DISPLAYSURF, WHITE, (posXRect,51, widthRect, heigthRect))
 	DISPLAYSURF.blit(displayTime, (scrW - lenDisTime - marge, 52)) 
 	DISPLAYSURF.blit(displayDate, (scrW - lenDisTime - marge, 182)) 
 	DISPLAYSURF.blit(displayDay, (scrW - lenDisTime - marge, 282)) 
