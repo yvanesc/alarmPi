@@ -121,8 +121,7 @@ startSc = 0
 #screen saver snow
 snFlake = 0
 snowOnTime = 0
-widthRect = 0
-heigthRect = 0
+
 snow_list = []
 
 #list bluetooth
