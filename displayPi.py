@@ -240,9 +240,7 @@ def scrSaveT01(DISPLAYSURF,scrW,scrH):
 	posXRect = scrW - lenDisTime - marge
 	#create only once
 	if iniPi.snFlake == 0:		
-		iniPi.snFlake = 1
-		widthRect = 0
-		heigthRect = 0								
+		iniPi.snFlake = 1		
 		print("YesOne")
 		for i in range(100):
 			x = random.randrange(0, scrW)
@@ -278,21 +276,21 @@ def scrSaveT01(DISPLAYSURF,scrW,scrH):
 			#if posXRect > (scrW - lenDisTime - marge):
 				#posXRect = posXRect - 1
 			try:
-				widthRect += random.randrange(0,2)
+				iniPi.widthRect += random.randrange(0,2)
 			except:
-				widthRect = random.randrange(0,2)
+				iniPi.widthRect = random.randrange(0,2)
 
 			try:
-				heigthRect = heigthRect - random.randrange(0,2)
+				iniPi.heigthRect = heigthRect - random.randrange(0,2)
 			except:
-				heigthRect = random.randrange(0,2)
+				iniPi.heigthRect = random.randrange(0,2)
 			#else:
 				#iniPi.widthRect = iniPi.widthRect + random.randrange(0,1)
 				#iniPi.heigthRect = iniPi.heigthRect + random.randrange(0,1)
 
 			
-			print(widthRect)
-			print(heigthRect)
+			#print(widthRect)
+			#print(heigthRect)
 			# Reset it just above the top
 			y = random.randrange(-50, -10)
 			snow_list[i][1] = y
@@ -300,7 +298,7 @@ def scrSaveT01(DISPLAYSURF,scrW,scrH):
 			x = random.randrange(0, scrW)
 			snow_list[i][0] = x
 
-		pygame.draw.rect(DISPLAYSURF, WHITE, (posXRect,51, widthRect, heigthRect))
+		pygame.draw.rect(DISPLAYSURF, WHITE, (posXRect,51, iniPi.widthRect, iniPi.heigthRect))
  
 	# Go ahead and update the screen with what we've drawn.	
 	DISPLAYSURF.blit(displayTime, (scrW - lenDisTime - marge, 52)) 
