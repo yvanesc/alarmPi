@@ -699,7 +699,7 @@ def scrSaveCircle(DISPLAYSURF,scrW,scrH):
 	#create only once
 	if iniPi.snFlake == 0:		
 		iniPi.snFlake = 1
-		for i in range(8):
+		for i in range(4):
 			x = random.randrange(40, (scrW - lenDisTime - marge*8))
 			y = random.randrange(40, scrH-40)
 			sizeStarLst = [random.randrange(20, 25),random.randrange(60, 80),random.randrange(40, 50)]
