@@ -719,7 +719,7 @@ def scrSaveCircle(DISPLAYSURF,scrW,scrH):
 			pygame.draw.circle(DISPLAYSURF, (nbCircle - 6, 0, 0), (snow_list[i][0],snow_list[i][1]), moveStar - 1 + nbCircle)
 			pygame.draw.circle(DISPLAYSURF, (nbCircle - 6, nbCircle - 6, 0), (snow_list[i][0],snow_list[i][1]), moveStar - 6 + nbCircle)
 			pygame.draw.circle(DISPLAYSURF, YELLOW, (snow_list[i][0],snow_list[i][1]), moveStar - 7 + nbCircle)
-			colorStarLst[ORANGE,RED,YELLOW]
+			colorStarLst = [ORANGE,RED,YELLOW]
 			colorStar = random.choice(colorStarLst)
 			pygame.draw.circle(DISPLAYSURF, colorStar, (snow_list[i][0],snow_list[i][1]), moveStar - 8 + nbCircle)
 			nbCircle = nbCircle - 8
