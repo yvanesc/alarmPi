@@ -702,7 +702,7 @@ def scrSaveCircle(DISPLAYSURF,scrW,scrH):
 		for i in range(20):
 			x = random.randrange(0, scrW)
 			y = random.randrange(0, scrH)
-			sizeStarLst = [random.randrange(2, 25),random.randrange(2, 15),random.randrange(2, 10)]
+			sizeStarLst = [random.randrange(10, 25),random.randrange(10, 15),random.randrange(20, 30)]
 			sizeStar = random.choice(sizeStarLst)#random.choice(items)		
 			snow_list.append([x, y, sizeStar])				
 			#snow_list.append([x, y])
