@@ -711,19 +711,19 @@ def scrSaveCircle(DISPLAYSURF,scrW,scrH):
 		# Draw the stars
 		# x -> width
 		#items = [random.randrange(4, 8),random.randrange(20, 24)]
-		moveStar = random.randrange(2, 6)#random.choice(items)
+		moveStar = random.randrange(1, 5)#random.choice(items)
 		#moveStar = moveStar + snow_list[i][2]
 		nbCircle = snow_list[i][2]
-		while nbCircle > 5:
+		while nbCircle > 7:
 			pygame.draw.circle(DISPLAYSURF, WHITE, (snow_list[i][0],snow_list[i][1]), moveStar + nbCircle)
 			pygame.draw.circle(DISPLAYSURF, BLACK, (snow_list[i][0],snow_list[i][1]), moveStar - 1 + nbCircle)
-			nbCircle = nbCircle - 6
+			nbCircle = nbCircle - 8
 		# Move the snow flake down one pixel
 		#snow_list[i][1] += 1
 
 		# If the snow flake has moved off the bottom of the screen
 		#lenDisTime = scrW - lenDisTime
-		if snow_list[i][1] > scrH or (snow_list[i][1] > 51 and snow_list[i][0] > (scrW - lenDisTime - marge)):        
+		if snow_list[i][1] > (scrH - 10) or (snow_list[i][1] > 45 and snow_list[i][0] > (scrW - lenDisTime - marge - marge)):        
 			# Reset it just above the top
 			y = random.randrange(-50, -10)
 			snow_list[i][1] = y
