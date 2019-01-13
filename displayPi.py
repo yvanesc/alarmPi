@@ -723,7 +723,7 @@ def scrSaveCircle(DISPLAYSURF,scrW,scrH):
 
 		# If the snow flake has moved off the bottom of the screen
 		#lenDisTime = scrW - lenDisTime
-		if snow_list[i][1] > (scrH - 10) or (snow_list[i][1] > 25 and snow_list[i][0] > (scrW - lenDisTime - marge*5)):        
+		if snow_list[i][1] > (scrH - 10) or (snow_list[i][1] > 25 and snow_list[i][0] > (scrW - lenDisTime - marge*8)):        
 			# Reset it just above the top
 			y = random.randrange(-50, -10)
 			snow_list[i][1] = y
