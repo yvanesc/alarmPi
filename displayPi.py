@@ -699,7 +699,7 @@ def scrSaveCircle(DISPLAYSURF,scrW,scrH):
 	#create only once
 	if iniPi.snFlake == 0:		
 		iniPi.snFlake = 1
-		for i in range(20):
+		for i in range(10):
 			x = random.randrange(0, scrW)
 			y = random.randrange(0, scrH)
 			sizeStarLst = [random.randrange(20, 25),random.randrange(60, 80),random.randrange(40, 50)]
@@ -723,7 +723,7 @@ def scrSaveCircle(DISPLAYSURF,scrW,scrH):
 
 		# If the snow flake has moved off the bottom of the screen
 		#lenDisTime = scrW - lenDisTime
-		if snow_list[i][1] > (scrH - 10) or (snow_list[i][1] > 30 and snow_list[i][0] > (scrW - lenDisTime - marge*5)):        
+		if snow_list[i][1] > (scrH - 10) or (snow_list[i][1] > 25 and snow_list[i][0] > (scrW - lenDisTime - marge*5)):        
 			# Reset it just above the top
 			y = random.randrange(-50, -10)
 			snow_list[i][1] = y
