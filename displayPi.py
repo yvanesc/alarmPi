@@ -715,6 +715,7 @@ def scrSaveCircle(DISPLAYSURF,scrW,scrH):
 		#moveStar = moveStar + snow_list[i][2]
 		
 		pygame.draw.circle(DISPLAYSURF, WHITE, snow_list[i], 10)
+		pygame.draw.circle(DISPLAYSURF, BLACK, snow_list[i], 9)
 		# Move the snow flake down one pixel
 		#snow_list[i][1] += 1
 
