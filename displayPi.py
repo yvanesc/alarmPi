@@ -489,26 +489,27 @@ def scrSaveStars(DISPLAYSURF,scrW,scrH):
 	#create only once
 	if iniPi.snFlake == 0:		
 		iniPi.snFlake = 1
-		for i in range(35):
+		for i in range(40):
 			x = random.randrange(0, scrW)
-			y = random.randrange(0, scrH)		
-			snow_list.append([x, y])			
-		for i in range(5):			
-			xB = random.randrange(0, scrW)
-			yB = random.randrange(0, scrH)
-			snow_listB.append([xB, yB])
+			y = random.randrange(0, scrH)
+			sizeStar = random.randrange(2, 40)#random.choice(items)		
+			snow_list.append([x, y, sizeStar])			
+		#for i in range(5):			
+			#xB = random.randrange(0, scrW)
+			#yB = random.randrange(0, scrH)
+			#snow_listB.append([xB, yB])
 	# Process each snow flake in the list
 	for i in range(len(snow_list)):
  
 		# Draw the stars
 		# x -> width
 		#items = [random.randrange(4, 8),random.randrange(20, 24)]
-		sizeStar = random.randrange(10, 14)#random.choice(items)
-		
-		posXL = snow_list[i][0] - sizeStar#10
-		posXR = snow_list[i][0] + sizeStar
-		posYL = snow_list[i][1] - sizeStar
-		posYR = snow_list[i][1] + sizeStar
+		moveStar = random.randrange(1, 4)#random.choice(items)
+		moveStar = moveStar + snow_list[i][2]
+		posXL = snow_list[i][0] - moveStar #snow_list[i][2]#sizeStar#10
+		posXR = snow_list[i][0] + moveStar
+		posYL = snow_list[i][1] - moveStar
+		posYR = snow_list[i][1] + moveStar
 		pygame.draw.line(DISPLAYSURF, WHITE, (posXL, snow_list[i][1]),(posXR,snow_list[i][1]), 1)		
 		pygame.draw.line(DISPLAYSURF, WHITE, (snow_list[i][0],posYL),(snow_list[i][0],posYR), 1)		
 		#point		
@@ -530,37 +531,37 @@ def scrSaveStars(DISPLAYSURF,scrW,scrH):
 			x = random.randrange(0, scrW)
 			snow_list[i][0] = x           
 
-	for i in range(len(snow_listB)):
+	# for i in range(len(snow_listB)):
  
-		# Draw the stars
-		# x -> width
-		#items = [random.randrange(4, 8),random.randrange(20, 24)]
-		sizeStar = random.randrange(22, 26)#random.choice(items)
+	# 	# Draw the stars
+	# 	# x -> width
+	# 	#items = [random.randrange(4, 8),random.randrange(20, 24)]
+	# 	sizeStar = random.randrange(22, 26)#random.choice(items)
 		
-		posXL = snow_listB[i][0] - sizeStar#10
-		posXR = snow_listB[i][0] + sizeStar
-		posYL = snow_listB[i][1] - sizeStar
-		posYR = snow_listB[i][1] + sizeStar
-		pygame.draw.line(DISPLAYSURF, WHITE, (posXL, snow_listB[i][1]),(posXR,snow_listB[i][1]), 1)		
-		pygame.draw.line(DISPLAYSURF, WHITE, (snow_listB[i][0],posYL),(snow_listB[i][0],posYR), 1)		
-		#point		
-		pygame.draw.line(DISPLAYSURF, WHITE, (posXL - 2, snow_listB[i][1]),(posXL - 3, snow_listB[i][1]), 1)
-		pygame.draw.line(DISPLAYSURF, WHITE, (posXR + 2, snow_listB[i][1]),(posXR + 3, snow_listB[i][1]), 1)
-		pygame.draw.line(DISPLAYSURF, WHITE, (snow_listB[i][0], posYL - 2),(snow_listB[i][0], posYL - 3), 1)
-		pygame.draw.line(DISPLAYSURF, WHITE, (snow_listB[i][0], posYR + 2),(snow_listB[i][0], posYR + 3), 1)
-		#pygame.draw.circle(DISPLAYSURF, WHITE, (snow_list[i][0], posYR + 2), 0.5)
-		# Move the snow flake down one pixel
-		#snow_list[i][1] += 1
+	# 	posXL = snow_listB[i][0] - sizeStar#10
+	# 	posXR = snow_listB[i][0] + sizeStar
+	# 	posYL = snow_listB[i][1] - sizeStar
+	# 	posYR = snow_listB[i][1] + sizeStar
+	# 	pygame.draw.line(DISPLAYSURF, WHITE, (posXL, snow_listB[i][1]),(posXR,snow_listB[i][1]), 1)		
+	# 	pygame.draw.line(DISPLAYSURF, WHITE, (snow_listB[i][0],posYL),(snow_listB[i][0],posYR), 1)		
+	# 	#point		
+	# 	pygame.draw.line(DISPLAYSURF, WHITE, (posXL - 2, snow_listB[i][1]),(posXL - 3, snow_listB[i][1]), 1)
+	# 	pygame.draw.line(DISPLAYSURF, WHITE, (posXR + 2, snow_listB[i][1]),(posXR + 3, snow_listB[i][1]), 1)
+	# 	pygame.draw.line(DISPLAYSURF, WHITE, (snow_listB[i][0], posYL - 2),(snow_listB[i][0], posYL - 3), 1)
+	# 	pygame.draw.line(DISPLAYSURF, WHITE, (snow_listB[i][0], posYR + 2),(snow_listB[i][0], posYR + 3), 1)
+	# 	#pygame.draw.circle(DISPLAYSURF, WHITE, (snow_list[i][0], posYR + 2), 0.5)
+	# 	# Move the snow flake down one pixel
+	# 	#snow_list[i][1] += 1
 
-		# If the snow flake has moved off the bottom of the screen
-		#lenDisTime = scrW - lenDisTime
-		if snow_listB[i][1] > scrH or (snow_listB[i][1] > 51 and snow_listB[i][0] > (scrW - lenDisTime - marge)):        
-			# Reset it just above the top
-			y = random.randrange(-50, -10)
-			snow_listB[i][1] = y
-			# Give it a new x position
-			x = random.randrange(0, scrW)
-			snow_listB[i][0] = x           
+	# 	# If the snow flake has moved off the bottom of the screen
+	# 	#lenDisTime = scrW - lenDisTime
+	# 	if snow_listB[i][1] > scrH or (snow_listB[i][1] > 51 and snow_listB[i][0] > (scrW - lenDisTime - marge)):        
+	# 		# Reset it just above the top
+	# 		y = random.randrange(-50, -10)
+	# 		snow_listB[i][1] = y
+	# 		# Give it a new x position
+	# 		x = random.randrange(0, scrW)
+	# 		snow_listB[i][0] = x           
  
 	# Go ahead and update the screen with what we've drawn.
 	DISPLAYSURF.blit(displayTime, (scrW - lenDisTime - marge, 52)) 
