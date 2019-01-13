@@ -699,7 +699,7 @@ def scrSaveCircle(DISPLAYSURF,scrW,scrH):
 	#create only once
 	if iniPi.snFlake == 0:		
 		iniPi.snFlake = 1
-		for i in range(10):
+		for i in range(5):
 			x = random.randrange(0, scrW)
 			y = random.randrange(0, scrH)
 			sizeStarLst = [random.randrange(20, 25),random.randrange(60, 80),random.randrange(40, 50)]
@@ -716,7 +716,7 @@ def scrSaveCircle(DISPLAYSURF,scrW,scrH):
 		nbCircle = snow_list[i][2]
 		while nbCircle > 7:
 			pygame.draw.circle(DISPLAYSURF, WHITE, (snow_list[i][0],snow_list[i][1]), moveStar + nbCircle)
-			pygame.draw.circle(DISPLAYSURF, (nbCircle, 0, 0), (snow_list[i][0],snow_list[i][1]), moveStar - 1 + nbCircle)
+			pygame.draw.circle(DISPLAYSURF, (nbCircle - 6, 0, 0), (snow_list[i][0],snow_list[i][1]), moveStar - 1 + nbCircle)
 			nbCircle = nbCircle - 8
 		# Move the snow flake down one pixel
 		#snow_list[i][1] += 1
