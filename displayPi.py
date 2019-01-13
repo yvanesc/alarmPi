@@ -492,7 +492,7 @@ def scrSaveStars(DISPLAYSURF,scrW,scrH):
 		for i in range(40):
 			x = random.randrange(0, scrW)
 			y = random.randrange(0, scrH)
-			sizeStar = random.randrange(2, 25)#random.choice(items)		
+			sizeStar = random.choice(random.randrange(2, 25),random.randrange(2, 15))#random.choice(items)		
 			snow_list.append([x, y, sizeStar])			
 		#for i in range(5):			
 			#xB = random.randrange(0, scrW)
