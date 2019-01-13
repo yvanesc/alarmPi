@@ -711,7 +711,7 @@ def scrSaveCircle(DISPLAYSURF,scrW,scrH):
 		# Draw the stars
 		# x -> width
 		#items = [random.randrange(4, 8),random.randrange(20, 24)]
-		moveStar = random.randrange(10, 20)#random.choice(items)
+		moveStar = random.randrange(12, 18)#random.choice(items)
 		#moveStar = moveStar + snow_list[i][2]
 		
 		pygame.draw.circle(DISPLAYSURF, WHITE, snow_list[i], moveStar)
