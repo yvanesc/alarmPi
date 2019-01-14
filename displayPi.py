@@ -769,10 +769,12 @@ def scrSaveClock(DISPLAYSURF,scrW,scrH):
 			#snow_list.append([x, y])
 
 	pts = []
-	for iCirc in range(1,10,1):
+	for iCirc in range(1,100,1):
 		x = 100 + 20 * math.cos(math.pi / 16 + math.pi * 2 * iCirc / 50)
 		y = 100 + 20 * math.sin(math.pi / 16 + math.pi * 2 * iCirc / 50)
 		pts.append([int(x), int(y)])
+		print (x)
+		print (y)
 	pygame.draw.polygon(DISPLAYSURF, WHITE, pts)
 
 	
