@@ -814,9 +814,9 @@ def scrSaveClock(DISPLAYSURF,scrW,scrH):
 		pts.append([int(x), int(y)])
 	pygame.draw.polygon(DISPLAYSURF, GREY, pts)
 	if iSat < 200:
- 		iSat = iSat + 1
- 	else:
- 		iSat = 0
+		iSat = iSat + 1
+	else:
+		iSat = 0
 
 	# Go ahead and update the screen with what we've drawn.
 	DISPLAYSURF.blit(displayTime, (scrW - lenDisTime - marge, 52)) 
