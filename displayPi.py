@@ -812,7 +812,7 @@ def scrSaveClock(DISPLAYSURF,scrW,scrH):
 		y = iniPi.ptsSat[iniPi.iSat][1]  + 60 * math.sin(math.pi / 16 + math.pi * 2 * iCirc / 65)#380
 		pts.append([int(x), int(y)])
 	pygame.draw.polygon(DISPLAYSURF, GREY, pts)
-	if iniPi.iSat < 200:
+	if iniPi.iSat < 199:
 		iniPi.iSat = iniPi.iSat + 1
 	else:
 		iniPi.iSat = 0
