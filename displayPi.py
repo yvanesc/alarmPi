@@ -769,6 +769,12 @@ def scrSaveClock(DISPLAYSURF,scrW,scrH):
 			#snow_list.append([x, y])
 
 	pts = []
+	for iCirc in range(0,200,1):
+		x = 200 + 200 * math.cos(math.pi / 16 + math.pi * 2 * iCirc / 100)
+		y = 200 + 200 * math.sin(math.pi / 16 + math.pi * 2 * iCirc / 100)
+		pts.append([int(x), int(y)])
+
+	pts = []
 	for iCirc in range(1,100,1):
 		x = 100 + 20 * math.cos(math.pi / 16 + math.pi * 2 * iCirc / 50)
 		y = 100 + 20 * math.sin(math.pi / 16 + math.pi * 2 * iCirc / 50)
@@ -789,12 +795,12 @@ def scrSaveClock(DISPLAYSURF,scrW,scrH):
 		pts.append([int(x), int(y)])
 	pygame.draw.polygon(DISPLAYSURF, YELLOW, pts)
 
-	pts = []
-	for iCirc in range(0,200,1):
-		x = 150 + 100 * math.cos(math.pi / 16 + math.pi * 2 * iCirc / 75)
-		y = 150 + 100 * math.sin(math.pi / 16 + math.pi * 2 * iCirc / 75)
-		pts.append([int(x), int(y)])
-	pygame.draw.polygon(DISPLAYSURF, ORANGE, pts)
+	# pts = []
+	# for iCirc in range(0,200,1):
+	# 	x = 150 + 100 * math.cos(math.pi / 16 + math.pi * 2 * iCirc / 75)
+	# 	y = 150 + 100 * math.sin(math.pi / 16 + math.pi * 2 * iCirc / 75)
+	# 	pts.append([int(x), int(y)])
+	# pygame.draw.polygon(DISPLAYSURF, ORANGE, pts)
 	
 	pts = []
 	for iCirc in range(0,200,1):
