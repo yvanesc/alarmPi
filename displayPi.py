@@ -767,6 +767,8 @@ def scrSaveClock(DISPLAYSURF,scrW,scrH):
 			sizeStar = random.choice(sizeStarLst)#random.choice(items)		
 			snow_list.append([x, y, sizeStar])				
 			#snow_list.append([x, y])
+
+	pts = []
 	for iCirc in range(1,10,1):
 		x = x + 20 * math.cos(math.pi / 16 + math.pi * 2 * i / iCirc)
 		y = y + 20 * math.sin(math.pi / 16 + math.pi * 2 * i / iCirc)
