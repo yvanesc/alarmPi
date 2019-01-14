@@ -130,7 +130,7 @@ snow_list = []
 snow_pack = []
 snow_listB = []
 blinkComet = 0
-
+ptsSat =[]
 #list bluetooth
 
 #position & size

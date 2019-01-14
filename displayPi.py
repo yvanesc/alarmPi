@@ -768,11 +768,11 @@ def scrSaveClock(DISPLAYSURF,scrW,scrH):
 			sizeStar = random.choice(sizeStarLst)#random.choice(items)		
 			snow_list.append([x, y, sizeStar])				
 			#snow_list.append([x, y])
-		ptsSat = []
+		iniPi.ptsSat = []
 		for iCirc in range(0,200,1):
 			x = 200 + 150 * math.cos(math.pi / 16 + math.pi * 2 * iCirc / 65)
 			y = 200 + 150 * math.sin(math.pi / 16 + math.pi * 2 * iCirc / 65)
-			ptsSat.append([int(x), int(y)])
+			iniPi.ptsSat.append([int(x), int(y)])
 	pts = []
 	for iCirc in range(0,200,1):
 		x = 200 + 200 * math.cos(math.pi / 16 + math.pi * 2 * iCirc / 100)
@@ -809,8 +809,8 @@ def scrSaveClock(DISPLAYSURF,scrW,scrH):
 	
 	pts = []
 	for iCirc in range(0,200,1):
-		x = ptsSat[iSat][0] #270 + 60 * math.cos(math.pi / 16 + math.pi * 2 * iCirc / 65)
-		y = ptsSat[iSat][1] #380 + 60 * math.sin(math.pi / 16 + math.pi * 2 * iCirc / 65)
+		x = iniPi.ptsSat[iSat][0] #270 + 60 * math.cos(math.pi / 16 + math.pi * 2 * iCirc / 65)
+		y = iniPi.ptsSat[iSat][1] #380 + 60 * math.sin(math.pi / 16 + math.pi * 2 * iCirc / 65)
 		pts.append([int(x), int(y)])
 	pygame.draw.polygon(DISPLAYSURF, GREY, pts)
 	if iSat < 200:
