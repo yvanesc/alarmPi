@@ -759,8 +759,7 @@ def scrSaveClock(DISPLAYSURF,scrW,scrH):
 
 	#create only once
 	if iniPi.snFlake == 0:		
-		iniPi.snFlake = 1
-		iSat=0
+		iniPi.snFlake = 1		
 		for i in range(4):
 			x = random.randrange(40, (scrW - lenDisTime - marge*8))
 			y = random.randrange(40, scrH-40)
@@ -809,14 +808,14 @@ def scrSaveClock(DISPLAYSURF,scrW,scrH):
 	
 	pts = []
 	for iCirc in range(0,200,1):
-		x = iniPi.ptsSat[iSat][0] #270 + 60 * math.cos(math.pi / 16 + math.pi * 2 * iCirc / 65)
-		y = iniPi.ptsSat[iSat][1] #380 + 60 * math.sin(math.pi / 16 + math.pi * 2 * iCirc / 65)
+		x = iniPi.ptsSat[iniPi.iSat][0]  + 60 * math.cos(math.pi / 16 + math.pi * 2 * iCirc / 65)#270
+		y = iniPi.ptsSat[iniPi.iSat][1]  + 60 * math.sin(math.pi / 16 + math.pi * 2 * iCirc / 65)#380
 		pts.append([int(x), int(y)])
 	pygame.draw.polygon(DISPLAYSURF, GREY, pts)
-	if iSat < 200:
-		iSat = iSat + 1
+	if iniPi.iSat < 200:
+		iniPi.iSat = iniPi.iSat + 1
 	else:
-		iSat = 0
+		iniPi.iSat = 0
 
 	# Go ahead and update the screen with what we've drawn.
 	DISPLAYSURF.blit(displayTime, (scrW - lenDisTime - marge, 52)) 
