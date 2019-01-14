@@ -768,8 +768,8 @@ def scrSaveClock(DISPLAYSURF,scrW,scrH):
 			snow_list.append([x, y, sizeStar])				
 			#snow_list.append([x, y])
 	for iCirc in range(1,10,1):
-		x = x + 20 * math.cos(tiltAngle + math.pi * 2 * i / numSides)
-		y = y + 20 * math.sin(tiltAngle + math.pi * 2 * i / numSides)
+		x = x + 20 * math.cos(math.pi / 16 + math.pi * 2 * i / numSides)
+		y = y + 20 * math.sin(math.pi / 16 + math.pi * 2 * i / numSides)
 		pts.append([int(x), int(y)])
 	pygame.draw.polygon(DISPLAYSURF, WHITE, pts)
 
