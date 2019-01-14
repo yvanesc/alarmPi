@@ -741,3 +741,41 @@ def scrSaveCircle(DISPLAYSURF,scrW,scrH):
 	DISPLAYSURF.blit(displayDate, (scrW - lenDisTime - marge, 182)) 
 	DISPLAYSURF.blit(displayDay, (scrW - lenDisTime - marge, 282)) 
 	pygame.display.flip()
+
+def scrSaveClock(DISPLAYSURF,scrW,scrH):
+	#screen saver circle time + date + day display
+	
+	fontSelL=pygame.font.SysFont(iniPi.font, int(scrW/4))
+	fontSel=pygame.font.SysFont(iniPi.font, int(scrW/6))
+	DISPLAYSURF.fill(BLACK)
+	time2Display = datetime.datetime.now().strftime("%H:%M")
+	date2Display = datetime.datetime.now().strftime("%d.%m.%y")
+	disDay = datetime.datetime.today().strftime('%A')[:3]
+	displayTime = fontSelL.render(time2Display, True, RED)
+	displayDate = fontSel.render(date2Display, True, RED)
+	displayDay = fontSel.render(disDay, True, RED)
+	lenDisTime = displayTime.get_width()	
+
+	#create only once
+	if iniPi.snFlake == 0:		
+		iniPi.snFlake = 1
+		for i in range(4):
+			x = random.randrange(40, (scrW - lenDisTime - marge*8))
+			y = random.randrange(40, scrH-40)
+			sizeStarLst = [random.randrange(20, 25),random.randrange(60, 80),random.randrange(40, 50)]
+			sizeStar = random.choice(sizeStarLst)#random.choice(items)		
+			snow_list.append([x, y, sizeStar])				
+			#snow_list.append([x, y])
+	for iCirc in range(1,10,1):
+		x = x + radius * math.cos(tiltAngle + math.pi * 2 * i / numSides)
+		y = y + radius * math.sin(tiltAngle + math.pi * 2 * i / numSides)
+		pts.append([int(x), int(y)])
+	pygame.draw.polygon(DISPLAYSURF, WHITE, pts)
+
+	
+ 
+	# Go ahead and update the screen with what we've drawn.
+	DISPLAYSURF.blit(displayTime, (scrW - lenDisTime - marge, 52)) 
+	DISPLAYSURF.blit(displayDate, (scrW - lenDisTime - marge, 182)) 
+	DISPLAYSURF.blit(displayDay, (scrW - lenDisTime - marge, 282)) 
+	pygame.display.flip()
