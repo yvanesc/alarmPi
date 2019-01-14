@@ -777,8 +777,8 @@ def scrSaveClock(DISPLAYSURF,scrW,scrH):
 
 	pts = []
 	for iCirc in range(1,200,1):
-		x = 2000 + 20 * math.cos(math.pi / 16 + math.pi * 2 * iCirc / 100)
-		y = 2000 + 20 * math.sin(math.pi / 16 + math.pi * 2 * iCirc / 100)
+		x = 200 + 200 * math.cos(math.pi / 16 + math.pi * 2 * iCirc / 100)
+		y = 200 + 200 * math.sin(math.pi / 16 + math.pi * 2 * iCirc / 100)
 		pts.append([int(x), int(y)])
 	pygame.draw.polygon(DISPLAYSURF, RED, pts)
 
