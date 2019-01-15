@@ -807,11 +807,13 @@ def scrSaveClock(DISPLAYSURF,scrW,scrH):
 	# pygame.draw.polygon(DISPLAYSURF, ORANGE, pts)
 	
 	pts = []
+	ptsShadow = []
 	for iCirc in range(0,200,1):
 		x = iniPi.ptsSat[iniPi.iSat][0]  + 60 * math.cos(math.pi / 16 + math.pi * 2 * iCirc / 65)#270
 		y = iniPi.ptsSat[iniPi.iSat][1]  + 60 * math.sin(math.pi / 16 + math.pi * 2 * iCirc / 65)#380
 		pts.append([int(x), int(y)])
-	pygame.draw.polygon(DISPLAYSURF, WHITE, (pts[0]-20,p[1]-20))
+		ptsShadow.append([int(x-20), int(y-20)])
+	pygame.draw.polygon(DISPLAYSURF, WHITE, ptsShadow)
 	pygame.draw.polygon(DISPLAYSURF, GREY, pts)
 	if iniPi.iSat < 99:
 		iniPi.iSat = iniPi.iSat + 1
