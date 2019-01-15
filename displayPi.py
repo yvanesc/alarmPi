@@ -768,7 +768,7 @@ def scrSaveClock(DISPLAYSURF,scrW,scrH):
 			snow_list.append([x, y, sizeStar])				
 			#snow_list.append([x, y])
 		iniPi.ptsSat = []
-		for iCirc in range(0,400,1):
+		for iCirc in range(0,100,1):
 			x = 200 + 150 * math.cos(math.pi / 16 + math.pi * 2 * iCirc / 65)
 			y = 200 + 150 * math.sin(math.pi / 16 + math.pi * 2 * iCirc / 65)
 			iniPi.ptsSat.append([int(x), int(y)])
@@ -812,7 +812,7 @@ def scrSaveClock(DISPLAYSURF,scrW,scrH):
 		y = iniPi.ptsSat[iniPi.iSat][1]  + 60 * math.sin(math.pi / 16 + math.pi * 2 * iCirc / 65)#380
 		pts.append([int(x), int(y)])
 	pygame.draw.polygon(DISPLAYSURF, GREY, pts)
-	if iniPi.iSat < 399:
+	if iniPi.iSat < 99:
 		iniPi.iSat = iniPi.iSat + 1
 	else:
 		iniPi.iSat = 0
