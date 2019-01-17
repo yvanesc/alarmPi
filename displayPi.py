@@ -810,7 +810,7 @@ def scrLeftButt(DISPLAYSURF,scrW,scrH):
 
 def powerCirc(DISPLAYSURF,scrW,scrH):
 	# -90	
-	for cntCirc in range(590,410,-90):
+	for cntCirc in range(590,409,-90):
 		pts = []
 		for iCirc in range(1,100,1):
 			x = cntCirc + 20 * math.cos(math.pi / 16 + math.pi * 2 * iCirc / 50)
