@@ -856,3 +856,13 @@ def scrMxScrSavLfBt(DISPLAYSURF,scrW,scrH):
 	txtDisplay(DISPLAYSURF,scrW,scrH)
 	iconeBell(DISPLAYSURF,scrW,scrH)
 	pygame.display.flip()
+
+def scrMxScrSavLfBtVert(DISPLAYSURF,scrW,scrH):
+	DISPLAYSURF.fill(BLACK)
+	scrSaveClock(DISPLAYSURF,scrW,scrH)
+	scrLeftButt(DISPLAYSURF,scrW,scrH)
+	powerCirc(DISPLAYSURF,scrW,scrH)
+	statuSys(DISPLAYSURF,scrW,scrH)
+	txtDisplay(DISPLAYSURF,scrW,scrH)
+	#iconeBell(DISPLAYSURF,scrW,scrH)
+	pygame.display.flip()

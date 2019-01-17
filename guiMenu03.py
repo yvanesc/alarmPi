@@ -58,7 +58,10 @@ while True:
 		#display button 1-4 & 5-6
 		
 		#display center
-        displayPi.scrMxScrSavLfBt(DISPLAYSURF,scrW,scrH)
+        if reverse == 0:
+                displayPi.scrMxScrSavLfBt(DISPLAYSURF,scrW,scrH)
+        else:
+                displayPi.scrMxScrSavLfBtVert(DISPLAYSURF,scrW,scrH)   
         #displayPi.scrLeftButt(DISPLAYSURF,scrW,scrH)
 
         pygame.display.update()
@@ -73,6 +76,10 @@ while True:
         if (not GPIO.input(24)):
                 # triangle                
                 butPi.tria()
+                if reverse == 0:
+                        reverse = 1:
+                else:
+                        reverse = 0:
         if (not GPIO.input(23)):
                 # O
                 butPi.rond()     
