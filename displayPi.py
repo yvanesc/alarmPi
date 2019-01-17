@@ -840,7 +840,7 @@ def scrLeftButt(DISPLAYSURF,scrW,scrH):
 	#pygame.display.flip()
 
 def powerCirc(DISPLAYSURF,scrW,scrH):
-
+	pts = []
 	for iCirc in range(1,100,1):
 		x = 800 + 20 * math.cos(math.pi / 16 + math.pi * 2 * iCirc / 65)
 		y = 80 + 20 * math.sin(math.pi / 16 + math.pi * 2 * iCirc / 65)
