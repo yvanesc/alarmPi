@@ -707,7 +707,7 @@ def scrSaveCircle(DISPLAYSURF,scrW,scrH):
 			sizeStar = random.choice(sizeStarLst)#random.choice(items)		
 			snow_list.append([x, y, sizeStar])				
 	for i in range(len(snow_list)):
- 		moveStar = random.randrange(1, 5)#random.choice(items)
+		moveStar = random.randrange(1, 5)#random.choice(items)
 		nbCircle = snow_list[i][2]
 		while nbCircle > 7:
 			pygame.draw.circle(DISPLAYSURF, YELLOW, (snow_list[i][0],snow_list[i][1]), moveStar + nbCircle)
