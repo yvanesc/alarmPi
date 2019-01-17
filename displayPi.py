@@ -810,14 +810,14 @@ def scrLeftButt(DISPLAYSURF,scrW,scrH):
 
 def powerCirc(DISPLAYSURF,scrW,scrH):
 	# -90	
-	for cntCirc in range(590,410,-90)
+	for cntCirc in range(590,410,-90):
 		pts = []
 		for iCirc in range(1,100,1):
 			x = cntCirc + 20 * math.cos(math.pi / 16 + math.pi * 2 * iCirc / 50)
 			y = 80 + 20 * math.sin(math.pi / 16 + math.pi * 2 * iCirc / 50)
 			pts.append([int(x), int(y)])
 		pygame.draw.polygon(DISPLAYSURF, WHITE, pts)
-			
+
 def txtDisplay(DISPLAYSURF,scrW,scrH):
 	fontSelL=pygame.font.SysFont(iniPi.font, int(scrW/4))
 	fontSel=pygame.font.SysFont(iniPi.font, int(scrW/6))	
