@@ -809,18 +809,15 @@ def scrLeftButt(DISPLAYSURF,scrW,scrH):
 	#pygame.display.flip()
 
 def powerCirc(DISPLAYSURF,scrW,scrH):
-	pts = []
-	for iCirc in range(1,100,1):
-		x = 590 + 20 * math.cos(math.pi / 16 + math.pi * 2 * iCirc / 50)
-		y = 80 + 20 * math.sin(math.pi / 16 + math.pi * 2 * iCirc / 50)
-		pts.append([int(x), int(y)])
-	pygame.draw.polygon(DISPLAYSURF, WHITE, pts)
-	pts = []
-	for iCirc in range(1,100,1):
-		x = 410 + 20 * math.cos(math.pi / 16 + math.pi * 2 * iCirc / 50)
-		y = 80 + 20 * math.sin(math.pi / 16 + math.pi * 2 * iCirc / 50)
-		pts.append([int(x), int(y)])
-	pygame.draw.polygon(DISPLAYSURF, WHITE, pts)
+	# -90	
+	for cntCirc in range(590,410,-90)
+		pts = []
+		for iCirc in range(1,100,1):
+			x = cntCirc + 20 * math.cos(math.pi / 16 + math.pi * 2 * iCirc / 50)
+			y = 80 + 20 * math.sin(math.pi / 16 + math.pi * 2 * iCirc / 50)
+			pts.append([int(x), int(y)])
+		pygame.draw.polygon(DISPLAYSURF, WHITE, pts)
+			
 def txtDisplay(DISPLAYSURF,scrW,scrH):
 	fontSelL=pygame.font.SysFont(iniPi.font, int(scrW/4))
 	fontSel=pygame.font.SysFont(iniPi.font, int(scrW/6))	
@@ -838,12 +835,6 @@ def txtDisplay(DISPLAYSURF,scrW,scrH):
 def iconeBell(DISPLAYSURF,scrW,scrH):#,status):
 	icBell=pygame.image.load(ic32PathR+ "bell" + ic32PathE)#stateBell +ic32PathE)  		
 	#icBell = pygame.transform.rotate(icBell,90)
-	pts = []
-	for iCirc in range(1,100,1):
-		x = 500 + 20 * math.cos(math.pi / 16 + math.pi * 2 * iCirc / 50)
-		y = 80 + 20 * math.sin(math.pi / 16 + math.pi * 2 * iCirc / 50)
-		pts.append([int(x), int(y)])
-	pygame.draw.polygon(DISPLAYSURF, WHITE, pts)
 	DISPLAYSURF.blit(icBell,(485, 65))
 	#angleRot = 0
 def revDisplay():
