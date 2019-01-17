@@ -842,8 +842,8 @@ def scrLeftButt(DISPLAYSURF,scrW,scrH):
 def powerCirc(DISPLAYSURF,scrW,scrH):
 	pts = []
 	for iCirc in range(1,100,1):
-		x = 600 + 20 * math.cos(math.pi / 16 + math.pi * 2 * iCirc / 65)
-		y = 80 + 20 * math.sin(math.pi / 16 + math.pi * 2 * iCirc / 65)
+		x = 590 + 20 * math.cos(math.pi / 16 + math.pi * 2 * iCirc / 55)
+		y = 80 + 20 * math.sin(math.pi / 16 + math.pi * 2 * iCirc / 55)
 		pts.append([int(x), int(y)])
 	pygame.draw.polygon(DISPLAYSURF, WHITE, pts)
 
