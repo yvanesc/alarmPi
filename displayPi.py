@@ -706,13 +706,8 @@ def scrSaveCircle(DISPLAYSURF,scrW,scrH):
 			sizeStarLst = [random.randrange(20, 25),random.randrange(60, 80),random.randrange(40, 50)]
 			sizeStar = random.choice(sizeStarLst)#random.choice(items)		
 			snow_list.append([x, y, sizeStar])				
-			#snow_list.append([x, y])
 	for i in range(len(snow_list)):
- 
-		# Draw the stars
-		# x -> width
-		#items = [random.randrange(4, 8),random.randrange(20, 24)]
-		moveStar = random.randrange(1, 5)#random.choice(items)
+ 		moveStar = random.randrange(1, 5)#random.choice(items)
 		#moveStar = moveStar + snow_list[i][2]
 		nbCircle = snow_list[i][2]
 		while nbCircle > 7:
@@ -724,11 +719,7 @@ def scrSaveCircle(DISPLAYSURF,scrW,scrH):
 			colorStar = random.choice(colorStarLst)
 			pygame.draw.circle(DISPLAYSURF, colorStar, (snow_list[i][0],snow_list[i][1]), moveStar - 8 + nbCircle)
 			nbCircle = nbCircle - 8
-		# Move the snow flake down one pixel
-		#snow_list[i][1] += 1
 
-		# If the snow flake has moved off the bottom of the screen
-		#lenDisTime = scrW - lenDisTime
 		if snow_list[i][1] > (scrH - 10) or (snow_list[i][1] > 25 and snow_list[i][0] > (scrW - lenDisTime - marge*8)):        
 			# Reset it just above the top
 			y = random.randrange(-50, -10)
@@ -761,6 +752,7 @@ def scrSaveClock(DISPLAYSURF,scrW,scrH):
 			x = 200 + 150 * math.cos(iCirc * math.pi/180) #math.pi / 16 + math.pi * 2 * iCirc / 65)
 			y = 200 + 150 * math.sin(iCirc * math.pi/180) #math.pi / 16 + math.pi * 2 * iCirc / 65)
 			iniPi.ptsSat.append([int(x), int(y)])
+			#to add sattelite to planet
 	pts = []
 	for iCirc in range(0,200,1):
 		x = 200 + 200 * math.cos(math.pi / 16 + math.pi * 2 * iCirc / 100)
@@ -806,8 +798,7 @@ def scrLeftButt(DISPLAYSURF,scrW,scrH):
 	DISPLAYSURF.blit(icO, (icOPosX*4, icOPosY*2))
 	DISPLAYSURF.blit(icX, (icXPosX*4, icXPosY*2))
 	DISPLAYSURF.blit(icRect, (icRectPosX*4, icRectPosY*2))
-	DISPLAYSURF.blit(icTri, (icTriPosX*4, icTriPosY*2))
-	#pygame.display.flip()
+	DISPLAYSURF.blit(icTri, (icTriPosX*4, icTriPosY*2))	
 
 def powerCirc(DISPLAYSURF,scrW,scrH):
 	# -90	
@@ -819,6 +810,13 @@ def powerCirc(DISPLAYSURF,scrW,scrH):
 			pts.append([int(x), int(y)])
 		pygame.draw.polygon(DISPLAYSURF, WHITE, pts)
 
+def statuSys(DISPLAYSURF,scrW,scrH):
+	pts = []
+	for iCirc in range(1,200,1):
+		y = 80 + 10 * math.sin(iCirc * math.pi/100)
+		x = 410 + 10 * math.cos(iCirc * math.pi/100)
+		pts.append([int(x), int(y)])
+	pygame.draw.polygon(DISPLAYSURF, ORANGE, pts)
 def txtDisplay(DISPLAYSURF,scrW,scrH):
 	fontSelL=pygame.font.SysFont(iniPi.font, int(scrW/4))
 	fontSel=pygame.font.SysFont(iniPi.font, int(scrW/6))	
@@ -855,6 +853,7 @@ def scrMxScrSavLfBt(DISPLAYSURF,scrW,scrH):
 	scrSaveClock(DISPLAYSURF,scrW,scrH)
 	scrLeftButt(DISPLAYSURF,scrW,scrH)
 	powerCirc(DISPLAYSURF,scrW,scrH)
+	statuSys(DISPLAYSURF,scrW,scrH)
 	txtDisplay(DISPLAYSURF,scrW,scrH)
 	iconeBell(DISPLAYSURF,scrW,scrH)
 	pygame.display.flip()
