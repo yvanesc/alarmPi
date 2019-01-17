@@ -832,7 +832,13 @@ def txtDisplay(DISPLAYSURF,scrW,scrH):
 def iconeBell(DISPLAYSURF,scrW,scrH):#,status):
 	icBell=pygame.image.load(ic32PathR+ "bell" + ic32PathE)#stateBell +ic32PathE)  		
 	#icBell = pygame.transform.rotate(icBell,90)
-	DISPLAYSURF.blit(icBell,(550, 80))
+	pts = []
+	for iCirc in range(1,100,1):
+		x = 500 + 20 * math.cos(math.pi / 16 + math.pi * 2 * iCirc / 50)
+		y = 80 + 20 * math.sin(math.pi / 16 + math.pi * 2 * iCirc / 50)
+		pts.append([int(x), int(y)])
+	pygame.draw.polygon(DISPLAYSURF, WHITE, pts)
+	DISPLAYSURF.blit(icBell,(500, 70))
 	#angleRot = 0
 def revDisplay():
 	if reverse == 0:
