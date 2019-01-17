@@ -824,7 +824,7 @@ def scrSaveClock(DISPLAYSURF,scrW,scrH):
 	DISPLAYSURF.blit(displayTime, (scrW - lenDisTime - marge, 52)) 
 	DISPLAYSURF.blit(displayDate, (scrW - lenDisTime - marge, 182)) 
 	DISPLAYSURF.blit(displayDay, (scrW - lenDisTime - marge, 282)) 	
-	pygame.display.flip()
+	#pygame.display.flip()
 
 def scrLeftButt(DISPLAYSURF,scrW,scrH):
 	icO=pygame.image.load(ic32PathR+ "power-standby" +ic32PathE)
@@ -837,8 +837,9 @@ def scrLeftButt(DISPLAYSURF,scrW,scrH):
 	DISPLAYSURF.blit(icX, (icXPosX*4, icXPosY*2))
 	DISPLAYSURF.blit(icRect, (icRectPosX*4, icRectPosY*2))
 	DISPLAYSURF.blit(icTri, (icTriPosX*4, icTriPosY*2))
-	pygame.display.flip()
+	#pygame.display.flip()
 
 def scrMxScrSavLfBt(DISPLAYSURF,scrW,scrH):
 	scrSaveClock(DISPLAYSURF,scrW,scrH)
 	scrLeftButt(DISPLAYSURF,scrW,scrH)
+	pygame.display.flip()
