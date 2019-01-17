@@ -815,6 +815,7 @@ def powerCirc(DISPLAYSURF,scrW,scrH):
 		y = 80 + 20 * math.sin(math.pi / 16 + math.pi * 2 * iCirc / 50)
 		pts.append([int(x), int(y)])
 	pygame.draw.polygon(DISPLAYSURF, WHITE, pts)
+	pts = []
 	for iCirc in range(1,100,1):
 		x = 410 + 20 * math.cos(math.pi / 16 + math.pi * 2 * iCirc / 50)
 		y = 80 + 20 * math.sin(math.pi / 16 + math.pi * 2 * iCirc / 50)
