@@ -77,9 +77,9 @@ while True:
                 # triangle                
                 butPi.tria()
                 if reverse == 0:
-                        reverse = 1:
+                        reverse = 1
                 else:
-                        reverse = 0:
+                        reverse = 0
         if (not GPIO.input(23)):
                 # O
                 butPi.rond()     
