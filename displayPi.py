@@ -833,7 +833,7 @@ def scrLeftButt(DISPLAYSURF,scrW,scrH):
 	icRect=pygame.image.load(ic32PathR+ "sun" +ic32PathE)
 	icTri=pygame.image.load(ic32PathR+ "loop-circular" +ic32PathE)
 
-	DISPLAYSURF.blit(icOd, (icOPosX*4, icOPosY*2))
-	DISPLAYSURF.blit(icXd, (icXPosX*4, icXPosY*2))
-	DISPLAYSURF.blit(icRectd, (icRectPosX*4, icRectPosY*2))
-	DISPLAYSURF.blit(icTrid, (icTriPosX*4, icTriPosY*2))
+	DISPLAYSURF.blit(icO, (icOPosX*4, icOPosY*2))
+	DISPLAYSURF.blit(icX, (icXPosX*4, icXPosY*2))
+	DISPLAYSURF.blit(icRect, (icRectPosX*4, icRectPosY*2))
+	DISPLAYSURF.blit(icTri, (icTriPosX*4, icTriPosY*2))
