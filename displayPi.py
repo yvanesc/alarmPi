@@ -824,7 +824,7 @@ def scrSaveClock(DISPLAYSURF,scrW,scrH):
 	DISPLAYSURF.blit(displayTime, (scrW - lenDisTime - marge, 52)) 
 	DISPLAYSURF.blit(displayDate, (scrW - lenDisTime - marge, 182)) 
 	DISPLAYSURF.blit(displayDay, (scrW - lenDisTime - marge, 282)) 
-	scrLeftButt(DISPLAYSURF,scrW,scrH)
+	#scrLeftButt(DISPLAYSURF,scrW,scrH)
 	pygame.display.flip()
 
 def scrLeftButt(DISPLAYSURF,scrW,scrH):
@@ -838,3 +838,4 @@ def scrLeftButt(DISPLAYSURF,scrW,scrH):
 	DISPLAYSURF.blit(icX, (icXPosX*4, icXPosY*2))
 	DISPLAYSURF.blit(icRect, (icRectPosX*4, icRectPosY*2))
 	DISPLAYSURF.blit(icTri, (icTriPosX*4, icTriPosY*2))
+	pygame.display.flip()
