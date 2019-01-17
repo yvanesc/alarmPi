@@ -746,22 +746,11 @@ def scrSaveCircle(DISPLAYSURF,scrW,scrH):
 def scrSaveClock(DISPLAYSURF,scrW,scrH):
 	#screen saver circle time + date + day display
 	
-	fontSelL=pygame.font.SysFont(iniPi.font, int(scrW/4))
-	fontSel=pygame.font.SysFont(iniPi.font, int(scrW/6))
-	DISPLAYSURF.fill(BLACK)
-	time2Display = datetime.datetime.now().strftime("%H:%M")
-	date2Display = datetime.datetime.now().strftime("%d.%m.%y")
-	disDay = datetime.datetime.today().strftime('%A')[:3]
-	displayTime = fontSelL.render(time2Display, True, RED)
-	displayDate = fontSel.render(date2Display, True, RED)
-	displayDay = fontSel.render(disDay, True, RED)
-	lenDisTime = displayTime.get_width()	
-
 	#create only once
 	if iniPi.snFlake == 0:		
 		iniPi.snFlake = 1		
 		for i in range(4):
-			x = random.randrange(40, (scrW - lenDisTime - marge*8))
+			x = random.randrange(40, (scrW - marge*8))
 			y = random.randrange(40, scrH-40)
 			sizeStarLst = [random.randrange(20, 25),random.randrange(60, 80),random.randrange(40, 50)]
 			sizeStar = random.choice(sizeStarLst)#random.choice(items)		
@@ -821,9 +810,7 @@ def scrSaveClock(DISPLAYSURF,scrW,scrH):
 		iniPi.iSat = 0
 
 	# Go ahead and update the screen with what we've drawn.
-	DISPLAYSURF.blit(displayTime, (scrW - lenDisTime - marge, 72)) 
-	DISPLAYSURF.blit(displayDate, (scrW - lenDisTime - marge, 202)) 
-	DISPLAYSURF.blit(displayDay, (scrW - lenDisTime - marge, 302)) 	
+	
 	#pygame.display.flip()
 
 def scrLeftButt(DISPLAYSURF,scrW,scrH):
@@ -842,13 +829,28 @@ def scrLeftButt(DISPLAYSURF,scrW,scrH):
 def powerCirc(DISPLAYSURF,scrW,scrH):
 	pts = []
 	for iCirc in range(1,100,1):
-		x = 590 + 20 * math.cos(math.pi / 16 + math.pi * 2 * iCirc / 55)
-		y = 80 + 20 * math.sin(math.pi / 16 + math.pi * 2 * iCirc / 55)
+		x = 590 + 20 * math.cos(math.pi / 16 + math.pi * 2 * iCirc / 50)
+		y = 80 + 20 * math.sin(math.pi / 16 + math.pi * 2 * iCirc / 50)
 		pts.append([int(x), int(y)])
 	pygame.draw.polygon(DISPLAYSURF, WHITE, pts)
+def txtDisplay(DISPLAYSURF,scrW,scrH):
+	fontSelL=pygame.font.SysFont(iniPi.font, int(scrW/4))
+	fontSel=pygame.font.SysFont(iniPi.font, int(scrW/6))	
+	time2Display = datetime.datetime.now().strftime("%H:%M")
+	date2Display = datetime.datetime.now().strftime("%d.%m.%y")
+	disDay = datetime.datetime.today().strftime('%A')[:3]
+	displayTime = fontSelL.render(time2Display, True, RED)
+	displayDate = fontSel.render(date2Display, True, RED)
+	displayDay = fontSel.render(disDay, True, RED)
+	lenDisTime = displayTime.get_width()	
+	DISPLAYSURF.blit(displayTime, (scrW - lenDisTime - marge, 72)) 
+	DISPLAYSURF.blit(displayDate, (scrW - lenDisTime - marge, 202)) 
+	DISPLAYSURF.blit(displayDay, (scrW - lenDisTime - marge, 302)) 	
 
 def scrMxScrSavLfBt(DISPLAYSURF,scrW,scrH):
+	DISPLAYSURF.fill(BLACK)
 	scrSaveClock(DISPLAYSURF,scrW,scrH)
 	scrLeftButt(DISPLAYSURF,scrW,scrH)
 	powerCirc(DISPLAYSURF,scrW,scrH)
+	txtDisplay(DISPLAYSURF,scrW,scrH)
 	pygame.display.flip()
