@@ -50,6 +50,7 @@ clock = pygame.time.Clock()
 menuTxt = sqlPi.reqMainMenu("menu","Main")  
 sec2Start = int(datetime.datetime.now().strftime("%S"))
 
+
 while True:
         os.system('clear')        
         #display background
@@ -58,6 +59,7 @@ while True:
 		
 		#display center
         displayPi.scrSaveClock(DISPLAYSURF,scrW,scrH)
+        displayPi.scrLeftButt(DISPLAYSURF,scrW,scrH)
 
         pygame.display.update()
         clock.tick(60)  # Limit the frame rate to 60 FPS.
