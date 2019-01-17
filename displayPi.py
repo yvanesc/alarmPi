@@ -829,7 +829,7 @@ def txtDisplay(DISPLAYSURF,scrW,scrH):
 	DISPLAYSURF.blit(displayDate, (scrW - lenDisTime - marge, 212)) 
 	DISPLAYSURF.blit(displayDay, (scrW - lenDisTime - marge, 312)) 	
 
-def icBell(DISPLAYSURF,scrW,scrH):#,status):
+def iconeBell(DISPLAYSURF,scrW,scrH):#,status):
 	icBell=pygame.image.load(ic32PathR+ stateBell +ic32PathE)  		
 	#icBell = pygame.transform.rotate(icBell,90)
 	DISPLAYSURF.blit(icBell, ((scrW/2)+marge, icRectPosY*2))
