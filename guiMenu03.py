@@ -62,7 +62,7 @@ while True:
         displayPi.scrLeftButt(DISPLAYSURF,scrW,scrH)
 
         pygame.display.update()
-        clock.tick(60)  # Limit the frame rate to 60 FPS.
+        clock.tick(80)  # Limit the frame rate to 60 FPS.
 
         if (not GPIO.input(5)):
                 # X
