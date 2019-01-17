@@ -838,7 +838,7 @@ def iconeBell(DISPLAYSURF,scrW,scrH):#,status):
 		y = 80 + 20 * math.sin(math.pi / 16 + math.pi * 2 * iCirc / 50)
 		pts.append([int(x), int(y)])
 	pygame.draw.polygon(DISPLAYSURF, WHITE, pts)
-	DISPLAYSURF.blit(icBell,(500, 70))
+	DISPLAYSURF.blit(icBell,(480, 65))
 	#angleRot = 0
 def revDisplay():
 	if reverse == 0:
