@@ -758,8 +758,8 @@ def scrSaveClock(DISPLAYSURF,scrW,scrH):
 			
 		iniPi.ptsSat = []
 		for iCirc in range(0,360,1):
-			x = 200 + 150 * math.cos(math.pi / 16 + math.pi * 2 * iCirc / 65)
-			y = 200 + 150 * math.sin(math.pi / 16 + math.pi * 2 * iCirc / 65)
+			x = 200 + 150 * math.cos(iCirc * math.pi/180) #math.pi / 16 + math.pi * 2 * iCirc / 65)
+			y = 200 + 150 * math.sin(iCirc * math.pi/180) #math.pi / 16 + math.pi * 2 * iCirc / 65)
 			iniPi.ptsSat.append([int(x), int(y)])
 	pts = []
 	for iCirc in range(0,200,1):
@@ -776,7 +776,7 @@ def scrSaveClock(DISPLAYSURF,scrW,scrH):
 
 	pts = []
 	for iCirc in range(0,200,1):
-		# 0 -> Pi
+		# 0 -> 2*Pi
 		x = 200 + 100 * math.cos(iCirc * math.pi/100) #(math.pi / 16 + math.pi * 2 * iCirc / 70)
 		y = 200 + 100 * math.sin(iCirc * math.pi/100) #math.pi / 16 + math.pi * 2 * iCirc / 70)
 		pts.append([int(x), int(y)])
