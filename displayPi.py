@@ -821,9 +821,9 @@ def scrSaveClock(DISPLAYSURF,scrW,scrH):
 		iniPi.iSat = 0
 
 	# Go ahead and update the screen with what we've drawn.
-	DISPLAYSURF.blit(displayTime, (scrW - lenDisTime - marge, 52)) 
-	DISPLAYSURF.blit(displayDate, (scrW - lenDisTime - marge, 182)) 
-	DISPLAYSURF.blit(displayDay, (scrW - lenDisTime - marge, 282)) 	
+	DISPLAYSURF.blit(displayTime, (scrW - lenDisTime - marge, 72)) 
+	DISPLAYSURF.blit(displayDate, (scrW - lenDisTime - marge, 202)) 
+	DISPLAYSURF.blit(displayDay, (scrW - lenDisTime - marge, 302)) 	
 	#pygame.display.flip()
 
 def scrLeftButt(DISPLAYSURF,scrW,scrH):
@@ -839,7 +839,16 @@ def scrLeftButt(DISPLAYSURF,scrW,scrH):
 	DISPLAYSURF.blit(icTri, (icTriPosX*4, icTriPosY*2))
 	#pygame.display.flip()
 
+def powerCirc(DISPLAYSURF,scrW,scrH):
+
+	for iCirc in range(1,100,1):
+		x = 800 + 20 * math.cos(math.pi / 16 + math.pi * 2 * iCirc / 65)
+		y = 80 + 20 * math.sin(math.pi / 16 + math.pi * 2 * iCirc / 65)
+		pts.append([int(x), int(y)])
+	pygame.draw.polygon(DISPLAYSURF, WHITE, pts)
+
 def scrMxScrSavLfBt(DISPLAYSURF,scrW,scrH):
 	scrSaveClock(DISPLAYSURF,scrW,scrH)
 	scrLeftButt(DISPLAYSURF,scrW,scrH)
+	powerCirc(DISPLAYSURF,scrW,scrH)
 	pygame.display.flip()
