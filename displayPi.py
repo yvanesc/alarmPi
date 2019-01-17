@@ -843,9 +843,9 @@ def txtDisplay(DISPLAYSURF,scrW,scrH):
 	displayDate = fontSel.render(date2Display, True, RED)
 	displayDay = fontSel.render(disDay, True, RED)
 	lenDisTime = displayTime.get_width()	
-	DISPLAYSURF.blit(displayTime, (scrW - lenDisTime - marge, 72)) 
-	DISPLAYSURF.blit(displayDate, (scrW - lenDisTime - marge, 202)) 
-	DISPLAYSURF.blit(displayDay, (scrW - lenDisTime - marge, 302)) 	
+	DISPLAYSURF.blit(displayTime, (scrW - lenDisTime - marge, 82)) 
+	DISPLAYSURF.blit(displayDate, (scrW - lenDisTime - marge, 212)) 
+	DISPLAYSURF.blit(displayDay, (scrW - lenDisTime - marge, 312)) 	
 
 def scrMxScrSavLfBt(DISPLAYSURF,scrW,scrH):
 	DISPLAYSURF.fill(BLACK)
