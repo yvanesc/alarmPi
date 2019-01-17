@@ -753,9 +753,9 @@ def scrSaveClock(DISPLAYSURF,scrW,scrH):
 			x = random.randrange(40, (scrW - marge*8))
 			y = random.randrange(40, scrH-40)
 			sizeStarLst = [random.randrange(20, 25),random.randrange(60, 80),random.randrange(40, 50)]
-			sizeStar = random.choice(sizeStarLst)#random.choice(items)		
+			sizeStar = random.choice(sizeStarLst)
 			snow_list.append([x, y, sizeStar])				
-			#snow_list.append([x, y])
+			
 		iniPi.ptsSat = []
 		for iCirc in range(0,100,1):
 			x = 200 + 150 * math.cos(math.pi / 16 + math.pi * 2 * iCirc / 65)
@@ -766,13 +766,6 @@ def scrSaveClock(DISPLAYSURF,scrW,scrH):
 		x = 200 + 200 * math.cos(math.pi / 16 + math.pi * 2 * iCirc / 100)
 		y = 200 + 200 * math.sin(math.pi / 16 + math.pi * 2 * iCirc / 100)
 		pts.append([int(x), int(y)])
-
-	pts = []
-	for iCirc in range(1,100,1):
-		x = 100 + 20 * math.cos(math.pi / 16 + math.pi * 2 * iCirc / 50)
-		y = 100 + 20 * math.sin(math.pi / 16 + math.pi * 2 * iCirc / 50)
-		pts.append([int(x), int(y)])
-	pygame.draw.polygon(DISPLAYSURF, WHITE, pts)
 
 	pts = []
 	for iCirc in range(0,200,1):
@@ -788,13 +781,6 @@ def scrSaveClock(DISPLAYSURF,scrW,scrH):
 		pts.append([int(x), int(y)])
 	pygame.draw.polygon(DISPLAYSURF, YELLOW, pts)
 
-	# pts = []
-	# for iCirc in range(0,200,1):
-	# 	x = 150 + 100 * math.cos(math.pi / 16 + math.pi * 2 * iCirc / 75)
-	# 	y = 150 + 100 * math.sin(math.pi / 16 + math.pi * 2 * iCirc / 75)
-	# 	pts.append([int(x), int(y)])
-	# pygame.draw.polygon(DISPLAYSURF, ORANGE, pts)
-	
 	pts = []
 	ptsShadow = []
 	for iCirc in range(0,200,1):
@@ -808,10 +794,6 @@ def scrSaveClock(DISPLAYSURF,scrW,scrH):
 		iniPi.iSat = iniPi.iSat + 1
 	else:
 		iniPi.iSat = 0
-
-	# Go ahead and update the screen with what we've drawn.
-	
-	#pygame.display.flip()
 
 def scrLeftButt(DISPLAYSURF,scrW,scrH):
 	icO=pygame.image.load(ic32PathR+ "power-standby" +ic32PathE)
@@ -847,10 +829,28 @@ def txtDisplay(DISPLAYSURF,scrW,scrH):
 	DISPLAYSURF.blit(displayDate, (scrW - lenDisTime - marge, 212)) 
 	DISPLAYSURF.blit(displayDay, (scrW - lenDisTime - marge, 312)) 	
 
+def icBell(DISPLAYSURF,scrW,scrH):#,status):
+	icBell=pygame.image.load(ic32PathR+ stateBell +ic32PathE)  		
+	#icBell = pygame.transform.rotate(icBell,90)
+	DISPLAYSURF.blit(icBell, ((scrW/2)+marge, icRectPosY*2))
+#angleRot = 0
+def revDisplay():
+	if reverse == 0:
+		angleRot = 0
+	else:
+		if angleRot < 90:
+			angleRot = angleRot + 5
+		icOd = pygame.transform.rotate(icO,angleRot)
+		icXd = pygame.transform.rotate(icBell,angleRot)
+		icRectd = pygame.transform.rotate(icRect,angleRot)
+		icTrid = pygame.transform.rotate(icTri,angleRot)
+		icBell = pygame.transform.rotate(icBell,angleRot)
+
 def scrMxScrSavLfBt(DISPLAYSURF,scrW,scrH):
 	DISPLAYSURF.fill(BLACK)
 	scrSaveClock(DISPLAYSURF,scrW,scrH)
 	scrLeftButt(DISPLAYSURF,scrW,scrH)
 	powerCirc(DISPLAYSURF,scrW,scrH)
 	txtDisplay(DISPLAYSURF,scrW,scrH)
+	iconeBell(DISPLAYSURF,scrW,scrH)
 	pygame.display.flip()
