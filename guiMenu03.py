@@ -70,6 +70,8 @@ while True:
         if (not GPIO.input(5)):
                 # X
                 butPi.croi()
+                pygame.quit()
+                sys.exit() 
         if (not GPIO.input(22)):
                 # rect     
                 butPi.rect()
