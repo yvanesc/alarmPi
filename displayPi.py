@@ -848,8 +848,8 @@ def revDisplay():
 		icBell = pygame.transform.rotate(icBell,angleRot)
 
 def rightIco(DISPLAYSURF,scrW,scrH):
-	icUp=pygame.image.load(ic32PathR+ "caret-top" +ic32PathE)
-	icDown=pygame.image.load(ic32PathR+ "caret-bottom" +ic32PathE)
+	icUp=pygame.image.load(ic32PathR+ "share-boxed" +ic32PathE)
+	icDown=pygame.image.load(ic32PathR+ "cloud-download" +ic32PathE)
 
 	DISPLAYSURF.blit(icDown, ((icDownPosX*2)-marge, icDownPosY*2))
 	DISPLAYSURF.blit(icUp, ((icUpPosX*2)-marge, icUpPosY*2))
