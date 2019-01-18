@@ -834,18 +834,23 @@ def iconeBell(DISPLAYSURF,scrW,scrH):#,status):
 	icBell=pygame.image.load(ic32PathR+ "bell" + ic32PathE)#stateBell +ic32PathE)  		
 	#icBell = pygame.transform.rotate(icBell,90)
 	DISPLAYSURF.blit(icBell,(485, 65))
+def iconeBellRev(DISPLAYSURF,scrW,scrH):#,status):
+	icBell=pygame.image.load(ic32PathR+ "bell" + ic32PathE)#stateBell +ic32PathE)  		
+	#icBell = pygame.transform.rotate(icBell,90)
+	DISPLAYSURF.blit(revDisplay(icBell),(485, 65))
 	#angleRot = 0
-def revDisplay():
+def revDisplay(ic2Use):
 	if reverse == 0:
 		angleRot = 0
 	else:
 		if angleRot < 90:
 			angleRot = angleRot + 5
-		icOd = pygame.transform.rotate(icO,angleRot)
-		icXd = pygame.transform.rotate(icBell,angleRot)
-		icRectd = pygame.transform.rotate(icRect,angleRot)
-		icTrid = pygame.transform.rotate(icTri,angleRot)
-		icBell = pygame.transform.rotate(icBell,angleRot)
+		return (pygame.transform.rotate(ic2Use,angleRot))
+		# icOd = pygame.transform.rotate(icO,angleRot)
+		# icXd = pygame.transform.rotate(icBell,angleRot)
+		# icRectd = pygame.transform.rotate(icRect,angleRot)
+		# icTrid = pygame.transform.rotate(icTri,angleRot)
+		# icBell = pygame.transform.rotate(icBell,angleRot)
 
 def rightIco(DISPLAYSURF,scrW,scrH):
 	icUp=pygame.image.load(ic32PathR+ "share-boxed" +ic32PathE)
@@ -873,5 +878,5 @@ def scrMxScrSavLfBtVert(DISPLAYSURF,scrW,scrH):
 	statuSys(DISPLAYSURF,scrW,scrH)
 	txtDisplay(DISPLAYSURF,scrW,scrH)
 	#rightIco(DISPLAYSURF,scrW,scrH)
-	#iconeBell(DISPLAYSURF,scrW,scrH)
+	iconeBellRev(DISPLAYSURF,scrW,scrH)
 	pygame.display.flip()
