@@ -872,6 +872,6 @@ def scrMxScrSavLfBtVert(DISPLAYSURF,scrW,scrH):
 	powerCirc(DISPLAYSURF,scrW,scrH)
 	statuSys(DISPLAYSURF,scrW,scrH)
 	txtDisplay(DISPLAYSURF,scrW,scrH)
-	rightIco(DISPLAYSURF,scrW,scrH)
+	#rightIco(DISPLAYSURF,scrW,scrH)
 	#iconeBell(DISPLAYSURF,scrW,scrH)
 	pygame.display.flip()
