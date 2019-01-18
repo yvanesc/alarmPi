@@ -847,6 +847,13 @@ def revDisplay():
 		icTrid = pygame.transform.rotate(icTri,angleRot)
 		icBell = pygame.transform.rotate(icBell,angleRot)
 
+def rightIco(DISPLAYSURF,scrW,scrH):
+	icUp=pygame.image.load(ic32PathR+ "caret-top" +ic32PathE)
+	icDown=pygame.image.load(ic32PathR+ "caret-bottom" +ic32PathE)
+
+	DISPLAYSURF.blit(icDown, ((icDownPosX*2)-marge, icDownPosY*2))
+	DISPLAYSURF.blit(icUp, ((icUpPosX*2)-marge, icUpPosY*2))
+
 def scrMxScrSavLfBt(DISPLAYSURF,scrW,scrH):
 	DISPLAYSURF.fill(BLACK)
 	scrSaveClock(DISPLAYSURF,scrW,scrH)
@@ -864,5 +871,6 @@ def scrMxScrSavLfBtVert(DISPLAYSURF,scrW,scrH):
 	powerCirc(DISPLAYSURF,scrW,scrH)
 	statuSys(DISPLAYSURF,scrW,scrH)
 	txtDisplay(DISPLAYSURF,scrW,scrH)
+	rightIco(DISPLAYSURF,scrW,scrH)
 	#iconeBell(DISPLAYSURF,scrW,scrH)
 	pygame.display.flip()

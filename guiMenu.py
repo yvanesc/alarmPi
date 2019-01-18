@@ -70,8 +70,6 @@ while True:
         if (not GPIO.input(5)):
                 # X
                 butPi.croi()
-                pygame.quit()
-                sys.exit() 
         if (not GPIO.input(22)):
                 # rect     
                 butPi.rect()
@@ -84,7 +82,9 @@ while True:
                         reverse = 0
         if (not GPIO.input(23)):
                 # O
-                butPi.rond()     
+                butPi.rond()
+                pygame.quit()
+                sys.exit()      
         if (not GPIO.input(4)):
                 #VOL LOW                
                 butPi.low()
