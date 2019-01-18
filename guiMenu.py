@@ -16,6 +16,7 @@ import displayPi
 import bluezPi
 import butPi
 
+from subprocess import call
 pygame.display.init()
 scrW = pygame.display.Info().current_w
 scrH = pygame.display.Info().current_h
@@ -82,15 +83,16 @@ while True:
                         reverse = 0
         if (not GPIO.input(23)):
                 # O
-                butPi.rond()
-                pygame.quit()
-                sys.exit()      
+                butPi.rond()    
+                call("sudo shutdown -h now", shell=True)
         if (not GPIO.input(4)):
                 #VOL LOW                
                 butPi.low()
         if (not GPIO.input(17)):
                 #VOL HIGH                
                 butPi.high()
+                pygame.quit()
+                sys.exit()  
         for event in pygame.event.get():
                 if event.type == QUIT:
                         pygame.quit()
