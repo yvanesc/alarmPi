@@ -846,7 +846,8 @@ def revDisplay(ic2Use):
 	else:
 		if angleRot < 90:
 			angleRot = angleRot + 5
-		return (pygame.transform.rotate(ic2Use,angleRot))
+		ic2Show = pygame.transform.rotate(ic2Use,angleRot)		
+		return (ic2Show)
 		# icOd = pygame.transform.rotate(icO,angleRot)
 		# icXd = pygame.transform.rotate(icBell,angleRot)
 		# icRectd = pygame.transform.rotate(icRect,angleRot)
