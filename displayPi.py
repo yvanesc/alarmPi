@@ -865,7 +865,7 @@ def iconeBellRev(DISPLAYSURF,scrW,scrH):#,status):
 	DISPLAYSURF.blit(revDisplay(icBell),(485, 65))#,icBell.get_width()),(485, 65))	
 
 	#angleRot = 0
-def revDisplay(ic2Use,lrgImg):
+def revDisplay(ic2Use):#,lrgImg):
 	if iniPi.angleRot < 90:
 		#loc = lrgImg/2
 		iniPi.angleRot = iniPi.angleRot + 5
