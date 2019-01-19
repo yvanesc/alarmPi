@@ -842,16 +842,18 @@ def txtDisplayRev(DISPLAYSURF,scrW,scrH):
 	displayDay = fontSel.render(disDay, True, ORANGE)
 	displayNxtAl0 = fontSelXs.render("Next", True, ORANGE)
 	displayNxtAl = fontSelXs.render("Alarm : 08:00", True, ORANGE)
+	lenNxt0 = displayNxtAl0.get_width()
+	lenNxt = displayNxtAl.get_width()
 	lenDisTime = displayTime.get_width()	
 	DISPLAYSURF.blit(revDisplay(displayTime), (60, 60))#scrH - lenDisTime)) 
 	DISPLAYSURF.blit(revDisplay(displayDate), (200, 60))
 	DISPLAYSURF.blit(revDisplay(displayDay), (280, 60))
 	displayNxtAl0 = pygame.transform.rotate(displayNxtAl0,90)
 	displayNxtAl = pygame.transform.rotate(displayNxtAl,90)
-	print(displayNxtAl0.get_width())
-	print(displayNxtAl.get_width())
-	DISPLAYSURF.blit(displayNxtAl0, (445, 120 + displayNxtAl0.get_width()))
-	DISPLAYSURF.blit(displayNxtAl, (473, 120 + displayNxtAl.get_width()))
+	print(lenNxt0)
+	print(lenNxt)
+	DISPLAYSURF.blit(displayNxtAl0, (445, 120 + lenNxt0))
+	DISPLAYSURF.blit(displayNxtAl, (473, 120 + lenNxt))
 
 
 def iconeBell(DISPLAYSURF,scrW,scrH):#,status):
