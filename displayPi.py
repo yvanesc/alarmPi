@@ -833,19 +833,22 @@ def txtDisplay(DISPLAYSURF,scrW,scrH):
 def txtDisplayRev(DISPLAYSURF,scrW,scrH):
 	fontSelL=pygame.font.SysFont(iniPi.font, int(scrW/4))
 	fontSel=pygame.font.SysFont(iniPi.font, int(scrW/6))	
-	fontSelXs=pygame.font.SysFont(iniPi.font, int(scrW/10))
+	fontSelXs=pygame.font.SysFont(iniPi.font, int(scrW/12))
 	time2Display = datetime.datetime.now().strftime("%H:%M")
 	date2Display = datetime.datetime.now().strftime("%d.%m.%y")
 	disDay = datetime.datetime.today().strftime('%A')[:3]
 	displayTime = fontSelL.render(time2Display, True, ORANGE)
 	displayDate = fontSel.render(date2Display, True, ORANGE)
 	displayDay = fontSel.render(disDay, True, ORANGE)
-	displayNxtAl = fontSelXs.render("Next Alarm : 08:00", True, ORANGE)
+	displayNxtAl0 = fontSelXs.render("Next", True, ORANGE)
+	displayNxtAl = fontSelXs.render("Alarm : 08:00", True, ORANGE)
 	lenDisTime = displayTime.get_width()	
 	DISPLAYSURF.blit(revDisplay(displayTime), (60, 60))#scrH - lenDisTime)) 
 	DISPLAYSURF.blit(revDisplay(displayDate), (200, 60))
 	DISPLAYSURF.blit(revDisplay(displayDay), (280, 60))
+	displayNxtAl0 = pygame.transform.rotate(displayNxtAl,90)
 	displayNxtAl = pygame.transform.rotate(displayNxtAl,90)
+	DISPLAYSURF.blit(displayNxtAl0, (450, 100))
 	DISPLAYSURF.blit(displayNxtAl, (470, 100))
 
 
