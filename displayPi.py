@@ -840,7 +840,7 @@ def txtDisplayRev(DISPLAYSURF,scrW,scrH):
 	displayDate = fontSel.render(date2Display, True, RED)
 	displayDay = fontSel.render(disDay, True, RED)
 	lenDisTime = displayTime.get_width()	
-	DISPLAYSURF.blit(revDisplay(displayTime), (scrW - lenDisTime - marge, 82)) 
+	DISPLAYSURF.blit(revDisplay(displayTime), (marge, 82)) 
 	DISPLAYSURF.blit(revDisplay(displayDate), (scrW - lenDisTime - marge, 212)) 
 	DISPLAYSURF.blit(revDisplay(displayDay), (scrW - lenDisTime - marge, 312)) 	
 
