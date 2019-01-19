@@ -840,9 +840,9 @@ def txtDisplayRev(DISPLAYSURF,scrW,scrH):
 	displayDate = fontSel.render(date2Display, True, ORANGE)
 	displayDay = fontSel.render(disDay, True, ORANGE)
 	lenDisTime = displayTime.get_width()	
-	DISPLAYSURF.blit(revDisplay(displayTime), (20, 0))#scrH - lenDisTime)) 
-	DISPLAYSURF.blit(revDisplay(displayDate), (150, 0))
-	DISPLAYSURF.blit(revDisplay(displayDay), (280, 0))
+	DISPLAYSURF.blit(revDisplay(displayTime), (40, 20))#scrH - lenDisTime)) 
+	DISPLAYSURF.blit(revDisplay(displayDate), (180, 20))
+	DISPLAYSURF.blit(revDisplay(displayDay), (280, 20))
 
 def iconeBell(DISPLAYSURF,scrW,scrH):#,status):
 	icBell=pygame.image.load(ic32PathR+ "bell" + ic32PathE)#stateBell +ic32PathE)  		
@@ -887,9 +887,9 @@ def scrMxScrSavLfBt(DISPLAYSURF,scrW,scrH):
 
 def scrMxScrSavLfBtVert(DISPLAYSURF,scrW,scrH):
 	DISPLAYSURF.fill(BLACK)
-	scrSaveClock(DISPLAYSURF,scrW,scrH)
+	#scrSaveClock(DISPLAYSURF,scrW,scrH)
 	scrLeftButt(DISPLAYSURF,scrW,scrH)
-	#powerCirc(DISPLAYSURF,scrW,scrH)
+	powerCirc(DISPLAYSURF,scrW,scrH)
 	statuSys(DISPLAYSURF,scrW,scrH)
 	txtDisplayRev(DISPLAYSURF,scrW,scrH)
 	#rightIco(DISPLAYSURF,scrW,scrH)
