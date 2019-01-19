@@ -841,7 +841,7 @@ def iconeBellRev(DISPLAYSURF,scrW,scrH):#,status):
 	if iniPi.angleRot < 90:
 		iniPi.angleRot = iniPi.angleRot + 5
 	icBell = pygame.transform.rotate(icBell,iniPi.angleRot)	
-	DISPLAYSURF.blit(icBell,(485, 65))	
+	DISPLAYSURF.blit(revDisplay(icBell),(485, 65))	
 	#angleRot = 0
 def revDisplay(ic2Use):
 	if reverse == 0:
@@ -849,8 +849,8 @@ def revDisplay(ic2Use):
 	else:
 		if angleRot < 90:
 			angleRot = angleRot + 5
-		ic2Show = pygame.transform.rotate(ic2Use,angleRot)		
-		return (ic2Show)
+		#ic2Show = pygame.transform.rotate(ic2Use,angleRot)		
+		return (pygame.transform.rotate(ic2Use,angleRot))#ic2Show)
 		# icOd = pygame.transform.rotate(icO,angleRot)
 		# icXd = pygame.transform.rotate(icBell,angleRot)
 		# icRectd = pygame.transform.rotate(icRect,angleRot)
