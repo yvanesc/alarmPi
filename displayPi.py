@@ -852,8 +852,8 @@ def txtDisplayRev(DISPLAYSURF,scrW,scrH):
 	displayNxtAl = pygame.transform.rotate(displayNxtAl,90)
 	print(lenNxt0)
 	print(lenNxt)
-	DISPLAYSURF.blit(displayNxtAl0, (445, 120 + lenNxt0))
-	DISPLAYSURF.blit(displayNxtAl, (473, 120 + lenNxt))
+	DISPLAYSURF.blit(displayNxtAl0, (445, 240 - lenNxt0))
+	DISPLAYSURF.blit(displayNxtAl, (473, 240 - lenNxt))
 
 
 def iconeBell(DISPLAYSURF,scrW,scrH):#,status):
