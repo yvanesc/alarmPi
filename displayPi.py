@@ -848,8 +848,10 @@ def txtDisplayRev(DISPLAYSURF,scrW,scrH):
 	DISPLAYSURF.blit(revDisplay(displayDay), (280, 60))
 	displayNxtAl0 = pygame.transform.rotate(displayNxtAl0,90)
 	displayNxtAl = pygame.transform.rotate(displayNxtAl,90)
-	DISPLAYSURF.blit(displayNxtAl0, (439, 120 + displayNxtAl0.get_width()))
-	DISPLAYSURF.blit(displayNxtAl, (467, 120 + displayNxtAl.get_width()))
+	print(displayNxtAl0.get_width())
+	print(displayNxtAl.get_width())
+	DISPLAYSURF.blit(displayNxtAl0, (445, 120 + displayNxtAl0.get_width()))
+	DISPLAYSURF.blit(displayNxtAl, (473, 120 + displayNxtAl.get_width()))
 
 
 def iconeBell(DISPLAYSURF,scrW,scrH):#,status):
