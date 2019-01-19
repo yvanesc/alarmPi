@@ -837,11 +837,11 @@ def txtDisplayRev(DISPLAYSURF,scrW,scrH):
 	time2Display = datetime.datetime.now().strftime("%H:%M")
 	date2Display = datetime.datetime.now().strftime("%d.%m.%y")
 	disDay = datetime.datetime.today().strftime('%A')[:3]
-	displayTime = fontSelL.render(time2Display, True, ORANGE)
-	displayDate = fontSel.render(date2Display, True, ORANGE)
-	displayDay = fontSel.render(disDay, True, ORANGE)
-	displayNxtAl0 = fontSelXs.render("Next", True, ORANGE)
-	displayNxtAl = fontSelXs.render("Alarm : Mon 08:00", True, ORANGE)
+	displayTime = fontSelL.render(time2Display, True, GREYDARK)
+	displayDate = fontSel.render(date2Display, True, GREYDARK)
+	displayDay = fontSel.render(disDay, True, GREYDARK)
+	displayNxtAl0 = fontSelXs.render("Next", True, GREYDARK)
+	displayNxtAl = fontSelXs.render("Alarm : Mon 08:00", True, GREYDARK)
 	lenNxt0 = displayNxtAl0.get_width()
 	lenNxt = displayNxtAl.get_width()
 	lenDisTime = displayTime.get_width()	
@@ -850,8 +850,8 @@ def txtDisplayRev(DISPLAYSURF,scrW,scrH):
 	DISPLAYSURF.blit(revDisplay(displayDay), (280, 60))
 	displayNxtAl0 = pygame.transform.rotate(displayNxtAl0,90)
 	displayNxtAl = pygame.transform.rotate(displayNxtAl,90)
-	DISPLAYSURF.blit(displayNxtAl0, (447, 400 - lenNxt0))
-	DISPLAYSURF.blit(displayNxtAl, (479, 400 - lenNxt))
+	DISPLAYSURF.blit(displayNxtAl0, (447, 450 - lenNxt0))
+	DISPLAYSURF.blit(displayNxtAl, (479, 450 - lenNxt))
 
 
 def iconeBell(DISPLAYSURF,scrW,scrH):#,status):
