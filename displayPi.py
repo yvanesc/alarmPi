@@ -840,9 +840,9 @@ def txtDisplayRev(DISPLAYSURF,scrW,scrH):
 	displayDate = fontSel.render(date2Display, True, RED)
 	displayDay = fontSel.render(disDay, True, RED)
 	lenDisTime = displayTime.get_width()	
-	DISPLAYSURF.blit(revDisplay(displayTime), (marge, 82)) 
-	DISPLAYSURF.blit(revDisplay(displayDate), (scrW - lenDisTime - marge, 212)) 
-	DISPLAYSURF.blit(revDisplay(displayDay), (scrW - lenDisTime - marge, 312)) 	
+	DISPLAYSURF.blit(revDisplay(displayTime), (20, 50)) 
+	DISPLAYSURF.blit(revDisplay(displayDate), (150, 50)) 
+	DISPLAYSURF.blit(revDisplay(displayDay), (280, 50)) 	
 
 def iconeBell(DISPLAYSURF,scrW,scrH):#,status):
 	icBell=pygame.image.load(ic32PathR+ "bell" + ic32PathE)#stateBell +ic32PathE)  		
