@@ -838,9 +838,7 @@ def iconeBellRev(DISPLAYSURF,scrW,scrH):#,status):
 	icBell=pygame.image.load(ic32PathR+ "bell" + ic32PathE)#stateBell +ic32PathE)  		
 	#icBell = pygame.transform.rotate(icBell,90)
 	#ic2Dis=revDisplay(icBell)
-	if iniPi.angleRot < 90:
-		iniPi.angleRot = iniPi.angleRot + 5
-	icBell = pygame.transform.rotate(icBell,iniPi.angleRot)	
+
 	DISPLAYSURF.blit(revDisplay(icBell),(485, 65))	
 	#angleRot = 0
 def revDisplay(ic2Use):
