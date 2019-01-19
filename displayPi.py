@@ -830,6 +830,20 @@ def txtDisplay(DISPLAYSURF,scrW,scrH):
 	DISPLAYSURF.blit(displayDate, (scrW - lenDisTime - marge, 212)) 
 	DISPLAYSURF.blit(displayDay, (scrW - lenDisTime - marge, 312)) 	
 
+def txtDisplayRev(DISPLAYSURF,scrW,scrH):
+	fontSelL=pygame.font.SysFont(iniPi.font, int(scrW/4))
+	fontSel=pygame.font.SysFont(iniPi.font, int(scrW/6))	
+	time2Display = datetime.datetime.now().strftime("%H:%M")
+	date2Display = datetime.datetime.now().strftime("%d.%m.%y")
+	disDay = datetime.datetime.today().strftime('%A')[:3]
+	displayTime = fontSelL.render(time2Display, True, RED)
+	displayDate = fontSel.render(date2Display, True, RED)
+	displayDay = fontSel.render(disDay, True, RED)
+	lenDisTime = displayTime.get_width()	
+	DISPLAYSURF.blit(revDisplay(displayTime), (scrW - lenDisTime - marge, 82)) 
+	DISPLAYSURF.blit(revDisplay(displayDate), (scrW - lenDisTime - marge, 212)) 
+	DISPLAYSURF.blit(revDisplay(displayDay), (scrW - lenDisTime - marge, 312)) 	
+
 def iconeBell(DISPLAYSURF,scrW,scrH):#,status):
 	icBell=pygame.image.load(ic32PathR+ "bell" + ic32PathE)#stateBell +ic32PathE)  		
 	#icBell = pygame.transform.rotate(icBell,90)
@@ -877,7 +891,7 @@ def scrMxScrSavLfBtVert(DISPLAYSURF,scrW,scrH):
 	scrLeftButt(DISPLAYSURF,scrW,scrH)
 	powerCirc(DISPLAYSURF,scrW,scrH)
 	statuSys(DISPLAYSURF,scrW,scrH)
-	txtDisplay(DISPLAYSURF,scrW,scrH)
+	txtDisplayRev(DISPLAYSURF,scrW,scrH)
 	#rightIco(DISPLAYSURF,scrW,scrH)
 	iconeBellRev(DISPLAYSURF,scrW,scrH)
 	pygame.display.flip()
