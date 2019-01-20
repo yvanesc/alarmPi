@@ -848,11 +848,11 @@ def txtDisplayRev(DISPLAYSURF,scrW,scrH):
 		iniPi.GREYDARK2 = iniPi.GREYDARK2 - 1
 		iniPi.GREYDARK3 = iniPi.GREYDARK3 - 1
 
-	displayTime = fontSelL.render(time2Display, True, (GREYDARK1, GREYDARK2, GREYDARK3))
-	displayDate = fontSel.render(date2Display, True, (GREYDARK1, GREYDARK2, GREYDARK3))
-	displayDay = fontSel.render(disDay, True, (GREYDARK1, GREYDARK2, GREYDARK3))
-	displayNxtAl0 = fontSelXs.render("Next", True, (GREYDARK1, GREYDARK2, GREYDARK3))
-	displayNxtAl = fontSelXs.render("Alarm : Mon 08:00", True, (GREYDARK1, GREYDARK2, GREYDARK3))
+	displayTime = fontSelL.render(time2Display, True, (iniPi.GREYDARK1, iniPi.GREYDARK2, iniPi.GREYDARK3))
+	displayDate = fontSel.render(date2Display, True, (iniPi.GREYDARK1, iniPi.GREYDARK2, iniPi.GREYDARK3))
+	displayDay = fontSel.render(disDay, True, (iniPi.GREYDARK1, iniPi.GREYDARK2, iniPi.GREYDARK3))
+	displayNxtAl0 = fontSelXs.render("Next", True, (iniPi.GREYDARK1, iniPi.GREYDARK2, iniPi.GREYDARK3))
+	displayNxtAl = fontSelXs.render("Alarm : Mon 08:00", True, (iniPi.GREYDARK1, iniPi.GREYDARK2, iniPi.GREYDARK3))
 	lenNxt0 = displayNxtAl0.get_width()
 	lenNxt = displayNxtAl.get_width()
 	lenDisTime = displayTime.get_width()	
