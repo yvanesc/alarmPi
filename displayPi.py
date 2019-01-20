@@ -831,7 +831,7 @@ def txtDisplay(DISPLAYSURF,scrW,scrH):
 	DISPLAYSURF.blit(displayDay, (scrW - lenDisTime - marge, 312)) 	
 
 def txtDisplayRev(DISPLAYSURF,scrW,scrH):
-	fontSelXl=pygame.font.SysFont(iniPi.font, int(scrW/3))
+	fontSelXl=pygame.font.SysFont(iniPi.font, int(scrW/2))
 	fontSelL=pygame.font.SysFont(iniPi.font, int(scrW/4))
 	fontSel=pygame.font.SysFont(iniPi.font, int(scrW/6))	
 	fontSelXs=pygame.font.SysFont(iniPi.font, int(scrW/12))
@@ -856,9 +856,9 @@ def txtDisplayRev(DISPLAYSURF,scrW,scrH):
 	lenNxt0 = displayNxtAl0.get_width()
 	lenNxt = displayNxtAl.get_width()
 	lenDisTime = displayTime.get_width()	
-	DISPLAYSURF.blit(revDisplay(displayTime), (70, 80))#scrH - lenDisTime)) 
-	DISPLAYSURF.blit(revDisplay(displayDate), (200, 60))
-	DISPLAYSURF.blit(revDisplay(displayDay), (280, 60))
+	DISPLAYSURF.blit(revDisplay(displayTime), (60, 60))#scrH - lenDisTime)) 
+	DISPLAYSURF.blit(revDisplay(displayDate), (240, 60))
+	DISPLAYSURF.blit(revDisplay(displayDay), (300, 60))
 	displayNxtAl0 = pygame.transform.rotate(displayNxtAl0,90)
 	displayNxtAl = pygame.transform.rotate(displayNxtAl,90)
 	DISPLAYSURF.blit(displayNxtAl0, (447, 450 - lenNxt0))
