@@ -838,6 +838,7 @@ def txtDisplayRev(DISPLAYSURF,scrW,scrH):
 	time2Display = datetime.datetime.now().strftime("%H:%M")
 	date2Display = datetime.datetime.now().strftime("%d.%m.%y")
 	disDay = datetime.datetime.today().strftime('%A')[:3]
+	print(iniPi.GREYDARK1)
 	if iniPi.GREYDARK1 == 0:
 		iniPi.GREYDARK1 = 47
 		iniPi.GREYDARK2 = 79
