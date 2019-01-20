@@ -831,21 +831,31 @@ def txtDisplay(DISPLAYSURF,scrW,scrH):
 	DISPLAYSURF.blit(displayDay, (scrW - lenDisTime - marge, 312)) 	
 
 def txtDisplayRev(DISPLAYSURF,scrW,scrH):
+	fontSelXl=pygame.font.SysFont(iniPi.font, int(scrW/3))
 	fontSelL=pygame.font.SysFont(iniPi.font, int(scrW/4))
 	fontSel=pygame.font.SysFont(iniPi.font, int(scrW/6))	
 	fontSelXs=pygame.font.SysFont(iniPi.font, int(scrW/12))
 	time2Display = datetime.datetime.now().strftime("%H:%M")
 	date2Display = datetime.datetime.now().strftime("%d.%m.%y")
 	disDay = datetime.datetime.today().strftime('%A')[:3]
-	displayTime = fontSelL.render(time2Display, True, (47, 79, 79))
-	displayDate = fontSel.render(date2Display, True, (47, 47, 79))
-	displayDay = fontSel.render(disDay, True, (47, 47, 47))
-	displayNxtAl0 = fontSelXs.render("Next", True, (47, 79, 47))
-	displayNxtAl = fontSelXs.render("Alarm : Mon 08:00", True, (47, 79, 47))
+	if GREYDARK1 == 0:
+		GREYDARK1 = 47
+		GREYDARK2 = 79
+		GREYDARK3 = 79
+	else:
+		GREYDARK1 = GREYDARK1 - 1
+		GREYDARK2 = GREYDARK2 - 1
+		GREYDARK3 = GREYDARK3 - 1
+
+	displayTime = fontSelL.render(time2Display, True, (GREYDARK1, GREYDARK2, GREYDARK3))
+	displayDate = fontSel.render(date2Display, True, (GREYDARK1, GREYDARK2, GREYDARK3))
+	displayDay = fontSel.render(disDay, True, (GREYDARK1, GREYDARK2, GREYDARK3))
+	displayNxtAl0 = fontSelXs.render("Next", True, (GREYDARK1, GREYDARK2, GREYDARK3))
+	displayNxtAl = fontSelXs.render("Alarm : Mon 08:00", True, (GREYDARK1, GREYDARK2, GREYDARK3))
 	lenNxt0 = displayNxtAl0.get_width()
 	lenNxt = displayNxtAl.get_width()
 	lenDisTime = displayTime.get_width()	
-	DISPLAYSURF.blit(revDisplay(displayTime), (60, 60))#scrH - lenDisTime)) 
+	DISPLAYSURF.blit(revDisplay(displayTime), (80, 100))#scrH - lenDisTime)) 
 	DISPLAYSURF.blit(revDisplay(displayDate), (200, 60))
 	DISPLAYSURF.blit(revDisplay(displayDay), (280, 60))
 	displayNxtAl0 = pygame.transform.rotate(displayNxtAl0,90)
