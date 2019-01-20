@@ -838,14 +838,14 @@ def txtDisplayRev(DISPLAYSURF,scrW,scrH):
 	time2Display = datetime.datetime.now().strftime("%H:%M")
 	date2Display = datetime.datetime.now().strftime("%d.%m.%y")
 	disDay = datetime.datetime.today().strftime('%A')[:3]
-	if GREYDARK1 == 0:
-		GREYDARK1 = 47
-		GREYDARK2 = 79
-		GREYDARK3 = 79
+	if iniPi.GREYDARK1 == 0:
+		iniPi.GREYDARK1 = 47
+		iniPi.GREYDARK2 = 79
+		iniPi.GREYDARK3 = 79
 	else:
-		GREYDARK1 = GREYDARK1 - 1
-		GREYDARK2 = GREYDARK2 - 1
-		GREYDARK3 = GREYDARK3 - 1
+		iniPi.GREYDARK1 = iniPi.GREYDARK1 - 1
+		iniPi.GREYDARK2 = iniPi.GREYDARK2 - 1
+		iniPi.GREYDARK3 = iniPi.GREYDARK3 - 1
 
 	displayTime = fontSelL.render(time2Display, True, (GREYDARK1, GREYDARK2, GREYDARK3))
 	displayDate = fontSel.render(date2Display, True, (GREYDARK1, GREYDARK2, GREYDARK3))
