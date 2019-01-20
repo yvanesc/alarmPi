@@ -839,7 +839,7 @@ def txtDisplayRev(DISPLAYSURF,scrW,scrH):
 	date2Display = datetime.datetime.now().strftime("%d.%m.%y")
 	disDay = datetime.datetime.today().strftime('%A')[:3]
 	print(iniPi.GREYDARK1)
-	if iniPi.GREYDARK1 == 0:
+	if iniPi.GREYDARK1 == 10:
 		iniPi.GREYDARK1 = 47
 		iniPi.GREYDARK2 = 47
 		iniPi.GREYDARK3 = 47
@@ -856,7 +856,7 @@ def txtDisplayRev(DISPLAYSURF,scrW,scrH):
 	lenNxt0 = displayNxtAl0.get_width()
 	lenNxt = displayNxtAl.get_width()
 	lenDisTime = displayTime.get_width()	
-	DISPLAYSURF.blit(revDisplay(displayTime), (80, 100))#scrH - lenDisTime)) 
+	DISPLAYSURF.blit(revDisplay(displayTime), (70, 80))#scrH - lenDisTime)) 
 	DISPLAYSURF.blit(revDisplay(displayDate), (200, 60))
 	DISPLAYSURF.blit(revDisplay(displayDay), (280, 60))
 	displayNxtAl0 = pygame.transform.rotate(displayNxtAl0,90)
