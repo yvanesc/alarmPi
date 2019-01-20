@@ -841,14 +841,14 @@ def txtDisplayRev(DISPLAYSURF,scrW,scrH):
 	print(iniPi.GREYDARK1)
 	if iniPi.GREYDARK1 == 0:
 		iniPi.GREYDARK1 = 47
-		iniPi.GREYDARK2 = 79
-		iniPi.GREYDARK3 = 79
+		iniPi.GREYDARK2 = 47
+		iniPi.GREYDARK3 = 47
 	else:
 		iniPi.GREYDARK1 = iniPi.GREYDARK1 - 1
 		iniPi.GREYDARK2 = iniPi.GREYDARK2 - 1
 		iniPi.GREYDARK3 = iniPi.GREYDARK3 - 1
 
-	displayTime = fontSelL.render(time2Display, True, (iniPi.GREYDARK1, iniPi.GREYDARK2, iniPi.GREYDARK3))
+	displayTime = fontSelXl.render(time2Display, True, (iniPi.GREYDARK1, iniPi.GREYDARK2, iniPi.GREYDARK3))
 	displayDate = fontSel.render(date2Display, True, (iniPi.GREYDARK1, iniPi.GREYDARK2, iniPi.GREYDARK3))
 	displayDay = fontSel.render(disDay, True, (iniPi.GREYDARK1, iniPi.GREYDARK2, iniPi.GREYDARK3))
 	displayNxtAl0 = fontSelXs.render("Next", True, (iniPi.GREYDARK1, iniPi.GREYDARK2, iniPi.GREYDARK3))
