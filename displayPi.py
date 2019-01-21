@@ -831,14 +831,14 @@ def txtDisplay(DISPLAYSURF,scrW,scrH):
 	DISPLAYSURF.blit(displayDay, (scrW - lenDisTime - marge, 312)) 	
 
 def txtDisplayRev(DISPLAYSURF,scrW,scrH):
-	fontSelXl=pygame.font.SysFont(iniPi.font, int(scrW/2))
+	fontSelXl=pygame.font.SysFont(iniPi.font, 300)
 	fontSelL=pygame.font.SysFont(iniPi.font, int(scrW/4))
 	fontSel=pygame.font.SysFont(iniPi.font, int(scrW/6))	
 	fontSelXs=pygame.font.SysFont(iniPi.font, int(scrW/12))
 	time2Display = datetime.datetime.now().strftime("%H:%M")
 	date2Display = datetime.datetime.now().strftime("%d.%m.%y")
 	disDay = datetime.datetime.today().strftime('%A')[:3]
-	print(iniPi.GREYDARK1)
+
 	if iniPi.GREYDARK1 == 10:
 		iniPi.GREYDARK1 = 47
 		iniPi.GREYDARK2 = 47
