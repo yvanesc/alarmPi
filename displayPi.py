@@ -831,7 +831,7 @@ def txtDisplay(DISPLAYSURF,scrW,scrH):
 	DISPLAYSURF.blit(displayDay, (scrW - lenDisTime - marge, 312)) 	
 
 def txtDisplayRev(DISPLAYSURF,scrW,scrH):
-	fontSelXl=pygame.font.SysFont(iniPi.font, 300)
+	fontSelXl=pygame.font.SysFont(iniPi.font, 240)
 	fontSelL=pygame.font.SysFont(iniPi.font, int(scrW/4))
 	fontSel=pygame.font.SysFont(iniPi.font, int(scrW/6))	
 	fontSelXs=pygame.font.SysFont(iniPi.font, int(scrW/12))
