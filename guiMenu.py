@@ -1,3 +1,5 @@
+#!/usr/bin/bash
+
 import time
 import RPi.GPIO as GPIO
 import pygame, sys, os
