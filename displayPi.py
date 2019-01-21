@@ -856,7 +856,7 @@ def txtDisplayRev(DISPLAYSURF,scrW,scrH):
 	lenNxt0 = displayNxtAl0.get_width()
 	lenNxt = displayNxtAl.get_width()
 	lenDisTime = displayTime.get_width()	
-	DISPLAYSURF.blit(revDisplay(displayTime), (50, 40))#scrH - lenDisTime)) 
+	DISPLAYSURF.blit(revDisplay(displayTime), (50, 0))#scrH - lenDisTime)) 
 	DISPLAYSURF.blit(revDisplay(displayDate), (260, 60))
 	DISPLAYSURF.blit(revDisplay(displayDay), (320, 60))
 	displayNxtAl0 = pygame.transform.rotate(displayNxtAl0,90)
