@@ -824,7 +824,7 @@ def txtDisplay(DISPLAYSURF,scrW,scrH):
 	disDay = datetime.datetime.today().strftime('%A')[:3]
 	displayTime = fontSelL.render(time2Display, True, RED)
 	displayDate = fontSel.render(date2Display, True, RED)
-	displayDay = fontSel.render(disDay, True, RED)
+	displayDay = fontSel.render(disDay, True, ORANGE)
 	lenDisTime = displayTime.get_width()	
 	DISPLAYSURF.blit(displayTime, (scrW - lenDisTime - marge, 82)) 
 	DISPLAYSURF.blit(displayDate, (scrW - lenDisTime - marge, 212)) 
