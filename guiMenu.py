@@ -89,11 +89,7 @@ while True:
                 call("sudo shutdown -h now", shell=True)
         if (not GPIO.input(4)):
                 #VOL LOW                
-                butPi.low()
-                g = git.Git('/home/pi/alarmPi')
-                g.pull('origin','master')
-                # restart python soft to update change
-                os.execl('/home/pi/alarmPi/stopRunMe.sh', '')
+                butPi.low()                
         if (not GPIO.input(17)):
                 #VOL HIGH                
                 butPi.high()
