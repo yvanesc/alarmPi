@@ -47,6 +47,9 @@ GPIO.setup(22, GPIO.IN, pull_up_down=GPIO.PUD_UP)
 GPIO.setup(23, GPIO.IN, pull_up_down=GPIO.PUD_UP)
 GPIO.setup(24, GPIO.IN, pull_up_down=GPIO.PUD_UP)
 
+# test brightness
+#GPIO.setup(18, GPIO.IN, pull_up_down=GPIO.PUD_UP)
+
 pygame.mouse.set_visible(False)
 
 clock = pygame.time.Clock()
