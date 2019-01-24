@@ -903,7 +903,7 @@ def scrMxScrSavLfBt(DISPLAYSURF,scrW,scrH):
 	scrLeftButt(DISPLAYSURF,scrW,scrH)
 	powerCirc(DISPLAYSURF,scrW,scrH)
 	statuSys(DISPLAYSURF,scrW,scrH)
-	txtDisplay(DISPLAYSURF,scrW,scrH)
+	#txtDisplay(DISPLAYSURF,scrW,scrH)
 	iconeBell(DISPLAYSURF,scrW,scrH)
 	rightIco(DISPLAYSURF,scrW,scrH)
 	pygame.display.flip()
